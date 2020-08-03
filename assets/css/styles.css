@@ -1,0 +1,914 @@
+:root {
+    --primary-colour: #6ABF16;
+    --secondary-colour: #32B8E9;
+    --button-colour: #1675bf;
+    --gutter: 1.5rem;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* Resetting */
+
+body {
+    font-family: 'Dosis', sans-serif;
+    background: #fff;
+    font-size: 15px;
+    line-height: 1.5;
+}
+
+a {
+    color: #262626; 
+    text-decoration: none;
+}
+
+ul {
+    list-style: none;
+
+}
+
+h1, h2 {
+    color: var(--primary-colour);
+    font-weight: bold;
+    font-size: 50px;
+    padding: 0em;
+}
+
+h5 {
+    font-family: Dosis;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 3rem;
+    line-height: 57px;
+    text-align: center;
+    letter-spacing: 5px;
+    color: #FFDE33;
+}
+
+.btn {
+    border-radius: 1rem;
+    border: 2px solid;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    /* padding-left: 1rem; */
+    /* padding-right: 1rem; */
+    margin: auto;
+    display: block;
+    background: var(--secondary-colour);
+    color: #fff;
+    font-weight: bold;
+    line-height: 1.5rem;
+    
+}
+
+.btn, button:hover {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+
+}
+
+.cards {
+    width: 100%;
+    background-color: #fff;
+    border-radius: 1rem;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+
+}
+
+/* Container */
+.container {
+    width: 90%; 
+    max-width: 1100px;
+    margin: auto; 
+}
+
+
+
+
+li, a {
+    font-family: "Montserrat", sans-serif;
+    font-weight: 500;
+    font-size: 1rem;
+    color: #141823; 
+    text-decoration: none;
+}
+
+ button {
+    font-family: "Montserrat", sans-serif;
+    font-weight: 500;
+    font-size: 1rem;
+    color: #fff;  
+    text-decoration: none;
+}
+
+/* PreNav */
+#pre-nav {
+    background: var(--secondary-colour);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    line-height: 1.5rem;
+    padding: 0.25rem 1rem 0.25rem 1rem;
+}
+
+
+
+#pre-nav a {
+    font-weight: bold;
+    font-size: 1.2rem;
+    color: #fff;
+}
+
+
+#pre-nav >:last-child a {
+    padding-left: 1rem;
+}
+
+#pre-nav >:last-child a:hover {
+    color: var(--primary-colour);
+}
+
+/* Menu */
+
+header {
+    display: flex; 
+    justify-content: flex-end;
+    align-items: center;
+    padding: 30px 10%; 
+}
+
+header .nav__links a:hover {
+    color: var(--secondary-colour);
+    border-bottom: 2px solid;
+    margin-top: 0.5rem; 
+}
+
+.logo {
+    cursor: pointer;
+    margin-right: auto;
+}
+
+.nav__links {
+    list-style: none;
+}
+
+.nav__links li {
+    display: inline-block;
+    padding: 0px 20px;
+}
+
+.nav__links li:nth-child(1) {
+    padding: 0 20px 0 0;
+}
+
+.nav__links li a {
+    transition: all 0.3s ease 0s;
+    font-weight: bold;
+    font-size: 1rem;
+    color: grey;
+}
+
+.nav__links li a:hover {
+    color: #0088a9;
+}
+
+.cta {
+    order: 2;
+}
+
+.menu {
+    display: none;
+}
+
+button {
+    margin-left: 2rem;
+    padding: 9px 25px; 
+    background-color: var(--button-colour);
+    border: none; 
+    border-radius: 50px; 
+    cursor: pointer;
+    transition: all 0.3s ease 0s;
+}
+
+button:hover {
+    opacity: 0.9;
+}
+
+
+/* Banner & Form */
+#banner {
+    width: 100%;
+    height: auto;
+    background: url(img/Go-Cleaning-Commercial-Cleaning.jpg) no-repeat center center/cover;
+    /* border-radius: 0% 0% 90% 90%/0% 0% 50% 50%; */
+}
+
+#banner .banner-bg {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding-top: 4rem;
+    /* background-color: rgba(73, 243, 51, 0.7); */
+    background-color: rgba(106, 191, 22, 0.65);
+    width: 100%;
+    height: auto;
+    /* border-radius: 0% 0% 90% 90%/0% 0% 50% 50%; */
+    
+}
+
+#banner .banner-bg h1 {
+    color: var(--secondary-colour);
+    font-size: 4rem;    
+}
+
+#banner .banner-bg h3 {
+    color: #fff;
+    font-size: 2.5rem;
+}
+#banner .banner-form {
+    /* background: rgb(255, 255, 255, 0.5); */
+    border-radius: 15px;
+    padding: 30px 10px 90px 10px;
+    width: 100%;
+    height: auto;
+}
+
+
+
+#banner .banner-form p {
+    font-weight: bold;
+    font-size: 1.5rem;
+    font-style: italic;
+}
+#banner .banner-form form {
+    display: grid;
+    grid-gap: 1rem;
+    grid-template-columns: repeat(5, minmax(50px, 1fr));
+
+}
+
+#banner form label:hover {
+    cursor: pointer;
+    opacity: 0.7;
+}
+
+#banner form label input[type=radio] {
+    opacity: 0;
+}
+
+/* Banner Progress bar, took from css-tricks.com/css3-prgress-bars  */
+.meter { 
+	height: 20px;  /* Can be anything */
+	position: relative;
+	background: #555;
+	-moz-border-radius: 25px;
+	-webkit-border-radius: 25px;
+	border-radius: 25px;
+	padding: 10px;
+	box-shadow: inset 0 -1px 1px rgba(255,255,255,0.3);
+}
+/* need to complete the progress bar code */
+
+
+#first-section  {
+    display: grid;
+    grid-template-columns: 1fr 1.5fr 3fr 0.3fr 2fr;
+    grid-auto-rows: auto; 
+    /* grid-gap: 1rem; */
+
+    /* border-radius: 10rem; */
+
+    
+}
+
+#first-section .first-box{
+    background-color: rgba(254, 222, 51);
+    /* padding-top: 1rem;
+    padding-right: 1rem; */
+    padding: 1rem;
+}
+
+
+#first-section .first-box h2 {
+    color: #fff; 
+    text-align: end;
+    line-height: 3rem;
+
+}
+
+#first-section .first-box .btn {
+    background-color: #ffffff;
+    color: var(--button-colour);
+    border: none;
+    text-align: center;
+    margin-top: 1rem;
+}
+
+#first-section .first-box span {
+    display: block;
+}
+
+
+#first-section .second-box {
+    padding: 1rem;
+    margin-top: 2rem;
+    grid-column-start: 2;
+    grid-column-end: 4; 
+}
+
+#first-section  .second-box h1 {
+    line-height: 3.5rem;
+    margin-bottom: 0.5rem;
+}
+#first-section  .second-box p {
+    color: grey;
+    margin-bottom: 1rem;
+    
+}
+
+#first-section  .second-box span {
+    display: block;
+}
+
+#first-section  .second-box .btn {
+    background-color: #ffffff;
+    color: var(--button-colour);
+    border-color: var(--button-colour);
+    text-align: center;
+    width: 60%;
+}
+
+#first-section .review-logos  {
+    padding: 3rem;
+}
+
+#first-section .side {
+    grid-column-start: 5; 
+    grid-column-end: 6;
+    grid-row-start: 1;
+    grid-row-end: 3;
+    width: 100%;
+    height: auto;
+    background: url(img/Go-Cleaning-Commercial-Cleaning.jpg) no-repeat left center/cover;
+}
+#first-section .side .side-overlay {
+
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    padding-top: 4rem;
+    background-color: rgba(88, 196, 234, 0.65);
+    width: 100%;
+    height: 100%;
+    color: #ffffff;
+    line-height: 2.3rem;
+}
+
+#first-section .side h3, h4 {
+    font-size: 1.5rem;
+    padding-top: 1rem;
+}
+
+
+
+#first-section .side .side-overlay > * {
+    margin: 0.5rem; 
+}
+
+#first-section .side div .btn {
+    padding: 0.5rem;
+}
+
+#first-section :nth-child(5) {
+
+    grid-column-start: 1;
+    grid-column-end: 3; 
+    width: 100%;
+    height: auto;
+    background: url(img/Go-Cleaning-Header-Background.jpg) no-repeat right center/cover; 
+    /* background-color: rgba(95, 97, 96, 0.8); */
+    color: #ffffff;
+}
+
+#first-section :nth-child(5) div {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+    background-color: rgba(95, 97, 96, 0.8);
+    width: 100%;
+    height: 100%;
+    color: #ffffff;
+    line-height: 1.3rem;
+
+}
+
+#first-section div:nth-child(5) div .btn {
+    background-color: rgba(95, 97, 96, 0.8);
+    color: #ffffff;
+    border: #ffffff;
+    border-style: solid;
+    border-width: thin;
+    padding: 1rem;
+} 
+
+/* TESTMONIALS */
+#first-section .testimonials  {
+    /* background-color: black; */
+    grid-column-start: 3;
+    grid-column-end: 5;
+    grid-row-start: 2; 
+    grid-row-end: 3;  
+    padding: 2rem;
+
+
+}
+
+
+#first-section .testimonials h2 {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+#first-section .testimonials .cards  img {
+    border-top-left-radius: 1rem;   
+}
+
+#first-section .testimonials .cards p {
+    background: linear-gradient(124.9deg, #1675BF -5.34%, #32B8E9 110.05%);
+    color: #fff;
+    padding: 1rem;
+    
+}
+
+#first-section .testimonials .cards p span {
+    display: block;
+}
+
+
+#first-section .testimonials .testimonials-content .cards {
+    display: flex;
+    /* grid-template-columns: repeat(3, 1fr); */
+    
+}
+
+
+
+/* SECOND SECTION */
+
+#second-section {
+    display: flex;
+    flex-direction: row;   
+    width: 100%;
+    height: auto;
+
+}
+
+#second-section h2 {
+    color: #ffffff;
+    font-size: 3rem;
+}
+
+
+
+
+#second-section .residential-cleaning {
+    text-align: center;
+    background: url(img/Go-Cleaning-Residential-Cleaning.jpg) no-repeat center center/cover;
+
+    /* width: 100%;
+    height: 100%; */
+    color: #ffffff;
+    line-height: 3rem;
+    width: 34%;
+    height: auto;
+}
+
+#second-section .residential-cleaning div {
+    background-color: rgba(79, 100, 209, 0.8);
+    padding: 4rem;
+    height: 100%;
+}
+
+
+#second-section .janitorial-cleaning div {
+    background-color: rgba(79, 123, 122, 0.8);
+    padding-top: 4rem;
+    height: 100%;
+
+}
+#second-section .janitorial-cleaning {
+    text-align: center;
+    background: url(img/Go-Cleaning-Commercial-Cleaning.jpg) no-repeat center center/cover;
+    /* width: 100%;
+    height: 100%; */
+    color: #ffffff;
+    line-height: 3rem;
+    width: 33%;
+    height: auto;
+
+}
+
+#second-section .office-cleaning {
+    text-align: center;
+    /* padding-top: 4rem; */
+    background: url(img/Go-Cleaning-Office-Cleaning.jpg) no-repeat center center/cover;
+    /* width: 100%;
+    height: 100%; */
+    color: #ffffff;
+    line-height: 3rem;
+    width: 33%;
+    height: auto;
+    /* padding: 3rem; */
+
+}
+
+#second-section .office-cleaning div {
+    background-color: rgba(153, 115, 226, 0.8);
+    padding-top: 4rem;
+    height: 100%;
+
+}
+
+
+#second-section .residential-cleaning h2 span, .janitorial-cleaning h2 span, .office-cleaning h2 span{
+    display: block;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ===============================================================================
+                            Commercial Cleaning Service  
+==================================================================================*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Footer Menu */
+#footer-menu {
+    display: grid;
+    grid-template-columns: 3fr 3fr 3fr;
+    grid-gap: 2rem;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+
+}
+
+#footer-menu h3 {
+    color: black;
+    text-align: left;
+
+}
+
+#footer-menu > div:nth-child(1)  p {
+    font-weight: normal;
+}
+
+#footer-menu >div:nth-child(2), #footer-menu >div:nth-child(3) {
+    display: flex;
+    flex-direction: column;
+}
+    
+
+
+#footer-menu >div:nth-child(2) span {
+    margin-left: 1rem;
+}
+
+#footer-menu a:hover {
+    color: var(--secondary-colour);
+}
+
+
+/* Footer */
+footer {
+    background: var(--secondary-colour);
+}
+
+footer p {
+    padding: 1.5rem;
+    color: #fff;
+    margin: auto;
+    width: 50%;
+}
+
+footer a:hover {
+    color: var(--primary-colour);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Mobile For Menu*/
+@media only screen and (max-width: 1100px) {
+    .nav__links, .cta {
+        display: none; 
+    }
+
+    .menu {
+        display: inherit;
+    }
+}
+
+
+/* Mobile Nav */
+
+.overlay {
+    height: 100%; 
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    left: 0; 
+    top: 0; 
+    background-color: var(--primary-colour); 
+    overflow-x: hidden;
+    transition: all 0.5s ease 0s;
+
+}
+
+.overlay__content {
+    display: flex;
+    height: 100%; 
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.overlay__content a {
+    padding: 1rem; 
+    font-size: 5rem;
+    display: block;
+    transition: all 0.3s ease 0s;
+    color: #edf0f1;
+
+}
+
+.overlay a:hover, .overlay a:focus {
+    color: var(--button-colour);
+}
+
+.overlay .close {
+    position: absolute;
+    top: 20px; 
+    right: 45px; 
+    font-size: 5rem;
+}
+
+@media screen and (max-width: 1140px) {
+    .overlay a {
+        font-size: 1.5rem; 
+    }
+
+    .overlay .close {
+        font-size: 4rem;
+        top: 1rem; 
+        right: 3rem; 
+    }
+
+    /* #banner .banner-bg .banner-form form {
+        grid-template-columns: repeat(2, 1fr);
+            
+
+    } */
+}
+
+
+/* Mobile CSS */
+@media (max-width: 800px) {
+
+    #banner .banner-bg .banner-form form {
+        grid-template-columns: repeat(5, 1fr);
+            
+    }
+
+    #first-section {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto;
+    }
+    #first-section .first-box {
+        grid-column-start: 5;
+        grid-column-end: 6;
+        grid-row-start: 3;
+        grid-row-end: 4; 
+        
+    }
+    #first-section .second-box {
+        grid-column-start: 1;
+        grid-column-end: 6;
+        grid-row-start: 1;
+        grid-row-end: 2; 
+
+        flex-direction: row;
+    }
+
+    #first-section .review-logos {
+        grid-column-start: 1;
+        grid-column-end: 2;
+        grid-row-start: 2;
+        grid-row-end: 3; 
+        /* display: inline-block; */
+        
+    }
+
+    #first-section .side {
+        grid-column-start: 1;
+        grid-column-end: 5;
+        grid-row-start: 3;
+        grid-row-end: 4; 
+        
+    }
+
+    #first-section .service-info {
+        grid-column-start: 1;
+        grid-column-end: 6;
+        grid-row-start: 5;
+        grid-row-end: 6; 
+        
+        
+    }
+
+    #first-section .testimonials {
+        grid-column-start: 3;
+        grid-column-end: 6;
+        grid-row-start: 2;
+        grid-row-end: 3; 
+        
+    }
+
+    #second-section div * {
+        font-size: 2rem;
+    }
+
+
+    @media (max-width: 600px) {
+        #banner .banner-bg .banner-form form {
+            grid-template-columns: repeat(2, 1fr);
+                
+        }
+    
+        #first-section {
+            grid-template-columns: 1fr;
+            grid-template-rows: auto;
+        }
+        #first-section .first-box {
+            grid-column-start: 1;
+            grid-column-end: 6;
+            grid-row-start: 3;
+            grid-row-end: 4;
+            /* display: none;  */
+            
+        }
+        #first-section .second-box {
+            grid-column-start: 1;
+            grid-column-end: 6;
+            grid-row-start: 1;
+            grid-row-end: 2; 
+    
+            flex-direction: row;
+        }
+    
+        #first-section .review-logos {
+            grid-column-start: 1;
+            grid-column-end: 2;
+            grid-row-start: 2;
+            grid-row-end: 3; 
+            /* display: inline-block; */
+            
+        }
+        #first-section .review-logos ul {
+            display: inline; 
+        }
+
+
+    
+        #first-section .side {
+            grid-column-start: 1;
+            grid-column-end: 6;
+            grid-row-start: 5;
+            grid-row-end: 6; 
+            
+        }
+    
+        #first-section .service-info {
+            grid-column-start: 1;
+            grid-column-end: 6;
+            grid-row-start: 6;
+            grid-row-end: 7; 
+            
+            
+        }
+    
+        #first-section .testimonials {
+            grid-column-start: 1;
+            grid-column-end: 6;
+            grid-row-start: 4;
+            grid-row-end: 5; 
+            
+        }
+        #second-section {
+            flex-direction: column;
+            
+        }
+
+        #second-section .residential-cleaning {
+            width: 100%;
+            height: auto;
+        }
+
+        #second-section .janitorial-cleaning {
+            width: 100%;
+            height: auto;
+        }
+
+        #second-section .office-cleaning {
+            width: 100%;
+            height: auto;
+        }
+
+        #footer-menu  {
+            grid-template-columns: 1fr;
+        }
+
+    }
+    
+}
+
+
+
+
+
+

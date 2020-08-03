@@ -1,0 +1,116 @@
+:root {
+    --primary-colour: #6ABF16;
+    --secondary-colour: #32B8E9;
+    --button-colour: #1675bf;
+    --gutter: 1.5rem;
+}
+
+#section-one-residential {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    justify-items: center;
+    margin-top: 3rem;
+    grid-gap: 2rem;
+
+}
+
+#section-one-residential img {
+    max-width: 70%;
+}
+
+#section-one-residential h4 {
+    color: var(--secondary-colour)
+}
+
+#section-one-residential p {
+    color: #777777;
+}
+
+#section-two-residential {
+    display: grid;
+    grid-template-columns: 1fr 1.15fr 1fr;
+    justify-items: center;
+    grid-gap: 1.5rem;
+    margin-top: 4rem;
+}
+
+#section-two-residential .cards {
+    padding: 1.5rem 0.5rem; 
+    text-align: center;
+}
+
+#section-two-residential h3 {
+    font-weight: 500;
+    font-size: 28px;
+    line-height: 35px;
+    color: #6ABF16;
+}
+
+#section-two-residential p {
+    font-size: 16px;
+    font-weight: bold;
+    /* line-height: 48px; */
+    /* text-align: center; */
+    letter-spacing: 5px;
+    color: #777777;
+    padding-bottom: 1rem;
+}
+
+#section-two-residential ul li {
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 22px;
+    text-align: center;
+    color: #777777;
+
+}
+
+#section-two-residential .cards h4 {
+    font-size: 14px;
+    line-height: 25px;
+    color: var(--secondary-colour);
+}
+
+#section-two-residential .cards h5 {
+    font-weight: 600;
+    font-size: 70px;
+    line-height: 48px;
+    color: var(--primary-colour);
+    margin: 0.5rem 0;
+}
+
+#section-two-residential .cards h6 {
+    font-size: 14px;
+    line-height: 25px;
+    color: #C4C4C4;
+}
+
+#section-two-residential .cards:nth-child(1), 
+#section-two-residential .cards:nth-child(3) {
+    margin: 1rem;
+    /* background-color: var(--secondary-colour); */
+
+}
+
+#section-two-residential .cards:nth-child(2) li {
+    line-height: 2.5rem;
+}
+ 
+
+#section-two-residential .btn {
+    margin-top: -40px;
+    background-color: #FFDE33;
+    border: none;
+    position: relative; 
+    line-height: 0.5rem;
+    letter-spacing: 5px;
+    font-size: 14px;
+    margin-bottom: 1.5rem;
+    margin-left: 2rem;
+    margin-right: 2rem; 
+}
+
+
+
+
+
