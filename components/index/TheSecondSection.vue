@@ -106,4 +106,32 @@ name: "TheSecondSection"
 #second-section .residential-cleaning h2 span, .janitorial-cleaning h2 span, .office-cleaning h2 span{
   display: block;
 }
+
+@media (max-width: 800px) {
+  #second-section div * {
+    font-size: 2rem;
+  }
+}
+
+@media (max-width: 600px) {
+  #second-section {
+    flex-direction: column;
+
+  }
+
+  #second-section .residential-cleaning {
+    width: 100%;
+    height: auto;
+  }
+
+  #second-section .janitorial-cleaning {
+    width: 100%;
+    height: auto;
+  }
+
+  #second-section .office-cleaning {
+    width: 100%;
+    height: auto;
+  }
+}
 </style>

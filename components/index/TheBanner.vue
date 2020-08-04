@@ -121,5 +121,19 @@ name: "TheBanner"
   padding: 10px;
   box-shadow: inset 0 -1px 1px rgba(255,255,255,0.3);
 }
+
+@media (max-width: 800px) {
+
+  #banner .banner-bg .banner-form form {
+    grid-template-columns: repeat(5, 1fr);
+
+  }
+}
+
+@media (max-width: 800px) {
+  #banner .banner-bg .banner-form form {
+    grid-template-columns: repeat(2, 1fr);
+
+  }
+}
 </style>
-d

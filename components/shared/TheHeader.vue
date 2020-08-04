@@ -152,4 +152,77 @@ button {
 button:hover {
   opacity: 0.9;
 }
+
+/* Mobile For Menu*/
+@media only screen and (max-width: 1100px) {
+  .nav__links, .cta {
+    display: none;
+  }
+
+  .menu {
+    display: inherit;
+  }
+}
+
+/* Mobile Nav */
+
+.overlay {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  background-color: var(--primary-colour);
+  overflow-x: hidden;
+  transition: all 0.5s ease 0s;
+
+}
+
+.overlay__content {
+  display: flex;
+  height: 100%;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+}
+
+.overlay__content a {
+  padding: 1rem;
+  font-size: 5rem;
+  display: block;
+  transition: all 0.3s ease 0s;
+  color: #edf0f1;
+
+}
+
+.overlay a:hover, .overlay a:focus {
+  color: var(--button-colour);
+}
+
+.overlay .close {
+  position: absolute;
+  top: 20px;
+  right: 45px;
+  font-size: 5rem;
+}
+
+@media screen and (max-width: 1140px) {
+  .overlay a {
+    font-size: 1.5rem;
+  }
+
+  .overlay .close {
+    font-size: 4rem;
+    top: 1rem;
+    right: 3rem;
+  }
+
+  /* #banner .banner-bg .banner-form form {
+      grid-template-columns: repeat(2, 1fr);
+
+
+  } */
+}
 </style>
