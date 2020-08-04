@@ -1,8 +1,21 @@
 <template>
   <div>
+    <TheHeader />
     <Nuxt />
+    <TheFooter />
   </div>
 </template>
+
+<script>
+import TheHeader from '@/components/shared/TheHeader'
+import TheFooter from '@/components/shared/TheFooter'
+
+export default {
+  components: {
+    TheHeader, TheFooter
+  }
+}
+</script>
 
 <style>
 html {

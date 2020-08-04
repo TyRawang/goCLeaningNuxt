@@ -1,0 +1,155 @@
+<template>
+  <section>
+    <!-- PreNav -->
+    <div id="pre-nav">
+      <div>
+        <a href="tel:+14037684186">(403)-768-4186</a>
+      </div>
+      <div>
+        <nuxt-link to="https://www.facebook.com/gocleaningcalgary/"><i class="fab fa-facebook-f fa-2x"></i></nuxt-link>
+        <nuxt-link to="https://www.instagram.com/gocleaningcalgary/"><i class="fab fa-instagram fa-2x"></i></nuxt-link>
+        <nuxt-link to="https://www.linkedin.com/company/18969594/"><i class="fab fa-linkedin-in fa-2x"></i></nuxt-link>
+        <nuxt-link to="mailto: info@gocleaning.ca"><i class="fas fa-envelope fa-2x"></i></nuxt-link>
+      </div>
+    </div>
+
+    <header>
+      <img src="~assets/img/logo.png" alt="Go Cleaning Logo" class="logo">
+      <nav>
+        <ul class="nav__links">
+          <li><nuxt-link to="index.html">Home</nuxt-link></li>
+          <li><nuxt-link to="services.html">Services</nuxt-link></li>
+          <li><nuxt-link to="testimonials.html">Testimonials</nuxt-link></li>
+          <li><nuxt-link to="frequently-asked-questions.html">FAQ</nuxt-link></li>
+          <li><nuxt-link to="blog.html">Blog</nuxt-link></li>
+          <li><nuxt-link to="contact-us.html">Contact</nuxt-link></li>
+
+        </ul>
+      </nav>
+      <nuxt-link to="#" class="cta">
+        <button>Free Quote</button>
+      </nuxt-link>
+      <a @click="openNav" class="menu" href="#">
+        <button>Menu</button>
+      </a>
+    </header>
+
+    <div id="mobile__menu" class="overlay" ref="mobileMenu">
+      <a href="#" @click="closeNav" class="close">&times;</a>
+      <div class="overlay__content">
+        <nuxt-link to="#">Services</nuxt-link>
+        <nuxt-link to="#">Projects</nuxt-link>
+        <nuxt-link to="#">About</nuxt-link>
+      </div>
+    </div>
+  </section>
+</template>
+
+<script>
+export default {
+  methods: {
+    openNav(){
+      this.$refs.mobileMenu.style.width = '100%';
+    },
+
+    closeNav(){
+      this.$refs.mobileMenu.style.width = '0%';
+    }
+  }
+}
+</script>
+
+<style>
+/* PreNav */
+#pre-nav {
+  background: var(--secondary-colour);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  line-height: 1.5rem;
+  padding: 0.25rem 1rem 0.25rem 1rem;
+}
+
+
+
+#pre-nav a {
+  font-weight: bold;
+  font-size: 1.2rem;
+  color: #fff;
+}
+
+
+#pre-nav >:last-child a {
+  padding-left: 1rem;
+}
+
+#pre-nav >:last-child a:hover {
+  color: var(--primary-colour);
+}
+
+/* Menu */
+
+header {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding: 30px 10%;
+}
+
+header .nav__links a:hover {
+  color: var(--secondary-colour);
+  border-bottom: 2px solid;
+  margin-top: 0.5rem;
+}
+
+.logo {
+  cursor: pointer;
+  margin-right: auto;
+}
+
+.nav__links {
+  list-style: none;
+}
+
+.nav__links li {
+  display: inline-block;
+  padding: 0px 20px;
+}
+
+.nav__links li:nth-child(1) {
+  padding: 0 20px 0 0;
+}
+
+.nav__links li a {
+  transition: all 0.3s ease 0s;
+  font-weight: bold;
+  font-size: 1rem;
+  color: grey;
+}
+
+.nav__links li a:hover {
+  color: #0088a9;
+}
+
+.cta {
+  order: 2;
+}
+
+.menu {
+  display: none;
+}
+
+button {
+  margin-left: 2rem;
+  padding: 9px 25px;
+  background-color: var(--button-colour);
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: all 0.3s ease 0s;
+}
+
+button:hover {
+  opacity: 0.9;
+}
+</style>

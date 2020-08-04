@@ -22,13 +22,17 @@ export default {
       { hid: 'description', name: 'description', content: process.env.npm_package_description || '' }
     ],
     link: [
-      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
+      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
+      { rel:"stylesheet", href:"https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css", integrity:"sha256-mmgLkCYLUQbXn0B1SRqzHar6dCnv9oZFPEC1g1cwlkk=", crossorigin:"anonymous"},
+      { rel:"stylesheet", href:"https://fonts.googleapis.com/css?family=Montserrat:500&display=swap" },
+      { rel:"stylesheet", href:"https://fonts.googleapis.com/css?family=Dosis&display=swap" }
     ]
   },
   /*
   ** Global CSS
   */
   css: [
+    '~assets/css/styles.css'
   ],
   /*
   ** Plugins to load before mounting the App
