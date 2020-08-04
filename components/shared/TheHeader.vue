@@ -14,7 +14,7 @@
     </div>
 
     <header>
-      <img src="~assets/img/logo.png" alt="Go Cleaning Logo" class="logo">
+      <img src="~/assets/img/logo.png" alt="Go Cleaning Logo" class="logo">
       <nav>
         <ul class="nav__links">
           <li><nuxt-link to="index.html">Home</nuxt-link></li>
