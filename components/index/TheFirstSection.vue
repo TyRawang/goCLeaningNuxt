@@ -250,4 +250,122 @@ name: "TheFirstSection"
   /* grid-template-columns: repeat(3, 1fr); */
 
 }
+
+@media (max-width: 800px) {
+  #first-section {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+  }
+  #first-section .first-box {
+    grid-column-start: 5;
+    grid-column-end: 6;
+    grid-row-start: 3;
+    grid-row-end: 4;
+
+  }
+  #first-section .second-box {
+    grid-column-start: 1;
+    grid-column-end: 6;
+    grid-row-start: 1;
+    grid-row-end: 2;
+
+    flex-direction: row;
+  }
+
+  #first-section .review-logos {
+    grid-column-start: 1;
+    grid-column-end: 2;
+    grid-row-start: 2;
+    grid-row-end: 3;
+    /* display: inline-block; */
+
+  }
+
+  #first-section .side {
+    grid-column-start: 1;
+    grid-column-end: 5;
+    grid-row-start: 3;
+    grid-row-end: 4;
+
+  }
+
+  #first-section .service-info {
+    grid-column-start: 1;
+    grid-column-end: 6;
+    grid-row-start: 5;
+    grid-row-end: 6;
+
+
+  }
+
+  #first-section .testimonials {
+    grid-column-start: 3;
+    grid-column-end: 6;
+    grid-row-start: 2;
+    grid-row-end: 3;
+
+  }
+}
+
+@media (max-width: 600px) {
+  #first-section {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+  }
+  #first-section .first-box {
+    grid-column-start: 1;
+    grid-column-end: 6;
+    grid-row-start: 3;
+    grid-row-end: 4;
+    /* display: none;  */
+
+  }
+  #first-section .second-box {
+    grid-column-start: 1;
+    grid-column-end: 6;
+    grid-row-start: 1;
+    grid-row-end: 2;
+
+    flex-direction: row;
+  }
+
+  #first-section .review-logos {
+    grid-column-start: 1;
+    grid-column-end: 2;
+    grid-row-start: 2;
+    grid-row-end: 3;
+    /* display: inline-block; */
+
+  }
+  #first-section .review-logos ul {
+    display: inline;
+  }
+
+
+
+  #first-section .side {
+    grid-column-start: 1;
+    grid-column-end: 6;
+    grid-row-start: 5;
+    grid-row-end: 6;
+
+  }
+
+  #first-section .service-info {
+    grid-column-start: 1;
+    grid-column-end: 6;
+    grid-row-start: 6;
+    grid-row-end: 7;
+
+
+  }
+
+  #first-section .testimonials {
+    grid-column-start: 1;
+    grid-column-end: 6;
+    grid-row-start: 4;
+    grid-row-end: 5;
+
+  }
+}
 </style>

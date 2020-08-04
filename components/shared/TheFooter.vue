@@ -28,7 +28,72 @@
     </div>
 
     <footer>
-      <p>© Copyright 2020 | All Rights Reserved | Sitemap | Powered by WebDesign Calgary</p>
+      <p>© Copyright {{ new Date().getFullYear() }} | All Rights Reserved | Sitemap | Powered by WebDesign Calgary</p>
     </footer>
   </section>
 </template>
+
+<script>
+export default {
+}
+</script>
+
+<style>
+/* Footer Menu */
+#footer-menu {
+  display: grid;
+  grid-template-columns: 3fr 3fr 3fr;
+  grid-gap: 2rem;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+
+}
+
+#footer-menu h3 {
+  color: black;
+  text-align: left;
+
+}
+
+#footer-menu > div:nth-child(1)  p {
+  font-weight: normal;
+}
+
+#footer-menu >div:nth-child(2), #footer-menu >div:nth-child(3) {
+  display: flex;
+  flex-direction: column;
+}
+
+
+
+#footer-menu >div:nth-child(2) span {
+  margin-left: 1rem;
+}
+
+#footer-menu a:hover {
+  color: var(--secondary-colour);
+}
+
+
+/* Footer */
+footer {
+  background: var(--secondary-colour);
+}
+
+footer p {
+  padding: 1.5rem;
+  color: #fff;
+  margin: auto;
+  width: 50%;
+}
+
+footer a:hover {
+  color: var(--primary-colour);
+}
+
+@media (max-width: 600px){
+  #footer-menu  {
+    grid-template-columns: 1fr;
+  }
+}
+</style>

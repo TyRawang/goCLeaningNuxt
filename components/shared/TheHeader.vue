@@ -6,15 +6,15 @@
         <a href="tel:+14037684186">(403)-768-4186</a>
       </div>
       <div>
-        <nuxt-link to="https://www.facebook.com/gocleaningcalgary/"><i class="fab fa-facebook-f fa-2x"></i></nuxt-link>
-        <nuxt-link to="https://www.instagram.com/gocleaningcalgary/"><i class="fab fa-instagram fa-2x"></i></nuxt-link>
-        <nuxt-link to="https://www.linkedin.com/company/18969594/"><i class="fab fa-linkedin-in fa-2x"></i></nuxt-link>
-        <nuxt-link to="mailto: info@gocleaning.ca"><i class="fas fa-envelope fa-2x"></i></nuxt-link>
+        <a href="https://www.facebook.com/gocleaningcalgary/"><i class="fab fa-facebook-f fa-2x"></i></a>
+        <a href="https://www.instagram.com/gocleaningcalgary/"><i class="fab fa-instagram fa-2x"></i></a>
+        <a href="https://www.linkedin.com/company/18969594/"><i class="fab fa-linkedin-in fa-2x"></i></a>
+        <a href="mailto: info@gocleaning.ca"><i class="fas fa-envelope fa-2x"></i></a>
       </div>
     </div>
 
     <header>
-      <img src="~assets/img/logo.png" alt="Go Cleaning Logo" class="logo">
+      <img src="~/assets/img/logo.png" alt="Go Cleaning Logo" class="logo">
       <nav>
         <ul class="nav__links">
           <li><nuxt-link to="index.html">Home</nuxt-link></li>
@@ -151,5 +151,78 @@ button {
 
 button:hover {
   opacity: 0.9;
+}
+
+/* Mobile For Menu*/
+@media only screen and (max-width: 1100px) {
+  .nav__links, .cta {
+    display: none;
+  }
+
+  .menu {
+    display: inherit;
+  }
+}
+
+/* Mobile Nav */
+
+.overlay {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  background-color: var(--primary-colour);
+  overflow-x: hidden;
+  transition: all 0.5s ease 0s;
+
+}
+
+.overlay__content {
+  display: flex;
+  height: 100%;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+}
+
+.overlay__content a {
+  padding: 1rem;
+  font-size: 5rem;
+  display: block;
+  transition: all 0.3s ease 0s;
+  color: #edf0f1;
+
+}
+
+.overlay a:hover, .overlay a:focus {
+  color: var(--button-colour);
+}
+
+.overlay .close {
+  position: absolute;
+  top: 20px;
+  right: 45px;
+  font-size: 5rem;
+}
+
+@media screen and (max-width: 1140px) {
+  .overlay a {
+    font-size: 1.5rem;
+  }
+
+  .overlay .close {
+    font-size: 4rem;
+    top: 1rem;
+    right: 3rem;
+  }
+
+  /* #banner .banner-bg .banner-form form {
+      grid-template-columns: repeat(2, 1fr);
+
+
+  } */
 }
 </style>
