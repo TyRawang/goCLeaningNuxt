@@ -49,6 +49,7 @@ export default {
   ** Nuxt.js dev-modules
   */
   buildModules: [
+    // '@nuxtjs/tailwindcss'
   ],
   /*
   ** Nuxt.js modules
@@ -59,6 +60,8 @@ export default {
     '@nuxtjs/pwa',
     // Doc: https://github.com/nuxt/content
     '@nuxt/content',
+    'bootstrap-vue/nuxt',
+
   ],
   /*
   ** Axios module configuration
