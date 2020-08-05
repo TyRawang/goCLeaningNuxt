@@ -4,7 +4,7 @@
       <div class="row">
         <div class="main-title text-center animate-in" data-anim-type="fade-in-down" data-anim-delay="100">
           <h3 class="text-white big-title">GO CLEANING BLOG</h3>
-          <h6>THE LATEST NEWS & RESOURCES</h6>
+          <h6>THE LATEST NEWS &amp; RESOURCES</h6>
         </div>
       </div>
     </div>

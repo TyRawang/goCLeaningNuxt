@@ -3,9 +3,9 @@
     <div class="container">
       <div class="row">
 
-        <div class="col-md-8">
+        <div class="blog-content">
           <div class="row">
-            <div class="col-md-12 col-sm-6 col-xs-12 blog-desc">
+            <div class="blog-desc">
               <div class="main-title" id="blog-detail-bx">
                 <h3 class="text-left d-title">Where Do We Start Cleaning?</h3>
                 <span class="d-date">2019-12-04T14:30:09</span> | <a class="d-auther">yhicknyan</a>
@@ -70,11 +70,11 @@
           <!--  Related Posts -->
 
           <div class="relatedpost-title bottom-margin3 margin-top5 recent-post"><h3>Related Posts</h3> <!---->
-            <div class="col-md-6"><img src="https://backend.gocleaning.ca/wp-content/uploads/2019/12/2-300x170.jpg"
+            <div class="related-post"><img src="https://backend.gocleaning.ca/wp-content/uploads/2019/12/2-300x170.jpg"
                                        class="img-responsive bottom-margin1"> <h4><a
               href="https://gocleaning.ca/blog-detail/22">What Is Your Cleaning Style?</a></h4> <span>2019-12-04T14:29:01 | <a>yhicknyan</a></span>
             </div>
-            <div class="col-md-6"><img src="https://backend.gocleaning.ca/wp-content/uploads/2019/12/blog1-300x200.jpg"
+            <div class="related-post"><img src="https://backend.gocleaning.ca/wp-content/uploads/2019/12/blog1-300x200.jpg"
                                        class="img-responsive bottom-margin1"> <h4><a
               href="https://gocleaning.ca/blog-detail/17">Clean House, Cleaner Perspective</a></h4> <span>2019-12-04T14:28:24 | <a>yhicknyan</a></span>
             </div>
@@ -85,7 +85,7 @@
 
         </div>
 
-        <div class="col-md-4">
+        <div class="blog-sidebar">
 
           <section class="recent-post">
 
@@ -151,6 +151,19 @@ export default {
   padding: 80px 0 80px 0;
 }
 
+.blog-content {
+  display: block;
+  width: 66%;
+  float: left;
+}
+
+.blog-sidebar {
+  display: block;
+  width: 32%;
+  float: left;
+  margin-left: 2%;
+}
+
 .blog-desc {
   padding: 30px 25px 50px 25px;
 }
@@ -158,6 +171,11 @@ export default {
 .blog-desc .main-title {
   padding-bottom: 20px;
   border-bottom: solid 1px #e5e5e5;
+}
+
+.blog-image img {
+  position: relative;
+  width: 100%;
 }
 
 .main-title h3 {
@@ -235,5 +253,10 @@ export default {
 .recent-post ul li {
   padding: 5px 0;
   border-bottom: solid 1px #dddbdb;
+}
+
+.related-post {
+  width: 49%;
+  float: left;
 }
 </style>

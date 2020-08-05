@@ -2,7 +2,7 @@
   <section id="blog-bx" class="sec-padding">
     <div class="container">
       <div class="row">
-        <div class="col-md-4 col-sm-6 col-xs-12 text-center">
+        <div class="blogs text-center">
           <div class="blog-box margin-top4">
             <div class="img-box">
               <div class="rollover"><!----></div>
@@ -19,7 +19,7 @@
             </div>
           </div>
         </div>
-        <div class="col-md-4 col-sm-6 col-xs-12 text-center">
+        <div class="blogs text-center">
           <div class="blog-box margin-top4">
             <div class="img-box">
               <div class="rollover"><!----></div>
@@ -34,7 +34,7 @@
             </div>
           </div>
         </div>
-        <div class="col-md-4 col-sm-6 col-xs-12 text-center">
+        <div class="blogs text-center">
           <div class="blog-box margin-top4">
             <div class="img-box">
               <div class="rollover"><!----></div>
@@ -49,6 +49,8 @@
             </div>
           </div>
         </div>
+
+        <div class="clearall"></div>
       </div>
     </div>
   </section>
@@ -61,7 +63,7 @@ export default {
 </script>
 
 <style>
-.blog-box {
+#blog-bx {
   background-color: rgba(255,255,255,0);
   border: 1px solid #e5e5e5;
   border-bottom-width: 3px;
@@ -70,6 +72,26 @@ export default {
   float: left;
   margin-top: 40px;
   width: 100%;
+}
+
+.blogs {
+  float: left;
+  width: 32%;
+  margin: 0 .98%;
+}
+
+.blogs:first-child{
+  margin-left: 0;
+  margin-right: .98%;
+}
+
+.blogs:nth-child(3){
+  margin-left: .98%;
+  margin-right: 0;
+}
+
+.blog-box {
+  border: 1px solid darkgray;
 }
 
 .img-box {
@@ -134,6 +156,10 @@ export default {
 
 .margin-top3 {
   margin-top: 30px!important;
+}
+
+.clearall{
+  clear: both;
 }
 
 </style>

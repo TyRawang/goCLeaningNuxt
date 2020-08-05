@@ -36,4 +36,86 @@ export default {
   padding: 6% 30px;
   background-size: cover;
 }
+
+h6 {
+  font-size: 16px;
+  margin-bottom: 14px;
+}
+
+.main-title h6 {
+  font-weight: 900;
+  line-height: 1.5;
+  letter-spacing: 0px;
+  font-style: normal;
+}
+
+.callback h6 {
+  text-align: left!important;
+  color: #fff!important;
+}
+
+
+.main-title h3 {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 900;
+  line-height: 1.2;
+  letter-spacing: 0px;
+  margin-bottom: 31px;
+  font-style: normal;
+  font-size: 47px;
+}
+
+.callback h3 {
+  text-align: left!important;
+  color: #fff!important;
+}
+
+p {
+  margin: 0 0 10px;
+}
+
+.callback p {
+  text-align: left!important;
+  color: #fff!important;
+}
+
+input {
+  background-color: #fff;
+  border-radius: 20px!important;
+  color: #333;
+  display: block;
+  float: none;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  padding: 6px 10px;
+  height: 38px;
+  width: 100%;
+  line-height: 1.3;
+}
+
+.margin-top3 {
+  margin-top: 30px!important;
+}
+
+.btn {
+  padding: 10px 36px;
+  margin: 0px;
+  box-shadow: none;
+}
+
+.btn {
+  white-space: pre-wrap!important;
+}
+
+.btn.btn-xround {
+  border-radius: 25px;
+}
+
+.btn.btn-orange-2 {
+  color: #fff;
+  font-weight: 900;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  background-color: #1675bf;
+}
 </style>

@@ -60,7 +60,7 @@ export default {
     '@nuxtjs/pwa',
     // Doc: https://github.com/nuxt/content
     '@nuxt/content',
-    'bootstrap-vue/nuxt',
+    // 'bootstrap-vue/nuxt',
 
   ],
   /*
