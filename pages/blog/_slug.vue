@@ -1,31 +1,27 @@
 <template>
-  <article>
-    <h1>{{ article.title }}</h1>
-    <p>{{ article.description }}</p>
-    <img :src="article.img" :alt="article.alt" />
-    <p>Article last updated: {{ formatDate(article.updatedAt) }}</p>
-
-    <nuxt-content :document="article" />
-
-    <author :author="article.author" />
-
-    <prev-next :prev="prev" :next="next" />
-  </article>
+  <section>
+    <TheBlogDetailBanner />
+    <div class="clearfix"></div>
+    <TheBlogDetailBody :article="article" />
+<!--    <nuxt-content :document="article" />-->
+    <div class="clearfix"></div>
+  </section>
 </template>
 
 <script>
+import TheBlogDetailBanner from "@/components/blog/TheBlogDetailBanner";
+import TheBlogDetailBody from "@/components/blog/TheBlogDetailBody";
 export default {
-  name: "_slug",
+  components: {
+    TheBlogDetailBanner, TheBlogDetailBody
+  },
+
+
   async asyncData({ $content, params }) {
-    const article = await $content('articles', params.slug).fetch()
+    // console.log(params)
+    const article = await $content('posts', params.slug).fetch()
     return { article }
   },
-  methods: {
-    formatDate(date) {
-      const options = { year: 'numeric', month: 'long', day: 'numeric' }
-      return new Date(date).toLocaleDateString('en', options)
-    }
-  }
 }
 </script>
 
