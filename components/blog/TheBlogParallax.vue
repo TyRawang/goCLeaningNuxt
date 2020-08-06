@@ -30,7 +30,7 @@ export default {
 <style>
 .parallax-section69 {
   background-color: rgba(255,255,255,0);
-  background-image: url('~static/images/bg/avada-movers-rates-callback.jpg');
+  background-image: url('~assets/images/bg/avada-movers-rates-callback.jpg');
   background-position: center top;
   background-repeat: no-repeat;
   padding: 6% 30px;
