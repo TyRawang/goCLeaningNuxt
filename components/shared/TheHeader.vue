@@ -17,8 +17,15 @@
       <img src="~/assets/img/logo.png" alt="Go Cleaning Logo" class="logo">
       <nav>
         <ul class="nav__links">
-          <li><nuxt-link to="index.html">Home</nuxt-link></li>
-          <li><nuxt-link to="services.html">Services</nuxt-link></li>
+          <li><nuxt-link to="">Home</nuxt-link></li>
+          <li><nuxt-link to="services">Services <i class="fas fa-angle-down"></i> </nuxt-link>
+            <ul class="dropdown">
+              <li></li>
+              <li><nuxt-link to="commercial-cleaning-service-calgary">Commercial</nuxt-link></li>
+              <li><nuxt-link to="residential-cleaning-service-calgary">Residential</nuxt-link></li>
+              <li><nuxt-link to="airbnb-cleaning-service-calgary">Airbnb</nuxt-link></li>
+            </ul>
+          </li>
           <li><nuxt-link to="testimonials.html">Testimonials</nuxt-link></li>
           <li><nuxt-link to="frequently-asked-questions.html">FAQ</nuxt-link></li>
           <li><nuxt-link to="blog.html">Blog</nuxt-link></li>
@@ -130,6 +137,68 @@ header .nav__links a:hover {
 .nav__links li a:hover {
   color: #0088a9;
 }
+
+/* SubMenu */
+.nav__links li .dropdown {
+  background:rgba(255,255,255, 0.9);
+	visibility: hidden;
+  opacity: 1;
+  min-width: 5rem;
+	position: absolute;
+  transition: all 0.5s ease;
+  /* margin-top: 1rem; */
+	left: 0;
+  display: none;
+  padding: 1rem;
+}
+
+a {
+  text-decoration: none;
+}
+
+nav {
+	font-family: monospace;
+}
+
+/* ul {
+  background: darkorange;
+	list-style: none;
+	margin: 0;
+	padding-left: 0;
+} */
+
+li {
+	color: #fff;
+	display: block;
+	float: left;
+	padding: 1rem;
+	position: relative;
+	text-decoration: none;
+  transition-duration: 0.5s;
+}
+  
+li a {
+  color: #fff;
+}
+
+li:hover {
+	cursor: pointer;
+}
+
+.nav__links li:hover > ul,
+.nav__links li ul:hover {
+  visibility: visible;
+  opacity: 1;
+  display: block;
+}
+
+.nav__links li .dropdown li {
+	clear: both;
+  width: 100%;
+  padding: 0 0.6rem 0.6rem 0.6rem; 
+}
+
+/* End of SubMenu */
 
 .cta {
   order: 2;
