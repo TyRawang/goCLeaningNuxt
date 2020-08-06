@@ -6,7 +6,7 @@
     </section>
 </template>
 <script>
-import TheBanner from "@/components/index/TheBanner";
+import TheBanner from "@/components/index/TheHomeBanner";
 import TheFirstSection from "@/components/index/TheFirstSection";
 import TheSecondSection from "@/components/index/TheSecondSection";
 export default {
