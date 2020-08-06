@@ -21,7 +21,7 @@ export default {
 .blog-banner {
   background-attachment: fixed;
   background-color: rgba(255, 255, 255, 0);
-  background-image: url('~static/images/bg/rawpixel-679094-unsplash.jpg');
+  background-image: url('~assets/images/bg/rawpixel-679094-unsplash.jpg');
   background-position: center bottom;
   background-repeat: no-repeat;
   background-size: cover;
