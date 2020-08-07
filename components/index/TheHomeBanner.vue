@@ -5,7 +5,7 @@
       <div class="container">
         <div class="banner-form">
 
-          <form id="regForm" @submit.prevent="submitForm" action="/thanks" ref="contact" data-netlify="true">
+          <form id="regForm" @submit.prevent="submitForm" action="/thanks" ref="contact"]>
             <div v-show="tab === 0" class="tab">
               <h3>How Often Are You Looking To Clean Your House?</h3>
               <div>
@@ -69,6 +69,7 @@
                 <label>Message: <textarea name="message" v-model="formData.customerMessage"></textarea></label>
               </p>
             </div>
+
             <div style="overflow:auto;">
               <div style="float:right;">
                 <button v-show="tab > 0" type="button" id="prevBtn" @click="toPreviousTab">Previous</button>
