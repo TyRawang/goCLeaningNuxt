@@ -73,19 +73,19 @@
             netlify
             netlify-honeypot="bot-field"
           >
-            // Hidden input to check for bots
+            <!-- Hidden input to check for bots -->
             <input type="hidden" name="form-name" value="contactus" />
             <div>
-              <label for="client-name">Name:</label>
-              <input type="text" id="client-name" name="name" required/>
+              <label for="name">Name:</label>
+              <input type="text" name="name" required/>
             </div>
             <div>
-              <label for="client-email">Email:</label>
-              <input id="client-email" type="email" name="email" required/>
+              <input type="email" name="email" required/>
+              <label for="email">Email:</label>
             </div>
             <div>
-              <label for="client-message">Message:</label>
-              <textarea id="client-message" name="message" required></textarea>
+              <textarea name="message" required></textarea>
+              <label for="message">Message:</label>
             </div>
             <button type="submit" value="Send message">Send</button>
           </form>
