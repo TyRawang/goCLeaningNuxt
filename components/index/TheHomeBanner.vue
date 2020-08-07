@@ -255,14 +255,12 @@ button:hover {
 
   #banner .banner-bg .banner-form form {
     grid-template-columns: repeat(5, 1fr);
-
   }
 }
 
 @media (max-width: 800px) {
   #banner .banner-bg .banner-form form {
     grid-template-columns: repeat(2, 1fr);
-
   }
 }
 </style>
