@@ -74,7 +74,7 @@
 
 <script>
 export default {
-  name: "TheBanner",
+  name: "TheHomeBanner",
 
   data() {
     return {
@@ -207,7 +207,7 @@ input[type=radio] {
 }
 
 input[type=radio]:checked + img {
-  outline: 2px solid #f00;
+  outline: 2px solid var(--secondary-colour);
 }
 
 

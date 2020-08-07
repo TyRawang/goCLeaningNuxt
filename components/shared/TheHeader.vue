@@ -17,8 +17,8 @@
       <img src="~/assets/img/logo.png" alt="Go Cleaning Logo" class="logo">
       <nav>
         <ul class="nav__links">
-          <li><nuxt-link to="">Home</nuxt-link></li>
-          <li><nuxt-link to="services">Services <i class="fas fa-angle-down"></i> </nuxt-link>
+          <li><nuxt-link to="/">Home</nuxt-link></li>
+          <li><nuxt-link to="#">Services <i class="fas fa-angle-down"></i> </nuxt-link>
             <ul class="dropdown">
               <li></li>
               <li><nuxt-link to="commercial-cleaning-service-calgary">Commercial</nuxt-link></li>

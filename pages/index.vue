@@ -1,15 +1,15 @@
 <template>
     <section>
-      <TheBanner/>
+      <TheHomeBanner/>
       <TheFirstSection/>
       <TheSecondSection/>
     </section>
 </template>
 <script>
-import TheBanner from "@/components/index/TheHomeBanner";
+import TheHomeBanner from "@/components/index/TheHomeBanner";
 import TheFirstSection from "@/components/index/TheFirstSection";
 import TheSecondSection from "@/components/index/TheSecondSection";
 export default {
-  components: {TheSecondSection, TheFirstSection, TheBanner}
+  components: {TheSecondSection, TheFirstSection, TheHomeBanner}
 }
 </script>
