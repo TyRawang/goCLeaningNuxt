@@ -5,66 +5,89 @@
       <div class="container">
         <div class="banner-form">
 
-          <form id="regForm" @submit.prevent="submitForm">
-            <div v-show="tab === 0" class="tab">
-              <h3>How Often Are You Looking To Clean Your House?</h3>
-              <div>
-                <label for="one-time">One Time
-                  <input type="radio" id="one-time" @change="viewValue" name="time" v-model="time" value="one-time">
-                  <img src="~/assets/img/calendar.svg" alt="">
-                </label>
-                <label for="weekly">Weekly
-                  <input type="radio" id="weekly" @change="viewValue" name="time" v-model="time" value="weekly">
-                  <img src="~/assets/img/calendar.svg" alt="">
-                </label>
-                <label for="bi-weekly">Bi-Weekly
-                  <input type="radio" id="bi-weekly" @change="viewValue" name="time" v-model="time" value="bi-weekly">
-                  <img src="~/assets/img/calendar.svg" alt="">
-                </label>
-                <label for="monthly">Monthly
-                  <input type="radio" id="monthly" @change="viewValue" name="time" v-model="time" value="monthly">
-                  <img src="~/assets/img/calendar.svg" alt="">
-                </label>
-                <label for="other">Other
-                  <input type="radio" id="other" @change="viewValue" name="time" v-model="time" value="other">
-                  <img src="~/assets/img/calendar.svg" alt="">
-                </label>
-              </div>
+<!--          <form id="regForm" @submit.prevent="submitForm" name="contactus" action="/thanks" method="post" netlify>-->
+<!--            <div v-show="tab === 0" class="tab">-->
+<!--              <h3>How Often Are You Looking To Clean Your House?</h3>-->
+<!--              <div>-->
+<!--                <label for="one-time">One Time-->
+<!--                  <input type="radio" id="one-time" @change="viewValue" name="time" v-model="time" value="one-time">-->
+<!--                  <img src="~/assets/img/calendar.svg" alt="">-->
+<!--                </label>-->
+<!--                <label for="weekly">Weekly-->
+<!--                  <input type="radio" id="weekly" @change="viewValue" name="time" v-model="time" value="weekly">-->
+<!--                  <img src="~/assets/img/calendar.svg" alt="">-->
+<!--                </label>-->
+<!--                <label for="bi-weekly">Bi-Weekly-->
+<!--                  <input type="radio" id="bi-weekly" @change="viewValue" name="time" v-model="time" value="bi-weekly">-->
+<!--                  <img src="~/assets/img/calendar.svg" alt="">-->
+<!--                </label>-->
+<!--                <label for="monthly">Monthly-->
+<!--                  <input type="radio" id="monthly" @change="viewValue" name="time" v-model="time" value="monthly">-->
+<!--                  <img src="~/assets/img/calendar.svg" alt="">-->
+<!--                </label>-->
+<!--                <label for="other">Other-->
+<!--                  <input type="radio" id="other" @change="viewValue" name="time" v-model="time" value="other">-->
+<!--                  <img src="~/assets/img/calendar.svg" alt="">-->
+<!--                </label>-->
+<!--              </div>-->
+<!--            </div>-->
+
+<!--            <div v-show="tab === 1" class="tab">-->
+<!--              <h3>Your Home Type</h3>-->
+
+<!--              <label for="home-type-1"></label>-->
+<!--              <select name="house-type" v-model="homeType1" id="home-type-1">-->
+<!--                <option value=""></option>-->
+<!--                <option value="bungalow">bungalow</option>-->
+<!--                <option value="two-storey">two-storey</option>-->
+<!--                <option value="condo">condo</option>-->
+<!--                <option value="4-level-split">4-level-split</option>-->
+<!--              </select>-->
+<!--            </div>-->
+
+<!--            <div v-show="tab === 2" class="tab">-->
+<!--              <h3>Your Home Type2</h3>-->
+
+<!--              <label for="home-type-2"></label>-->
+<!--              <select name="house-type-2" v-model="homeType2" id="home-type-2">-->
+<!--                <option value=""></option>-->
+<!--                <option value="bungalow">bungalow</option>-->
+<!--                <option value="two-storey">two-storey</option>-->
+<!--                <option value="condo">condo</option>-->
+<!--                <option value="4-level-split">4-level-split</option>-->
+<!--              </select>-->
+<!--            </div>-->
+<!--            <div style="overflow:auto;">-->
+<!--              <div style="float:right;">-->
+<!--                <button v-show="tab > 0" type="button" id="prevBtn" @click="toPreviousTab">Previous</button>-->
+<!--                <button v-show="tab < 2" type="button" id="nextBtn" @click="toNextTab">Next</button>-->
+<!--                <button v-show="tab === 2" type="submit">Submit</button>-->
+<!--              </div>-->
+<!--            </div>-->
+
+<!--          </form>-->
+          <form
+            name="contactus"
+            action="/thanks"
+            method="post"
+            netlify
+            netlify-honeypot="bot-field"
+          >
+            // Hidden input to check for bots
+            <input type="hidden" name="form-name" value="contactus" />
+            <div>
+              <label for="client-name">Name:</label>
+              <input type="text" id="client-name" name="name" required/>
             </div>
-
-            <div v-show="tab === 1" class="tab">
-              <h3>Your Home Type</h3>
-
-              <label for="home-type-1"></label>
-              <select name="house-type" v-model="homeType1" id="home-type-1">
-                <option value=""></option>
-                <option value="bungalow">bungalow</option>
-                <option value="two-storey">two-storey</option>
-                <option value="condo">condo</option>
-                <option value="4-level-split">4-level-split</option>
-              </select>
+            <div>
+              <label for="client-email">Email:</label>
+              <input id="client-email" type="email" name="email" required/>
             </div>
-
-            <div v-show="tab === 2" class="tab">
-              <h3>Your Home Type2</h3>
-
-              <label for="home-type-2"></label>
-              <select name="house-type-2" v-model="homeType2" id="home-type-2">
-                <option value=""></option>
-                <option value="bungalow">bungalow</option>
-                <option value="two-storey">two-storey</option>
-                <option value="condo">condo</option>
-                <option value="4-level-split">4-level-split</option>
-              </select>
+            <div>
+              <label for="client-message">Message:</label>
+              <textarea id="client-message" name="message" required></textarea>
             </div>
-            <div style="overflow:auto;">
-              <div style="float:right;">
-                <button v-show="tab > 0" type="button" id="prevBtn" @click="toPreviousTab">Previous</button>
-                <button v-show="tab < 2" type="button" id="nextBtn" @click="toNextTab">Next</button>
-                <button v-show="tab === 2" type="submit">Submit</button>
-              </div>
-            </div>
-
+            <button type="submit" value="Send message">Send</button>
           </form>
         </div>
       </div>
