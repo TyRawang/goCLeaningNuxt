@@ -6,9 +6,7 @@
         <div class="banner-form">
 
           <form id="regForm" name="contactus" action="/thanks" method="post" netlify netlify-honeypot="bot-field">
-            <div v-show="false" class="tab">
-              <input type="hidden" name="form-name" value="contactus" />
-            </div>
+            <input type="hidden" name="form-name" value="contactus" />
 
             <div v-show="tab === 0" class="tab">
               <h3>How Often Are You Looking To Clean Your House?</h3>
@@ -233,6 +231,10 @@ input[type=radio] {
 
 input[type=radio]:checked + img {
   outline: 2px solid #f00;
+}
+
+img {
+  max-height: 100px;
 }
 
 
