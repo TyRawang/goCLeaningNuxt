@@ -74,8 +74,6 @@
 
 <script>
 export default {
-  name: "TheBanner",
-
   data() {
     return {
       tab: 0,
@@ -104,23 +102,22 @@ export default {
       let valid = true;
       if(this.tab === 0  && this.time === ''){
         valid = false
+        this.$toast.error('You need to select a frequency please!')
       }else if(this.tab === 1  && this.homeType1 === ''){
         valid = false
+        this.$toast.error('You need to select a home type please!')
       }else{
         valid = true
       }
 
-      if(valid) {
-        console.log('We are valid!');
-      }
       return valid;
     },
 
     submitForm(){
       if(this.homeType2 === ''){
-        console.log('submission failed. please select home type 2')
+        this.$toast.error('Submission failed. please select home type 2!')
       }else{
-        console.log('submission successful')
+        this.$toast.success('submission successful')
       }
     },
 

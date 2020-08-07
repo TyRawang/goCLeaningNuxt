@@ -150,6 +150,7 @@ header .nav__links a:hover {
 	left: 0;
   display: none;
   padding: 1rem;
+  z-index: 9;
 }
 
 a {
