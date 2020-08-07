@@ -20,7 +20,7 @@ export default {
 <style>
   .blogdetail-banner {
     border-color: #d2d3d4;
-    background-image: url('~static/images/bg/page_title_bg.png');
+    background-image: url('~assets/images/bg/page_title_bg.png');
     background-color: #f6f6f6;
     padding: 20px;
   }

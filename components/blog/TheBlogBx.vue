@@ -76,7 +76,7 @@
                     {{ post.description }}
                   </p>
                 </div>
-                <div class="meta-info"><a href="https://gocleaning.ca/blog-detail/24">Read More</a></div>
+                <div class="meta-info"><nuxt-link :to="'/blog/' + post.slug">Read More</nuxt-link></div>
               </div>
             </div>
           </div>
