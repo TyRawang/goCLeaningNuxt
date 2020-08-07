@@ -30,7 +30,6 @@
           <li><nuxt-link to="frequently-asked-questions.html">FAQ</nuxt-link></li>
           <li><nuxt-link to="blog.html">Blog</nuxt-link></li>
           <li><nuxt-link to="contact-us.html">Contact</nuxt-link></li>
-
         </ul>
       </nav>
       <nuxt-link to="#" class="cta">
@@ -139,36 +138,24 @@ header .nav__links a:hover {
 }
 
 /* SubMenu */
-.nav__links li .dropdown {
-  background:rgba(255,255,255, 0.9);
-	visibility: hidden;
-  opacity: 1;
-  min-width: 5rem;
-	position: absolute;
-  transition: all 0.5s ease;
-  /* margin-top: 1rem; */
-	left: 0;
-  display: none;
-  padding: 1rem;
-}
-
-a {
+nav a {
   text-decoration: none;
 }
 
-nav {
+/* nav {
 	font-family: monospace;
-}
+} */
 
-/* ul {
-  background: darkorange;
+nav ul {
+  background:rgba(255,255,255, 0.9);
 	list-style: none;
 	margin: 0;
 	padding-left: 0;
-} */
+}
 
-li {
+nav li {
 	color: #fff;
+  /* background: darkorange; */
 	display: block;
 	float: left;
 	padding: 1rem;
@@ -177,38 +164,58 @@ li {
   transition-duration: 0.5s;
 }
   
-li a {
+nav li a {
   color: #fff;
 }
 
-li:hover {
+nav li:hover,
+nav li:focus-within {
+	/* background: red; */
 	cursor: pointer;
 }
 
-.nav__links li:hover > ul,
-.nav__links li ul:hover {
-  visibility: visible;
-  opacity: 1;
-  display: block;
+nav li:focus-within a {
+  outline: none;
 }
 
-.nav__links li .dropdown li {
+nav ul li ul {
+	/* background: orange; */
+	visibility: hidden;
+  opacity: 0;
+  min-width: 5rem;
+	position: absolute;
+  transition: all 0.5s ease;
+  padding-top: 1rem;
+	left: 0;
+  display: none;
+}
+
+nav ul li:hover > ul,
+nav ul li:focus-within > ul,
+nav ul li ul:hover,
+nav ul li ul:focus {
+  visibility: visible;
+  opacity: 1;
+  display: block
+}
+
+nav ul li ul li {
 	clear: both;
   width: 100%;
-  padding: 0 0.6rem 0.6rem 0.6rem; 
+  padding-bottom: 1rem !important;
 }
 
 /* End of SubMenu */
 
-.cta {
+ .cta {
   order: 2;
 }
 
-.menu {
+ .menu {
   display: none;
 }
 
-button {
+ button {
   margin-left: 2rem;
   padding: 9px 25px;
   background-color: var(--button-colour);
@@ -218,7 +225,7 @@ button {
   transition: all 0.3s ease 0s;
 }
 
-button:hover {
+ button:hover {
   opacity: 0.9;
 }
 
