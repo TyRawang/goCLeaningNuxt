@@ -5,7 +5,7 @@
       <div class="container">
         <div class="banner-form">
 
-          <form id="regForm" @submit.prevent="submitForm" action="/thanks" ref="contact"]>
+          <form id="regForm" data-netlify="true" ref="contact"]>
             <div v-show="tab === 0" class="tab">
               <h3>How Often Are You Looking To Clean Your House?</h3>
               <div>
