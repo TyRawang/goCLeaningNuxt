@@ -5,7 +5,7 @@
       <div class="container">
         <div class="banner-form">
 
-          <form id="regForm" name="contactus" action="/thanks" method="post" netlify netlify-honeypot="bot-field">
+          <form name="contactus" action="/thanks" method="post" netlify netlify-honeypot="bot-field">
             <input type="hidden" name="form-name" value="contactus" />
 
             <div v-show="tab === 0" class="tab">
@@ -231,10 +231,6 @@ input[type=radio] {
 
 input[type=radio]:checked + img {
   outline: 2px solid #f00;
-}
-
-img {
-  max-height: 100px;
 }
 
 
