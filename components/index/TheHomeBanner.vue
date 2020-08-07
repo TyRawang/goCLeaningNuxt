@@ -5,89 +5,78 @@
       <div class="container">
         <div class="banner-form">
 
-<!--          <form id="regForm" @submit.prevent="submitForm" name="contactus" action="/thanks" method="post" netlify>-->
-<!--            <div v-show="tab === 0" class="tab">-->
-<!--              <h3>How Often Are You Looking To Clean Your House?</h3>-->
-<!--              <div>-->
-<!--                <label for="one-time">One Time-->
-<!--                  <input type="radio" id="one-time" @change="viewValue" name="time" v-model="time" value="one-time">-->
-<!--                  <img src="~/assets/img/calendar.svg" alt="">-->
-<!--                </label>-->
-<!--                <label for="weekly">Weekly-->
-<!--                  <input type="radio" id="weekly" @change="viewValue" name="time" v-model="time" value="weekly">-->
-<!--                  <img src="~/assets/img/calendar.svg" alt="">-->
-<!--                </label>-->
-<!--                <label for="bi-weekly">Bi-Weekly-->
-<!--                  <input type="radio" id="bi-weekly" @change="viewValue" name="time" v-model="time" value="bi-weekly">-->
-<!--                  <img src="~/assets/img/calendar.svg" alt="">-->
-<!--                </label>-->
-<!--                <label for="monthly">Monthly-->
-<!--                  <input type="radio" id="monthly" @change="viewValue" name="time" v-model="time" value="monthly">-->
-<!--                  <img src="~/assets/img/calendar.svg" alt="">-->
-<!--                </label>-->
-<!--                <label for="other">Other-->
-<!--                  <input type="radio" id="other" @change="viewValue" name="time" v-model="time" value="other">-->
-<!--                  <img src="~/assets/img/calendar.svg" alt="">-->
-<!--                </label>-->
-<!--              </div>-->
-<!--            </div>-->
-
-<!--            <div v-show="tab === 1" class="tab">-->
-<!--              <h3>Your Home Type</h3>-->
-
-<!--              <label for="home-type-1"></label>-->
-<!--              <select name="house-type" v-model="homeType1" id="home-type-1">-->
-<!--                <option value=""></option>-->
-<!--                <option value="bungalow">bungalow</option>-->
-<!--                <option value="two-storey">two-storey</option>-->
-<!--                <option value="condo">condo</option>-->
-<!--                <option value="4-level-split">4-level-split</option>-->
-<!--              </select>-->
-<!--            </div>-->
-
-<!--            <div v-show="tab === 2" class="tab">-->
-<!--              <h3>Your Home Type2</h3>-->
-
-<!--              <label for="home-type-2"></label>-->
-<!--              <select name="house-type-2" v-model="homeType2" id="home-type-2">-->
-<!--                <option value=""></option>-->
-<!--                <option value="bungalow">bungalow</option>-->
-<!--                <option value="two-storey">two-storey</option>-->
-<!--                <option value="condo">condo</option>-->
-<!--                <option value="4-level-split">4-level-split</option>-->
-<!--              </select>-->
-<!--            </div>-->
-<!--            <div style="overflow:auto;">-->
-<!--              <div style="float:right;">-->
-<!--                <button v-show="tab > 0" type="button" id="prevBtn" @click="toPreviousTab">Previous</button>-->
-<!--                <button v-show="tab < 2" type="button" id="nextBtn" @click="toNextTab">Next</button>-->
-<!--                <button v-show="tab === 2" type="submit">Submit</button>-->
-<!--              </div>-->
-<!--            </div>-->
-
-<!--          </form>-->
-          <form
-            name="contactus"
-            action="/thanks"
-            method="post"
-            netlify
-            netlify-honeypot="bot-field"
-          >
-            <!-- Hidden input to check for bots -->
-            <input type="hidden" name="form-name" value="contactus" />
-            <div>
-              <label for="name">Name:</label>
-              <input type="text" name="name" required/>
+          <form id="regForm" @submit.prevent="submitForm" action="/thanks" ref="contact" data-netlify="true">
+            <div v-show="tab === 0" class="tab">
+              <h3>How Often Are You Looking To Clean Your House?</h3>
+              <div>
+                <label for="one-time">One Time
+                  <input type="radio" id="one-time" @change="viewValue" name="time" v-model="formData.time" value="one-time">
+                  <img src="~/assets/img/calendar.svg" alt="">
+                </label>
+                <label for="weekly">Weekly
+                  <input type="radio" id="weekly" @change="viewValue" name="time" v-model="formData.time" value="weekly">
+                  <img src="~/assets/img/calendar.svg" alt="">
+                </label>
+                <label for="bi-weekly">Bi-Weekly
+                  <input type="radio" id="bi-weekly" @change="viewValue" name="time" v-model="formData.time" value="bi-weekly">
+                  <img src="~/assets/img/calendar.svg" alt="">
+                </label>
+                <label for="monthly">Monthly
+                  <input type="radio" id="monthly" @change="viewValue" name="time" v-model="formData.time" value="monthly">
+                  <img src="~/assets/img/calendar.svg" alt="">
+                </label>
+                <label for="other">Other
+                  <input type="radio" id="other" @change="viewValue" name="time" v-model="formData.time" value="other">
+                  <img src="~/assets/img/calendar.svg" alt="">
+                </label>
+              </div>
             </div>
-            <div>
-              <input type="email" name="email" required/>
-              <label for="email">Email:</label>
+
+            <div v-show="tab === 1" class="tab">
+              <h3>Your Home Type</h3>
+
+              <label for="home-type-1"></label>
+              <select name="house-type" v-model="formData.homeType1" id="home-type-1">
+                <option value=""></option>
+                <option value="bungalow">bungalow</option>
+                <option value="two-storey">two-storey</option>
+                <option value="condo">condo</option>
+                <option value="4-level-split">4-level-split</option>
+              </select>
             </div>
-            <div>
-              <textarea name="message" required></textarea>
-              <label for="message">Message:</label>
+
+            <div v-show="tab === 2" class="tab">
+              <h3>Your Home Type2</h3>
+
+              <label for="home-type-2"></label>
+              <select name="house-type-2" v-model="formData.homeType2" id="home-type-2">
+                <option value=""></option>
+                <option value="bungalow">bungalow</option>
+                <option value="two-storey">two-storey</option>
+                <option value="condo">condo</option>
+                <option value="4-level-split">4-level-split</option>
+              </select>
             </div>
-            <button type="submit" value="Send message">Send</button>
+
+            <div v-show="tab === 3" class="tab">
+              <p>
+                <label>Your Name: <input type="text" v-model="formData.customerName" name="name" required/></label>
+              </p>
+              <p>
+                <label>Your Email: <input type="email" name="email" v-model="formData.customerEmail" required/></label>
+              </p>
+              <p>
+                <label>Message: <textarea name="message" v-model="formData.customerMessage"></textarea></label>
+              </p>
+            </div>
+            <div style="overflow:auto;">
+              <div style="float:right;">
+                <button v-show="tab > 0" type="button" id="prevBtn" @click="toPreviousTab">Previous</button>
+                <button v-show="tab < 3" type="button" id="nextBtn" @click="toNextTab">Next</button>
+                <button v-show="tab === 3" type="submit">Submit</button>
+              </div>
+            </div>
+
           </form>
         </div>
       </div>
@@ -100,9 +89,14 @@ export default {
   data() {
     return {
       tab: 0,
-      time: '',
-      homeType1: '',
-      homeType2: ''
+      formData: {
+        time: '',
+        homeType1: '',
+        homeType2: '',
+        customerName: '',
+        customerEmail: '',
+        customerMessage: ''
+      }
     }
   },
 
@@ -115,7 +109,7 @@ export default {
 
     toNextTab(){
       if(this.validateForm()){
-        if(this.tab < 2){
+        if(this.tab < 3){
           this.tab += 1
         }
       }
@@ -129,6 +123,9 @@ export default {
       }else if(this.tab === 1  && this.homeType1 === ''){
         valid = false
         this.$toast.error('You need to select a home type please!')
+      }else if(this.tab === 2  && this.homeType2 === ''){
+        valid = false
+        this.$toast.error('You need to select a home type please!')
       }else{
         valid = true
       }
@@ -140,12 +137,15 @@ export default {
       if(this.homeType2 === ''){
         this.$toast.error('Submission failed. please select home type 2!')
       }else{
-        this.$toast.success('submission successful')
+        // console.log(this.$refs.contact.getAttribute('action'))
+        this.$axios.$post(this.$refs.contact.getAttribute('action'), this.formData).then(function (){
+          this.$toast.success('submission successful')
+        })
       }
     },
 
     viewValue(){
-      console.log(this.time)
+      console.log(this.formData.time)
     }
   }
 }
