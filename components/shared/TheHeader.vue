@@ -28,7 +28,7 @@
           </li>
           <li><nuxt-link to="testimonials.html">Testimonials</nuxt-link></li>
           <li><nuxt-link to="frequently-asked-questions.html">FAQ</nuxt-link></li>
-          <li><nuxt-link to="blog.html">Blog</nuxt-link></li>
+          <li><nuxt-link to="/blog">Blog</nuxt-link></li>
           <li><nuxt-link to="contact-us.html">Contact</nuxt-link></li>
 
         </ul>
@@ -176,7 +176,7 @@ li {
 	text-decoration: none;
   transition-duration: 0.5s;
 }
-  
+
 li a {
   color: #fff;
 }
@@ -195,7 +195,7 @@ li:hover {
 .nav__links li .dropdown li {
 	clear: both;
   width: 100%;
-  padding: 0 0.6rem 0.6rem 0.6rem; 
+  padding: 0 0.6rem 0.6rem 0.6rem;
 }
 
 /* End of SubMenu */
