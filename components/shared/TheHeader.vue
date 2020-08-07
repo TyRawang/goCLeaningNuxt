@@ -17,8 +17,8 @@
       <img src="~/assets/img/logo.png" alt="Go Cleaning Logo" class="logo">
       <nav>
         <ul class="nav__links">
-          <li><nuxt-link to="/">Home</nuxt-link></li>
-          <li><nuxt-link to="#">Services <i class="fas fa-angle-down"></i> </nuxt-link>
+          <li><nuxt-link to="">Home</nuxt-link></li>
+          <li><nuxt-link to="services">Services <i class="fas fa-angle-down"></i> </nuxt-link>
             <ul class="dropdown">
               <li></li>
               <li><nuxt-link to="commercial-cleaning-service-calgary">Commercial</nuxt-link></li>
@@ -28,8 +28,9 @@
           </li>
           <li><nuxt-link to="testimonials.html">Testimonials</nuxt-link></li>
           <li><nuxt-link to="frequently-asked-questions.html">FAQ</nuxt-link></li>
-          <li><nuxt-link to="blog.html">Blog</nuxt-link></li>
+          <li><nuxt-link to="/blog">Blog</nuxt-link></li>
           <li><nuxt-link to="contact-us.html">Contact</nuxt-link></li>
+
         </ul>
       </nav>
       <nuxt-link to="#" class="cta">
@@ -100,6 +101,7 @@ header {
   justify-content: flex-end;
   align-items: center;
   padding: 30px 10%;
+  z-index: 999;
 }
 
 header .nav__links a:hover {
@@ -138,24 +140,36 @@ header .nav__links a:hover {
 }
 
 /* SubMenu */
-nav a {
+.nav__links li .dropdown {
+  background:rgba(255,255,255, 0.9);
+	visibility: hidden;
+  opacity: 1;
+  min-width: 5rem;
+	position: absolute;
+  transition: all 0.5s ease;
+  /* margin-top: 1rem; */
+	left: 0;
+  display: none;
+  padding: 1rem;
+}
+
+a {
   text-decoration: none;
 }
 
-/* nav {
+nav {
 	font-family: monospace;
-} */
+}
 
-nav ul {
-  background:rgba(255,255,255, 0.9);
+/* ul {
+  background: darkorange;
 	list-style: none;
 	margin: 0;
 	padding-left: 0;
-}
+} */
 
-nav li {
+li {
 	color: #fff;
-  /* background: darkorange; */
 	display: block;
 	float: left;
 	padding: 1rem;
@@ -163,59 +177,39 @@ nav li {
 	text-decoration: none;
   transition-duration: 0.5s;
 }
-  
-nav li a {
+
+li a {
   color: #fff;
 }
 
-nav li:hover,
-nav li:focus-within {
-	/* background: red; */
+li:hover {
 	cursor: pointer;
 }
 
-nav li:focus-within a {
-  outline: none;
-}
-
-nav ul li ul {
-	/* background: orange; */
-	visibility: hidden;
-  opacity: 0;
-  min-width: 5rem;
-	position: absolute;
-  transition: all 0.5s ease;
-  padding-top: 1rem;
-	left: 0;
-  display: none;
-}
-
-nav ul li:hover > ul,
-nav ul li:focus-within > ul,
-nav ul li ul:hover,
-nav ul li ul:focus {
+.nav__links li:hover > ul,
+.nav__links li ul:hover {
   visibility: visible;
   opacity: 1;
-  display: block
+  display: block;
 }
 
-nav ul li ul li {
+.nav__links li .dropdown li {
 	clear: both;
   width: 100%;
-  padding-bottom: 1rem !important;
+  padding: 0 0.6rem 0.6rem 0.6rem;
 }
 
 /* End of SubMenu */
 
- .cta {
+.cta {
   order: 2;
 }
 
- .menu {
+.menu {
   display: none;
 }
 
- button {
+button {
   margin-left: 2rem;
   padding: 9px 25px;
   background-color: var(--button-colour);
@@ -225,7 +219,7 @@ nav ul li ul li {
   transition: all 0.3s ease 0s;
 }
 
- button:hover {
+button:hover {
   opacity: 0.9;
 }
 

@@ -61,6 +61,7 @@ export default {
     // Doc: https://github.com/nuxt/content
     '@nuxt/content',
     // 'bootstrap-vue/nuxt',
+    '@nuxtjs/toast'
 
   ],
   /*
@@ -78,5 +79,20 @@ export default {
   ** See https://nuxtjs.org/api/configuration-build/
   */
   build: {
+  },
+
+  toast: {
+    position: 'bottom-right',
+    duration: 3000,
+    register: [
+      // Register custom toasts
+      // {
+      //   name: 'my-error',
+      //   message: 'Oops...Something went wrong',
+      //   options: {
+      //     type: 'error'
+      //   }
+      // }
+    ]
   }
 }
