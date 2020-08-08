@@ -15,7 +15,7 @@
           <form>
             <label for="one-time">
 
-              
+
               <input type="radio" name="" id="">
               <img src="~/assets/img/calendar.svg" alt="">
             </label>
@@ -44,7 +44,6 @@
 
 <script>
 export default {
-name: "TheBanner"
 }
 </script>
 
@@ -97,7 +96,7 @@ name: "TheBanner"
   font-style: italic;
 }
 #banner .banner-form form {
-  display: grid;
+  /*display: grid;*/
   grid-gap: 1rem;
   grid-template-columns: repeat(5, minmax(50px, 1fr));
 

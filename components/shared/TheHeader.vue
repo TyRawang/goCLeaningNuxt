@@ -28,7 +28,7 @@
           </li>
           <li><nuxt-link to="testimonials.html">Testimonials</nuxt-link></li>
           <li><nuxt-link to="frequently-asked-questions.html">FAQ</nuxt-link></li>
-          <li><nuxt-link to="blog.html">Blog</nuxt-link></li>
+          <li><nuxt-link to="/blog">Blog</nuxt-link></li>
           <li><nuxt-link to="contact-us.html">Contact</nuxt-link></li>
         </ul>
       </nav>
@@ -138,7 +138,21 @@ header .nav__links a:hover {
 }
 
 /* SubMenu */
-nav a {
+.nav__links li .dropdown {
+  background:rgba(255,255,255, 0.9);
+	visibility: hidden;
+  opacity: 1;
+  min-width: 5rem;
+	position: absolute;
+  transition: all 0.5s ease;
+  /* margin-top: 1rem; */
+	left: 0;
+  display: none;
+  padding: 1rem;
+  z-index: 9;
+}
+
+a {
   text-decoration: none;
 }
 
@@ -163,6 +177,8 @@ nav li {
 	text-decoration: none;
   transition-duration: 0.5s;
 }
+
+
   
 nav li a {
   color: #fff;
@@ -202,6 +218,7 @@ nav ul li ul:focus {
 nav ul li ul li {
 	clear: both;
   width: 100%;
+
   padding-bottom: 1rem !important;
 }
 

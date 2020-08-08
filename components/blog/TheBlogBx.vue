@@ -60,6 +60,7 @@ export default {
   background-color: rgba(255,255,255,0);
   border: 1px solid #e5e5e5;
   border-bottom-width: 3px;
+  padding: 5% 0;
 }
 .margin-top4 {
   float: left;
