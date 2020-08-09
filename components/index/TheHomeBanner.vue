@@ -6,29 +6,29 @@
         <div class="banner-form">
 
           <form name="contactus" action="/thanks" method="post" netlify netlify-honeypot="bot-field">
-            <input type="hidden" name="form-name" value="contactus" />
+<!--            <input type="hidden" name="form-name" value="contactus" />-->
 
             <div v-show="tab === 0" class="tab">
               <h3>How Often Are You Looking To Clean Your House?</h3>
               <div>
                 <label for="one-time">One Time
-                  <input type="radio" id="one-time" @change="viewValue" name="time" v-model="formData.time" value="one-time">
+                  <input type="radio" id="one-time" name="time" v-model="formData.time" value="one-time">
                   <img src="~/assets/img/calendar.svg" alt="">
                 </label>
                 <label for="weekly">Weekly
-                  <input type="radio" id="weekly" @change="viewValue" name="time" v-model="formData.time" value="weekly">
+                  <input type="radio" id="weekly" name="time" v-model="formData.time" value="weekly">
                   <img src="~/assets/img/calendar.svg" alt="">
                 </label>
                 <label for="bi-weekly">Bi-Weekly
-                  <input type="radio" id="bi-weekly" @change="viewValue" name="time" v-model="formData.time" value="bi-weekly">
+                  <input type="radio" id="bi-weekly" name="time" v-model="formData.time" value="bi-weekly">
                   <img src="~/assets/img/calendar.svg" alt="">
                 </label>
                 <label for="monthly">Monthly
-                  <input type="radio" id="monthly" @change="viewValue" name="time" v-model="formData.time" value="monthly">
+                  <input type="radio" id="monthly" name="time" v-model="formData.time" value="monthly">
                   <img src="~/assets/img/calendar.svg" alt="">
                 </label>
                 <label for="other">Other
-                  <input type="radio" id="other" @change="viewValue" name="time" v-model="formData.time" value="other">
+                  <input type="radio" id="other" name="time" v-model="formData.time" value="other">
                   <img src="~/assets/img/calendar.svg" alt="">
                 </label>
               </div>
@@ -105,7 +105,7 @@ export default {
 
   methods: {
     toPreviousTab(){
-      if(this.tab > 0 && this.tab <= 2){
+      if(this.tab > 0 && this.tab <= 3){
         this.tab -= 1
       }
     },
@@ -119,14 +119,14 @@ export default {
     },
 
     validateForm(){
-      let valid = true;
-      if(this.tab === 0  && this.time === ''){
+      let valid = false
+      if(this.tab === 0  && this.formData.time === ''){
         valid = false
         this.$toast.error('You need to select a frequency please!')
-      }else if(this.tab === 1  && this.homeType1 === ''){
+      }else if(this.tab === 1  && this.formData.homeType1 === ''){
         valid = false
         this.$toast.error('You need to select a home type please!')
-      }else if(this.tab === 2  && this.homeType2 === ''){
+      }else if(this.tab === 2  && this.formData.homeType2 === ''){
         valid = false
         this.$toast.error('You need to select a home type please!')
       }else{
@@ -140,15 +140,10 @@ export default {
       if(this.homeType2 === ''){
         this.$toast.error('Submission failed. please select home type 2!')
       }else{
-        // console.log(this.$refs.contact.getAttribute('action'))
         this.$axios.$post(this.$refs.contact.getAttribute('action'), this.formData).then(function (){
           this.$toast.success('submission successful')
         })
       }
-    },
-
-    viewValue(){
-      console.log(this.formData.time)
     }
   }
 }
