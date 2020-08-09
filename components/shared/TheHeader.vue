@@ -152,6 +152,12 @@ header .nav__links a:hover {
   z-index: 9;
 }
 
+.nav__links li:hover > ul {
+  visibility: visible;
+  opacity: 1;
+  display: block;
+}
+
 a {
   text-decoration: none;
 }
@@ -179,7 +185,7 @@ nav li {
 }
 
 
-  
+
 nav li a {
   color: #fff;
 }
