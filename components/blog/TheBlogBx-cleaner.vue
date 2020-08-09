@@ -1,33 +1,28 @@
 <template>
   <!-- This is the clean version -->
   <section>
-      <div>
-        <div>
-          <div v-for="(post, index) in posts" :key="index">
+        <div v-for="(post, index) in posts" :key="index">
+            <div>
+              <img :src="post.image">
+            </div>
             <div>
               <div>
-                <img :src="post.image"></div>
-              <div>
-                <div>
-                  <h3>
-                    <nuxt-link :to="'/blog/' + post.slug">
-                      {{ post.title }}
-                    </nuxt-link>
-                  </h3>
-<!--                  <h3>Where Do We Start Cleaning?</h3>-->
-                  <span>By {{ post.author ? post.author : 'Anonymous' }} | {{ formatDate(post.createdAt) }}</span></div>
-                <div>
-                  <p>
-                    {{ post.description }}
-                  </p>
-                </div>
-                <div><nuxt-link :to="'/blog/' + post.slug">Read More</nuxt-link></div>
+                <h3>
+                  <nuxt-link :to="'/blog/' + post.slug">
+                    {{ post.title }}
+                  </nuxt-link>
+                </h3>
+                <span>By {{ post.author ? post.author : 'Anonymous' }} | {{ formatDate(post.createdAt) }}</span>
               </div>
+              <div>
+                <p>
+                  {{ post.description }}
+                </p>
+              </div>
+              <div><nuxt-link :to="'/blog/' + post.slug">Read More</nuxt-link></div>
             </div>
-          </div>
         </div>
-      </div>
-    </section>
+  </section>
 </template>
 
 <script>

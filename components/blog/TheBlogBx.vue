@@ -2,24 +2,24 @@
   <!-- This is the cleaner version -->
   <section>
     <div v-for="(post, index) in posts" :key="index">
-            <img :src="post.image"></div>
-            <h3>
-              <nuxt-link :to="'/blog/' + post.slug">
-                {{ post.title }}
-              </nuxt-link>
-            </h3>
-            
-            <div>
-              <span>By {{ post.author ? post.author : 'Anonymous' }} | {{ formatDate(post.createdAt) }}</span>
-            </div>
-            <div>
-              <p>
-                {{ post.description }}
-              </p>
-            </div>
-            <div><nuxt-link :to="'/blog/' + post.slug">Read More</nuxt-link></div>
-            
-          </div>
+      <img :src="post.image">
+      <h3>
+        <nuxt-link :to="'/blog/' + post.slug">
+          {{ post.title }}
+        </nuxt-link>
+      </h3>
+
+      <div>
+        <span>By {{ post.author ? post.author : 'Anonymous' }} | {{ formatDate(post.createdAt) }}</span>
+      </div>
+      <div>
+        <p>
+          {{ post.description }}
+        </p>
+      </div>
+      <div><nuxt-link :to="'/blog/' + post.slug">Read More</nuxt-link></div>
+
+    </div>
   </section>
 </template>
 
