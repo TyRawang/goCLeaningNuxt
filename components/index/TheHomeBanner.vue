@@ -6,7 +6,7 @@
         <div class="banner-form">
 
           <form name="contactus" action="/thanks" method="post" netlify netlify-honeypot="bot-field">
-            <!-- <input type="hidden" name="form-name" value="contactus" /> -->
+            <input type="hidden" name="form-name" value="contactus" />
 
             <div v-show="tab === 0" class="tab">
               <h3>How Often Are You Looking To Clean Your House?</h3>
@@ -203,10 +203,11 @@ export default {
   font-style: italic;
 }
 
-#banner .banner-form form div:nth-child(1) div {
+#banner .banner-form form div:nth-child(2) div {
   display: grid;
   grid-gap: 1rem;
   grid-template-columns: repeat(5, minmax(50px, 1fr));
+  /* background: ivory; */
 }
 
 #banner form label:hover {
