@@ -1,59 +1,4 @@
 <template>
-<!--  <section id="blog-bx" class="sec-padding">-->
-<!--    <div class="container">-->
-<!--      <div class="row">-->
-<!--        <div class="blogs text-center">-->
-<!--          <div class="blog-box margin-top4">-->
-<!--            <div class="img-box">-->
-<!--              <div class="rollover">&lt;!&ndash;&ndash;&gt;</div>-->
-<!--              <img src="https://backend.gocleaning.ca/wp-content/uploads/2019/12/3-300x199.jpeg"-->
-<!--                   class="img-responsive bottom-margin1"></div>-->
-<!--            <div class="blog-desc">-->
-<!--              <div class="main-title"><h3>Where Do We Start Cleaning?</h3>-->
-<!--                <span>By yhicknyan | 2019-12-04T14:30:09</span></div>-->
-<!--              <div class="blog-detial margin-top3"><p class="text-center">As we begin our descent into the New Year we-->
-<!--                are often posed with the question 'Where do we-->
-
-<!--              </p></div>-->
-<!--              <div class="meta-info"><a href="https://gocleaning.ca/blog-detail/24">Read More</a></div>-->
-<!--            </div>-->
-<!--          </div>-->
-<!--        </div>-->
-<!--        <div class="blogs text-center">-->
-<!--          <div class="blog-box margin-top4">-->
-<!--            <div class="img-box">-->
-<!--              <div class="rollover">&lt;!&ndash;&ndash;&gt;</div>-->
-<!--              <img src="https://backend.gocleaning.ca/wp-content/uploads/2019/12/2-300x170.jpg"-->
-<!--                   class="img-responsive bottom-margin1"></div>-->
-<!--            <div class="blog-desc">-->
-<!--              <div class="main-title"><h3>What Is Your Cleaning Style?</h3>-->
-<!--                <span>By yhicknyan | 2019-12-04T14:29:01</span></div>-->
-<!--              <div class="blog-detial margin-top3"><p class="text-center">Everyone has a specific cleaning-->
-<!--                style/personality which can define how you organize and clean your living and work space. In</p></div>-->
-<!--              <div class="meta-info"><a href="https://gocleaning.ca/blog-detail/22">Read More</a></div>-->
-<!--            </div>-->
-<!--          </div>-->
-<!--        </div>-->
-<!--        <div class="blogs text-center">-->
-<!--          <div class="blog-box margin-top4">-->
-<!--            <div class="img-box">-->
-<!--              <div class="rollover">&lt;!&ndash;&ndash;&gt;</div>-->
-<!--              <img src="https://backend.gocleaning.ca/wp-content/uploads/2019/12/blog1-300x200.jpg"-->
-<!--                   class="img-responsive bottom-margin1"></div>-->
-<!--            <div class="blog-desc">-->
-<!--              <div class="main-title"><h3>Clean House, Cleaner Perspective</h3>-->
-<!--                <span>By yhicknyan | 2019-12-04T14:28:24</span></div>-->
-<!--              <div class="blog-detial margin-top3"><p class="text-center">Clean House, Cleaner Perspective As we enter-->
-<!--                the New Year, it is now time to work on completing our</p></div>-->
-<!--              <div class="meta-info"><a href="https://gocleaning.ca/blog-detail/17">Read More</a></div>-->
-<!--            </div>-->
-<!--          </div>-->
-<!--        </div>-->
-
-<!--        <div class="clearall"></div>-->
-<!--      </div>-->
-<!--    </div>-->
-<!--  </section>-->
   <section id="blog-bx" class="section">
       <div class="container">
         <div class="columns">
@@ -69,7 +14,6 @@
                       {{ post.title }}
                     </nuxt-link>
                   </h3>
-<!--                  <h3>Where Do We Start Cleaning?</h3>-->
                   <span>By {{ post.author ? post.author : 'Anonymous' }} | {{ formatDate(post.createdAt) }}</span></div>
                 <div class="blog-detial margin-top3">
                   <p class="text-center">

@@ -89,6 +89,7 @@
 
 <script>
 export default {
+
   data() {
     return {
       tab: 0,
@@ -225,7 +226,7 @@ input[type=radio] {
 }
 
 input[type=radio]:checked + img {
-  outline: 2px solid #f00;
+  outline: 2px solid var(--secondary-colour);
 }
 
 
