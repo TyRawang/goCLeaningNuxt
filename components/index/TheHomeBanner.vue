@@ -6,7 +6,7 @@
         <div class="banner-form">
 
           <form name="contactus" action="/thanks" method="post" netlify netlify-honeypot="bot-field">
-            <input type="hidden" name="form-name" value="contactus" />
+            <!-- <input type="hidden" name="form-name" value="contactus" /> -->
 
             <div v-show="tab === 0" class="tab">
               <h3>How Often Are You Looking To Clean Your House?</h3>
