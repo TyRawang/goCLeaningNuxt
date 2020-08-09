@@ -198,10 +198,11 @@ export default {
   font-style: italic;
 }
 
-#banner .banner-form form div:nth-child(1) div {
+#banner .banner-form form div:nth-child(2) div {
   display: grid;
   grid-gap: 1rem;
   grid-template-columns: repeat(5, minmax(50px, 1fr));
+  /* background: ivory; */
 }
 
 #banner form label:hover {
