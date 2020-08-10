@@ -1,3 +1,8 @@
+const dyRoutes = [
+  "/blog/custom-email-verification-notification-in-laravel",
+  "/blog/how-to-create-custom-bash-commands",
+  "/blog/intro-to-alpinejs"
+]
 
 export default {
   /*
