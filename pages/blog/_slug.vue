@@ -2,7 +2,7 @@
   <section>
     <TheBlogDetailBanner />
     <div class="clearfix"></div>
-    <TheBlogDetailBody :article="article" />
+    <TheBlogDetailBody2 :article="article" />
 <!--    <nuxt-content :document="article" />-->
     <div class="clearfix"></div>
   </section>
@@ -10,7 +10,7 @@
 
 <script>
 import TheBlogDetailBanner from "@/components/blog/TheBlogDetailBanner";
-import TheBlogDetailBody from "@/components/blog/TheBlogDetailBody";
+import TheBlogDetailBody2 from "@/components/blog/TheBlogDetailBody2";
 export default {
   head () {
     return {
@@ -26,7 +26,7 @@ export default {
   },
 
   components: {
-    TheBlogDetailBanner, TheBlogDetailBody
+    TheBlogDetailBanner, TheBlogDetailBody2
   },
 
   async asyncData({ $content, params }) {
