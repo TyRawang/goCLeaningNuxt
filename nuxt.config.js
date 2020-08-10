@@ -61,7 +61,9 @@ export default {
     // Doc: https://github.com/nuxt/content
     '@nuxt/content',
     // 'bootstrap-vue/nuxt',
-    '@nuxtjs/toast'
+    '@nuxtjs/toast', 
+    // nuxt sitemap
+    '@nuxtjs/sitemap',
 
   ],
   /*
@@ -94,5 +96,12 @@ export default {
       //   }
       // }
     ]
+  },
+  sitemap: {
+    path: '/sitemap.xml',
+    // cacheTime: 1000 * 60 * 60 * 2,
+    trailingSlash: true,
+    gzip: true,
+    generate: true
   }
 }
