@@ -2,7 +2,7 @@
 
    <section id="blog-section-one" class="container">
 
-        <div class="blogs" >          
+        <div class="blogs" >
             <div v-for="(post, index) in posts" :key="index">
                 <img :src="post.image" alt="">
                 <!-- <img src="~/assets/img/Happy-Family.jpg" alt="Happy family sitting in their living room"> -->
@@ -68,7 +68,7 @@ export default {
 }
 
 #blog-section-one p {
-    margin-top: 1rem; 
+    margin-top: 1rem;
 }
 
 #blog-section-one a {
