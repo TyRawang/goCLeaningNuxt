@@ -26,10 +26,10 @@
               <li><nuxt-link to="airbnb-cleaning-service-calgary">Airbnb</nuxt-link></li>
             </ul>
           </li>
-          <li><nuxt-link to="testimonials.html">Testimonials</nuxt-link></li>
-          <li><nuxt-link to="frequently-asked-questions.html">FAQ</nuxt-link></li>
-          <li><nuxt-link to="/blog">Blog</nuxt-link></li>
-          <li><nuxt-link to="contact-us.html">Contact</nuxt-link></li>
+          <li><nuxt-link to="testimonials-reviews-for-best-cleaning-service">Testimonials</nuxt-link></li>
+          <li><nuxt-link to="best-cleaning-services-calgary-faq">FAQ</nuxt-link></li>
+          <li><nuxt-link to="blog">Blog</nuxt-link></li>
+          <li><nuxt-link to="contact-us-for-cleaning-services">Contact</nuxt-link></li>
         </ul>
       </nav>
       <nuxt-link to="#" class="cta">
