@@ -63,8 +63,6 @@ export default {
     // 'bootstrap-vue/nuxt',
     '@nuxtjs/toast',
     '@nuxtjs/sitemap'
-
-
   ],
   /*
   ** Axios module configuration

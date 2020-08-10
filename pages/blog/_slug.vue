@@ -2,8 +2,8 @@
   <section>
     <TheBlogDetailBanner />
     <div class="clearfix"></div>
+
     <TheBlogDetailBody :article="article" />
-<!--    <nuxt-content :document="article" />-->
     <div class="clearfix"></div>
   </section>
 </template>
@@ -27,10 +27,6 @@ export default {
 
   components: {
     TheBlogDetailBanner, TheBlogDetailBody
-  },
-
-  mounted() {
-    console.log(this.article)
   },
 
   async asyncData({ $content, params }) {
