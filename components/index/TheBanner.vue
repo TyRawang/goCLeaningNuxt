@@ -14,26 +14,24 @@
           </h3>
           <form>
             <label for="one-time">
-
-
               <input type="radio" name="" id="">
-              <img src="~/assets/img/calendar.svg" alt="">
+              <img src="~/assets/svg/One-Time-Cleaning.svg" alt="One-Time-Cleaning Go Cleaning">
             </label>
             <label for="one-time">
               <input type="radio" name="" id="">
-              <img src="~/assets/img/calendar.svg" alt="">
+              <img src="~/assets/svg/Weekly-Cleaning.svg" alt="Weekly-Cleaning Go Cleaning">
             </label>
             <label for="one-time">
               <input type="radio" name="" id="">
-              <img src="~/assets/img/calendar.svg" alt="">
+              <img src="~/assets/svg/Bi-Weekly-Cleaning.svg" alt="Bi-Weekly-Cleaning Go Cleaning">
             </label>
             <label for="one-time">
               <input type="radio" name="" id="">
-              <img src="~/assets/img/calendar.svg" alt="">
+              <img src="~/assets/svg/Other-Cleaning.svg" alt="Monthly-Cleaning Go Cleaning">
             </label>
             <label for="one-time">
               <input type="radio" name="" id="">
-              <img src="~/assets/img/calendar.svg" alt="">
+              <img src="~/assets/svg/Other-Cleaning.svg" alt="Other-Cleaning Go Cleaning">
             </label>
           </form>
         </div>

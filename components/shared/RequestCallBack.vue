@@ -1,5 +1,5 @@
 <template>
-    <div id="section-two-testimonials" class="container">
+    <div id="section-two-testimonials" class="">
         <div>
             <h3>Request a Callback</h3>
             <p>Give us your number to request a call back to diss your cleaning</p>
@@ -21,7 +21,7 @@ export default {
 #section-two-testimonials {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
-      margin-top: 3rem;
+      /* margin-top: 3rem; */
       margin-bottom: 3rem;
       
 
@@ -49,7 +49,8 @@ export default {
   }
   #section-two-testimonials div:nth-child(2) {
 
-    background:radial-gradient(circle, rgba(255,255,255,0) 0%, rgba(106,191,22,1) 82%), url(~assets/img/Happy-Family.jpg) no-repeat center center/cover;
+        background:radial-gradient(circle, rgba(255,255,255,0) 0%, rgba(106,191,22,1) 82%), url(~assets/img/Happy-Family.jpg) no-repeat center center/cover;
+        
 
     }
 
@@ -60,8 +61,13 @@ export default {
         font-size: 42px;
         line-height: 40px;
 
-        padding-top: 1rem;
+        padding-top: 1rem; 
         padding-bottom: 1rem;
+    
+    }
+
+    #section-two-testimonials div {
+        padding: 3rem; 
     }
 
     #section-two-testimonials p {
@@ -69,9 +75,7 @@ export default {
         line-height: 28px;
         display: flex;
         align-items: center;
-
-        /* blanco */
-
+        padding-bottom: 1rem;
         color: #FFFFFF;
     }
 

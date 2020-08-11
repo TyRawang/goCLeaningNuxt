@@ -1,5 +1,11 @@
 <template>
   <section>
+    <div id="pre-footer">
+      <h3>Our customers love our service and attention to safety and detail</h3>
+      <p><span>Send us an email, call us, or let us call you</span></p>
+      <p>Your convenience and happiness is our pririty</p>
+      <button> REQUEST A FREE QUOTE </button>
+    </div>
     <div id="footer-menu" class="container">
       <div>
         <h3>About</h3>
@@ -39,6 +45,53 @@ export default {
 </script>
 
 <style>
+
+/* Pre Footer */
+
+#pre-footer {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  padding: 4rem;
+  background:radial-gradient(circle, rgba(50,184, 233, 0) 0%, rgba(50, 184, 233, 0.7) 0%), 
+    url(~assets/img/Go-Cleaning-Body-Content-Three-Background.jpg) no-repeat center center/cover;
+  border-bottom: solid;
+  border-color: var(--primary-colour);
+  border-width: 2rem;
+
+}
+
+#pre-footer h3 {
+  font-weight: bold;
+  font-size: 48px;
+  line-height: 48px;
+  text-align: center;
+  color: #FFFFFF;
+
+}
+
+#pre-footer p {
+  font-weight: 300;
+  font-size: 30px;
+  line-height: 40px;
+  text-align: center;
+  color: #FFFFFF;
+
+}
+
+#pre-footer p span {
+  font-weight: 50;
+
+  /* color: black; */
+}
+
+button {
+  margin: 2rem;
+}
+
+
+
 /* Footer Menu */
 #footer-menu {
   display: grid;

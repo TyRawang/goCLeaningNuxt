@@ -1,22 +1,28 @@
 <template>
     <section>
       <TheResidentialBanner/>
+      <TheResidentialSectionOne/>
+      <TheResidentialSectionTwo/>
+      <RequestCallBack/>
+      <TheResidentialSectionThree/>
+      
     
     </section>
 </template>
 <script>
 import TheResidentialBanner from "@/components/residential/TheResidentialBanner";
-import TheCommercialFirstSection from "@/components/commercial/TheCommercialFirstSection";
-import TheCommercialSecondSection from "@/components/commercial/TheCommercialSecondSection";
-import TheCommercialThirdSection from "@/components/commercial/TheCommercialThirdSection";
-import TheCommercialFouthSection from "@/components/commercial/TheCommercialFouthSection";
-import TheCommercialFifthSection from "@/components/commercial/TheCommercialFifthSection";
+import TheResidentialSectionOne from "@/components/residential/TheResidentialSectionOne";
+import TheResidentialSectionTwo from "@/components/residential/TheResidentialSectionTwo";
+import RequestCallBack from "@/components/shared/RequestCallBack";
+import TheResidentialSectionThree from "@/components/residential/TheResidentialSectionThree"
+
+
+
 
 
 
 
 export default {
-  components: { TheResidentialBanner, TheCommercialFirstSection, TheCommercialSecondSection, 
-                TheCommercialThirdSection, TheCommercialFouthSection, TheCommercialFifthSection}
+  components: { TheResidentialBanner, TheResidentialSectionOne, TheResidentialSectionTwo, RequestCallBack, TheResidentialSectionThree }
 }
 </script>
