@@ -35,21 +35,70 @@
             </div>
 
             <div v-show="tab === 1" class="tab">
-              <h3>What Type Of HOme Do You Have?</h3>
-              <label for="home-type-1"></label>
-              <select name="house-type" v-model="formData.homeType1" id="home-type-1">
-                <option value=""></option>
-                <option value="Bungalow">Bungalow</option>
-                <option value="Two Storey">Two Storey</option>
-                <option value="One &amp; Half Storey">One and Half Storey</option>
-                <option value="One Floor Condo or Apartment">One Floor Condo or Apartment</option>
-                <option value="4 Level Split">4 Level Split</option>
-                <option value="Basement Suite">Basement Suite</option>
-              </select>
-              <select name="house-type" v-model="formData.homeType1" id="home-type-1">
-                <option value=""></option>
-                <option value="Bungalow">Bungalow</option>
-              </select>
+              <div>
+                <h3>Tell Us About Your Home?</h3>
+                <label for="home-type-1">Home Type</label>
+                <select name="house-type" v-model="formData.homeType1" id="home-type-1">
+                  <option value=""></option>
+                  <option value="Bungalow">Bungalow</option>
+                  <option value="Two Storey">Two Storey</option>
+                  <option value="One &amp; Half Storey">One and Half Storey</option>
+                  <option value="One Floor Condo or Apartment">One Floor Condo or Apartment</option>
+                  <option value="4 Level Split">4 Level Split</option>
+                  <option value="Basement Suite">Basement Suite</option>
+                </select>
+              </div>
+              <div>
+                <label for="bedrooms">Bedrooms</label>
+                <select name="Bedrooms" v-model="formData.bedrooms" id="bedrooms">
+                  <option value=""></option>
+                  <option value="1">1</option>
+                  <option value="2">2</option>
+                  <option value="3">3</option>
+                  <option value="4">4</option>
+                  <option value="4">4</option>
+                  <option value="5">5</option>
+                  <option value="6">6</option>
+                  <option value="7">7</option>
+                </select>
+              </div>
+              <div>
+                <label for="bathrooms">Bathrooms</label>
+                <select name="Bathrooms" v-model="formData.bathrooms" id="bathrooms">
+                  <option value=""></option>
+                  <option value="1">1</option>
+                  <option value="1.5">1.5</option>
+                  <option value="2">2</option>
+                  <option value="2.5">2.5</option>
+                  <option value="3">3</option>
+                  <option value="3.5">3.5</option>
+                  <option value="4">4</option>
+                  <option value="4.5">4.5</option>
+                  <option value="5+">5+</option>
+                </select>
+              </div>
+              <div>
+                <label for="size">Size</label>
+                <input type="number" v-model="formData.size" id="size">
+              </div>
+              <div>
+                <label for="levels">Levels</label>
+               <select name="levels" v-model="formData.levels" id="levels">
+                  <option value=""></option>
+                  <option value="1">1</option>
+                  <option value="2">2</option>
+                  <option value="3">3</option>
+                  <option value="4+">4+</option>
+                </select>
+              </div>
+              <div>
+                <label for="pets">Pet(s)</label>
+               <select name="pets" v-model="formData.pets" id="pets">
+                  <option value=""></option>
+                  <option value="yes">Yes</option>
+                  <option value="no">No</option>
+                </select>
+              </div>
             </div>
 
             <div v-show="tab === 2" class="tab">
