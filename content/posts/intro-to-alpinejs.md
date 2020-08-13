@@ -3,6 +3,7 @@ title: Intro to AlpineJS
 description: In this quick intro I’ll explain how you can use this library to add some simple javascript functionality to your application. you’ll first see how you’d perform this functionality in vanilla javascript and then i’ll show you how you can simplify that by adding some alpine.
 author: yhicknyan
 image: https://backend.gocleaning.ca/wp-content/uploads/2019/12/blog1-300x200.jpg
+tags: javascript, alpinjs
 ---
 
 I know what you’re probably thinking. Another javascript framework/library. But before you write this one off, perhaps you should take a look at how simple and flexible it is.

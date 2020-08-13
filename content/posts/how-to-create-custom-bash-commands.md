@@ -3,6 +3,7 @@ title: How to create custom bash commands
 description: In this tutorial, I will show you how to create custom bash commands.
 author: yhicknyan
 image: https://backend.gocleaning.ca/wp-content/uploads/2019/12/2-300x170.jpg
+tags: bash commands, custom commands
 ---
 
 ## Introduction

@@ -3,6 +3,7 @@ title: Custom Email Verification Notification in Laravel
 description: For most of the people, Laravel's default configuration works just fine but sometimes we need to tweak it a bit to attain our desired result.
 author: yhicknyan
 image: https://backend.gocleaning.ca/wp-content/uploads/2019/12/3-300x199.jpeg
+tags: email, verificaiton, notification, laravel, php, custom email
 ---
 
 Laravel being the most loved Framework by the PHP community offers a vast amount of features and scaffolding out of the box.
