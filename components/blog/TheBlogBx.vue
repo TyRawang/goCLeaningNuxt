@@ -266,7 +266,7 @@ export default {
   background: none;
   border: 2px solid darkseagreen;
   border-radius: 10px;
-  box-shadow: none;
+  box-shadow: 0 0 6px darkseagreen;
   cursor: pointer;
 }
 
