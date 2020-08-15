@@ -1,5 +1,23 @@
 <template>
   <section id="blog-bx" class="section">
+    <div class="container pagination-area">
+      <div class="previous-page">
+        <span class="button" v-if="currentPage > 1" @click="goToPreviousPage">< Previous Page</span>
+        <span v-else>&nbsp;</span>
+      </div>
+
+      <div class="current-page">
+        Page {{ currentPage }} of {{ totalPages() }}
+      </div>
+
+      <div class="next-page">
+        <span class="button" v-if="currentPage < totalPages()" @click="goToNextPage">Next Page ></span>
+        <span v-else>&nbsp;</span>
+      </div>
+
+      <div class="clearfix"></div>
+    </div>
+
     <div class="container">
       <div class="columns">
         <div class="blogs text-center" v-for="(post, index) in postsForCurrentPage()" :key="index">
@@ -38,7 +56,7 @@
       </div>
 
       <div class="current-page">
-        <span v-if="totalPages() < 2">Page</span><span v-else>Pages</span> {{ currentPage }} of {{ totalPages() }}
+        Page {{ currentPage }} of {{ totalPages() }}
       </div>
 
       <div class="next-page">
@@ -125,6 +143,7 @@ export default {
   border: 1px solid #e5e5e5;
   border-bottom-width: 3px;
   padding: 5% 0;
+  transition: ease-in-out;
 }
 
 .margin-top4 {
