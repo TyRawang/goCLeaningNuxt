@@ -239,7 +239,7 @@ export default {
 }
 
 .pagination-area {
-  margin-top: 2.5%;
+  margin-top: 1%;
 }
 
 .previous-page, .current-page, .next-page {
@@ -259,7 +259,7 @@ export default {
   border: 2px solid gray;
   border-radius: 10px;
   color: black;
-  padding: 1rem 2rem;
+  padding: .75rem 2rem;
 }
 
 .previous-page .button:hover, .next-page .button:hover {
