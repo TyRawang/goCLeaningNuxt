@@ -10,7 +10,7 @@
 
             <div v-show="tab === 0" class="tab">
               <h3>How Often Are You Looking To Clean Your House?</h3>
-              <div>
+              <div class="tab-zero">
                 <label for="one-time">One Time
                   <input type="radio" id="one-time" name="time" v-model="formData.time" value="one-time">
                   <img src="~/assets/img/calendar.svg" alt="">
@@ -35,85 +35,101 @@
             </div>
 
             <div v-show="tab === 1" class="tab">
-              <div>
-                <h3>Tell Us About Your Home?</h3>
-                <label for="home-type-1">Home Type</label>
-                <select name="house-type" v-model="formData.homeType1" id="home-type-1">
-                  <option value=""></option>
-                  <option value="Bungalow">Bungalow</option>
-                  <option value="Two Storey">Two Storey</option>
-                  <option value="One &amp; Half Storey">One and Half Storey</option>
-                  <option value="One Floor Condo or Apartment">One Floor Condo or Apartment</option>
-                  <option value="4 Level Split">4 Level Split</option>
-                  <option value="Basement Suite">Basement Suite</option>
-                </select>
-              </div>
-              <div>
-                <label for="bedrooms">Bedrooms</label>
-                <select name="Bedrooms" v-model="formData.bedrooms" id="bedrooms">
-                  <option value=""></option>
-                  <option value="1">1</option>
-                  <option value="2">2</option>
-                  <option value="3">3</option>
-                  <option value="4">4</option>
-                  <option value="4">4</option>
-                  <option value="5">5</option>
-                  <option value="6">6</option>
-                  <option value="7">7</option>
-                </select>
-              </div>
-              <div>
-                <label for="bathrooms">Bathrooms</label>
-                <select name="Bathrooms" v-model="formData.bathrooms" id="bathrooms">
-                  <option value=""></option>
-                  <option value="1">1</option>
-                  <option value="1.5">1.5</option>
-                  <option value="2">2</option>
-                  <option value="2.5">2.5</option>
-                  <option value="3">3</option>
-                  <option value="3.5">3.5</option>
-                  <option value="4">4</option>
-                  <option value="4.5">4.5</option>
-                  <option value="5+">5+</option>
-                </select>
-              </div>
-              <div>
-                <label for="size">Size</label>
-                <input type="number" v-model="formData.size" id="size">
-              </div>
-              <div>
-                <label for="levels">Levels</label>
-               <select name="levels" v-model="formData.levels" id="levels">
-                  <option value=""></option>
-                  <option value="1">1</option>
-                  <option value="2">2</option>
-                  <option value="3">3</option>
-                  <option value="4+">4+</option>
-                </select>
-              </div>
-              <div>
-                <label for="pets">Pet(s)</label>
-               <select name="pets" v-model="formData.pets" id="pets">
-                  <option value=""></option>
-                  <option value="yes">Yes</option>
-                  <option value="no">No</option>
-                </select>
+              <h3>Tell Us About Your Home?</h3>
+              <div class="tab-one">
+                <div>
+                  <label for="home-type">Home Type</label>
+                  <select name="house-type" v-model="formData.homeType" id="home-type">
+                    <option value=""></option>
+                    <option value="Bungalow">Bungalow</option>
+                    <option value="Two Storey">Two Storey</option>
+                    <option value="One &amp; Half Storey">One and Half Storey</option>
+                    <option value="One Floor Condo or Apartment">One Floor Condo or Apartment</option>
+                    <option value="4 Level Split">4 Level Split</option>
+                    <option value="Basement Suite">Basement Suite</option>
+                  </select>
+                </div>
+                <div>
+                  <label for="bedrooms">Bedrooms</label>
+                  <select name="Bedrooms" v-model="formData.bedrooms" id="bedrooms">
+                    <option value=""></option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="6">6</option>
+                    <option value="7">7</option>
+                  </select>
+                </div>
+                <div>
+                  <label for="bathrooms">Bathrooms</label>
+                  <select name="Bathrooms" v-model="formData.bathrooms" id="bathrooms">
+                    <option value=""></option>
+                    <option value="1">1</option>
+                    <option value="1.5">1.5</option>
+                    <option value="2">2</option>
+                    <option value="2.5">2.5</option>
+                    <option value="3">3</option>
+                    <option value="3.5">3.5</option>
+                    <option value="4">4</option>
+                    <option value="4.5">4.5</option>
+                    <option value="5+">5+</option>
+                  </select>
+                </div>
+                <div>
+                  <label for="size">Size (sqt)</label>
+                  <input type="text" v-model="formData.size" id="size">
+                </div>
+                <div>
+                  <label for="levels">Levels</label>
+                <select name="levels" v-model="formData.levels" id="levels">
+                    <option value=""></option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4+">4+</option>
+                  </select>
+                </div>
+                <div>
+                  <label for="pets">Pet(s)</label>
+                <select name="pets" v-model="formData.pets" id="pets">
+                    <option value=""></option>
+                    <option value="yes">Yes</option>
+                    <option value="no">No</option>
+                  </select>
+                </div>
               </div>
             </div>
-
             <div v-show="tab === 2" class="tab">
-              <h3>Your Home Type2</h3>
-
-              <label for="home-type-2"></label>
-              <select name="house-type-2" v-model="formData.homeType2" id="home-type-2">
-                <option value=""></option>
-                <option value="bungalow">bungalow</option>
-                <option value="two-storey">two-storey</option>
-                <option value="condo">condo</option>
-                <option value="4-level-split">4-level-split</option>
-              </select>
+              <h3>Tell Us About Your Home?</h3>
+              <div class="tab-one">
+                <div>
+                  <label for="people">How Many People Lives In Your House? </label>
+                  <select name="house-typ" v-model="formData.homeType" id="home-type">
+                    <option value=""></option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="6+">6+</option>
+                  </select>
+                </div>
+                <div>
+                  <label for="how-dirty">How Clean Would You Say Your Home Is?</label>
+                  <select name="Bedrooms" v-model="formData.bedrooms" id="bedrooms">
+                    <option value=""></option>
+                    <option value="Really Dirty">Really Dirty</option>
+                    <option value="Kind of Diry">Kind of Diry</option>
+                    <option value="About Average">About Average</option>
+                    <option value="Kind of Clean">Kind of Clean</option>
+                    <option value="Really Clean">Really Clean</option>             
+                  </select>
+                </div>
+              </div>
             </div>
-
             <div v-show="tab === 3" class="tab">
               <p>
                 <label>Your Name: <input type="text" v-model="formData.customerName" name="name" required/></label>
@@ -187,7 +203,6 @@ export default {
       }else{
         valid = true
       }
-
       return valid;
     },
 
@@ -252,7 +267,7 @@ export default {
   font-style: italic;
 }
 
-#banner .banner-form form div:nth-child(2) div {
+#banner .banner-form form .tab-zero{
   display: grid;
   grid-gap: 1rem;
   grid-template-columns: repeat(5, minmax(50px, 1fr));
@@ -290,6 +305,20 @@ input.invalid {
   background-color: #ffdddd;
 }
 
+input[type=text], select {
+  width: 20%;
+  height: 1rem;
+  padding: 12px 20px;
+  margin: 2px 0;
+  display: block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  /* text-align: center; */
+}
+
+
+
 /* Hide all steps by default: */
 /*.tab {*/
 /*  display: none;*/
@@ -324,6 +353,30 @@ button:hover {
   padding: 10px;
   box-shadow: inset 0 -1px 1px rgba(255, 255, 255, 0.3);
 }
+
+
+.banner-form form .tab-one {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  /* align-items: center; */
+  justify-content: space-evenly;
+
+  grid-gap: 1rem; 
+    
+}
+
+label {
+
+  font-size: 1.5rem;
+  font-family: 'Dosis', sans-serif; 
+  font-weight: bold;
+  color: whitesmoke;
+  text-align: left;
+  display: block;
+}
+
+
+
 
 @media (max-width: 800px) {
 

@@ -23,7 +23,7 @@
               <li></li>
               <li><nuxt-link to="commercial-cleaning-service-calgary">Commercial</nuxt-link></li>
               <li><nuxt-link to="residential-cleaning-service-calgary">Residential</nuxt-link></li>
-              <li><nuxt-link to="airbnb-cleaning-service-calgary">Airbnb</nuxt-link></li>
+              <li><nuxt-link to="carpet-cleaning-service-calgary">Carpet Cleaning</nuxt-link></li>
             </ul>
           </li>
           <li><nuxt-link to="testimonials-reviews-for-best-cleaning-service">Testimonials</nuxt-link></li>
