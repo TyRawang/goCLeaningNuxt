@@ -10,30 +10,28 @@
 
             <div v-show="tab === 0" class="tab">
               <h3>How Often Are You Looking To Clean Your House?</h3>
-              <input type="date" v-model="formData.cleaningDate" />
-              <input type="time" v-model="formData.cleaningTime" />
-<!--              <div class="tab-zero">-->
-<!--                <label for="one-time">One Time-->
-<!--                  <input type="radio" id="one-time" name="time" v-model="formData.time" value="one-time">-->
-<!--                  <img src="~/assets/img/calendar.svg" alt="">-->
-<!--                </label>-->
-<!--                <label for="weekly">Weekly-->
-<!--                  <input type="radio" id="weekly" name="time" v-model="formData.time" value="weekly">-->
-<!--                  <img src="~/assets/img/calendar.svg" alt="">-->
-<!--                </label>-->
-<!--                <label for="bi-weekly">Bi-Weekly-->
-<!--                  <input type="radio" id="bi-weekly" name="time" v-model="formData.time" value="bi-weekly">-->
-<!--                  <img src="~/assets/img/calendar.svg" alt="">-->
-<!--                </label>-->
-<!--                <label for="monthly">Monthly-->
-<!--                  <input type="radio" id="monthly" name="time" v-model="formData.time" value="monthly">-->
-<!--                  <img src="~/assets/img/calendar.svg" alt="">-->
-<!--                </label>-->
-<!--                <label for="other">Other-->
-<!--                  <input type="radio" id="other" name="time" v-model="formData.time" value="other">-->
-<!--                  <img src="~/assets/img/calendar.svg" alt="">-->
-<!--                </label>-->
-<!--              </div>-->
+              <div class="tab-zero">
+                <label for="one-time">One Time
+                  <input type="radio" id="one-time" name="time" v-model="formData.time" value="one-time">
+                  <img src="~/assets/img/calendar.svg" alt="">
+                </label>
+                <label for="weekly">Weekly
+                  <input type="radio" id="weekly" name="time" v-model="formData.time" value="weekly">
+                  <img src="~/assets/img/calendar.svg" alt="">
+                </label>
+                <label for="bi-weekly">Bi-Weekly
+                  <input type="radio" id="bi-weekly" name="time" v-model="formData.time" value="bi-weekly">
+                  <img src="~/assets/img/calendar.svg" alt="">
+                </label>
+                <label for="monthly">Monthly
+                  <input type="radio" id="monthly" name="time" v-model="formData.time" value="monthly">
+                  <img src="~/assets/img/calendar.svg" alt="">
+                </label>
+                <label for="other">Other
+                  <input type="radio" id="other" name="time" v-model="formData.time" value="other">
+                  <img src="~/assets/img/calendar.svg" alt="">
+                </label>
+              </div>
             </div>
 
             <div v-show="tab === 1" class="tab">
@@ -104,6 +102,7 @@
                 </div>
               </div>
             </div>
+
             <div v-show="tab === 2" class="tab">
               <h3>Tell Us About Your Home?</h3>
               <div class="tab-one">
@@ -132,7 +131,13 @@
                 </div>
               </div>
             </div>
+
             <div v-show="tab === 3" class="tab">
+              <input type="date" alt="cleaning date" v-model="formData.cleaningDate">
+              <input type="time" alt="cleaning time" v-model="formData.cleaningTime">
+            </div>
+
+            <div v-show="tab === 4" class="tab">
               <p>
                 <label>Your Name: <input type="text" v-model="formData.customerName" name="name" required/></label>
               </p>
@@ -144,11 +149,15 @@
               </p>
             </div>
 
+            <div class="progress-bar">
+              <div class="progress-bar-filler"  :style="{'width': completedPortion()+'%'}"></div>
+            </div>
+
             <div style="overflow:auto;">
               <div style="float:right;">
                 <button v-show="tab > 0" type="button" id="prevBtn" @click="toPreviousTab">Previous</button>
-                <button v-show="tab < 3" type="button" id="nextBtn" @click="toNextTab">Next</button>
-                <button v-show="tab === 3" type="submit">Submit</button>
+                <button v-show="tab < 4" type="button" id="nextBtn" @click="toNextTab">Next</button>
+                <button v-show="tab === 4" type="submit">Submit</button>
               </div>
             </div>
 
@@ -176,22 +185,22 @@ export default {
         customerName: '',
         customerEmail: '',
         customerMessage: '',
-        cleaningDate:'',
-        cleaningTime: ''
+        cleaningDate: null,
+        cleaningTime: null
       }
     }
   },
 
   methods: {
     toPreviousTab(){
-      if(this.tab > 0 && this.tab <= 3){
+      if(this.tab > 0 && this.tab <= 4){
         this.tab -= 1
       }
     },
 
     toNextTab(){
       if(this.validateForm()){
-        if(this.tab < 3){
+        if(this.tab < 4){
           this.tab += 1
         }
       }
@@ -199,7 +208,7 @@ export default {
 
     validateForm(){
       let valid = false
-      if(this.tab === 0  && this.formData.cleaningDate === '' &&  this.formData.cleaningTime === ''){
+      if(this.tab === 0  && this.formData.time === ''){
         valid = false
         this.$toast.error('You need to select a frequency please!')
       }else if(this.tab === 1  && this.formData.homeType1 === ''){
@@ -208,6 +217,9 @@ export default {
       }else if(this.tab === 2  && this.formData.homeType2 === ''){
         valid = false
         this.$toast.error('You need to select a home type please!')
+      }else if(this.tab === 3 && this.formData.cleaningDate === null && this.formData.cleaningTime === null){
+        valid = false
+        this.$toast.error('You have to select date and time for appointment please.')
       }else{
         valid = true
       }
@@ -221,6 +233,20 @@ export default {
         this.$axios.$post(this.$refs.contact.getAttribute('action'), this.formData).then(function (){
           this.$toast.success('submission successful')
         })
+      }
+    },
+
+    completedPortion(){
+      if(this.tab === 1){
+        return 25
+      }else if(this.tab === 2){
+        return 50
+      }else if(this.tab === 3){
+        return 75
+      }else if(this.tab === 4){
+        return 100
+      }else{
+        return 5
       }
     }
   }
@@ -383,9 +409,6 @@ label {
   display: block;
 }
 
-
-
-
 @media (max-width: 800px) {
 
   #banner .banner-bg .banner-form form {
@@ -397,5 +420,19 @@ label {
   #banner .banner-bg .banner-form form {
     grid-template-columns: repeat(2, 1fr);
   }
+}
+
+.progress-bar {
+  width: 20rem;
+  height: 20px;
+  border: 1px solid dodgerblue;
+  border-radius: 10px;
+}
+
+.progress-bar-filler {
+  background: dodgerblue;
+  height: 18px;
+  border: none;
+  border-radius: 10px;
 }
 </style>
