@@ -21,15 +21,15 @@
           <li><nuxt-link to="#">Services <i class="fas fa-angle-down"></i> </nuxt-link>
             <ul class="dropdown">
               <li></li>
-              <li><nuxt-link to="commercial-cleaning-service-calgary">Commercial</nuxt-link></li>
-              <li><nuxt-link to="residential-cleaning-service-calgary">Residential</nuxt-link></li>
-              <li><nuxt-link to="carpet-cleaning-service-calgary">Carpet Cleaning</nuxt-link></li>
+              <li><nuxt-link to="/commercial-cleaning-service-calgary">Commercial</nuxt-link></li>
+              <li><nuxt-link to="/residential-cleaning-service-calgary">Residential</nuxt-link></li>
+              <li><nuxt-link to="/carpet-cleaning-service-calgary">Carpet Cleaning</nuxt-link></li>
             </ul>
           </li>
-          <li><nuxt-link to="testimonials-reviews-for-best-cleaning-service">Testimonials</nuxt-link></li>
-          <li><nuxt-link to="best-cleaning-services-calgary-faq">FAQ</nuxt-link></li>
-          <li><nuxt-link to="blog">Blog</nuxt-link></li>
-          <li><nuxt-link to="contact-us-for-cleaning-services">Contact</nuxt-link></li>
+          <li><nuxt-link to="/testimonials-reviews-for-best-cleaning-service">Testimonials</nuxt-link></li>
+          <li><nuxt-link to="/best-cleaning-services-calgary-faq">FAQ</nuxt-link></li>
+          <li><nuxt-link to="/blog">Blog</nuxt-link></li>
+          <li><nuxt-link to="/contact-us-for-cleaning-services">Contact</nuxt-link></li>
         </ul>
       </nav>
       <nuxt-link to="#" class="cta">

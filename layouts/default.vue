@@ -1,6 +1,7 @@
 <template>
   <div>
     <TheHeader />
+    <TheBreadcrumb />
     <Nuxt />
     <TheFooter />
   </div>
@@ -9,9 +10,11 @@
 <script>
 import TheHeader from '@/components/shared/TheHeader'
 import TheFooter from '@/components/shared/TheFooter'
+import TheBreadcrumb from "@/components/shared/TheBreadcrumb";
 
 export default {
   components: {
+    TheBreadcrumb,
     TheHeader, TheFooter
   }
 }

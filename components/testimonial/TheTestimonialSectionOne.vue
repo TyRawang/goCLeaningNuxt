@@ -2,28 +2,125 @@
     <div id="section-one-testimonials" class="container">
         <h3>WHAT THEY SAY ABOUT US</h3>
         <h2>TESTIMONIALS</h2>
-        <div>
-            <div class="cards">
-                <div>
-                    <img src="~/assets/img/noah_bowman.png" alt="">
-                </div>
-                <div>
-                    <p> 
-                        Gdo Cleaning provided me with excellent services. Their cleaners 
-                        are always smiling and have great respect for me and house. I can 
-                        easily say they are the best cleaning service near me. Noah
-                    </p>
-                    <h6>Noah</h6>
-                </div>
-            </div>
-        </div>            
 
+        <VueSlickCarousel ref="carousel" v-bind="slickOptions">
+          <div>
+            <div class="cards">
+              <div>
+                <img src="~/assets/img/noah_bowman.png" alt="">
+              </div>
+              <div>
+                <p>
+                  Gdo Cleaning provided me with excellent services. Their cleaners
+                  are always smiling and have great respect for me and house. I can
+                  easily say they are the best cleaning service near me. Noah
+                </p>
+                <h6>Noah</h6>
+              </div>
+            </div>
+          </div>
+          <div>
+            <div class="cards">
+              <div>
+                <img src="~/assets/img/noah_bowman.png" alt="">
+              </div>
+              <div>
+                <p>
+                  Gdo Cleaning provided me with excellent services. Their cleaners
+                  are always smiling and have great respect for me and house. I can
+                  easily say they are the best cleaning service near me. Noah
+                </p>
+                <h6>Noah</h6>
+              </div>
+            </div>
+          </div>
+          <div>
+            <div class="cards">
+              <div>
+                <img src="~/assets/img/noah_bowman.png" alt="">
+              </div>
+              <div>
+                <p>
+                  Gdo Cleaning provided me with excellent services. Their cleaners
+                  are always smiling and have great respect for me and house. I can
+                  easily say they are the best cleaning service near me. Noah
+                </p>
+                <h6>Noah</h6>
+              </div>
+            </div>
+          </div>
+          <div>
+            <div class="cards">
+              <div>
+                <img src="~/assets/img/noah_bowman.png" alt="">
+              </div>
+              <div>
+                <p>
+                  Gdo Cleaning provided me with excellent services. Their cleaners
+                  are always smiling and have great respect for me and house. I can
+                  easily say they are the best cleaning service near me. Noah
+                </p>
+                <h6>Noah</h6>
+              </div>
+            </div>
+          </div>
+          <div>
+            <div class="cards">
+              <div>
+                <img src="~/assets/img/noah_bowman.png" alt="">
+              </div>
+              <div>
+                <p>
+                  Gdo Cleaning provided me with excellent services. Their cleaners
+                  are always smiling and have great respect for me and house. I can
+                  easily say they are the best cleaning service near me. Noah
+                </p>
+                <h6>Noah</h6>
+              </div>
+            </div>
+          </div>
+          <div>
+            <div class="cards">
+              <div>
+                <img src="~/assets/img/noah_bowman.png" alt="">
+              </div>
+              <div>
+                <p>
+                  Gdo Cleaning provided me with excellent services. Their cleaners
+                  are always smiling and have great respect for me and house. I can
+                  easily say they are the best cleaning service near me. Noah
+                </p>
+                <h6>Noah</h6>
+              </div>
+            </div>
+          </div>
+        </VueSlickCarousel>
     </div>
 </template>
 
 <script>
 export default {
-    name: 'TheTestimonialSectionOne'
+  name: 'TheTestimonialSectionOne',
+  data() {
+    return {
+      slickOptions: {
+        arrows: false,
+        dots: true,
+        infinite: true,
+        slidesToShow: 2,
+        slidesToScroll: 1,
+        autoplay: true,
+        speed: 2000,
+        autoplaySpeed: 2000,
+        cssEase: "linear"
+      }
+    }
+  },
+  methods: {
+    // showNext() {
+    //   this.$refs.carousel.next()
+    // },
+  }
 }
 </script>
 
@@ -42,7 +139,7 @@ export default {
     font-weight: normal;
     font-size: 14px;
     line-height: 25px;
-    color: #777777; 
+    color: #777777;
 
 }
 
@@ -53,11 +150,11 @@ export default {
   }
 
   #section-one-testimonials .cards :nth-child(2) {
-      padding: 2rem; 
+      padding: 2rem;
   }
 
   #section-one-testimonials .cards :nth-child(2) h6 {
-      text-align: right; 
+      text-align: right;
       color: var(--secondary-colour);
       font-size: 2rem;
 

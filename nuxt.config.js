@@ -37,13 +37,16 @@ export default {
   ** Global CSS
   */
   css: [
-    '~/assets/css/styles.css'
+    '~/assets/css/styles.css',
+    'vue-slick-carousel/dist/vue-slick-carousel.css',
+    'vue-slick-carousel/dist/vue-slick-carousel-theme.css'
   ],
   /*
   ** Plugins to load before mounting the App
   ** https://nuxtjs.org/guide/plugins
   */
   plugins: [
+    '~/plugins/carousel.js'
   ],
   /*
   ** Auto import components
@@ -66,7 +69,7 @@ export default {
     // Doc: https://github.com/nuxt/content
     '@nuxt/content',
     // 'bootstrap-vue/nuxt',
-    '@nuxtjs/toast', 
+    '@nuxtjs/toast',
     // nuxt sitemap
     '@nuxtjs/sitemap',
 
@@ -108,7 +111,7 @@ export default {
     // cacheTime: 1000 * 60 * 60 * 2,
     trailingSlash: true,
     gzip: true,
-    generate: false, 
+    generate: false,
     routes: dyRoutes
   }
 }
