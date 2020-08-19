@@ -10,28 +10,30 @@
 
             <div v-show="tab === 0" class="tab">
               <h3>How Often Are You Looking To Clean Your House?</h3>
-              <div class="tab-zero">
-                <label for="one-time">One Time
-                  <input type="radio" id="one-time" name="time" v-model="formData.time" value="one-time">
-                  <img src="~/assets/img/calendar.svg" alt="">
-                </label>
-                <label for="weekly">Weekly
-                  <input type="radio" id="weekly" name="time" v-model="formData.time" value="weekly">
-                  <img src="~/assets/img/calendar.svg" alt="">
-                </label>
-                <label for="bi-weekly">Bi-Weekly
-                  <input type="radio" id="bi-weekly" name="time" v-model="formData.time" value="bi-weekly">
-                  <img src="~/assets/img/calendar.svg" alt="">
-                </label>
-                <label for="monthly">Monthly
-                  <input type="radio" id="monthly" name="time" v-model="formData.time" value="monthly">
-                  <img src="~/assets/img/calendar.svg" alt="">
-                </label>
-                <label for="other">Other
-                  <input type="radio" id="other" name="time" v-model="formData.time" value="other">
-                  <img src="~/assets/img/calendar.svg" alt="">
-                </label>
-              </div>
+              <input type="date" v-model="formData.cleaningDate" />
+              <input type="time" v-model="formData.cleaningTime" />
+<!--              <div class="tab-zero">-->
+<!--                <label for="one-time">One Time-->
+<!--                  <input type="radio" id="one-time" name="time" v-model="formData.time" value="one-time">-->
+<!--                  <img src="~/assets/img/calendar.svg" alt="">-->
+<!--                </label>-->
+<!--                <label for="weekly">Weekly-->
+<!--                  <input type="radio" id="weekly" name="time" v-model="formData.time" value="weekly">-->
+<!--                  <img src="~/assets/img/calendar.svg" alt="">-->
+<!--                </label>-->
+<!--                <label for="bi-weekly">Bi-Weekly-->
+<!--                  <input type="radio" id="bi-weekly" name="time" v-model="formData.time" value="bi-weekly">-->
+<!--                  <img src="~/assets/img/calendar.svg" alt="">-->
+<!--                </label>-->
+<!--                <label for="monthly">Monthly-->
+<!--                  <input type="radio" id="monthly" name="time" v-model="formData.time" value="monthly">-->
+<!--                  <img src="~/assets/img/calendar.svg" alt="">-->
+<!--                </label>-->
+<!--                <label for="other">Other-->
+<!--                  <input type="radio" id="other" name="time" v-model="formData.time" value="other">-->
+<!--                  <img src="~/assets/img/calendar.svg" alt="">-->
+<!--                </label>-->
+<!--              </div>-->
             </div>
 
             <div v-show="tab === 1" class="tab">
@@ -39,7 +41,7 @@
               <div class="tab-one">
                 <div>
                   <label for="home-type">Home Type</label>
-                  <select name="house-type" v-model="formData.homeType" id="home-type">
+                  <select name="house-type" v-model="formData.homeType1" id="home-type">
                     <option value=""></option>
                     <option value="Bungalow">Bungalow</option>
                     <option value="Two Storey">Two Storey</option>
@@ -51,7 +53,7 @@
                 </div>
                 <div>
                   <label for="bedrooms">Bedrooms</label>
-                  <select name="Bedrooms" v-model="formData.bedrooms" id="bedrooms">
+                  <select name="Bedrooms" v-model="formData.bedrooms1" id="bedrooms">
                     <option value=""></option>
                     <option value="1">1</option>
                     <option value="2">2</option>
@@ -65,7 +67,7 @@
                 </div>
                 <div>
                   <label for="bathrooms">Bathrooms</label>
-                  <select name="Bathrooms" v-model="formData.bathrooms" id="bathrooms">
+                  <select name="Bathrooms" v-model="formData.bathrooms1" id="bathrooms">
                     <option value=""></option>
                     <option value="1">1</option>
                     <option value="1.5">1.5</option>
@@ -107,7 +109,7 @@
               <div class="tab-one">
                 <div>
                   <label for="people">How Many People Lives In Your House? </label>
-                  <select name="house-typ" v-model="formData.homeType" id="home-type">
+                  <select name="house-typ" v-model="formData.homeType2" id="home-type">
                     <option value=""></option>
                     <option value="1">1</option>
                     <option value="2">2</option>
@@ -119,13 +121,13 @@
                 </div>
                 <div>
                   <label for="how-dirty">How Clean Would You Say Your Home Is?</label>
-                  <select name="Bedrooms" v-model="formData.bedrooms" id="bedrooms">
+                  <select name="Bedrooms" v-model="formData.bedrooms2" id="bedrooms">
                     <option value=""></option>
                     <option value="Really Dirty">Really Dirty</option>
                     <option value="Kind of Diry">Kind of Diry</option>
                     <option value="About Average">About Average</option>
                     <option value="Kind of Clean">Kind of Clean</option>
-                    <option value="Really Clean">Really Clean</option>             
+                    <option value="Really Clean">Really Clean</option>
                   </select>
                 </div>
               </div>
@@ -166,10 +168,16 @@ export default {
       formData: {
         time: '',
         homeType1: '',
+        bedrooms1: '',
+        bathrooms1: '',
         homeType2: '',
+        bedrooms2: '',
+        bathrooms2: '',
         customerName: '',
         customerEmail: '',
-        customerMessage: ''
+        customerMessage: '',
+        cleaningDate:'',
+        cleaningTime: ''
       }
     }
   },
@@ -191,7 +199,7 @@ export default {
 
     validateForm(){
       let valid = false
-      if(this.tab === 0  && this.formData.time === ''){
+      if(this.tab === 0  && this.formData.cleaningDate === '' &&  this.formData.cleaningTime === ''){
         valid = false
         this.$toast.error('You need to select a frequency please!')
       }else if(this.tab === 1  && this.formData.homeType1 === ''){
@@ -361,14 +369,14 @@ button:hover {
   /* align-items: center; */
   justify-content: space-evenly;
 
-  grid-gap: 1rem; 
-    
+  grid-gap: 1rem;
+
 }
 
 label {
 
   font-size: 1.5rem;
-  font-family: 'Dosis', sans-serif; 
+  font-family: 'Dosis', sans-serif;
   font-weight: bold;
   color: whitesmoke;
   text-align: left;

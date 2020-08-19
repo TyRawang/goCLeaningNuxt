@@ -14,7 +14,25 @@ import TheSecondSection from "@/components/index/TheSecondSection";
 import RequestCallBack from "@/components/shared/RequestCallBack";
 // import TheTestimonialSectionOne from "@/components/testimonial/TheTestimonialSectionOne"
 export default {
-  components: {TheSecondSection, TheFirstSection, TheHomeBanner2, RequestCallBack,
-                 }
+  components: {
+    TheSecondSection, TheFirstSection, TheHomeBanner2, RequestCallBack
+  },
+
+  data(){
+    return {
+      loading: true,
+    }
+  },
+
+  created() {
+  },
+
+  mounted() {
+    this.$nextTick(() => {
+      this.$nuxt.$loading.start()
+
+      setTimeout(() => this.$nuxt.$loading.finish(), 500)
+    })
+  }
 }
 </script>

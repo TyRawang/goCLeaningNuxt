@@ -16,6 +16,22 @@ export default {
   components: {
     TheBreadcrumb,
     TheHeader, TheFooter
+  },
+
+  data(){
+    return {
+      loading: {
+        height: '50px'
+      },
+    }
+  },
+
+  mounted() {
+    this.$nextTick(() => {
+      this.$nuxt.$loading.start()
+
+      setTimeout(() => this.$nuxt.$loading.finish(), 500)
+    })
   }
 }
 </script>
