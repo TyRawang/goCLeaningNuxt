@@ -5,6 +5,10 @@
       <div class="container">
         <div class="banner-form">
 
+          <div class="progress-bar" v-show="this.formData.service === 'residential'">
+            <div class="progress-bar-filler"  :style="{'width': completedPortion()+'%'}"></div>
+          </div>
+
           <form name="contactus" action="/thanks" method="post" netlify netlify-honeypot="bot-field">
            <input type="hidden" name="form-name" value="contactus" />
 
@@ -195,9 +199,6 @@
               </div>
 
 <!--              <button type="button" @click.prevent="submitClientForm">Submit</button>-->
-            </div>
-            <div class="progress-bar" v-show="this.formData.service === 'residential'">
-              <div class="progress-bar-filler"  :style="{'width': completedPortion()+'%'}"></div>
             </div>
 
             <div style="overflow:auto;">
