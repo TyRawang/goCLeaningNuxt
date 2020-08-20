@@ -11,15 +11,15 @@
             <div v-show="tab === 0" class="tab">
               <h3>The Kind Of Service You are Looking for</h3>
               <div class="tab-zero">
-                <label for="one-time">Residential
+                <label for="service-house">Residential
                   <input type="radio" id="service-house" name="service" v-model="formData.service" value="residential">
                   <img src="~/assets/img/service-type-house.png" height="100rem" alt="">
                 </label>
-                <label for="weekly">Commercial
+                <label for="service-commercial">Commercial
                   <input type="radio" id="service-commercial" name="service" v-model="formData.service" value="commercial">
                   <img src="~/assets/img/service-type-apartment.png" height="100rem" alt="">
                 </label>
-                <label for="bi-weekly">Corporate
+                <label for="service-corporate">Corporate
                   <input type="radio" id="service-corporate" name="service" v-model="formData.service" value="corporate">
                   <img src="~/assets/img/service-type-corporate.png" height="100rem" alt="">
                 </label>
@@ -167,42 +167,44 @@
               </p>
             </div>
 
-            <div v-show="formData.service !== 'residential'" class="tab">
+            <div v-show="tab===1 && formData.service !== 'residential'" class="tab">
               <div>
                 <label for="client-name">Name: </label>
-                <input id="client-name" type="text" placeholder="First Name">
-                <input type="text" placeholder="Last Name">
+                <input id="client-name" type="text" placeholder="First Name" v-model="clientData.firstName">
+                <input type="text" placeholder="Last Name" v-model="clientData.lastName">
               </div>
 
               <div>
                 <label for="business-org">Business Organization: </label>
-                <input id="business-org" type="text" placeholder="Business Organization">
+                <input id="business-org" type="text" placeholder="Business Organization" v-model="clientData.org">
               </div>
 
               <div>
                 <label for="client-email">Email: </label>
-                <input id="client-email" type="email" placeholder="Email">
+                <input id="client-email" type="email" placeholder="Email" v-model="clientData.email">
               </div>
 
               <div>
                 <label for="client-phone">Phone: </label>
-                <input id="client-phone" type="tel" placeholder="Phone">
+                <input id="client-phone" type="tel" placeholder="Phone" v-model="clientData.phone">
               </div>
 
               <div>
-                <label for="client-request">Email: </label>
-                <textarea id="client-request"></textarea>
+                <label for="client-request">Request: </label>
+                <textarea id="client-request" v-model="clientData.request"></textarea>
               </div>
+
+<!--              <button type="button" @click.prevent="submitClientForm">Submit</button>-->
             </div>
-            <div class="progress-bar">
+            <div class="progress-bar" v-show="this.formData.service === 'residential'">
               <div class="progress-bar-filler"  :style="{'width': completedPortion()+'%'}"></div>
             </div>
 
             <div style="overflow:auto;">
               <div style="float:right;">
                 <button v-show="tab > 0" type="button" id="prevBtn" @click="toPreviousTab">Previous</button>
-                <button v-show="tab < 5" type="button" id="nextBtn" @click="toNextTab">Next</button>
-                <button v-show="tab === 4" type="submit">Submit</button>
+                <button v-show="(tab < 5 && formData.service ==='residential') || (formData.service !=='residential' && tab === 0)" type="button" id="nextBtn" @click="toNextTab">Next</button>
+                <button v-show="(tab === 5  && formData.service ==='residential') || (tab===1 && formData.service !=='residential')" type="submit">Submit</button>
               </div>
             </div>
 
@@ -233,6 +235,14 @@ export default {
         customerMessage: '',
         cleaningDate: null,
         cleaningTime: null
+      },
+      clientData:{
+        firstName: '',
+        lastName: '',
+        org: '',
+        email: '',
+        phone: '',
+        request: ''
       }
     }
   },
@@ -250,8 +260,6 @@ export default {
           this.tab += 1
         }
       }
-      console.log(this.tab)
-      console.log(this.formData)
     },
 
     validateForm(){
@@ -287,17 +295,33 @@ export default {
       }
     },
 
+    submitClientForm(){
+      if(this.formData.service === 'residential'){
+        if(this.tab > 0){
+
+        }
+      }
+    },
+
     completedPortion(){
-      if(this.tab === 1){
-        return 25
-      }else if(this.tab === 2){
-        return 50
-      }else if(this.tab === 3){
-        return 75
-      }else if(this.tab === 4){
-        return 100
+      if(this.formData.service === 'residential'){
+        if(this.tab === 1){
+          return 20
+        }else if(this.tab === 2){
+          return 40
+        }else if(this.tab === 3){
+          return 60
+        }else if(this.tab === 4){
+          return 80
+        }else if(this.tab === 5){
+          return 100
+        }else{
+          return 5
+        }
       }else{
-        return 5
+        if(this.tab===1){
+          return 50
+        }
       }
     }
   }
