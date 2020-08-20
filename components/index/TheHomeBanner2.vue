@@ -9,6 +9,24 @@
            <input type="hidden" name="form-name" value="contactus" />
 
             <div v-show="tab === 0" class="tab">
+              <h3>The Kind Of Service You are Looking for</h3>
+              <div class="tab-zero">
+                <label for="one-time">Residential
+                  <input type="radio" id="service-house" name="service" v-model="formData.service" value="residential">
+                  <img src="~/assets/img/service-type-house.png" height="100rem" alt="">
+                </label>
+                <label for="weekly">Commercial
+                  <input type="radio" id="service-commercial" name="service" v-model="formData.service" value="commercial">
+                  <img src="~/assets/img/service-type-apartment.png" height="100rem" alt="">
+                </label>
+                <label for="bi-weekly">Corporate
+                  <input type="radio" id="service-corporate" name="service" v-model="formData.service" value="corporate">
+                  <img src="~/assets/img/service-type-corporate.png" height="100rem" alt="">
+                </label>
+              </div>
+            </div>
+
+            <div v-show="tab === 1 && formData.service === 'residential'" class="tab">
               <h3>How Often Are You Looking To Clean Your House?</h3>
               <div class="tab-zero">
                 <label for="one-time">One Time
@@ -34,7 +52,7 @@
               </div>
             </div>
 
-            <div v-show="tab === 1" class="tab">
+            <div v-show="tab === 2 && formData.service === 'residential'" class="tab">
               <h3>Tell Us About Your Home?</h3>
               <div class="tab-one">
                 <div>
@@ -103,7 +121,7 @@
               </div>
             </div>
 
-            <div v-show="tab === 2" class="tab">
+            <div v-show="tab === 3 && formData.service === 'residential'" class="tab">
               <h3>Tell Us About Your Home?</h3>
               <div class="tab-one">
                 <div>
@@ -132,12 +150,12 @@
               </div>
             </div>
 
-            <div v-show="tab === 3" class="tab">
+            <div v-show="tab === 4 && formData.service === 'residential'" class="tab">
               <input type="date" alt="cleaning date" v-model="formData.cleaningDate">
               <input type="time" alt="cleaning time" v-model="formData.cleaningTime">
             </div>
 
-            <div v-show="tab === 4" class="tab">
+            <div v-show="tab === 5 && formData.service === 'residential'" class="tab">
               <p>
                 <label>Your Name: <input type="text" v-model="formData.customerName" name="name" required/></label>
               </p>
@@ -149,6 +167,33 @@
               </p>
             </div>
 
+            <div v-show="formData.service !== 'residential'" class="tab">
+              <div>
+                <label for="client-name">Name: </label>
+                <input id="client-name" type="text" placeholder="First Name">
+                <input type="text" placeholder="Last Name">
+              </div>
+
+              <div>
+                <label for="business-org">Business Organization: </label>
+                <input id="business-org" type="text" placeholder="Business Organization">
+              </div>
+
+              <div>
+                <label for="client-email">Email: </label>
+                <input id="client-email" type="email" placeholder="Email">
+              </div>
+
+              <div>
+                <label for="client-phone">Phone: </label>
+                <input id="client-phone" type="tel" placeholder="Phone">
+              </div>
+
+              <div>
+                <label for="client-request">Email: </label>
+                <textarea id="client-request"></textarea>
+              </div>
+            </div>
             <div class="progress-bar">
               <div class="progress-bar-filler"  :style="{'width': completedPortion()+'%'}"></div>
             </div>
@@ -156,7 +201,7 @@
             <div style="overflow:auto;">
               <div style="float:right;">
                 <button v-show="tab > 0" type="button" id="prevBtn" @click="toPreviousTab">Previous</button>
-                <button v-show="tab < 4" type="button" id="nextBtn" @click="toNextTab">Next</button>
+                <button v-show="tab < 5" type="button" id="nextBtn" @click="toNextTab">Next</button>
                 <button v-show="tab === 4" type="submit">Submit</button>
               </div>
             </div>
@@ -175,6 +220,7 @@ export default {
     return {
       tab: 0,
       formData: {
+        service: '',
         time: '',
         homeType1: '',
         bedrooms1: '',
@@ -200,24 +246,29 @@ export default {
 
     toNextTab(){
       if(this.validateForm()){
-        if(this.tab < 4){
+        if(this.tab < 5){
           this.tab += 1
         }
       }
+      console.log(this.tab)
+      console.log(this.formData)
     },
 
     validateForm(){
       let valid = false
-      if(this.tab === 0  && this.formData.time === ''){
+      if(this.tab === 0  && this.formData.service === ''){
+        valid = false
+        this.$toast.error('You need to select a service type please!')
+      }else if((this.tab === 1 && this.formData.service !== 'residential') || (this.tab === 1  && this.formData.time === '')){
         valid = false
         this.$toast.error('You need to select a frequency please!')
-      }else if(this.tab === 1  && this.formData.homeType1 === ''){
+      }else if(this.tab === 2  && this.formData.homeType1 === ''){
         valid = false
         this.$toast.error('You need to select a home type please!')
-      }else if(this.tab === 2  && this.formData.homeType2 === ''){
+      }else if(this.tab === 3  && this.formData.homeType2 === ''){
         valid = false
         this.$toast.error('You need to select a home type please!')
-      }else if(this.tab === 3 && this.formData.cleaningDate === null && this.formData.cleaningTime === null){
+      }else if(this.tab === 4 && this.formData.cleaningDate === null && this.formData.cleaningTime === null){
         valid = false
         this.$toast.error('You have to select date and time for appointment please.')
       }else{
