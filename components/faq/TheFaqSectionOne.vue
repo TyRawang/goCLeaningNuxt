@@ -17,8 +17,8 @@
             <div>
                 <h5>EXPERTS IN FIELD</h5>
                 <h4>Insurance Questions</h4>
-                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Aut veniam 
-                    itaque quod odio consequuntur atque quisquam magni accusantium rerum 
+                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Aut veniam
+                    itaque quod odio consequuntur atque quisquam magni accusantium rerum
                     quaerat.
                 </p>
             </div>
@@ -62,7 +62,7 @@
                 </label>
             </div>
         </div>
-    </section>   
+    </section>
 </template>
 
 <script>
@@ -78,7 +78,7 @@ export default {
 @import url(https://fonts.googleapis.com/css?family=Open Sans); */
 
 .faq-heading {
-  font-family: Lato;   
+  font-family: Lato;
   font-weight: 400;
   font-size: 19px;
    -webkit-transition: text-indent 0.2s;
@@ -87,7 +87,7 @@ export default {
 }
 
 .faq-text {
-  font-family: Open Sans;   
+  font-family: Open Sans;
   font-weight: 400;
   color: #919191;
   width:95%;
@@ -110,7 +110,7 @@ export default {
   cursor: pointer;
   height: 56px;
   padding-top:1px;
- 
+
   background-color: #FAFAFA;
   border-bottom: 1px solid #E1E1E1;
 }
