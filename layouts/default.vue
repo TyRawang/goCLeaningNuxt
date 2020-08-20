@@ -1,6 +1,7 @@
 <template>
   <div>
     <TheHeader />
+    <TheBreadcrumb />
     <Nuxt />
     <TheFooter />
   </div>
@@ -9,10 +10,28 @@
 <script>
 import TheHeader from '@/components/shared/TheHeader'
 import TheFooter from '@/components/shared/TheFooter'
+import TheBreadcrumb from "@/components/shared/TheBreadcrumb";
 
 export default {
   components: {
+    TheBreadcrumb,
     TheHeader, TheFooter
+  },
+
+  data(){
+    return {
+      loading: {
+        height: '50px'
+      },
+    }
+  },
+
+  mounted() {
+    this.$nextTick(() => {
+      this.$nuxt.$loading.start()
+
+      setTimeout(() => this.$nuxt.$loading.finish(), 500)
+    })
   }
 }
 </script>

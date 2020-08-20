@@ -39,7 +39,7 @@
               <div class="tab-one">
                 <div>
                   <label for="home-type">Home Type</label>
-                  <select name="house-type" v-model="formData.homeType" id="home-type">
+                  <select name="house-type" v-model="formData.homeType1" id="home-type">
                     <option value=""></option>
                     <option value="Bungalow">Bungalow</option>
                     <option value="Two Storey">Two Storey</option>
@@ -51,7 +51,7 @@
                 </div>
                 <div>
                   <label for="bedrooms">Bedrooms</label>
-                  <select name="Bedrooms" v-model="formData.bedrooms" id="bedrooms">
+                  <select name="Bedrooms" v-model="formData.bedrooms1" id="bedrooms">
                     <option value=""></option>
                     <option value="1">1</option>
                     <option value="2">2</option>
@@ -65,7 +65,7 @@
                 </div>
                 <div>
                   <label for="bathrooms">Bathrooms</label>
-                  <select name="Bathrooms" v-model="formData.bathrooms" id="bathrooms">
+                  <select name="Bathrooms" v-model="formData.bathrooms1" id="bathrooms">
                     <option value=""></option>
                     <option value="1">1</option>
                     <option value="1.5">1.5</option>
@@ -102,12 +102,13 @@
                 </div>
               </div>
             </div>
+
             <div v-show="tab === 2" class="tab">
               <h3>Tell Us About Your Home?</h3>
               <div class="tab-one">
                 <div>
                   <label for="people">How Many People Lives In Your House? </label>
-                  <select name="house-typ" v-model="formData.homeType" id="home-type">
+                  <select name="house-typ" v-model="formData.homeType2" id="home-type">
                     <option value=""></option>
                     <option value="1">1</option>
                     <option value="2">2</option>
@@ -119,18 +120,24 @@
                 </div>
                 <div>
                   <label for="how-dirty">How Clean Would You Say Your Home Is?</label>
-                  <select name="Bedrooms" v-model="formData.bedrooms" id="bedrooms">
+                  <select name="Bedrooms" v-model="formData.bedrooms2" id="bedrooms">
                     <option value=""></option>
                     <option value="Really Dirty">Really Dirty</option>
                     <option value="Kind of Diry">Kind of Diry</option>
                     <option value="About Average">About Average</option>
                     <option value="Kind of Clean">Kind of Clean</option>
-                    <option value="Really Clean">Really Clean</option>             
+                    <option value="Really Clean">Really Clean</option>
                   </select>
                 </div>
               </div>
             </div>
+
             <div v-show="tab === 3" class="tab">
+              <input type="date" alt="cleaning date" v-model="formData.cleaningDate">
+              <input type="time" alt="cleaning time" v-model="formData.cleaningTime">
+            </div>
+
+            <div v-show="tab === 4" class="tab">
               <p>
                 <label>Your Name: <input type="text" v-model="formData.customerName" name="name" required/></label>
               </p>
@@ -142,11 +149,15 @@
               </p>
             </div>
 
+            <div class="progress-bar">
+              <div class="progress-bar-filler"  :style="{'width': completedPortion()+'%'}"></div>
+            </div>
+
             <div style="overflow:auto;">
               <div style="float:right;">
                 <button v-show="tab > 0" type="button" id="prevBtn" @click="toPreviousTab">Previous</button>
-                <button v-show="tab < 3" type="button" id="nextBtn" @click="toNextTab">Next</button>
-                <button v-show="tab === 3" type="submit">Submit</button>
+                <button v-show="tab < 4" type="button" id="nextBtn" @click="toNextTab">Next</button>
+                <button v-show="tab === 4" type="submit">Submit</button>
               </div>
             </div>
 
@@ -166,24 +177,30 @@ export default {
       formData: {
         time: '',
         homeType1: '',
+        bedrooms1: '',
+        bathrooms1: '',
         homeType2: '',
+        bedrooms2: '',
+        bathrooms2: '',
         customerName: '',
         customerEmail: '',
-        customerMessage: ''
+        customerMessage: '',
+        cleaningDate: null,
+        cleaningTime: null
       }
     }
   },
 
   methods: {
     toPreviousTab(){
-      if(this.tab > 0 && this.tab <= 3){
+      if(this.tab > 0 && this.tab <= 4){
         this.tab -= 1
       }
     },
 
     toNextTab(){
       if(this.validateForm()){
-        if(this.tab < 3){
+        if(this.tab < 4){
           this.tab += 1
         }
       }
@@ -200,6 +217,9 @@ export default {
       }else if(this.tab === 2  && this.formData.homeType2 === ''){
         valid = false
         this.$toast.error('You need to select a home type please!')
+      }else if(this.tab === 3 && this.formData.cleaningDate === null && this.formData.cleaningTime === null){
+        valid = false
+        this.$toast.error('You have to select date and time for appointment please.')
       }else{
         valid = true
       }
@@ -213,6 +233,20 @@ export default {
         this.$axios.$post(this.$refs.contact.getAttribute('action'), this.formData).then(function (){
           this.$toast.success('submission successful')
         })
+      }
+    },
+
+    completedPortion(){
+      if(this.tab === 1){
+        return 25
+      }else if(this.tab === 2){
+        return 50
+      }else if(this.tab === 3){
+        return 75
+      }else if(this.tab === 4){
+        return 100
+      }else{
+        return 5
       }
     }
   }
@@ -361,22 +395,19 @@ button:hover {
   /* align-items: center; */
   justify-content: space-evenly;
 
-  grid-gap: 1rem; 
-    
+  grid-gap: 1rem;
+
 }
 
 label {
 
   font-size: 1.5rem;
-  font-family: 'Dosis', sans-serif; 
+  font-family: 'Dosis', sans-serif;
   font-weight: bold;
   color: whitesmoke;
   text-align: left;
   display: block;
 }
-
-
-
 
 @media (max-width: 800px) {
 
@@ -389,5 +420,19 @@ label {
   #banner .banner-bg .banner-form form {
     grid-template-columns: repeat(2, 1fr);
   }
+}
+
+.progress-bar {
+  width: 20rem;
+  height: 20px;
+  border: 1px solid dodgerblue;
+  border-radius: 10px;
+}
+
+.progress-bar-filler {
+  background: dodgerblue;
+  height: 18px;
+  border: none;
+  border-radius: 10px;
 }
 </style>
