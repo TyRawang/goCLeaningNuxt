@@ -2,7 +2,7 @@
   <section>
     <TheBlogDetailBanner />
     <div class="clearfix"></div>
-    <TheBlogDetailBody2 :article="article" />
+    <TheBlogDetailBody2 :posts="posts" :article="article" />
 <!--    <nuxt-content :document="article" />-->
     <div class="clearfix"></div>
   </section>
@@ -31,8 +31,9 @@ export default {
 
   async asyncData({ $content, params }) {
     // console.log(params)
+    const posts = await $content('posts').sortBy('createdAt', 'desc').fetch()
     const article = await $content('posts', params.slug).fetch()
-    return { article }
+    return { posts, article }
   },
 }
 </script>
