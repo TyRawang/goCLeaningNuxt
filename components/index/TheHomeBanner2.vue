@@ -14,20 +14,8 @@
 
             <div v-show="tab === 0" class="tab">
               <h3>The Kind Of Service You are Looking for</h3>
-              <div class="tab-zero">
+              <div class="tab-main">
                 <label for="service-house">Residential
-<<<<<<< Updated upstream
-                  <input type="radio" id="service-house" name="service" v-model="formData.service" value="residential">
-                  <img src="~/assets/img/service-type-house.png" height="100rem" alt="">
-                </label>
-                <label for="service-commercial">Commercial
-                  <input type="radio" id="service-commercial" name="service" v-model="formData.service" value="commercial">
-                  <img src="~/assets/img/service-type-apartment.png" height="100rem" alt="">
-                </label>
-                <label for="service-corporate">Corporate
-                  <input type="radio" id="service-corporate" name="service" v-model="formData.service" value="corporate">
-                  <img src="~/assets/img/service-type-corporate.png" height="100rem" alt="">
-=======
                   <input type="radio" id="service-house" name="service" v-model="serviceType" value="residential">
                   <img src="~/assets/img/service-type-house.png"  alt="">
                 </label>
@@ -38,7 +26,6 @@
                 <label for="service-corporate">Corporate
                   <input type="radio" id="service-corporate" name="service" v-model="serviceType" value="carpet-cleaning">
                   <img src="~/assets/img/service-type-corporate.png" alt="">
->>>>>>> Stashed changes
                 </label>
               </div>
             </div>
@@ -143,7 +130,7 @@
               <div class="tab-one">
                 <div>
                   <label for="people">How Many People Lives In Your House? </label>
-                  <select name="house-typ" v-model="formData.homeType2" id="home-type">
+                  <select name="house-type" v-model="formData.homeType2" id="home-type">
                     <option value=""></option>
                     <option value="1">1</option>
                     <option value="2">2</option>
@@ -184,29 +171,20 @@
               </p>
             </div>
 
-<<<<<<< Updated upstream
-            <div v-show="tab===1 && formData.service !== 'residential'" class="tab">
-=======
             <div v-show="tab===1 && serviceType === 'commercial'" class="tab">
->>>>>>> Stashed changes
               <div>
                 <label for="client-name">Name: </label>
-                <input id="client-name" type="text" placeholder="First Name" v-model="clientData.firstName">
-                <input type="text" placeholder="Last Name" v-model="clientData.lastName">
+                <input id="client-name" type="text" placeholder="Full Name" v-model="clientData.firstName">
+                <!-- <input type="text" placeholder="Last Name" v-model="clientData.lastName"> -->
               </div>
 
               <div>
-                <label for="business-org">Business Organization: </label>
-                <input id="business-org" type="text" placeholder="Business Organization" v-model="clientData.org">
+                <label for="business-org">Company Name </label>
+                <input id="business-org" type="text" placeholder="Company Name" v-model="clientData.org">
               </div>
 
               <div>
                 <label for="client-email">Email: </label>
-<<<<<<< Updated upstream
-                <input id="client-email" type="email" placeholder="Email" v-model="clientData.email">
-              </div>
-
-=======
                 <input id="client-email" type="email" placeholder="Email" v-model="clientData.address">
               </div>
               <div>
@@ -296,7 +274,6 @@
                     <option value="6+">6+</option>
                   </select>
                 </div>
->>>>>>> Stashed changes
               <div>
                 <label for="customer-phone">Phone: </label>
                 <input id="customer-phone" type="tel" placeholder="Phone" v-model="clientData.phone">
@@ -307,7 +284,6 @@
                 <textarea id="customer-request" v-model="clientData.request"></textarea>
               </div>
 
-<!--              <button type="button" @click.prevent="submitClientForm">Submit</button>-->
             </div>
 
             <div style="overflow:auto;">
@@ -489,6 +465,19 @@ export default {
   font-size: 1.5rem;
   font-style: italic;
 }
+
+#banner .banner-form .tab-main {
+  display: grid;
+  grid-gap: 1rem;
+  grid-template-columns: repeat(3, minmax(100px, 1fr));
+}
+
+.tab-main img {
+  max-width: 250px;
+  max-height: 250px;
+}
+
+
 
 #banner .banner-form form .tab-zero{
   display: grid;
