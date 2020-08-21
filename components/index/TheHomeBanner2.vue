@@ -5,7 +5,7 @@
       <div class="container">
         <div class="banner-form">
 
-          <div class="progress-bar" v-show="this.formData.service === 'residential'">
+          <div class="progress-bar" v-show="serviceType === 'residential'">
             <div class="progress-bar-filler"  :style="{'width': completedPortion()+'%'}"></div>
           </div>
 
@@ -16,21 +16,21 @@
               <h3>The Kind Of Service You are Looking for</h3>
               <div class="tab-main">
                 <label for="service-house">Residential
-                  <input type="radio" id="service-house" name="service" v-model="formData.service" value="residential">
+                  <input type="radio" id="service-house" name="service" v-model="serviceType" value="residential">
                   <img src="~/assets/img/service-type-house.png"  alt="">
                 </label>
                 <label for="service-commercial">Commercial
-                  <input type="radio" id="service-commercial" name="service" v-model="formData.service" value="commercial">
+                  <input type="radio" id="service-commercial" name="service" v-model="serviceType" value="commercial">
                   <img src="~/assets/img/service-type-apartment.png"  alt="">
                 </label>
                 <label for="service-corporate">Corporate
-                  <input type="radio" id="service-corporate" name="service" v-model="formData.service" value="corporate">
+                  <input type="radio" id="service-corporate" name="service" v-model="serviceType" value="carpet-cleaning">
                   <img src="~/assets/img/service-type-corporate.png" alt="">
                 </label>
               </div>
             </div>
 
-            <div v-show="tab === 1 && formData.service === 'residential'" class="tab">
+            <div v-show="tab === 1 && serviceType === 'residential'" class="tab">
               <h3>How Often Are You Looking To Clean Your House?</h3>
               <div class="tab-zero">
                 <label for="one-time">One Time
@@ -56,7 +56,7 @@
               </div>
             </div>
 
-            <div v-show="tab === 2 && formData.service === 'residential'" class="tab">
+            <div v-show="tab === 2 && serviceType === 'residential'" class="tab">
               <h3>Tell Us About Your Home?</h3>
               <div class="tab-one">
                 <div>
@@ -125,12 +125,12 @@
               </div>
             </div>
 
-            <div v-show="tab === 3 && formData.service === 'residential'" class="tab">
+            <div v-show="tab === 3 && serviceType === 'residential'" class="tab">
               <h3>Tell Us About Your Home?</h3>
               <div class="tab-one">
                 <div>
                   <label for="people">How Many People Lives In Your House? </label>
-                  <select name="house-type" v-model="formData.homeType2" id="home-type">
+                  <select name="house-type" v-model="formData.people" id="people">
                     <option value=""></option>
                     <option value="1">1</option>
                     <option value="2">2</option>
@@ -142,7 +142,7 @@
                 </div>
                 <div>
                   <label for="how-dirty">How Clean Would You Say Your Home Is?</label>
-                  <select name="Bedrooms" v-model="formData.bedrooms2" id="bedrooms">
+                  <select name="Bedrooms" v-model="formData.howDirty" id="how-dirty">
                     <option value=""></option>
                     <option value="Really Dirty">Really Dirty</option>
                     <option value="Kind of Diry">Kind of Diry</option>
@@ -154,12 +154,12 @@
               </div>
             </div>
 
-            <div v-show="tab === 4 && formData.service === 'residential'" class="tab">
+            <div v-show="tab === 4 && serviceType === 'residential'" class="tab">
               <input type="date" alt="cleaning date" v-model="formData.cleaningDate">
               <input type="time" alt="cleaning time" v-model="formData.cleaningTime">
             </div>
 
-            <div v-show="tab === 5 && formData.service === 'residential'" class="tab">
+            <div v-show="tab === 5 && serviceType === 'residential'" class="tab">
               <p>
                 <label>Your Name: <input type="text" v-model="formData.customerName" name="name" required/></label>
               </p>
@@ -171,10 +171,10 @@
               </p>
             </div>
 
-            <div v-show="tab===1 && formData.service === 'commercial'" class="tab">
+            <div v-show="tab===1 && serviceType === 'commercial'" class="tab">
               <div>
                 <label for="client-name">Name: </label>
-                <input id="client-name" type="text" placeholder="Full Name" v-model="clientData.firstName">
+                <input id="client-name" type="text" placeholder="Full Name" v-model="clientData.fullName">
                 <!-- <input type="text" placeholder="Last Name" v-model="clientData.lastName"> -->
               </div>
 
@@ -185,7 +185,7 @@
 
               <div>
                 <label for="client-email">Email: </label>
-                <input id="client-email" type="email" placeholder="Email" v-model="clientData.address">
+                <input id="client-email" type="email" placeholder="Email" v-model="clientData.email">
               </div>
               <div>
                 <label for="client-address">Address: </label>
@@ -193,25 +193,25 @@
               </div>
               <div>
                 <label for="location-type">Location Type</label>
-                <select name="Bedrooms" v-model="formData.bedrooms2" id="bedrooms">
+                <select name="Bedrooms" v-model="formData.bedrooms2" id="location-type">
                   <option value=""></option>
-                  <option value="Really Dirty">Office</option>
-                  <option value="Kind of Diry">Retail</option>
-                  <option value="About Average">Spas &amp; Healthcare</option>
-                  <option value="Kind of Clean">Schools &amp; Daycares</option>
-                  <option value="Really Clean">Dealership</option>
-                  <option value="Really Clean">Church</option>
-                  <option value="Really Clean">Restaurent</option>
-                  <option value="Really Clean">Others</option>
+                  <option value="office">Office</option>
+                  <option value="retail">Retail</option>
+                  <option value="spas-healthcare">Spas &amp; Healthcare</option>
+                  <option value="schools-daycares">Schools &amp; Daycares</option>
+                  <option value="dealership">Dealership</option>
+                  <option value="church">Church</option>
+                  <option value="restaurant">Restaurant</option>
+                  <option value="others">Others</option>
                 </select>
               </div>
               <div>
-                  <label for="size">Size (sqt)</label>
-                  <input type="text" v-model="formData.size" id="size">
+                  <label for="space">Size (sqt)</label>
+                  <input type="text" v-model="formData.size" id="space">
               </div>
               <div>
                   <label for="employees">Number of Employee(s) In The Location? </label>
-                  <select name="house-type" v-model="formData.homeType2" id="home-type">
+                  <select name="employees" v-model="formData.employeeNo" id="employees">
                     <option value=""></option>
                     <option value="1">1</option>
                     <option value="2">2</option>
@@ -234,24 +234,25 @@
 <!--              <button type="button" @click.prevent="submitClientForm">Submit</button>-->
             </div>
 
-            <div v-show="tab===1 && formData.service === 'carpet-cleaning'" class="tab">
+            <div v-show="tab===1 && serviceType === 'carpet-cleaning'" class="tab">
               <div>
-                <label for="client-name">Name: </label>
-                <input id="client-name" type="text" placeholder="Full Name" v-model="clientData.firstName">
+                <label for="customer-name">Name: </label>
+                <input id="customer-name" type="text" placeholder="Full Name" v-model="clientData.fullName">
               </div>
 
+              <div>
+                <label for="customer-email">Email: </label>
+                <input id="customer-email" type="email" placeholder="Email" v-model="clientData.email">
+              </div>
 
               <div>
-                <label for="client-email">Email: </label>
-                <input id="client-email" type="email" placeholder="Email" v-model="clientData.address">
+                <label for="customer-address">Address: </label>
+                <input id="customer-address" type="text" placeholder="Address" v-model="clientData.address">
               </div>
+
               <div>
-                <label for="client-address">Address: </label>
-                <input id="client-address" type="text" placeholder="Address" v-model="clientData.address">
-              </div>
-              <div>
-                <label for="how-dirty">How Clean Would You Say Your Home Is?</label>
-                <select name="Bedrooms" v-model="formData.bedrooms2" id="bedrooms">
+                <label for="dirty-level">How Clean Would You Say Your Home Is?</label>
+                <select name="dirtLevel" v-model="clientData.howDirty" id="dirty-level">
                   <option value=""></option>
                   <option value="Really Dirty">Really Dirty</option>
                   <option value="Kind of Diry">Kind of Diry</option>
@@ -260,30 +261,33 @@
                   <option value="Really Clean">Really Clean</option>
                 </select>
               </div>
+
               <div>
-                  <label for="size">Size (sqt)</label>
-                  <input type="text" v-model="formData.size" id="size">
-              </div>
-              <div>
-                  <label for="employees">Number of People Living in the House? </label>
-                  <select name="house-type" v-model="formData.homeType2" id="home-type">
-                    <option value=""></option>
-                    <option value="1">1</option>
-                    <option value="2">2</option>
-                    <option value="3">3</option>
-                    <option value="4">4</option>
-                    <option value="5">5</option>
-                    <option value="6+">6+</option>
-                  </select>
-                </div>
-              <div>
-                <label for="client-phone">Phone: </label>
-                <input id="client-phone" type="tel" placeholder="Phone" v-model="clientData.phone">
+                  <label for="area">Size (sqt)</label>
+                  <input type="text" v-model="clientData.area" id="area">
               </div>
 
               <div>
-                <label for="client-request">Request: </label>
-                <textarea id="client-request" v-model="clientData.request"></textarea>
+                <label for="residents-no">Number of People Living in the House? </label>
+                <select name="residents" v-model="clientData.residentNo" id="residents-no">
+                  <option value=""></option>
+                  <option value="1">1</option>
+                  <option value="2">2</option>
+                  <option value="3">3</option>
+                  <option value="4">4</option>
+                  <option value="5">5</option>
+                  <option value="6+">6+</option>
+                </select>
+              </div>
+
+              <div>
+                <label for="customer-phone">Phone: </label>
+                <input id="customer-phone" type="tel" placeholder="Phone" v-model="clientData.phone">
+              </div>
+
+              <div>
+                <label for="customer-request">Request: </label>
+                <textarea id="customer-request" v-model="clientData.request"></textarea>
               </div>
 
             </div>
@@ -291,8 +295,8 @@
             <div style="overflow:auto;">
               <div style="float:right;">
                 <button v-show="tab > 0" type="button" id="prevBtn" @click="toPreviousTab">Previous</button>
-                <button v-show="(tab < 5 && formData.service ==='residential') || (formData.service !=='residential' && tab === 0)" type="button" id="nextBtn" @click="toNextTab">Next</button>
-                <button v-show="(tab === 5  && formData.service ==='residential') || (tab===1 && formData.service !=='residential')" type="submit">Submit</button>
+                <button v-show="(tab < 5 && serviceType ==='residential') || (serviceType !=='residential' && tab === 0)" type="button" id="nextBtn" @click="toNextTab">Next</button>
+                <button v-show="(tab === 5  && serviceType ==='residential') || (tab===1 && serviceType !=='residential')" type="submit">Submit</button>
               </div>
             </div>
 
@@ -309,10 +313,11 @@ export default {
   data() {
     return {
       tab: 0,
+      serviceType: '',
       formData: {
-        service: '',
         time: '',
         homeType1: '',
+        people: '',
         bedrooms1: '',
         bathrooms1: '',
         homeType2: '',
@@ -322,12 +327,17 @@ export default {
         customerEmail: '',
         customerMessage: '',
         cleaningDate: null,
-        cleaningTime: null
+        cleaningTime: null,
+        employeeNo:''
       },
       clientData:{
         firstName: '',
         lastName: '',
+        fullName: '',
         org: '',
+        area: '',
+        residentNo: '',
+        howDirty: '',
         email: '',
         phone: '',
         request: ''
@@ -352,10 +362,10 @@ export default {
 
     validateForm(){
       let valid = false
-      if(this.tab === 0  && this.formData.service === ''){
+      if(this.tab === 0  && this.serviceType === ''){
         valid = false
         this.$toast.error('You need to select a service type please!')
-      }else if((this.tab === 1 && this.formData.service !== 'residential') || (this.tab === 1  && this.formData.time === '')){
+      }else if((this.tab === 1 && this.serviceType !== 'residential') || (this.tab === 1  && this.formData.time === '')){
         valid = false
         this.$toast.error('You need to select a frequency please!')
       }else if(this.tab === 2  && this.formData.homeType1 === ''){
@@ -384,7 +394,7 @@ export default {
     },
 
     submitClientForm(){
-      if(this.formData.service === 'residential'){
+      if(this.serviceType === 'residential'){
         if(this.tab > 0){
 
         }
@@ -392,7 +402,7 @@ export default {
     },
 
     completedPortion(){
-      if(this.formData.service === 'residential'){
+      if(this.serviceType === 'residential'){
         if(this.tab === 1){
           return 20
         }else if(this.tab === 2){
