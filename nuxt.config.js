@@ -114,5 +114,10 @@ export default {
     gzip: true,
     generate: false,
     routes: dyRoutes
+  },
+
+  server: {
+    port: 7000, // default: 3000
+    host: 'localhost' // default: localhost
   }
 }
