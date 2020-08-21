@@ -14,18 +14,18 @@
 
             <div v-show="tab === 0" class="tab">
               <h3>The Kind Of Service You are Looking for</h3>
-              <div class="tab-zero">
+              <div class="tab-main">
                 <label for="service-house">Residential
                   <input type="radio" id="service-house" name="service" v-model="formData.service" value="residential">
-                  <img src="~/assets/img/service-type-house.png" height="100rem" alt="">
+                  <img src="~/assets/img/service-type-house.png"  alt="">
                 </label>
                 <label for="service-commercial">Commercial
                   <input type="radio" id="service-commercial" name="service" v-model="formData.service" value="commercial">
-                  <img src="~/assets/img/service-type-apartment.png" height="100rem" alt="">
+                  <img src="~/assets/img/service-type-apartment.png"  alt="">
                 </label>
                 <label for="service-corporate">Corporate
                   <input type="radio" id="service-corporate" name="service" v-model="formData.service" value="corporate">
-                  <img src="~/assets/img/service-type-corporate.png" height="100rem" alt="">
+                  <img src="~/assets/img/service-type-corporate.png" alt="">
                 </label>
               </div>
             </div>
@@ -130,7 +130,7 @@
               <div class="tab-one">
                 <div>
                   <label for="people">How Many People Lives In Your House? </label>
-                  <select name="house-typ" v-model="formData.homeType2" id="home-type">
+                  <select name="house-type" v-model="formData.homeType2" id="home-type">
                     <option value=""></option>
                     <option value="1">1</option>
                     <option value="2">2</option>
@@ -171,23 +171,56 @@
               </p>
             </div>
 
-            <div v-show="tab===1 && formData.service !== 'residential'" class="tab">
+            <div v-show="tab===1 && formData.service === 'commercial'" class="tab">
               <div>
                 <label for="client-name">Name: </label>
-                <input id="client-name" type="text" placeholder="First Name" v-model="clientData.firstName">
-                <input type="text" placeholder="Last Name" v-model="clientData.lastName">
+                <input id="client-name" type="text" placeholder="Full Name" v-model="clientData.firstName">
+                <!-- <input type="text" placeholder="Last Name" v-model="clientData.lastName"> -->
               </div>
 
               <div>
-                <label for="business-org">Business Organization: </label>
-                <input id="business-org" type="text" placeholder="Business Organization" v-model="clientData.org">
+                <label for="business-org">Company Name </label>
+                <input id="business-org" type="text" placeholder="Company Name" v-model="clientData.org">
               </div>
 
               <div>
                 <label for="client-email">Email: </label>
-                <input id="client-email" type="email" placeholder="Email" v-model="clientData.email">
+                <input id="client-email" type="email" placeholder="Email" v-model="clientData.address">
               </div>
-
+              <div>
+                <label for="client-address">Address: </label>
+                <input id="client-address" type="text" placeholder="Address" v-model="clientData.address">
+              </div>
+              <div>
+                <label for="location-type">Location Type</label>
+                <select name="Bedrooms" v-model="formData.bedrooms2" id="bedrooms">
+                  <option value=""></option>
+                  <option value="Really Dirty">Office</option>
+                  <option value="Kind of Diry">Retail</option>
+                  <option value="About Average">Spas &amp; Healthcare</option>
+                  <option value="Kind of Clean">Schools &amp; Daycares</option>
+                  <option value="Really Clean">Dealership</option>
+                  <option value="Really Clean">Church</option>
+                  <option value="Really Clean">Restaurent</option>
+                  <option value="Really Clean">Others</option>
+                </select>
+              </div>
+              <div>
+                  <label for="size">Size (sqt)</label>
+                  <input type="text" v-model="formData.size" id="size">
+              </div>
+              <div>
+                  <label for="employees">Number of Employee(s) In The Location? </label>
+                  <select name="house-type" v-model="formData.homeType2" id="home-type">
+                    <option value=""></option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="6+">6+</option>
+                  </select>
+                </div>
               <div>
                 <label for="client-phone">Phone: </label>
                 <input id="client-phone" type="tel" placeholder="Phone" v-model="clientData.phone">
@@ -199,6 +232,60 @@
               </div>
 
 <!--              <button type="button" @click.prevent="submitClientForm">Submit</button>-->
+            </div>
+
+            <div v-show="tab===1 && formData.service === 'carpet-cleaning'" class="tab">
+              <div>
+                <label for="client-name">Name: </label>
+                <input id="client-name" type="text" placeholder="Full Name" v-model="clientData.firstName">
+              </div>
+
+
+              <div>
+                <label for="client-email">Email: </label>
+                <input id="client-email" type="email" placeholder="Email" v-model="clientData.address">
+              </div>
+              <div>
+                <label for="client-address">Address: </label>
+                <input id="client-address" type="text" placeholder="Address" v-model="clientData.address">
+              </div>
+              <div>
+                <label for="how-dirty">How Clean Would You Say Your Home Is?</label>
+                <select name="Bedrooms" v-model="formData.bedrooms2" id="bedrooms">
+                  <option value=""></option>
+                  <option value="Really Dirty">Really Dirty</option>
+                  <option value="Kind of Diry">Kind of Diry</option>
+                  <option value="About Average">About Average</option>
+                  <option value="Kind of Clean">Kind of Clean</option>
+                  <option value="Really Clean">Really Clean</option>
+                </select>
+              </div>
+              <div>
+                  <label for="size">Size (sqt)</label>
+                  <input type="text" v-model="formData.size" id="size">
+              </div>
+              <div>
+                  <label for="employees">Number of People Living in the House? </label>
+                  <select name="house-type" v-model="formData.homeType2" id="home-type">
+                    <option value=""></option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="6+">6+</option>
+                  </select>
+                </div>
+              <div>
+                <label for="client-phone">Phone: </label>
+                <input id="client-phone" type="tel" placeholder="Phone" v-model="clientData.phone">
+              </div>
+
+              <div>
+                <label for="client-request">Request: </label>
+                <textarea id="client-request" v-model="clientData.request"></textarea>
+              </div>
+
             </div>
 
             <div style="overflow:auto;">
@@ -376,6 +463,19 @@ export default {
   font-size: 1.5rem;
   font-style: italic;
 }
+
+#banner .banner-form .tab-main {
+  display: grid;
+  grid-gap: 1rem;
+  grid-template-columns: repeat(3, minmax(100px, 1fr));
+}
+
+.tab-main img {
+  max-width: 250px;
+  max-height: 250px;
+}
+
+
 
 #banner .banner-form form .tab-zero{
   display: grid;
