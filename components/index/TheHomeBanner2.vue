@@ -499,15 +499,16 @@ label {
 }
 
 .progress-bar {
-  width: 20rem;
-  height: 20px;
+  width: 100%;
+  height: 30px;
   border: 1px solid dodgerblue;
   border-radius: 10px;
+  margin-bottom: 20px;
 }
 
 .progress-bar-filler {
   background: dodgerblue;
-  height: 18px;
+  height: 28px;
   border: none;
   border-radius: 10px;
 }
