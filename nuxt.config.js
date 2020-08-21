@@ -47,7 +47,7 @@ export default {
   */
   plugins: [
     '~/plugins/carousel.js',
-    '~/plugins/faq-accordion.js'
+    '~/plugins/faq-accordion.js',
   ],
   /*
   ** Auto import components

@@ -14,17 +14,7 @@
       </div>
     </div>
 
-<!--    <ThePagination :allPosts="this.posts"></ThePagination>-->
-    <paginate
-      :page-count="20"
-      :page-range="3"
-      :margin-pages="2"
-      :click-handler="goToPageNumber(page)"
-      :prev-text="'Prev'"
-      :next-text="'Next'"
-      :container-class="'pagination'"
-      :page-class="'page-item'"
-    ></paginate>
+    <ThePagination :allPosts="this.posts"></ThePagination>
   </section>
 </template>
 
@@ -45,7 +35,6 @@ export default {
       postsPerPage: 9,
       postsInCurrentPage: [],
       currentPage: 1,
-      page: 1
     }
   },
 
