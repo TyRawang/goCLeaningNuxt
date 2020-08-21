@@ -21,7 +21,7 @@
                 <div>
                     <h3>RECENT POSTS</h3>
                     <ul>
-                      <li v-for="(rp, index) in recentPosts()" :key="index">{{rp.title}}</li>
+                      <li v-for="(rp, index) in recentPosts()" :key="index"><nuxt-link :to="'/blog/' + rp.slug">{{rp.title}}</nuxt-link></li>
                     </ul>
                 </div>
 

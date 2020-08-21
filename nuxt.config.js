@@ -46,7 +46,8 @@ export default {
   ** https://nuxtjs.org/guide/plugins
   */
   plugins: [
-    '~/plugins/carousel.js'
+    '~/plugins/carousel.js',
+    '~/plugins/faq-accordion.js',
   ],
   /*
   ** Auto import components
