@@ -18,19 +18,10 @@
                 </div>
             </div>
             <div>
-                <div>
-                    <h3>RECENT POSTS</h3>
-                    <ul>
-                      <li v-for="(rp, index) in recentPosts()" :key="index"><nuxt-link :to="'/blog/' + rp.slug">{{rp.title}}</nuxt-link></li>
-                    </ul>
-                </div>
+              <TheRecentPosts :recentPosts="recentPosts()" />
 
-                <div>
-                  <h3>CATEGORIES</h3>
-                  <ul>
-                    <li v-for="cat in categories" :key="cat.id">{{cat.name}}</li>
-                  </ul>
-                </div>
+                <TheCategories :categories="categories" />
+
                 <div class="share-this-blog">
                     <h3>Share This Blog</h3>
                     <span>
@@ -55,9 +46,11 @@
 </template>
 
 <script>
+import TheRecentPosts from "@/components/blog/TheRecentPosts";
+import TheCategories from "@/components/blog/TheCategories";
 export default {
   name: "TheBlogDetailBody2",
-
+  components: {TheCategories, TheRecentPosts},
   props: {
     posts:{
       type:Array,
@@ -71,7 +64,7 @@ export default {
 
   data(){
     return {
-      recent: 6,
+      recent: 3,
       categories: [
         {id:1, name: 'Cleaning'},
         {id:2, name: 'Commercial'},
@@ -90,7 +83,7 @@ export default {
 
     recentPosts(){
       let posts = []
-      for(let i=0; i<=this.recent; i++){
+      for(let i=0; i < this.recent; i++){
         if(this.posts[i]){
           posts.push(this.posts[i])
         }

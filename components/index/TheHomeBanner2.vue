@@ -130,7 +130,7 @@
               <div class="tab-one">
                 <div>
                   <label for="people">How Many People Lives In Your House? </label>
-                  <select name="house-type" v-model="formData.people" id="people">
+                  <select name="people" v-model="formData.people" id="people">
                     <option value=""></option>
                     <option value="1">1</option>
                     <option value="2">2</option>
@@ -142,7 +142,7 @@
                 </div>
                 <div>
                   <label for="how-dirty">How Clean Would You Say Your Home Is?</label>
-                  <select name="Bedrooms" v-model="formData.howDirty" id="how-dirty">
+                  <select name="how-dirty" v-model="formData.howDirty" id="how-dirty">
                     <option value=""></option>
                     <option value="Really Dirty">Really Dirty</option>
                     <option value="Kind of Diry">Kind of Diry</option>
@@ -155,8 +155,20 @@
             </div>
 
             <div v-show="tab === 4 && serviceType === 'residential'" class="tab">
-              <input type="date" alt="cleaning date" v-model="formData.cleaningDate">
-              <input type="time" alt="cleaning time" v-model="formData.cleaningTime">
+              <DatePicker
+                v-model="formData.cleaningDate"
+                :default-value="new Date()"
+                :disabled-date="notBeforeToday"
+              />
+
+              <DatePicker
+                v-model="formData.cleaningTime"
+                value-type="format"
+                type="time"
+                placeholder="HH:mm:ss"
+                :default-value="new Date().setHours(9, 0, 0, 0)"
+                :disabled-time="notBeforeNineOClock"
+              />
             </div>
 
             <div v-show="tab === 5 && serviceType === 'residential'" class="tab">
@@ -328,7 +340,8 @@ export default {
         customerMessage: '',
         cleaningDate: null,
         cleaningTime: null,
-        employeeNo:''
+        employeeNo:'',
+        howDirty: ''
       },
       clientData:{
         firstName: '',
@@ -347,7 +360,7 @@ export default {
 
   methods: {
     toPreviousTab(){
-      if(this.tab > 0 && this.tab <= 4){
+      if(this.tab > 0 && this.tab <= 5){
         this.tab -= 1
       }
     },
@@ -371,9 +384,9 @@ export default {
       }else if(this.tab === 2  && this.formData.homeType1 === ''){
         valid = false
         this.$toast.error('You need to select a home type please!')
-      }else if(this.tab === 3  && this.formData.homeType2 === ''){
+      }else if(this.tab === 3  && this.formData.howDirty === ''){
         valid = false
-        this.$toast.error('You need to select a home type please!')
+        this.$toast.error('You need to select a dirty level!')
       }else if(this.tab === 4 && this.formData.cleaningDate === null && this.formData.cleaningTime === null){
         valid = false
         this.$toast.error('You have to select date and time for appointment please.')
@@ -421,7 +434,14 @@ export default {
           return 50
         }
       }
-    }
+    },
+
+    notBeforeNineOClock(date) {
+      return date.getHours() < 9;
+    },
+    notBeforeToday(date) {
+      return date < new Date(new Date().setHours(24, 0, 0, 0));
+    },
   }
 }
 </script>
@@ -586,7 +606,6 @@ button:hover {
 }
 
 label {
-
   font-size: 1.5rem;
   font-family: 'Dosis', sans-serif;
   font-weight: bold;
@@ -621,5 +640,13 @@ label {
   height: 28px;
   border: none;
   border-radius: 10px;
+}
+
+.mx-datepicker > input[type="text"] {
+  width: 200px;
+}
+
+.banner-form > div > button {
+  outline: none;
 }
 </style>

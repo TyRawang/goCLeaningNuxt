@@ -14,7 +14,14 @@
       </div>
     </div>
 
-    <ThePagination :allPosts="this.posts"></ThePagination>
+    <ThePagination
+      :total-pages="totalPages()"
+      :total="113"
+      :per-page="9"
+      :current-page="currentPage"
+      @pagechanged="onPageChange"
+    />
+<!--    <jw-pagination :items="posts" @changePage="goToPageNumber"></jw-pagination>-->
   </section>
 </template>
 
@@ -32,9 +39,8 @@ export default {
 
   data(){
     return {
-      postsPerPage: 9,
-      postsInCurrentPage: [],
       currentPage: 1,
+      postsPerPage: 9
     }
   },
 
@@ -49,6 +55,10 @@ export default {
     formatDate(date) {
       const options = {year: 'numeric', month: 'long', day: 'numeric'}
       return new Date(date).toLocaleDateString('en', options)
+    },
+
+    totalPages() {
+      return Math.ceil(this.posts.length / this.postsPerPage)
     },
 
     goToPageNumber(pageNo){
@@ -76,8 +86,10 @@ export default {
       }
     },
 
-
-
+    onPageChange(page) {
+      // console.log(page)
+      this.currentPage = page;
+    }
   },
 }
 </script>

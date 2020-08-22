@@ -39,7 +39,8 @@ export default {
   css: [
     '~/assets/css/styles.css',
     'vue-slick-carousel/dist/vue-slick-carousel.css',
-    'vue-slick-carousel/dist/vue-slick-carousel-theme.css'
+    'vue-slick-carousel/dist/vue-slick-carousel-theme.css',
+    'vue2-datepicker/index.css'
   ],
   /*
   ** Plugins to load before mounting the App
@@ -48,6 +49,7 @@ export default {
   plugins: [
     '~/plugins/carousel.js',
     '~/plugins/faq-accordion.js',
+    '~/plugins/datepicker.js'
   ],
   /*
   ** Auto import components

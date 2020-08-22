@@ -1,18 +1,67 @@
 <template>
-  <div class="container pagination-area">
-    <button v-show="currentPage<3 || currentPage >= totalPages()-2" @click="goToPage(1)" :class="currentPage===activePage?'active-page':''">1</button>
-    <button v-show="currentPage>=4 || currentPage >= totalPages()-2">...</button>
-    <button v-show="currentPage<=2" @click="goToPage(2)" :class="currentPage===activePage?'active-page':''">2</button>
-    <button v-show="currentPage<=2 || currentPage === 3 && totalPages()-2 !== 3" @click="goToPage(3)" :class="currentPage===activePage?'active-page':''">3</button>
+  <div class="pagination-area">
+    <ul class="pagination">
+      <li
+        class="pagination-item"
+      >
+        <button
+          type="button"
+          @click="onClickFirstPage"
+          :disabled="isInFirstPage"
+          aria-label="Go to first page"
+        >
+          First
+        </button>
+      </li>
 
-    <button v-show="currentPage-3>=1 && currentPage+3 < totalPages()-2" @click="goToPage(currentPage)" :class="currentPage===activePage?'active-page':''">{{currentPage}}</button>
-    <button v-show="currentPage >= totalPages()-2" @click="goToPage(totalPages()-2)" :class="currentPage===activePage?'active-page':''">{{totalPages()-2}}</button>
-    <button v-show="currentPage >= totalPages()-2" @click="goToPage(totalPages()-1)" :class="currentPage===activePage?'active-page':''">{{totalPages()-1}}</button>
-    <button v-show="currentPage <= totalPages()-3">...</button>
-    <button @click="goToPage(totalPages())" :class="currentPage===activePage?'active-page':''">{{totalPages()}}</button>
-<!--    <button v-for="(item, index) in totalPages()" :key="index" :class="(index+1) === currentPage?'active-page':''" @click="goToPage(index+1)" >{{index + 1}}</button>-->
+      <li
+        class="pagination-item"
+      >
+        <button
+          type="button"
+          @click="onClickPreviousPage"
+          :disabled="isInFirstPage"
+          aria-label="Go to previous page"
+        >
+          Previous
+        </button>
+      </li>
 
-    <div class="clearfix"></div>
+      <li v-for="(page, index) in pages" :key="index" class="pagination-item">
+        <button
+          type="button"
+          @click="onClickPage(page.name)"
+          :disabled="page.isDisabled"
+          :class="{ active: isPageActive(page.name) }"
+          :aria-label="`Go to page number ${page.name}`"
+
+        >
+          {{ page.name }}
+        </button>
+      </li>
+
+      <li class="pagination-item">
+        <button
+          type="button"
+          @click="onClickNextPage"
+          :disabled="isInLastPage"
+          aria-label="Go to next page"
+        >
+          Next
+        </button>
+      </li>
+
+      <li class="pagination-item">
+        <button
+          type="button"
+          @click="onClickLastPage"
+          :disabled="isInLastPage"
+          aria-label="Go to last page"
+        >
+          Last
+        </button>
+      </li>
+    </ul>
   </div>
 </template>
 
@@ -20,50 +69,89 @@
 export default {
   name: "ThePagination",
   props: {
-    allPosts: {
-      type: Array,
+    maxVisibleButtons: {
+      type: Number,
+      required: false,
+      default: 5
+    },
+    totalPages: {
+      type: Number,
       required: true
-    }
+    },
+    total: {
+      type: Number,
+      required: true
+    },
+    perPage: {
+      type: Number,
+      required: true
+    },
+    currentPage: {
+      type: Number,
+      required: true
+    },
   },
 
-  data(){
-    return {
-      postsPerPage: 9,
-      postsInCurrentPage: [],
-      currentPage: 1,
-      activePage: null
-    }
+  computed: {
+    startPage() {
+      if (this.currentPage === 1) {
+        return 1;
+      }
+
+      if (this.currentPage === this.totalPages) {
+        return this.totalPages - this.maxVisibleButtons + 1;
+      }
+
+      return this.currentPage - 1;
+    },
+    endPage() {
+      return Math.min(this.startPage + this.maxVisibleButtons - 1, this.totalPages);
+    },
+
+    pages() {
+      const range = [];
+
+      for (let i = this.startPage; i <= this.endPage; i+= 1 ) {
+        range.push({
+          name: i,
+          isDisabled: i === this.currentPage
+        });
+      }
+
+      return range;
+    },
+
+    isInFirstPage() {
+      return this.currentPage === 1;
+    },
+    isInLastPage() {
+      return this.currentPage === this.totalPages;
+    },
   },
 
   mounted() {
-    console.log('paginate')
-    console.log(this.allPosts)
   },
 
   methods: {
-    totalPages() {
-      return Math.ceil(this.allPosts.length / this.postsPerPage)
-    },
 
-    goToPage(pageNo){
-      this.currentPage = pageNo
-      this.activePage = pageNo
-      this.$root.$emit('pageNoClicked', pageNo)
+    onClickFirstPage() {
+      this.$emit('pagechanged', 1);
     },
-
-    // goToPreviousPage() {
-    //   if (this.currentPage > 1) {
-    //     this.currentPage -= 1
-    //     this.postsForCurrentPage()
-    //   }
-    // },
-    //
-    // goToNextPage() {
-    //   if (this.currentPage < this.totalPages()) {
-    //     this.currentPage += 1
-    //     this.postsForCurrentPage()
-    //   }
-    // }
+    onClickPreviousPage() {
+      this.$emit('pagechanged', this.currentPage - 1);
+    },
+    onClickPage(page) {
+      this.$emit('pagechanged', page);
+    },
+    onClickNextPage() {
+      this.$emit('pagechanged', this.currentPage + 1);
+    },
+    onClickLastPage() {
+      this.$emit('pagechanged', this.totalPages);
+    },
+    isPageActive(page) {
+      return this.currentPage === page;
+    },
   }
 }
 </script>
@@ -73,50 +161,29 @@ export default {
   margin-top: 1%;
 }
 
-.previous-page, .current-page, .next-page {
-  display: block;
-  width: 31%;
-  float: left;
+.pagination {
+  list-style-type: none;
 }
 
-.current-page {
-  text-align: center;
-  margin: 0 3%;
-  padding: 1rem 0;
+.pagination-item {
+  display: inline-block;
 }
 
-.previous-page .button, .next-page .button {
-  background: none;
-  border: 2px solid gray;
-  border-radius: 10px;
-  color: black;
-  padding: .75rem 2rem;
+.active {
+  background-color: #4AAE9B;
+  color: #ffffff;
 }
 
-.previous-page .button:hover, .next-page .button:hover {
-  background: none;
-  border: 2px solid darkseagreen;
-  border-radius: 10px;
-  box-shadow: 0 0 6px darkseagreen;
-  cursor: pointer;
+.pagination-item button {
+  margin: 0 5px;
 }
 
-.previous-page .button {
+.pagination-item button:first-child {
   margin-left: 0;
 }
 
-.next-page .button {
-  float: right;
-  margin-left: 0;
-}
-
-.pagination-area button {
-  margin-right: 5px;
-  outline: none;
-}
-
-.active-page {
-  background: dodgerblue;
+.pagination-item button:last-child {
+  margin-right: 0;
 }
 
 </style>
