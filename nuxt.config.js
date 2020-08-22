@@ -114,5 +114,9 @@ export default {
     gzip: true,
     generate: false,
     routes: dyRoutes
+  },
+
+  generate: {
+    fallback: true
   }
 }
