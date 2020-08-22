@@ -161,14 +161,17 @@
                 :disabled-date="notBeforeToday"
               />
 
-              <DatePicker
+              <date-picker
                 v-model="formData.cleaningTime"
-                value-type="format"
+                :time-picker-options="{
+                  start: '08:30',
+                  step: '00:15',
+                  end: '18:30',
+                }"
+                format="hh:mm a"
                 type="time"
-                placeholder="HH:mm:ss"
-                :default-value="new Date().setHours(9, 0, 0, 0)"
-                :disabled-time="notBeforeNineOClock"
-              />
+                placeholder="hh:mm a"
+              ></date-picker>
             </div>
 
             <div v-show="tab === 5 && serviceType === 'residential'" class="tab">
@@ -354,6 +357,9 @@ export default {
         email: '',
         phone: '',
         request: ''
+      },
+      timePickerOptions: {
+        start: '09:00', step:'00:15' , end: '12:00', format: 'hh:mm:A'
       }
     }
   },
