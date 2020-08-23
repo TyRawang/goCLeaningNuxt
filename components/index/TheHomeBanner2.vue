@@ -6,25 +6,26 @@
         <div class="banner-form">
 
           <div class="progress-bar" v-show="serviceType === 'residential'">
-            <div class="progress-bar-filler"  :style="{'width': completedPortion()+'%'}"></div>
+            <div class="progress-bar-filler" :style="{'width': completedPortion()+'%'}"></div>
           </div>
 
           <form name="contactus" action="/thanks" method="post" netlify netlify-honeypot="bot-field">
-           <input type="hidden" name="form-name" value="contactus" />
+            <input type="hidden" name="form-name" value="contactus"/>
 
             <div v-show="tab === 0" class="tab">
               <h3>The Kind Of Service You are Looking for</h3>
               <div class="tab-main">
                 <label for="service-house">Residential
                   <input type="radio" id="service-house" name="service" v-model="serviceType" value="residential">
-                  <img src="~/assets/img/service-type-house.png"  alt="">
+                  <img src="~/assets/img/service-type-house.png" alt="">
                 </label>
                 <label for="service-commercial">Commercial
                   <input type="radio" id="service-commercial" name="service" v-model="serviceType" value="commercial">
-                  <img src="~/assets/img/service-type-apartment.png"  alt="">
+                  <img src="~/assets/img/service-type-apartment.png" alt="">
                 </label>
                 <label for="service-corporate">Corporate
-                  <input type="radio" id="service-corporate" name="service" v-model="serviceType" value="carpet-cleaning">
+                  <input type="radio" id="service-corporate" name="service" v-model="serviceType"
+                         value="carpet-cleaning">
                   <img src="~/assets/img/service-type-corporate.png" alt="">
                 </label>
               </div>
@@ -106,7 +107,7 @@
                 </div>
                 <div>
                   <label for="levels">Levels</label>
-                <select name="levels" v-model="formData.levels" id="levels">
+                  <select name="levels" v-model="formData.levels" id="levels">
                     <option value=""></option>
                     <option value="1">1</option>
                     <option value="2">2</option>
@@ -116,7 +117,7 @@
                 </div>
                 <div>
                   <label for="pets">Pet(s)</label>
-                <select name="pets" v-model="formData.pets" id="pets">
+                  <select name="pets" v-model="formData.pets" id="pets">
                     <option value=""></option>
                     <option value="yes">Yes</option>
                     <option value="no">No</option>
@@ -155,163 +156,182 @@
             </div>
 
             <div v-show="tab === 4 && serviceType === 'residential'" class="tab">
-              <DatePicker
-                v-model="formData.cleaningDate"
-                :default-value="new Date()"
-                :disabled-date="notBeforeToday"
-              />
+              <h3>Please Pick a Date and Time *</h3>
+              <div class="tab-one">
+                <div>
+                  <DatePicker
+                    v-model="formData.cleaningDate"
+                    :default-value="new Date()"
+                    :disabled-date="notBeforeToday"
+                  />
+                </div>
 
-              <date-picker
-                v-model="formData.cleaningTime"
-                :time-picker-options="{
-                  start: '08:30',
-                  step: '00:15',
-                  end: '18:30',
-                }"
-                format="hh:mm a"
-                type="time"
-                placeholder="hh:mm a"
-              ></date-picker>
+                <div>
+                  <date-picker
+                    v-model="formData.cleaningTime"
+                    :time-picker-options="{
+                      start: '08:30',
+                      step: '00:15',
+                      end: '18:30',
+                    }"
+                    format="hh:mm a"
+                    type="time"
+                    placeholder="hh:mm a"
+                  ></date-picker>
+                </div>
+              </div>
             </div>
 
             <div v-show="tab === 5 && serviceType === 'residential'" class="tab">
-              <p>
-                <label>Your Name: <input type="text" v-model="formData.customerName" name="name" required/></label>
-              </p>
-              <p>
-                <label>Your Email: <input type="email" name="email" v-model="formData.customerEmail" required/></label>
-              </p>
-              <p>
-                <label>Message: <textarea name="message" v-model="formData.customerMessage"></textarea></label>
-              </p>
+              <div class="tab-one"></div>
             </div>
 
             <div v-show="tab===1 && serviceType === 'commercial'" class="tab">
-              <div>
-                <label for="client-name">Name: </label>
-                <input id="client-name" type="text" placeholder="Full Name" v-model="clientData.fullName">
-                <!-- <input type="text" placeholder="Last Name" v-model="clientData.lastName"> -->
-              </div>
+              <div class="tab-one">
+                <div>
+                  <div>
+                    <label for="client-name">Name: </label>
+                    <input id="client-name" type="text" placeholder="Full Name" v-model="clientData.fullName">
+                    <!-- <input type="text" placeholder="Last Name" v-model="clientData.lastName"> -->
+                  </div>
 
-              <div>
-                <label for="business-org">Company Name </label>
-                <input id="business-org" type="text" placeholder="Company Name" v-model="clientData.org">
-              </div>
+                  <div>
+                    <label for="business-org">Company Name </label>
+                    <input id="business-org" type="text" placeholder="Company Name" v-model="clientData.org">
+                  </div>
 
-              <div>
-                <label for="client-email">Email: </label>
-                <input id="client-email" type="email" placeholder="Email" v-model="clientData.email">
-              </div>
-              <div>
-                <label for="client-address">Address: </label>
-                <input id="client-address" type="text" placeholder="Address" v-model="clientData.address">
-              </div>
-              <div>
-                <label for="location-type">Location Type</label>
-                <select name="Bedrooms" v-model="formData.bedrooms2" id="location-type">
-                  <option value=""></option>
-                  <option value="office">Office</option>
-                  <option value="retail">Retail</option>
-                  <option value="spas-healthcare">Spas &amp; Healthcare</option>
-                  <option value="schools-daycares">Schools &amp; Daycares</option>
-                  <option value="dealership">Dealership</option>
-                  <option value="church">Church</option>
-                  <option value="restaurant">Restaurant</option>
-                  <option value="others">Others</option>
-                </select>
-              </div>
-              <div>
-                  <label for="space">Size (sqt)</label>
-                  <input type="text" v-model="formData.size" id="space">
-              </div>
-              <div>
-                  <label for="employees">Number of Employee(s) In The Location? </label>
-                  <select name="employees" v-model="formData.employeeNo" id="employees">
-                    <option value=""></option>
-                    <option value="1">1</option>
-                    <option value="2">2</option>
-                    <option value="3">3</option>
-                    <option value="4">4</option>
-                    <option value="5">5</option>
-                    <option value="6+">6+</option>
-                  </select>
+                  <div>
+                    <label for="client-email">Email: </label>
+                    <input id="client-email" type="email" placeholder="Email" v-model="clientData.email">
+                  </div>
+
+                  <div>
+                    <label for="client-address">Address: </label>
+                    <input id="client-address" type="text" placeholder="Address" v-model="clientData.address">
+                  </div>
+
+                  <div>
+                    <label for="location-type">Location Type</label>
+                    <select name="Bedrooms" v-model="formData.bedrooms2" id="location-type">
+                      <option value=""></option>
+                      <option value="office">Office</option>
+                      <option value="retail">Retail</option>
+                      <option value="spas-healthcare">Spas &amp; Healthcare</option>
+                      <option value="schools-daycares">Schools &amp; Daycares</option>
+                      <option value="dealership">Dealership</option>
+                      <option value="church">Church</option>
+                      <option value="restaurant">Restaurant</option>
+                      <option value="others">Others</option>
+                    </select>
+                  </div>
                 </div>
-              <div>
-                <label for="client-phone">Phone: </label>
-                <input id="client-phone" type="tel" placeholder="Phone" v-model="clientData.phone">
-              </div>
 
-              <div>
-                <label for="client-request">Request: </label>
-                <textarea id="client-request" v-model="clientData.request"></textarea>
-              </div>
+                <div>
+                  <div>
+                    <label for="space">Size (sqt)</label>
+                    <input type="text" v-model="formData.size" id="space">
+                  </div>
 
-<!--              <button type="button" @click.prevent="submitClientForm">Submit</button>-->
+                  <div>
+                    <label for="employees">Number of Employee(s) In The Location? </label>
+                    <select name="employees" v-model="formData.employeeNo" id="employees">
+                      <option value=""></option>
+                      <option value="1">1</option>
+                      <option value="2">2</option>
+                      <option value="3">3</option>
+                      <option value="4">4</option>
+                      <option value="5">5</option>
+                      <option value="6+">6+</option>
+                    </select>
+                  </div>
+
+                  <div>
+                    <label for="client-phone">Phone: </label>
+                    <input id="client-phone" type="tel" placeholder="Phone" v-model="clientData.phone">
+                  </div>
+
+                  <div>
+                    <label for="client-request">Request: </label>
+                    <textarea id="client-request" v-model="clientData.request"></textarea>
+                  </div>
+                </div>
+              </div>
             </div>
 
             <div v-show="tab===1 && serviceType === 'carpet-cleaning'" class="tab">
-              <div>
-                <label for="customer-name">Name: </label>
-                <input id="customer-name" type="text" placeholder="Full Name" v-model="clientData.fullName">
-              </div>
+              <div class="tab-one">
+                <div>
+                  <div>
+                    <label for="customer-name">Name: </label>
+                    <input id="customer-name" type="text" placeholder="Full Name" v-model="clientData.fullName">
+                  </div>
 
-              <div>
-                <label for="customer-email">Email: </label>
-                <input id="customer-email" type="email" placeholder="Email" v-model="clientData.email">
-              </div>
+                  <div>
+                    <label for="customer-email">Email: </label>
+                    <input id="customer-email" type="email" placeholder="Email" v-model="clientData.email">
+                  </div>
 
-              <div>
-                <label for="customer-address">Address: </label>
-                <input id="customer-address" type="text" placeholder="Address" v-model="clientData.address">
-              </div>
+                  <div>
+                    <label for="customer-address">Address: </label>
+                    <input id="customer-address" type="text" placeholder="Address" v-model="clientData.address">
+                  </div>
 
-              <div>
-                <label for="dirty-level">How Clean Would You Say Your Home Is?</label>
-                <select name="dirtLevel" v-model="clientData.howDirty" id="dirty-level">
-                  <option value=""></option>
-                  <option value="Really Dirty">Really Dirty</option>
-                  <option value="Kind of Diry">Kind of Diry</option>
-                  <option value="About Average">About Average</option>
-                  <option value="Kind of Clean">Kind of Clean</option>
-                  <option value="Really Clean">Really Clean</option>
-                </select>
-              </div>
+                  <div>
+                    <label for="dirty-level">How Clean Would You Say Your Home Is?</label>
+                    <select name="dirtLevel" v-model="clientData.howDirty" id="dirty-level">
+                      <option value=""></option>
+                      <option value="Really Dirty">Really Dirty</option>
+                      <option value="Kind of Diry">Kind of Diry</option>
+                      <option value="About Average">About Average</option>
+                      <option value="Kind of Clean">Kind of Clean</option>
+                      <option value="Really Clean">Really Clean</option>
+                    </select>
+                  </div>
+                </div>
 
-              <div>
-                  <label for="area">Size (sqt)</label>
-                  <input type="text" v-model="clientData.area" id="area">
-              </div>
+                <div>
+                  <div>
+                    <label for="area">Size (sqt)</label>
+                    <input type="text" v-model="clientData.area" id="area">
+                  </div>
 
-              <div>
-                <label for="residents-no">Number of People Living in the House? </label>
-                <select name="residents" v-model="clientData.residentNo" id="residents-no">
-                  <option value=""></option>
-                  <option value="1">1</option>
-                  <option value="2">2</option>
-                  <option value="3">3</option>
-                  <option value="4">4</option>
-                  <option value="5">5</option>
-                  <option value="6+">6+</option>
-                </select>
-              </div>
+                  <div>
+                    <label for="residents-no">Number of People Living in the House? </label>
+                    <select name="residents" v-model="clientData.residentNo" id="residents-no">
+                      <option value=""></option>
+                      <option value="1">1</option>
+                      <option value="2">2</option>
+                      <option value="3">3</option>
+                      <option value="4">4</option>
+                      <option value="5">5</option>
+                      <option value="6+">6+</option>
+                    </select>
+                  </div>
 
-              <div>
-                <label for="customer-phone">Phone: </label>
-                <input id="customer-phone" type="tel" placeholder="Phone" v-model="clientData.phone">
-              </div>
+                  <div>
+                    <label for="customer-phone">Phone: </label>
+                    <input id="customer-phone" type="tel" placeholder="Phone" v-model="clientData.phone">
+                  </div>
 
-              <div>
-                <label for="customer-request">Request: </label>
-                <textarea id="customer-request" v-model="clientData.request"></textarea>
+                  <div>
+                    <label for="customer-request">Request: </label>
+                    <textarea id="customer-request" v-model="clientData.request"></textarea>
+                  </div>
+                </div>
               </div>
-
             </div>
 
             <div style="overflow:auto;">
               <div style="float:right;">
                 <button v-show="tab > 0" type="button" id="prevBtn" @click="toPreviousTab">Previous</button>
-                <button v-show="(tab < 5 && serviceType ==='residential') || (serviceType !=='residential' && tab === 0)" type="button" id="nextBtn" @click="toNextTab">Next</button>
-                <button v-show="(tab === 5  && serviceType ==='residential') || (tab===1 && serviceType !=='residential')" type="submit">Submit</button>
+                <button
+                  v-show="(tab < 5 && serviceType ==='residential') || (serviceType !=='residential' && tab === 0)"
+                  type="button" id="nextBtn" @click="toNextTab">Next
+                </button>
+                <button
+                  v-show="(tab === 5  && serviceType ==='residential') || (tab===1 && serviceType !=='residential')"
+                  type="submit">Submit
+                </button>
               </div>
             </div>
 
@@ -343,10 +363,10 @@ export default {
         customerMessage: '',
         cleaningDate: null,
         cleaningTime: null,
-        employeeNo:'',
+        employeeNo: '',
         howDirty: ''
       },
-      clientData:{
+      clientData: {
         firstName: '',
         lastName: '',
         fullName: '',
@@ -359,84 +379,84 @@ export default {
         request: ''
       },
       timePickerOptions: {
-        start: '09:00', step:'00:15' , end: '12:00', format: 'hh:mm:A'
+        start: '09:00', step: '00:15', end: '12:00', format: 'hh:mm:A'
       }
     }
   },
 
   methods: {
-    toPreviousTab(){
-      if(this.tab > 0 && this.tab <= 5){
+    toPreviousTab() {
+      if (this.tab > 0 && this.tab <= 5) {
         this.tab -= 1
       }
     },
 
-    toNextTab(){
-      if(this.validateForm()){
-        if(this.tab < 5){
+    toNextTab() {
+      if (this.validateForm()) {
+        if (this.tab < 5) {
           this.tab += 1
         }
       }
     },
 
-    validateForm(){
+    validateForm() {
       let valid = false
-      if(this.tab === 0  && this.serviceType === ''){
+      if (this.tab === 0 && this.serviceType === '') {
         valid = false
         this.$toast.error('You need to select a service type please!')
-      }else if((this.tab === 1 && this.serviceType !== 'residential') || (this.tab === 1  && this.formData.time === '')){
+      } else if ((this.tab === 1 && this.serviceType !== 'residential') || (this.tab === 1 && this.formData.time === '')) {
         valid = false
         this.$toast.error('You need to select a frequency please!')
-      }else if(this.tab === 2  && this.formData.homeType1 === ''){
+      } else if (this.tab === 2 && this.formData.homeType1 === '') {
         valid = false
         this.$toast.error('You need to select a home type please!')
-      }else if(this.tab === 3  && this.formData.howDirty === ''){
+      } else if (this.tab === 3 && this.formData.howDirty === '') {
         valid = false
         this.$toast.error('You need to select a dirty level!')
-      }else if(this.tab === 4 && this.formData.cleaningDate === null && this.formData.cleaningTime === null){
+      } else if (this.tab === 4 && this.formData.cleaningDate === null && this.formData.cleaningTime === null) {
         valid = false
         this.$toast.error('You have to select date and time for appointment please.')
-      }else{
+      } else {
         valid = true
       }
       return valid;
     },
 
-    submitForm(){
-      if(this.homeType2 === ''){
+    submitForm() {
+      if (this.homeType2 === '') {
         this.$toast.error('Submission failed. please select home type 2!')
-      }else{
-        this.$axios.$post(this.$refs.contact.getAttribute('action'), this.formData).then(function (){
+      } else {
+        this.$axios.$post(this.$refs.contact.getAttribute('action'), this.formData).then(function () {
           this.$toast.success('submission successful')
         })
       }
     },
 
-    submitClientForm(){
-      if(this.serviceType === 'residential'){
-        if(this.tab > 0){
+    submitClientForm() {
+      if (this.serviceType === 'residential') {
+        if (this.tab > 0) {
 
         }
       }
     },
 
-    completedPortion(){
-      if(this.serviceType === 'residential'){
-        if(this.tab === 1){
+    completedPortion() {
+      if (this.serviceType === 'residential') {
+        if (this.tab === 1) {
           return 20
-        }else if(this.tab === 2){
+        } else if (this.tab === 2) {
           return 40
-        }else if(this.tab === 3){
+        } else if (this.tab === 3) {
           return 60
-        }else if(this.tab === 4){
+        } else if (this.tab === 4) {
           return 80
-        }else if(this.tab === 5){
+        } else if (this.tab === 5) {
           return 100
-        }else{
+        } else {
           return 5
         }
-      }else{
-        if(this.tab===1){
+      } else {
+        if (this.tab === 1) {
           return 50
         }
       }
@@ -456,7 +476,6 @@ export default {
 /* Banner & Form */
 #banner {
   width: 100%;
-  height: 30rem;
   background: url('~assets/img/Go-Cleaning-Commercial-Cleaning.jpg') no-repeat center center/cover;
   /* border-radius: 0% 0% 90% 90%/0% 0% 50% 50%; */
 }
@@ -467,11 +486,11 @@ export default {
   align-items: center;
   justify-content: center;
   text-align: center;
-  padding-top: 04rem;
   /* background-color: rgba(73, 243, 51, 0.7); */
   background-color: rgba(106, 191, 22, 0.65);
   width: 100%;
-  height: 30rem;
+  height: 100%;
+  padding: 4rem 3rem 3rem 3rem;
   /* border-radius: 0% 0% 90% 90%/0% 0% 50% 50%; */
 
 }
@@ -488,8 +507,8 @@ export default {
 
 #banner .banner-form {
   /* background: rgb(255, 255, 255, 0.5); */
-  border-radius: 15px;
-  padding: 30px 10px 90px 10px;
+  border-radius: 1rem;
+  padding: 2rem 1rem;
   width: 100%;
   height: auto;
 }
@@ -512,8 +531,7 @@ export default {
 }
 
 
-
-#banner .banner-form form .tab-zero{
+#banner .banner-form form .tab-zero {
   display: grid;
   grid-gap: 1rem;
   grid-template-columns: repeat(5, minmax(50px, 1fr));
@@ -551,18 +569,19 @@ input.invalid {
   background-color: #ffdddd;
 }
 
-input[type=text], select {
-  width: 20%;
-  height: 1rem;
-  padding: 12px 20px;
-  margin: 2px 0;
+input[type=text], input[type=email], input[type=tel], select, textarea {
+  width: 100%;
+  height: 3rem;
+  padding: .5rem 2rem;
+  font-size: 1.1rem;
+  margin-bottom: 1rem;
   display: block;
   border: 1px solid #ccc;
-  border-radius: 4px;
+  /*border-radius: 4px;*/
   box-sizing: border-box;
   /* text-align: center; */
+  outline: none;
 }
-
 
 
 /* Hide all steps by default: */
@@ -570,7 +589,7 @@ input[type=text], select {
 /*  display: none;*/
 /*}*/
 
-button {
+#banner button {
   background-color: #4CAF50;
   color: #ffffff;
   border: none;
@@ -580,7 +599,7 @@ button {
   cursor: pointer;
 }
 
-button:hover {
+#banner button:hover {
   opacity: 0.8;
 }
 
@@ -648,8 +667,8 @@ label {
   border-radius: 10px;
 }
 
-.mx-datepicker > input[type="text"] {
-  width: 200px;
+.mx-datepicker {
+  width: 100%;
 }
 
 .banner-form > div > button {

@@ -79,7 +79,7 @@ p {
   color: #fff!important;
 }
 
-input {
+#request_form input {
   background-color: #fff;
   border-radius: 20px!important;
   color: #333;
