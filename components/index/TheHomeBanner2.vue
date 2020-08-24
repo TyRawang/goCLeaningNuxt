@@ -163,6 +163,7 @@
                     v-model="formData.cleaningDate"
                     :default-value="new Date()"
                     :disabled-date="notBeforeToday"
+                    aria-required="true"
                   />
                 </div>
 
@@ -177,6 +178,7 @@
                     format="hh:mm a"
                     type="time"
                     placeholder="hh:mm a"
+                    aria-required="true"
                   ></date-picker>
                 </div>
               </div>
@@ -191,28 +193,28 @@
                 <div>
                   <div>
                     <label for="client-name">Name: </label>
-                    <input id="client-name" type="text" placeholder="Full Name" v-model="clientData.fullName">
+                    <input id="client-name" type="text" placeholder="Full Name" v-model="clientData.fullName" required>
                     <!-- <input type="text" placeholder="Last Name" v-model="clientData.lastName"> -->
                   </div>
 
                   <div>
                     <label for="business-org">Company Name </label>
-                    <input id="business-org" type="text" placeholder="Company Name" v-model="clientData.org">
+                    <input id="business-org" type="text" placeholder="Company Name" v-model="clientData.org" required>
                   </div>
 
                   <div>
                     <label for="client-email">Email: </label>
-                    <input id="client-email" type="email" placeholder="Email" v-model="clientData.email">
+                    <input id="client-email" type="email" placeholder="Email" v-model="clientData.email" required>
                   </div>
 
                   <div>
                     <label for="client-address">Address: </label>
-                    <input id="client-address" type="text" placeholder="Address" v-model="clientData.address">
+                    <input id="client-address" type="text" placeholder="Address" v-model="clientData.address" required>
                   </div>
 
                   <div>
                     <label for="location-type">Location Type</label>
-                    <select name="Bedrooms" v-model="formData.bedrooms2" id="location-type">
+                    <select name="Bedrooms" v-model="formData.bedrooms2" id="location-type" required>
                       <option value=""></option>
                       <option value="office">Office</option>
                       <option value="retail">Retail</option>
@@ -229,12 +231,12 @@
                 <div>
                   <div>
                     <label for="space">Size (sqt)</label>
-                    <input type="text" v-model="formData.size" id="space">
+                    <input type="text" v-model="formData.size" id="space" required>
                   </div>
 
                   <div>
                     <label for="employees">Number of Employee(s) In The Location? </label>
-                    <select name="employees" v-model="formData.employeeNo" id="employees">
+                    <select name="employees" v-model="formData.employeeNo" id="employees" required>
                       <option value=""></option>
                       <option value="1">1</option>
                       <option value="2">2</option>
@@ -247,12 +249,12 @@
 
                   <div>
                     <label for="client-phone">Phone: </label>
-                    <input id="client-phone" type="tel" placeholder="Phone" v-model="clientData.phone">
+                    <input id="client-phone" type="tel" placeholder="Phone" v-model="clientData.phone" required>
                   </div>
 
                   <div>
                     <label for="client-request">Request: </label>
-                    <textarea id="client-request" v-model="clientData.request"></textarea>
+                    <textarea id="client-request" v-model="clientData.request" required></textarea>
                   </div>
                 </div>
               </div>
@@ -263,22 +265,22 @@
                 <div>
                   <div>
                     <label for="customer-name">Name: </label>
-                    <input id="customer-name" type="text" placeholder="Full Name" v-model="clientData.fullName">
+                    <input id="customer-name" type="text" placeholder="Full Name" v-model="clientData.fullName" required>
                   </div>
 
                   <div>
                     <label for="customer-email">Email: </label>
-                    <input id="customer-email" type="email" placeholder="Email" v-model="clientData.email">
+                    <input id="customer-email" type="email" placeholder="Email" v-model="clientData.email" required>
                   </div>
 
                   <div>
                     <label for="customer-address">Address: </label>
-                    <input id="customer-address" type="text" placeholder="Address" v-model="clientData.address">
+                    <input id="customer-address" type="text" placeholder="Address" v-model="clientData.address" required>
                   </div>
 
                   <div>
                     <label for="dirty-level">How Clean Would You Say Your Home Is?</label>
-                    <select name="dirtLevel" v-model="clientData.howDirty" id="dirty-level">
+                    <select name="dirtLevel" v-model="clientData.howDirty" id="dirty-level" required>
                       <option value=""></option>
                       <option value="Really Dirty">Really Dirty</option>
                       <option value="Kind of Diry">Kind of Diry</option>
@@ -297,7 +299,7 @@
 
                   <div>
                     <label for="residents-no">Number of People Living in the House? </label>
-                    <select name="residents" v-model="clientData.residentNo" id="residents-no">
+                    <select name="residents" v-model="clientData.residentNo" id="residents-no" required>
                       <option value=""></option>
                       <option value="1">1</option>
                       <option value="2">2</option>
@@ -310,12 +312,12 @@
 
                   <div>
                     <label for="customer-phone">Phone: </label>
-                    <input id="customer-phone" type="tel" placeholder="Phone" v-model="clientData.phone">
+                    <input id="customer-phone" type="tel" placeholder="Phone" v-model="clientData.phone" required>
                   </div>
 
                   <div>
                     <label for="customer-request">Request: </label>
-                    <textarea id="customer-request" v-model="clientData.request"></textarea>
+                    <textarea id="customer-request" v-model="clientData.request" required></textarea>
                   </div>
                 </div>
               </div>
