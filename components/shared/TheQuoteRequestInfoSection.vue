@@ -54,7 +54,7 @@
         <div class="form-regular-input">
           <label for="client-message">Message *</label>
           <div class="input-field">
-            <textarea id="client-message" rows="5" placeholder="Enter your phone number please"></textarea>
+            <textarea id="client-message" rows="5" placeholder="Enter your message please"></textarea>
           </div>
         </div>
 
@@ -101,6 +101,10 @@ export default {
   margin-bottom: 1rem;
 }
 
+.input-field {
+  max-height: 5rem;
+}
+
 .form-radio-checkbox-input {
   display: flex; align-items: center; justify-content: flex-start; margin-top: 1.5rem;
 }
@@ -114,7 +118,11 @@ export default {
 }
 
 .form-submit-btn {
-  display: flex;
-  margin: 1.5rem auto 0 auto;
+  display: block;
+  margin: 4rem auto 0 auto;
+}
+
+textarea {
+  height: auto;
 }
 </style>
