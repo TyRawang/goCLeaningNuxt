@@ -49,7 +49,8 @@ export default {
   plugins: [
     '~/plugins/carousel.js',
     '~/plugins/faq-accordion.js',
-    '~/plugins/datepicker.js'
+    '~/plugins/datepicker.js',
+    { src: '~plugins/ga.js', mode: 'client' }
   ],
   /*
   ** Auto import components
@@ -75,6 +76,7 @@ export default {
     '@nuxtjs/toast',
     // nuxt sitemap
     '@nuxtjs/sitemap',
+    'nuxt-facebook-pixel-module',
 
   ],
   /*
@@ -120,5 +122,12 @@ export default {
 
   generate: {
     fallback: true
-  }
+  },
+
+  facebook: {
+    /* module options */
+    track: 'PageView',
+    pixelId: 'FACEBOOK_PIXEL_ID',
+    disabled: true
+  },
 }

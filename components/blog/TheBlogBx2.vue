@@ -26,7 +26,7 @@
 </template>
 
 <script>
-import ThePagination from "@/components/shared/ThePagination";
+import ThePagination from "@/components/global/ThePagination";
 export default {
   name: "TheBlogBx2",
   components: {ThePagination},

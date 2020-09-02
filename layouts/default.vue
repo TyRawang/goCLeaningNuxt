@@ -8,9 +8,9 @@
 </template>
 
 <script>
-import TheHeader from '@/components/shared/TheHeader'
-import TheFooter from '@/components/shared/TheFooter'
-import TheBreadcrumb from "@/components/shared/TheBreadcrumb";
+import TheHeader from '@/components/global/TheHeader'
+import TheFooter from '@/components/global/TheFooter'
+import TheBreadcrumb from "@/components/global/TheBreadcrumb";
 
 export default {
   components: {
