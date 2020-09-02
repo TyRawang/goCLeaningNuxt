@@ -3,6 +3,7 @@
     <div class="container page-title-holder">
       <h1>{{ pageMaterials.pageTitle }}</h1>
       <h3>{{ pageMaterials.pageSubtitle }}</h3>
+      <button v-show="pageMaterials.hasButton" class="page-banner-btn">Request Quote</button>
     </div>
   </section>
 </template>
@@ -53,5 +54,14 @@ export default {
 .page-title-holder h3 {
   font-size: 2rem;
   font-weight: bold;
+}
+
+.page-banner-btn {
+  margin-right: 0;
+  padding: 1rem 3rem;
+  margin-top: 2rem;
+  background-color: #92d102;
+  color: black;
+  border-radius: 10px;
 }
 </style>

@@ -18,7 +18,8 @@ name: "calgary",
       bannerPageMaterials: {
         bannerImage: '/img/go-cleaning-edmonton-banner-bg.png',
         pageTitle: 'Edmonton',
-        pageSubtitle: 'Perfection is our passion'
+        pageSubtitle: 'Perfection is our passion',
+        hasButton: false
       }
     }
   }
