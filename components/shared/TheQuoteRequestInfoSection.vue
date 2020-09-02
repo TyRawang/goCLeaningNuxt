@@ -81,6 +81,17 @@ export default {
   padding: 5rem 0;
 }
 
+.request-info-title h3 {
+  font-size: 2.2rem;
+  text-align: center;
+}
+
+.request-info-title hr {
+  width: 40%;
+  margin: 1rem auto;
+  border: 1px solid black;
+}
+
 .request-info-form {
   margin-top: 1.5rem;
 }
