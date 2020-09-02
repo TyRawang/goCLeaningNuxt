@@ -54,14 +54,14 @@ import TopImageCard from "@/components/shared/TopImageCard";
 import TheFaqSectionOne from "@/components/faq/TheFaqSectionOne";
 
 export default {
-  name: "go-cleaning-car-wash",
+  name: "go-cleaning-carpet-cleaning",
   components: {TheFaqSectionOne, TopImageCard, TheGenericSection, ThePageBannerSection},
 
   data() {
     return {
       bannerPageMaterials: {
-        bannerImage: 'https://pictureperfectcleaning.ca/wp-content/uploads/2019/08/ppc-hero-auto-image.jpg',
-        pageTitle: 'Car Wash - Car Dealership Page',
+        bannerImage: 'https://pictureperfectcleaning.ca/wp-content/uploads/2019/08/ppc-hero-office-image.jpg',
+        pageTitle: 'Carpet Cleaning Page',
         pageSubtitle: 'Commercial Cleaning Service',
         hasButton: true
       },

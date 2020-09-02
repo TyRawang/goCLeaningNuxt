@@ -67,7 +67,7 @@ export default {
           value: 'The earlier you book the better it is for both us and the customer. That is because we can plan our cleaning better, but we do last minute booking if our schedule allows.',
           category: 'Others'
         },
-        
+
       ]
     }
   }
@@ -80,8 +80,6 @@ export default {
   display: grid;
   grid-template-columns:  2fr 1fr;
   margin-top: 4rem;
-  
-
 }
 
 .intro p {
