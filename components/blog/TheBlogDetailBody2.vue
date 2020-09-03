@@ -9,10 +9,54 @@
                  <div class="share-this-blog-bottom">
                     <h3>Share This Blog</h3>
                     <span>
-                        <a href="#"><i class="fab fa-facebook fa-lg"></i></a>
-                        <a href="#"><i class="fab fa-twitter fa-lg"></i></a>
-                        <a href="#"><i class="fab fa-linkedin fa-lg"></i></a>
-                        <a href="#"><i class="fab fa-whatsapp fa-lg"></i></a>
+                      <span class="share-link"><ShareNetwork
+                        network="facebook"
+                        :url="ourDomain + $route.fullPath"
+                        :title="article.title"
+                        :description="article.description"
+                        :quote="article.quote"
+                        :hashtags="article.tags"
+                      >
+                        <i class="fab fa-facebook fa-lg"></i>
+                        <!--                        <span>Share on Twitter</span>-->
+                      </ShareNetwork></span>
+                      <span class="share-link"><ShareNetwork
+                        network="twitter"
+                        :url="ourDomain + $route.fullPath"
+                        :title="article.title"
+                        :description="article.description"
+                        :quote="article.quote"
+                        :hashtags="article.tags"
+                      >
+                        <i class="fab fa-twitter fa-lg"></i>
+                        <!--                        <span>Share on Twitter</span>-->
+                      </ShareNetwork></span>
+                      <span class="share-link"><ShareNetwork
+                        network="linkedin"
+                        :url="ourDomain + $route.fullPath"
+                        :title="article.title"
+                        :description="article.description"
+                        :quote="article.quote"
+                        :hashtags="article.tags"
+                      >
+                        <i class="fab fa-linkedin fa-lg"></i>
+                        <!--                        <span>Share on Twitter</span>-->
+                      </ShareNetwork></span>
+                      <span class="share-link"><ShareNetwork
+                        network="whatsapp"
+                        :url="ourDomain + $route.fullPath"
+                        :title="article.title"
+                        :description="article.description"
+                        :quote="article.quote"
+                        :hashtags="article.tags"
+                      >
+                        <i class="fab fa-whatsapp fa-lg"></i>
+                        <!--                        <span>Share on Twitter</span>-->
+                      </ShareNetwork></span>
+<!--                        <a href="#"><i class="fab fa-facebook fa-lg"></i></a>-->
+<!--                        <a href="#"><i class="fab fa-twitter fa-lg"></i></a>-->
+<!--                        <a href="#"><i class="fab fa-linkedin fa-lg"></i></a>-->
+<!--                        <a href="#"><i class="fab fa-whatsapp fa-lg"></i></a>-->
                         <!-- <a href="#"><i class="fab fa-envelope-o"></i></a> -->
                     </span>
                 </div>
@@ -25,11 +69,55 @@
                 <div class="share-this-blog">
                     <h3>Share This Blog</h3>
                     <span>
-                        <a href="#"><i class="fab fa-facebook fa-lg"></i></a>
-                        <a href="#"><i class="fab fa-twitter fa-lg"></i></a>
-                        <a href="#"><i class="fab fa-linkedin fa-lg"></i></a>
-                        <a href="#"><i class="fab fa-whatsapp fa-lg"></i></a>
-                        <!-- <a href="#"><i class="fab fa-envelope-o"></i></a> -->
+                      <span class="share-link"><ShareNetwork
+                        network="facebook"
+                        :url="ourDomain + $route.fullPath"
+                        :title="article.title"
+                        :description="article.description"
+                        :quote="article.quote"
+                        :hashtags="article.tags"
+                      >
+                        <i class="fab fa-facebook fa-lg"></i>
+                        <!--                        <span>Share on Twitter</span>-->
+                      </ShareNetwork></span>
+                      <span class="share-link"><ShareNetwork
+                        network="twitter"
+                        :url="ourDomain + $route.fullPath"
+                        :title="article.title"
+                        :description="article.description"
+                        :quote="article.quote"
+                        :hashtags="article.tags"
+                      >
+                        <i class="fab fa-twitter fa-lg"></i>
+                        <!--                        <span>Share on Twitter</span>-->
+                      </ShareNetwork></span>
+                      <span class="share-link"><ShareNetwork
+                        network="linkedin"
+                        :url="ourDomain + $route.fullPath"
+                        :title="article.title"
+                        :description="article.description"
+                        :quote="article.quote"
+                        :hashtags="article.tags"
+                      >
+                        <i class="fab fa-linkedin fa-lg"></i>
+                        <!--                        <span>Share on Twitter</span>-->
+                      </ShareNetwork></span>
+                      <span class="share-link"><ShareNetwork
+                        network="whatsapp"
+                        :url="ourDomain + $route.fullPath"
+                        :title="article.title"
+                        :description="article.description"
+                        :quote="article.quote"
+                        :hashtags="article.tags"
+                      >
+                        <i class="fab fa-whatsapp fa-lg"></i>
+                        <!--                        <span>Share on Twitter</span>-->
+                      </ShareNetwork></span>
+<!--                        <a href="#"><i class="fab fa-facebook fa-lg"></i></a>-->
+<!--                        <a href="#"><i class="fab fa-twitter fa-lg"></i></a>-->
+<!--                        <a href="#"><i class="fab fa-linkedin fa-lg"></i></a>-->
+<!--                        <a href="#"><i class="fab fa-whatsapp fa-lg"></i></a>-->
+<!--                        &lt;!&ndash; <a href="#"><i class="fab fa-envelope-o"></i></a> &ndash;&gt;-->
                     </span>
 
                 </div>
@@ -71,7 +159,8 @@ export default {
         {id:3, name: 'Corporate'},
         {id:4, name: 'Residential'},
         {id:5, name: 'Outside World'},
-      ]
+      ],
+      ourDomain: 'http://localhost:3000' // for now. It should be the base url that is for example: gocleaning.ca
     }
   },
 
@@ -149,5 +238,9 @@ export default {
     }
     .share-this-blog-bottom  span a {
         padding-right: 2rem;
+    }
+
+    .share-link {
+      cursor: pointer;
     }
 </style>
