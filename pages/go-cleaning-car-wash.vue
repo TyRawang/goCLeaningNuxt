@@ -31,7 +31,9 @@
       <div class="feature-boxes-area">
         <h2>Included For Every Client</h2>
         <hr>
-        <TopImageCard class="feature-box" v-for="(feature, index) in features" :key="index" :cardContent="feature" />
+        <div class="features-collection">
+          <TopImageCard class="feature-box" v-for="(feature, index) in features" :key="index" :cardContent="feature" />
+        </div>
         <p class="clearfix"></p>
       </div>
     </div>
@@ -186,13 +188,11 @@ export default {
 
       features: [
         { legendImage: 'https://pictureperfectcleaning.ca/wp-content/uploads/2019/08/unparallel-service.png', featureHeading: 'Unparalleled Service', featureDetail: 'Picture Perfect Cleaning is incredibly proud of the culture we have built within our company. We prioritize communication and teamwork, and it shows: you’ll never be left wondering about the work we do, or how we do it.'},
-        { legendImage: 'https://pictureperfectcleaning.ca/wp-content/uploads/2019/08/unparallel-service.png', featureHeading: 'Unparalleled Service', featureDetail: 'Picture Perfect Cleaning is incredibly proud of the culture we have built within our company. We prioritize communication and teamwork, and it shows: you’ll never be left wondering about the work we do, or how we do it.'},
-        { legendImage: 'https://pictureperfectcleaning.ca/wp-content/uploads/2019/08/unparallel-service.png', featureHeading: 'Unparalleled Service', featureDetail: 'Picture Perfect Cleaning is incredibly proud of the culture we have built within our company. We prioritize communication and teamwork, and it shows: you’ll never be left wondering about the work we do, or how we do it.'},
-        { legendImage: 'https://pictureperfectcleaning.ca/wp-content/uploads/2019/08/unparallel-service.png', featureHeading: 'Unparalleled Service', featureDetail: 'Picture Perfect Cleaning is incredibly proud of the culture we have built within our company. We prioritize communication and teamwork, and it shows: you’ll never be left wondering about the work we do, or how we do it.'},
-        { legendImage: 'https://pictureperfectcleaning.ca/wp-content/uploads/2019/08/unparallel-service.png', featureHeading: 'Unparalleled Service', featureDetail: 'Picture Perfect Cleaning is incredibly proud of the culture we have built within our company. We prioritize communication and teamwork, and it shows: you’ll never be left wondering about the work we do, or how we do it.'},
-        { legendImage: 'https://pictureperfectcleaning.ca/wp-content/uploads/2019/08/unparallel-service.png', featureHeading: 'Unparalleled Service', featureDetail: 'Picture Perfect Cleaning is incredibly proud of the culture we have built within our company. We prioritize communication and teamwork, and it shows: you’ll never be left wondering about the work we do, or how we do it.'},
-        { legendImage: 'https://pictureperfectcleaning.ca/wp-content/uploads/2019/08/unparallel-service.png', featureHeading: 'Unparalleled Service', featureDetail: 'Picture Perfect Cleaning is incredibly proud of the culture we have built within our company. We prioritize communication and teamwork, and it shows: you’ll never be left wondering about the work we do, or how we do it.'},
-        { legendImage: 'https://pictureperfectcleaning.ca/wp-content/uploads/2019/08/unparallel-service.png', featureHeading: 'Unparalleled Service', featureDetail: 'Picture Perfect Cleaning is incredibly proud of the culture we have built within our company. We prioritize communication and teamwork, and it shows: you’ll never be left wondering about the work we do, or how we do it.'}
+        { legendImage: 'https://pictureperfectcleaning.ca/wp-content/uploads/2019/08/impeccable-work.png', featureHeading: 'Impeccable Work', featureDetail: 'By encouraging and listening to client feedback, we ensure that we meet your business’ needs with the same quality and reliability that we offer all of our clients. We set standards that we are accountable to, and then add the extra mile for good measure.'},
+        { legendImage: 'https://pictureperfectcleaning.ca/wp-content/uploads/2019/08/fair-pricing.png', featureHeading: 'Fair Pricing', featureDetail: 'Different establishments have different needs, but that shouldn’t compromise the service they receive. We work hard to understand your needs and expectations before we even deliver a quote.'},
+        { legendImage: 'https://pictureperfectcleaning.ca/wp-content/uploads/2019/08/performance-checks.png', featureHeading: 'Performance Spot Checks', featureDetail: 'Once we’ve established the right cleaning routine for your business, we will regularly check in with you to ensure your expectations are being met. Our operations managers perform regular checks on our cleaners’ work for additional confidence.'},
+        { legendImage: 'https://pictureperfectcleaning.ca/wp-content/uploads/2019/08/green.png', featureHeading: 'Green Cleaning', featureDetail: 'Picture Perfect Cleaning uses products that you can trust. Our cleaning supplies are certified environmentally friendly from third parties such as EcoLogo and Green Seal.'},
+        { legendImage: 'https://pictureperfectcleaning.ca/wp-content/uploads/2019/08/insured.png', featureHeading: 'Bonded & Insured', featureDetail: 'All of our staff are well taken care of, and that includes legally. Picture Perfect Cleaning is fully bonded, licensed, and insured, so that you can enjoy your sparkling establishment with a peaceful mind. It’s not our habit to sweep things under the rug.'}
       ]
     }
   },
@@ -220,12 +220,16 @@ export default {
 
 }
 
+.features-collection {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
 .feature-box {
-  display: block;
-  width: 46%;
-  margin-right: 4%;
-  margin-bottom: 2rem;
-  float: left;
+  flex-basis: 48%;
+  margin-top: 2rem;
 }
 
 .feature-box:nth-child(even) {

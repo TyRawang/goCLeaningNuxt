@@ -31,12 +31,12 @@ export default {
 }
 
 .feature-heading, .feature-detail {
+  margin-top: 2rem;
   margin-bottom: 2rem;
 }
 
 .feature-detail {
   padding: 0 2.2rem;
-  margin-top: 2rem;
 }
 
 .top-image-card hr {
