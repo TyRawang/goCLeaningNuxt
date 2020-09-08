@@ -2,7 +2,7 @@
   <!--Breadcrumbs Area Start-->
   <div v-show="this.$route.path !== '/'" class="main-breadcrumb-area">
     <div class="container">
-      <h3>Breadcrumb area</h3>
+      <!-- <h3>Breadcrumb area</h3> -->
       <div>
         <nuxt-link to="/">Home</nuxt-link>
         <span> / </span>

@@ -31,10 +31,14 @@
         <a href="#">- What Is Your Cleaning Style?</a>
         <a href="#">- Clean House, Cleaner Perspective</a>
       </div>
-    </div>
+    </div>              
+    <!-- <li><nuxt-link to="/commercial-cleaning-service-calgary">Commercial</nuxt-link></li> -->
 
     <footer>
-      <p>© Copyright {{ new Date().getFullYear() }} | All Rights Reserved | Sitemap | Powered by WebDesign Calgary</p>
+      <p>
+        © Copyright {{ new Date().getFullYear() }} | All Rights Reserved | <nuxt-link to="/sitemap.xml">Sitemap</nuxt-link> | Powered by WebDesign Calgary | 
+        <nuxt-link to="/privacy-policy">Privacy Policy</nuxt-link> | <nuxt-link to="/terms-condition">Terms &amp; Condition</nuxt-link>   
+      </p>
     </footer>
   </section>
 </template>
@@ -45,7 +49,6 @@ export default {
 </script>
 
 <style>
-
 /* Pre Footer */
 
 #pre-footer {
@@ -133,11 +136,13 @@ footer {
   background: var(--secondary-colour);
 }
 
-footer p {
+footer p, footer a {
   padding: 1.5rem;
   color: #fff;
   margin: auto;
   width: 50%;
+  font-size: 1rem;
+  font-weight: 200;
 }
 
 footer a:hover {

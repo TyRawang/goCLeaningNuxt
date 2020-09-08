@@ -13,7 +13,7 @@
             <input type="hidden" name="form-name" value="contactus"/>
 
             <div v-show="tab === 0" class="tab">
-              <h3>The Kind Of Service You are Looking for</h3>
+              <h3>What Kind Of Service You are Looking for</h3>
               <div class="tab-main">
                 <label for="service-house">Residential
                   <input type="radio" id="service-house" name="service" v-model="serviceType" value="residential">
@@ -37,31 +37,26 @@
               <div class="tab-zero">
                 <label for="one-time">One Time
                   <input type="radio" id="one-time" name="time" v-model="formData.time" value="one-time">
-                  <img src="~/assets/svg/go-cleaning-one-time-cleaning-calendar.svg" alt="">
-                  
+                  <img src="~/assets/svg/go-cleaning-one-time-cleaning-calendar.svg" alt="">                  
                 </label>
                 <label for="weekly">Weekly
                   <input type="radio" id="weekly" name="time" v-model="formData.time" value="weekly">
-                  <img src="~/assets/svg/go-cleaning-weekly-cleaning-calendar.svg" alt="">
-                  
+                  <img src="~/assets/svg/go-cleaning-weekly-cleaning-calendar.svg" alt="">                 
                 </label>
                 <label for="bi-weekly">Bi-Weekly
                   <input type="radio" id="bi-weekly" name="time" v-model="formData.time" value="bi-weekly">
-                  <img src="~/assets/svg/go-cleaning-bi-weekly-cleaning-calendar.svg" alt="">
-                  
+                  <img src="~/assets/svg/go-cleaning-bi-weekly-cleaning-calendar.svg" alt="">               
                 </label>
                 <label for="monthly">Monthly
                   <input type="radio" id="monthly" name="time" v-model="formData.time" value="monthly">
-                  <img src="~/assets/svg/go-cleaning-monthly-cleaning-calendar.svg" alt="">
-                  
+                  <img src="~/assets/svg/go-cleaning-monthly-cleaning-calendar.svg" alt="">                
                 </label>
                 <label for="other">Other
                   <input type="radio" id="other" name="time" v-model="formData.time" value="other">
-                  <!-- <img src="~/assets/svg/go-cleaning-other-cleaning-calendar.svg" alt="" -->
-                  
+                  <img src="~/assets/svg/go-cleaning-other-cleaning-calendar.svg" alt="">                 
                 </label>
               </div>
-            </div>
+            </div>  
 
             <div v-show="tab === 2 && serviceType === 'residential'" class="tab">
               <h3>Tell Us About Your Home?</h3>
@@ -87,9 +82,7 @@
                     <option value="3">3</option>
                     <option value="4">4</option>
                     <option value="4">4</option>
-                    <option value="5">5</option>
-                    <option value="6">6</option>
-                    <option value="7">7</option>
+                    <option value="5+">5+</option>
                   </select>
                 </div>
                 <div>
@@ -102,9 +95,7 @@
                     <option value="2.5">2.5</option>
                     <option value="3">3</option>
                     <option value="3.5">3.5</option>
-                    <option value="4">4</option>
-                    <option value="4.5">4.5</option>
-                    <option value="5+">5+</option>
+                    <option value="4+">4+</option>
                   </select>
                 </div>
                 <div>
@@ -244,20 +235,18 @@
                     <label for="employees">Number of Employee(s) In The Location? </label>
                     <select name="employees" v-model="formData.employeeNo" id="employees" required>
                       <option value=""></option>
-                      <option value="1">1</option>
-                      <option value="2">2</option>
-                      <option value="3">3</option>
-                      <option value="4">4</option>
-                      <option value="5">5</option>
-                      <option value="6+">6+</option>
+                      <option value="1-4">1-4</option>
+                      <option value="5-10">5-10</option>
+                      <option value="10-20">10-20</option>
+                      <option value="20-40">20-40</option>
+                      <option value="50+">50+</option>
+                      <option value="100+">100+</option>
                     </select>
                   </div>
-
                   <div>
                     <label for="client-phone">Phone: </label>
                     <input id="client-phone" type="tel" placeholder="Phone" v-model="clientData.phone" required>
                   </div>
-
                   <div>
                     <label for="client-request">Request: </label>
                     <textarea id="client-request" v-model="clientData.request" required></textarea>
@@ -273,17 +262,14 @@
                     <label for="customer-name">Name: </label>
                     <input id="customer-name" type="text" placeholder="Full Name" v-model="clientData.fullName" required>
                   </div>
-
                   <div>
                     <label for="customer-email">Email: </label>
                     <input id="customer-email" type="email" placeholder="Email" v-model="clientData.email" required>
                   </div>
-
                   <div>
                     <label for="customer-address">Address: </label>
                     <input id="customer-address" type="text" placeholder="Address" v-model="clientData.address" required>
                   </div>
-
                   <div>
                     <label for="dirty-level">How Clean Would You Say Your Home Is?</label>
                     <select name="dirtLevel" v-model="clientData.howDirty" id="dirty-level" required>
@@ -296,13 +282,11 @@
                     </select>
                   </div>
                 </div>
-
                 <div>
                   <div>
                     <label for="area">Size (sqt)</label>
                     <input type="text" v-model="clientData.area" id="area">
                   </div>
-
                   <div>
                     <label for="residents-no">Number of People Living in the House? </label>
                     <select name="residents" v-model="clientData.residentNo" id="residents-no" required>
@@ -315,12 +299,10 @@
                       <option value="6+">6+</option>
                     </select>
                   </div>
-
                   <div>
                     <label for="customer-phone">Phone: </label>
                     <input id="customer-phone" type="tel" placeholder="Phone" v-model="clientData.phone" required>
                   </div>
-
                   <div>
                     <label for="customer-request">Request: </label>
                     <textarea id="customer-request" v-model="clientData.request" required></textarea>
@@ -342,7 +324,6 @@
                 </button>
               </div>
             </div>
-
           </form>
         </div>
       </div>
