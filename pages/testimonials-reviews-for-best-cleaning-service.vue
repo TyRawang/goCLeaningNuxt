@@ -3,8 +3,8 @@
       <TheTestimonialBanner/>
       <TheTestimonialSectionOne/>
       <RequestCallBack/>
-      <TheTestimonialSectionThree/>
-    
+      <TheTestimonialSectionThree :posts="posts"/>
+
     </section>
 </template>
 <script>
@@ -19,6 +19,13 @@ import TheTestimonialSectionThree from "@/components/testimonial/TheTestimonialS
 
 
 export default {
-  components: { TheTestimonialBanner}
+  components: { TheTestimonialBanner},
+
+
+  async asyncData({ $content, params }) {
+    // console.log(params)
+    const posts = await $content('posts').sortBy('createdAt', 'desc').fetch()
+    return { posts }
+  },
 }
 </script>
