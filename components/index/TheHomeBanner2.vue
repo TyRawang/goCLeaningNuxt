@@ -17,17 +17,16 @@
               <div class="tab-main">
                 <label for="service-house">Residential
                   <input type="radio" id="service-house" name="service" v-model="serviceType" value="residential">
-                  <!-- <img src="~/assets/img/Go-Cleaning-House.png"  -->
-                  <!-- alt=""> -->
+                  <img src="~/assets/img/Go-Cleaning-House.png"  alt="">
                 </label>
                 <label for="service-commercial">Commercial
                   <input type="radio" id="service-commercial" name="service" v-model="serviceType" value="commercial">
-                  <!-- <img src="~/assets/img/go-cleaning-commercial-building.png" alt="" -->
+                  <img src="~/assets/img/go-cleaning-commercial-building.png" alt="">
                   
                 </label>
                 <label for="service-corporate">Carpet Cleaning
                   <input type="radio" id="service-corporate" name="service" v-model="serviceType" value="carpet-cleaning">
-                  <!-- <img src="~/assets/img/Go-Cleaning-Carpet-Cleaning.png" alt="" -->
+                  <img src="~/assets/img/Go-Cleaning-Carpet-Cleaning.png" alt="">
                   
                 </label>
               </div>
