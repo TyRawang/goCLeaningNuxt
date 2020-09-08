@@ -17,15 +17,17 @@
               <div class="tab-main">
                 <label for="service-house">Residential
                   <input type="radio" id="service-house" name="service" v-model="serviceType" value="residential">
-                  <img src="~/assets/img/go-cleaning-house.png" alt="">
+                  <img src="~/assets/img/Go-Cleaning-House.png"  alt="">
                 </label>
                 <label for="service-commercial">Commercial
                   <input type="radio" id="service-commercial" name="service" v-model="serviceType" value="commercial">
                   <img src="~/assets/img/go-cleaning-commercial-building.png" alt="">
+                  
                 </label>
                 <label for="service-corporate">Carpet Cleaning
                   <input type="radio" id="service-corporate" name="service" v-model="serviceType" value="carpet-cleaning">
                   <img src="~/assets/img/Go-Cleaning-Carpet-Cleaning.png" alt="">
+                  
                 </label>
               </div>
             </div>
@@ -36,22 +38,27 @@
                 <label for="one-time">One Time
                   <input type="radio" id="one-time" name="time" v-model="formData.time" value="one-time">
                   <img src="~/assets/svg/go-cleaning-one-time-cleaning-calendar.svg" alt="">
+                  
                 </label>
                 <label for="weekly">Weekly
                   <input type="radio" id="weekly" name="time" v-model="formData.time" value="weekly">
                   <img src="~/assets/svg/go-cleaning-weekly-cleaning-calendar.svg" alt="">
+                  
                 </label>
                 <label for="bi-weekly">Bi-Weekly
                   <input type="radio" id="bi-weekly" name="time" v-model="formData.time" value="bi-weekly">
                   <img src="~/assets/svg/go-cleaning-bi-weekly-cleaning-calendar.svg" alt="">
+                  
                 </label>
                 <label for="monthly">Monthly
                   <input type="radio" id="monthly" name="time" v-model="formData.time" value="monthly">
                   <img src="~/assets/svg/go-cleaning-monthly-cleaning-calendar.svg" alt="">
+                  
                 </label>
                 <label for="other">Other
                   <input type="radio" id="other" name="time" v-model="formData.time" value="other">
-                  <img src="~/assets/svg/go-cleaning-other-cleaning-calendar.svg" alt="">
+                  <!-- <img src="~/assets/svg/go-cleaning-other-cleaning-calendar.svg" alt="" -->
+                  
                 </label>
               </div>
             </div>
