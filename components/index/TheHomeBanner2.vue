@@ -9,11 +9,11 @@
             <div class="progress-bar-filler" :style="{'width': completedPortion()+'%'}"></div>
           </div>
 
-          <form name="contactus" action="/thanks" method="post" netlify netlify-honeypot="bot-field">
-            <input type="hidden" name="form-name" value="contactus"/>
+          <form name="quotation_request" action="/thanks" method="post" netlify netlify-honeypot="bot-field">
+            <input type="hidden" name="form-name" value="quotation_request"/>
 
             <div v-show="tab === 0" class="tab">
-              <h3>What Kind Of Service You are Looking for</h3>
+              <h3>What Kind Of Service You are Looking for?</h3>
               <div class="tab-main">
                 <label for="service-house">Residential
                   <input type="radio" id="service-house" name="service" v-model="serviceType" value="residential">
@@ -22,12 +22,12 @@
                 <label for="service-commercial">Commercial
                   <input type="radio" id="service-commercial" name="service" v-model="serviceType" value="commercial">
                   <img src="~/assets/img/go-cleaning-commercial-building.png" alt="">
-                  
+
                 </label>
                 <label for="service-corporate">Carpet Cleaning
                   <input type="radio" id="service-corporate" name="service" v-model="serviceType" value="carpet-cleaning">
                   <img src="~/assets/img/Go-Cleaning-Carpet-Cleaning.png" alt="">
-                  
+
                 </label>
               </div>
             </div>
@@ -37,26 +37,26 @@
               <div class="tab-zero">
                 <label for="one-time">One Time
                   <input type="radio" id="one-time" name="time" v-model="formData.time" value="one-time">
-                  <img src="~/assets/svg/go-cleaning-one-time-cleaning-calendar.svg" alt="">                  
+                  <img src="~/assets/svg/go-cleaning-one-time-cleaning-calendar.svg" alt="">
                 </label>
                 <label for="weekly">Weekly
                   <input type="radio" id="weekly" name="time" v-model="formData.time" value="weekly">
-                  <img src="~/assets/svg/go-cleaning-weekly-cleaning-calendar.svg" alt="">                 
+                  <img src="~/assets/svg/go-cleaning-weekly-cleaning-calendar.svg" alt="">
                 </label>
                 <label for="bi-weekly">Bi-Weekly
                   <input type="radio" id="bi-weekly" name="time" v-model="formData.time" value="bi-weekly">
-                  <img src="~/assets/svg/go-cleaning-bi-weekly-cleaning-calendar.svg" alt="">               
+                  <img src="~/assets/svg/go-cleaning-bi-weekly-cleaning-calendar.svg" alt="">
                 </label>
                 <label for="monthly">Monthly
                   <input type="radio" id="monthly" name="time" v-model="formData.time" value="monthly">
-                  <img src="~/assets/svg/go-cleaning-monthly-cleaning-calendar.svg" alt="">                
+                  <img src="~/assets/svg/go-cleaning-monthly-cleaning-calendar.svg" alt="">
                 </label>
                 <label for="other">Other
                   <input type="radio" id="other" name="time" v-model="formData.time" value="other">
-                  <img src="~/assets/svg/go-cleaning-other-cleaning-calendar.svg" alt="">                 
+                  <img src="~/assets/svg/go-cleaning-other-cleaning-calendar.svg" alt="">
                 </label>
               </div>
-            </div>  
+            </div>
 
             <div v-show="tab === 2 && serviceType === 'residential'" class="tab">
               <h3>Tell Us About Your Home?</h3>
@@ -182,10 +182,17 @@
             </div>
 
             <div v-show="tab === 5 && serviceType === 'residential'" class="tab">
-              <div class="tab-one"></div>
+              <h3>If you have any message for us, please send us!</h3>
+              <div class="customer-message-box">
+                <label for="customer-message">Message: </label>
+                <textarea id="customer-message" rows="5" v-model="formData.customerMessage"></textarea>
+              </div>
             </div>
 
+
+
             <div v-show="tab===1 && serviceType === 'commercial'" class="tab">
+              <h3>Please provide us the following details!</h3>
               <div class="tab-one">
                 <div>
                   <div>
@@ -198,12 +205,45 @@
                     <label for="business-org">Company Name </label>
                     <input id="business-org" type="text" placeholder="Company Name" v-model="clientData.org" required>
                   </div>
+                </div>
 
+                <div>
+                  <div>
+                    <label for="space">Size (sqt)</label>
+                    <input type="text" v-model="clientData.size" id="space" required>
+                  </div>
+
+                  <div>
+                    <label for="employees">Number of Employee(s) In The Location? </label>
+                    <select name="employees" v-model="clientData.employeeNo" id="employees" required>
+                      <option value=""></option>
+                      <option value="1-4">1-4</option>
+                      <option value="5-10">5-10</option>
+                      <option value="10-20">10-20</option>
+                      <option value="20-40">20-40</option>
+                      <option value="50+">50+</option>
+                      <option value="100+">100+</option>
+                    </select>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div v-show="tab === 2 && serviceType === 'commercial'" class="tab">
+              <h3>Please provide us the following details!</h3>
+              <div class="tab-one">
+                <div>
                   <div>
                     <label for="client-email">Email: </label>
                     <input id="client-email" type="email" placeholder="Email" v-model="clientData.email" required>
                   </div>
 
+                  <div>
+                    <label for="client-phone">Phone: </label>
+                    <input id="client-phone" type="tel" placeholder="Phone" v-model="clientData.phone" required>
+                  </div>
+                </div>
+                <div>
                   <div>
                     <label for="client-address">Address: </label>
                     <input id="client-address" type="text" placeholder="Address" v-model="clientData.address" required>
@@ -211,7 +251,7 @@
 
                   <div>
                     <label for="location-type">Location Type</label>
-                    <select name="Bedrooms" v-model="formData.bedrooms2" id="location-type" required>
+                    <select name="location-type" v-model="clientData.locationType" id="location-type" required>
                       <option value=""></option>
                       <option value="office">Office</option>
                       <option value="retail">Retail</option>
@@ -224,38 +264,22 @@
                     </select>
                   </div>
                 </div>
-
-                <div>
-                  <div>
-                    <label for="space">Size (sqt)</label>
-                    <input type="text" v-model="formData.size" id="space" required>
-                  </div>
-
-                  <div>
-                    <label for="employees">Number of Employee(s) In The Location? </label>
-                    <select name="employees" v-model="formData.employeeNo" id="employees" required>
-                      <option value=""></option>
-                      <option value="1-4">1-4</option>
-                      <option value="5-10">5-10</option>
-                      <option value="10-20">10-20</option>
-                      <option value="20-40">20-40</option>
-                      <option value="50+">50+</option>
-                      <option value="100+">100+</option>
-                    </select>
-                  </div>
-                  <div>
-                    <label for="client-phone">Phone: </label>
-                    <input id="client-phone" type="tel" placeholder="Phone" v-model="clientData.phone" required>
-                  </div>
-                  <div>
-                    <label for="client-request">Request: </label>
-                    <textarea id="client-request" v-model="clientData.request" required></textarea>
-                  </div>
-                </div>
               </div>
             </div>
 
+            <div v-show="tab === 3 && serviceType === 'commercial'" class="tab">
+              <h3>If you have any additional request or queries, please let us know.</h3>
+              <div>
+                <label for="client-request">Request: </label>
+                <textarea id="client-request" v-model="clientData.request"></textarea>
+              </div>
+            </div>
+
+
+
+
             <div v-show="tab===1 && serviceType === 'carpet-cleaning'" class="tab">
+              <h3>Please provide us the following details!</h3>
               <div class="tab-one">
                 <div>
                   <div>
@@ -266,26 +290,11 @@
                     <label for="customer-email">Email: </label>
                     <input id="customer-email" type="email" placeholder="Email" v-model="clientData.email" required>
                   </div>
-                  <div>
-                    <label for="customer-address">Address: </label>
-                    <input id="customer-address" type="text" placeholder="Address" v-model="clientData.address" required>
-                  </div>
-                  <div>
-                    <label for="dirty-level">How Clean Would You Say Your Home Is?</label>
-                    <select name="dirtLevel" v-model="clientData.howDirty" id="dirty-level" required>
-                      <option value=""></option>
-                      <option value="Really Dirty">Really Dirty</option>
-                      <option value="Kind of Diry">Kind of Diry</option>
-                      <option value="About Average">About Average</option>
-                      <option value="Kind of Clean">Kind of Clean</option>
-                      <option value="Really Clean">Really Clean</option>
-                    </select>
-                  </div>
                 </div>
                 <div>
                   <div>
                     <label for="area">Size (sqt)</label>
-                    <input type="text" v-model="clientData.area" id="area">
+                    <input type="text" v-model="clientData.size" id="area">
                   </div>
                   <div>
                     <label for="residents-no">Number of People Living in the House? </label>
@@ -299,15 +308,38 @@
                       <option value="6+">6+</option>
                     </select>
                   </div>
-                  <div>
-                    <label for="customer-phone">Phone: </label>
-                    <input id="customer-phone" type="tel" placeholder="Phone" v-model="clientData.phone" required>
-                  </div>
-                  <div>
-                    <label for="customer-request">Request: </label>
-                    <textarea id="customer-request" v-model="clientData.request" required></textarea>
-                  </div>
                 </div>
+              </div>
+            </div>
+
+            <div v-show="tab === 2 && serviceType === 'carpet-cleaning'" class="tab">
+              <h3>Please provide us the following details!</h3>
+              <div>
+                <label for="customer-address">Address: </label>
+                <input id="customer-address" type="text" placeholder="Address" v-model="clientData.address">
+              </div>
+              <div>
+                <label for="dirty-level">How Clean Would You Say Your Home Is?</label>
+                <select name="dirtLevel" v-model="clientData.howDirty" id="dirty-level" required>
+                  <option value=""></option>
+                  <option value="Really Dirty">Really Dirty</option>
+                  <option value="Kind of Diry">Kind of Diry</option>
+                  <option value="About Average">About Average</option>
+                  <option value="Kind of Clean">Kind of Clean</option>
+                  <option value="Really Clean">Really Clean</option>
+                </select>
+              </div>
+              <div>
+                <label for="customer-phone">Phone: </label>
+                <input id="customer-phone" type="tel" placeholder="Phone" v-model="clientData.phone">
+              </div>
+            </div>
+
+            <div v-show="tab === 3 && serviceType === 'carpet-cleaning'" class="tab">
+              <h3>If you have any additional request or queries, please let us know.</h3>
+              <div>
+                <label for="customer-request">Request: </label>
+                <textarea id="customer-request" v-model="clientData.request"></textarea>
               </div>
             </div>
 
@@ -315,11 +347,11 @@
               <div style="float:right;">
                 <button v-show="tab > 0" type="button" id="prevBtn" @click="toPreviousTab">Previous</button>
                 <button
-                  v-show="(tab < 5 && serviceType ==='residential') || (serviceType !=='residential' && tab === 0)"
+                  v-show="(tab < 5 && serviceType ==='residential') || (serviceType !=='residential' && tab < 3)"
                   type="button" id="nextBtn" @click="toNextTab">Next
                 </button>
                 <button
-                  v-show="(tab === 5  && serviceType ==='residential') || (tab===1 && serviceType !=='residential')"
+                  v-show="(tab === 5  && serviceType ==='residential') || (tab===3 && serviceType !=='residential')"
                   type="submit">Submit
                 </button>
               </div>
@@ -353,18 +385,23 @@ export default {
         cleaningDate: null,
         cleaningTime: null,
         employeeNo: '',
-        howDirty: ''
+        howDirty: '',
+        size: '',
+        levels: '',
+        pets: null
       },
       clientData: {
         firstName: '',
         lastName: '',
         fullName: '',
         org: '',
-        area: '',
+        size: '',
+        employeeNo: '',
         residentNo: '',
         howDirty: '',
         email: '',
         phone: '',
+        locationType: '',
         request: ''
       },
       timePickerOptions: {
@@ -393,15 +430,121 @@ export default {
       if (this.tab === 0 && this.serviceType === '') {
         valid = false
         this.$toast.error('You need to select a service type please!')
-      } else if ((this.tab === 1 && this.serviceType !== 'residential') || (this.tab === 1 && this.formData.time === '')) {
-        valid = false
-        this.$toast.error('You need to select a frequency please!')
-      } else if (this.tab === 2 && this.formData.homeType1 === '') {
-        valid = false
-        this.$toast.error('You need to select a home type please!')
-      } else if (this.tab === 3 && this.formData.howDirty === '') {
-        valid = false
-        this.$toast.error('You need to select a dirty level!')
+      } else if (this.tab === 1) {
+        if(this.serviceType==='residential' && this.formData.time === ''){
+          valid = false
+          this.$toast.error('You need to select a frequency please!')
+        }else if(this.serviceType === 'commercial'){
+          if(this.clientData.fullName === ''){
+            valid = false
+            this.$toast.error('You need to provide your name please!')
+          }else if(this.clientData.org === ''){
+            valid = false
+            this.$toast.error('You need to provide your organization name please!')
+          }else if(this.clientData.size === ''){
+            valid = false
+            this.$toast.error('You need to provide your space size please!')
+          }else if(this.clientData.employeeNo === ''){
+            valid = false
+            this.$toast.error('You need to provide your employee number please!')
+          }else{
+            valid = true
+          }
+        }else if(this.serviceType === 'carpet-cleaning'){
+          if(this.clientData.fullName === ''){
+            valid = false
+            this.$toast.error('You need to provide your name please!')
+          }if(this.clientData.email === ''){
+            valid = false
+            this.$toast.error('You need to provide your email address please!')
+          }else if(this.clientData.size === ''){
+            valid = false
+            this.$toast.error('You need to provide your space size please!')
+          }else if(this.clientData.residentNo === ''){
+            valid = false
+            this.$toast.error('You need to provide resident number please!')
+          }else{
+            valid = true
+          }
+        }else{
+          valid = true
+        }
+      } else if (this.tab === 2) {
+        if(this.serviceType === 'residential'){
+          if(this.formData.homeType1 === ''){
+            valid = false
+            this.$toast.error('You need to select a home type please!')
+          }
+          else if(this.formData.bedrooms1 === ''){
+            valid = false
+            this.$toast.error('You need to select number of Bedrooms please!')
+          }
+          else if(this.formData.bathrooms1 === ''){
+            valid = false
+            this.$toast.error('You need to select number of Bathrooms please!')
+          }
+          else if(this.formData.size === ''){
+            valid = false
+            this.$toast.error('You need to provide size of the residence please!')
+          }
+          else if(this.formData.levels === ''){
+            valid = false
+            this.$toast.error('You need to select number of levels please!')
+          }
+          else if(this.formData.pets === null || this.formData.pets === ''){
+            valid = false
+            this.$toast.error('You need to select number of pets you have please!')
+          }else{
+            valid = true
+          }
+        }
+
+        if(this.serviceType === 'commercial'){
+          if(this.clientData.phone === ''){
+            valid = false
+            this.$toast.error('You need to provide your phone number please!')
+          }else if(this.clientData.address === ''){
+            valid = false
+            this.$toast.error('You need to provide your organization address please!')
+          }else if(this.clientData.email === ''){
+            valid = false
+            this.$toast.error('You need to provide your email address please!')
+          }else if(this.clientData.locationType === null || this.clientData.locationType === ''){
+            valid = false
+            this.$toast.error('You need to provide your location type please!')
+          }else{
+            valid = true
+          }
+        }
+
+        if(this.serviceType === 'carpet-cleaning'){
+          if(this.clientData.phone === ''){
+            valid = false
+            this.$toast.error('You need to provide your phone number please!')
+          }else if(this.clientData.address === ''){
+            valid = false
+            this.$toast.error('You need to provide your organization address please!')
+          }else if(this.clientData.howDirty === ''){
+            valid = false
+            this.$toast.error('You need to specify dirt level of your place please!')
+          }else{
+            valid = true
+          }
+        }
+      } else if (this.tab === 3) {
+        if(this.serviceType === 'residential'){
+          if(this.formData.people === ''){
+            valid = false
+            this.$toast.error('You need to specify the number of people in the residence please!')
+          }else if(this.formData.howDirty === ''){
+            valid = false
+            this.$toast.error('You need to select a dirt level please!')
+          }else{
+            valid = true
+          }
+        }else{
+          valid = true
+        }
       } else if (this.tab === 4 && this.formData.cleaningDate === null && this.formData.cleaningTime === null) {
         valid = false
         this.$toast.error('You have to select date and time for appointment please.')
