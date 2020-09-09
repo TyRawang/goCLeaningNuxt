@@ -323,7 +323,7 @@
                 <select name="dirtLevel" v-model="clientData.howDirty" id="dirty-level" required>
                   <option value=""></option>
                   <option value="Really Dirty">Really Dirty</option>
-                  <option value="Kind of Diry">Kind of Diry</option>
+                  <option value="Kind of Dirty">Kind of Dirty</option>
                   <option value="About Average">About Average</option>
                   <option value="Kind of Clean">Kind of Clean</option>
                   <option value="Really Clean">Really Clean</option>
@@ -343,6 +343,7 @@
               </div>
             </div>
 
+            
             <div style="overflow:auto;">
               <div style="float:right;">
                 <button v-show="tab > 0" type="button" id="prevBtn" @click="toPreviousTab">Previous</button>
