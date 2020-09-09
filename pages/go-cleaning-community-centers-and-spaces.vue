@@ -79,7 +79,7 @@ export default {
       sectionContentOne: {
         fullWidth: false,
         imageRight: true,
-        imagePath: 'https://pictureperfectcleaning.ca/wp-content/uploads/2019/08/auto-image1.jpg',
+        imagePath: 'https://pictureperfectcleaning.ca/wp-content/uploads/2019/08/community-image1.jpg',
         mainHeading: 'Speedy Cleaning for Your Dealership',
         mainParagraphs: [
           'Picture Perfect Cleaning is proud to offer reliable, flexible service to all of our customers, and we’ve gained credible expertise in doing so. If you need every detail just right, you can count on our team to hit the mark on time, every time.'
@@ -99,7 +99,7 @@ export default {
       sectionContentTwo: {
         fullWidth: false,
         imageRight: false,
-        imagePath: 'https://pictureperfectcleaning.ca/wp-content/uploads/2019/08/auto-image2.jpg',
+        imagePath: 'https://pictureperfectcleaning.ca/wp-content/uploads/2019/08/community-image2.jpg',
         mainHeading: 'Genuine Service',
         mainParagraphs: [
           'The team at Picture Perfect Cleaning have all been highly trained and continually developed to be their professional best. We base this training off of the values and virtues that set them apart in the first place: integrity, care, and dedication. Whatever the job is, our team is ready to get it done.'

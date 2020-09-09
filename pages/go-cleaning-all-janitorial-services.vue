@@ -232,7 +232,7 @@ export default {
 
 .business-work-with {
   display: flex;
-  align-items: start;
+  align-items: flex-start;
   justify-content: space-between;
   flex-wrap: wrap;
 }

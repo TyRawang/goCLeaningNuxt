@@ -4,7 +4,7 @@
 
     <div class="page-section second-section">
       <TheGenericSection :reviewsOrTestimonial="false" :genericSectionContent="sectionContentOne"/>
-      <TheGenericSection :reviewsOrTestimonial="false" :genericSectionContent="sectionContentTwo"/>
+<!--      <TheGenericSection :reviewsOrTestimonial="false" :genericSectionContent="sectionContentTwo"/>-->
       <TheGenericSection :reviewsOrTestimonial="false" :genericSectionContent="sectionContentThree"/>
     </div>
 
@@ -79,7 +79,7 @@ export default {
       sectionContentOne: {
         fullWidth: false,
         imageRight: true,
-        imagePath: 'https://pictureperfectcleaning.ca/wp-content/uploads/2019/08/auto-image1.jpg',
+        imagePath: 'https://pictureperfectcleaning.ca/wp-content/uploads/2019/08/spa-image1.jpg',
         mainHeading: 'Speedy Cleaning for Your Dealership',
         mainParagraphs: [
           'Picture Perfect Cleaning is proud to offer reliable, flexible service to all of our customers, and we’ve gained credible expertise in doing so. If you need every detail just right, you can count on our team to hit the mark on time, every time.'
