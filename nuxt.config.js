@@ -112,9 +112,9 @@ export default {
     ]
   },
   sitemap: {
-    hostname: 'http:localhost',
+    hostname: 'http://localhost:3000',
     path: '/sitemap.xml',
-    // cacheTime: 1000 * 60 * 60 * 2,
+    cacheTime: 1000 * 60 * 60 * 2,
     trailingSlash: true,
     gzip: true,
     generate: false,

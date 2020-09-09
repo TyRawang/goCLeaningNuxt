@@ -160,7 +160,7 @@ export default {
         {id:4, name: 'Residential'},
         {id:5, name: 'Outside World'},
       ],
-      ourDomain: 'http://localhost:3000' // for now. It should be the base url that is for example: gocleaning.ca
+      ourDomain:'https://cranky-hopper-6f24a3.netlify.app/' // for now. It should be the base url that is for example: gocleaning.ca
     }
   },
 
