@@ -183,9 +183,13 @@
 
             <div v-show="tab === 5 && serviceType === 'residential'" class="tab">
               <h3>If you have any message for us, please send us!</h3>
+              <div>
+                <label for="res-customer-email">Email: </label>
+                <input name="res-customer-email" id="res-customer-email" type="email" placeholder="Email" v-model="formData.customerEmail">
+              </div>
               <div class="customer-message-box">
                 <label for="customer-message">Message: </label>
-                <textarea id="customer-message" rows="5" v-model="formData.customerMessage"></textarea>
+                <textarea name="customer-message" id="customer-message" rows="5" v-model="formData.customerMessage"></textarea>
               </div>
             </div>
 
@@ -197,25 +201,25 @@
                 <div>
                   <div>
                     <label for="client-name">Name: </label>
-                    <input id="client-name" type="text" placeholder="Full Name" v-model="clientData.fullName" required>
+                    <input id="client-name" type="text" placeholder="Full Name" v-model="clientData.fullName">
                     <!-- <input type="text" placeholder="Last Name" v-model="clientData.lastName"> -->
                   </div>
 
                   <div>
                     <label for="business-org">Company Name </label>
-                    <input id="business-org" type="text" placeholder="Company Name" v-model="clientData.org" required>
+                    <input id="business-org" type="text" placeholder="Company Name" v-model="clientData.org">
                   </div>
                 </div>
 
                 <div>
                   <div>
                     <label for="space">Size (sqt)</label>
-                    <input type="text" v-model="clientData.size" id="space" required>
+                    <input type="text" v-model="clientData.size" id="space">
                   </div>
 
                   <div>
                     <label for="employees">Number of Employee(s) In The Location? </label>
-                    <select name="employees" v-model="clientData.employeeNo" id="employees" required>
+                    <select name="employees" v-model="clientData.employeeNo" id="employees">
                       <option value=""></option>
                       <option value="1-4">1-4</option>
                       <option value="5-10">5-10</option>
@@ -235,23 +239,23 @@
                 <div>
                   <div>
                     <label for="client-email">Email: </label>
-                    <input id="client-email" type="email" placeholder="Email" v-model="clientData.email" required>
+                    <input id="client-email" type="email" placeholder="Email" v-model="clientData.email">
                   </div>
 
                   <div>
                     <label for="client-phone">Phone: </label>
-                    <input id="client-phone" type="tel" placeholder="Phone" v-model="clientData.phone" required>
+                    <input id="client-phone" type="tel" placeholder="Phone" v-model="clientData.phone">
                   </div>
                 </div>
                 <div>
                   <div>
                     <label for="client-address">Address: </label>
-                    <input id="client-address" type="text" placeholder="Address" v-model="clientData.address" required>
+                    <input id="client-address" type="text" placeholder="Address" v-model="clientData.address">
                   </div>
 
                   <div>
                     <label for="location-type">Location Type</label>
-                    <select name="location-type" v-model="clientData.locationType" id="location-type" required>
+                    <select name="location-type" v-model="clientData.locationType" id="location-type">
                       <option value=""></option>
                       <option value="office">Office</option>
                       <option value="retail">Retail</option>
@@ -284,11 +288,11 @@
                 <div>
                   <div>
                     <label for="customer-name">Name: </label>
-                    <input id="customer-name" type="text" placeholder="Full Name" v-model="clientData.fullName" required>
+                    <input id="customer-name" type="text" placeholder="Full Name" v-model="clientData.fullName">
                   </div>
                   <div>
                     <label for="customer-email">Email: </label>
-                    <input id="customer-email" type="email" placeholder="Email" v-model="clientData.email" required>
+                    <input id="customer-email" type="email" placeholder="Email" v-model="clientData.email">
                   </div>
                 </div>
                 <div>
@@ -298,7 +302,7 @@
                   </div>
                   <div>
                     <label for="residents-no">Number of People Living in the House? </label>
-                    <select name="residents" v-model="clientData.residentNo" id="residents-no" required>
+                    <select name="residents-no" v-model="clientData.residentNo" id="residents-no">
                       <option value=""></option>
                       <option value="1">1</option>
                       <option value="2">2</option>
@@ -320,7 +324,7 @@
               </div>
               <div>
                 <label for="dirty-level">How Clean Would You Say Your Home Is?</label>
-                <select name="dirtLevel" v-model="clientData.howDirty" id="dirty-level" required>
+                <select name="dirty-level" v-model="clientData.howDirty" id="dirty-level">
                   <option value=""></option>
                   <option value="Really Dirty">Really Dirty</option>
                   <option value="Kind of Dirty">Kind of Dirty</option>
@@ -343,7 +347,7 @@
               </div>
             </div>
 
-            
+
             <div style="overflow:auto;">
               <div style="float:right;">
                 <button v-show="tab > 0" type="button" id="prevBtn" @click="toPreviousTab">Previous</button>
@@ -445,6 +449,9 @@ export default {
           }else if(this.clientData.size === ''){
             valid = false
             this.$toast.error('You need to provide your space size please!')
+          }else if(this.validateArea(this.clientData.size)===false){
+            valid = false
+            this.$toast.error('You need to provide valid size please!')
           }else if(this.clientData.employeeNo === ''){
             valid = false
             this.$toast.error('You need to provide your employee number please!')
@@ -455,12 +462,18 @@ export default {
           if(this.clientData.fullName === ''){
             valid = false
             this.$toast.error('You need to provide your name please!')
-          }if(this.clientData.email === ''){
+          }else if(this.clientData.email === ''){
             valid = false
-            this.$toast.error('You need to provide your email address please!')
+            this.$toast.error('You need to provide your valid email address please!')
+          }else if(!this.validateEmail(this.clientData.email)){
+            valid = false
+            this.$toast.error('You need to provide your valid email address please!')
           }else if(this.clientData.size === ''){
             valid = false
             this.$toast.error('You need to provide your space size please!')
+          }else if(this.validateArea(this.clientData.size)===false){
+            valid = false
+            this.$toast.error('You need to provide valid size please!')
           }else if(this.clientData.residentNo === ''){
             valid = false
             this.$toast.error('You need to provide resident number please!')
@@ -487,6 +500,9 @@ export default {
           else if(this.formData.size === ''){
             valid = false
             this.$toast.error('You need to provide size of the residence please!')
+          }else if(this.validateArea(this.formData.size)===false){
+            valid = false
+            this.$toast.error('You need to provide valid size of the residence please!')
           }
           else if(this.formData.levels === ''){
             valid = false
@@ -504,12 +520,15 @@ export default {
           if(this.clientData.phone === ''){
             valid = false
             this.$toast.error('You need to provide your phone number please!')
+          }else if(this.validatePhone(this.clientData.phone) === false){
+            valid = false
+            this.$toast.error('You need to provide a valid phone number please!')
           }else if(this.clientData.address === ''){
             valid = false
             this.$toast.error('You need to provide your organization address please!')
-          }else if(this.clientData.email === ''){
+          }else if(!this.validateEmail(this.clientData.email)){
             valid = false
-            this.$toast.error('You need to provide your email address please!')
+            this.$toast.error('You need to provide your valid email address please!')
           }else if(this.clientData.locationType === null || this.clientData.locationType === ''){
             valid = false
             this.$toast.error('You need to provide your location type please!')
@@ -522,6 +541,9 @@ export default {
           if(this.clientData.phone === ''){
             valid = false
             this.$toast.error('You need to provide your phone number please!')
+          }else if(this.validatePhone(this.clientData.phone) === false){
+            valid = false
+            this.$toast.error('You need to provide a valid phone number please!')
           }else if(this.clientData.address === ''){
             valid = false
             this.$toast.error('You need to provide your organization address please!')
@@ -549,29 +571,85 @@ export default {
       } else if (this.tab === 4 && this.formData.cleaningDate === null && this.formData.cleaningTime === null) {
         valid = false
         this.$toast.error('You have to select date and time for appointment please.')
+      } else if(this.tab === 5){
+        if(this.formData.customerEmail === ''){
+          valid = false
+          this.$toast.error('You have to provide your email address please.')
+        }else if(this.validateEmail(this.formData.customerEmail) === false) {
+          valid = false
+          this.$toast.error('You have to provide a email address please.')
+        }else{
+          valid = true
+        }
       } else {
         valid = true
       }
       return valid;
     },
 
-    submitForm() {
-      if (this.homeType2 === '') {
-        this.$toast.error('Submission failed. please select home type 2!')
+    // validateEmail(email){
+    //   if(email === ''){
+    //     return false
+    //   }else if((email.match(/@/g) || []).length !== 1){
+    //     this.$toast.error('The email must have at least and only one "@" sign')
+    //     return false
+    //   }else if(((email.split('@')).length <= 2) && (email.split('@'))[1] === ''){
+    //     this.$toast.error('The please provide an email with valid domain.')
+    //     return false
+    //   }else{
+    //     return true
+    //   }
+    // },
+    validateEmail(email){
+      if (/^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/.test(email))
+      {
+        return true
+      }
+      this.$toast.error("You have entered an invalid email address!")
+      return false
+    },
+
+    validateArea(area){
+      // console.log(parseInt(area))
+      if(!(parseInt(area) > 0)){
+        this.$toast.error('The area/size of the space must be a positive number.')
+        return false
+      }else{
+        return true
+      }
+    },
+
+    validatePhone(phone){
+      let phoneNo = /^\+?([0-9]{2})\)?[-. ]?([0-9]{4})[-. ]?([0-9]{4})$/
+      if(phone.match(phoneNo)){
+        return true;
       } else {
-        this.$axios.$post(this.$refs.contact.getAttribute('action'), this.formData).then(function () {
-          this.$toast.success('submission successful')
-        })
+        this.$toast.error("Please provide a valid phone number! formats: +XX XXXX XXXX or +XX-XXXX-XXXX");
+        return false;
       }
     },
 
-    submitClientForm() {
-      if (this.serviceType === 'residential') {
-        if (this.tab > 0) {
-
+    submitForm() {
+        if(this.serviceType === 'residential'){
+          this.$axios.$post(this.$refs.contact.getAttribute('action'), this.formData).then(function () {
+            this.$toast.success('Info submission successful')
+          })
+        }else{
+          this.$axios.$post(this.$refs.contact.getAttribute('action'), this.clientData).then(function () {
+            this.$toast.success('Info submission successful')
+          })
         }
-      }
     },
+
+    // validateFormSubmission(formData){},
+    //
+    // submitClientForm() {
+    //   if (this.serviceType === 'residential') {
+    //     if (this.tab === 5) {
+    //
+    //     }
+    //   }
+    // },
 
     completedPortion() {
       if (this.serviceType === 'residential') {
