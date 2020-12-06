@@ -5,9 +5,9 @@
       <div class="container">
         <div class="banner-form">
 
-          <!-- <div class="progress-bar" v-show="serviceType === 'residential'">
+          <div class="progress-bar" v-show="serviceType === 'residential'">
             <div class="progress-bar-filler" :style="{'width': completedPortion()+'%'}"></div>
-          </div> -->
+          </div>
 
           <form name="quotation_request" action="/thanks" method="post" netlify netlify-honeypot="bot-field">
             <input type="hidden" name="form-name" value="quotation_request"/>
@@ -181,8 +181,6 @@
 
               </div>
             </div>
-
-            <div v-show="tab===2 && serviceType === 'commercial'" class="tab">
               <div>
                 <label for="client-email">Email: </label>
                 <input id="client-email" type="email" placeholder="Email" v-model="clientData.address">
@@ -226,7 +224,7 @@
                 <input id="client-phone" type="tel" placeholder="Phone" v-model="clientData.phone">
               </div>
             </div>
-          <!-- </div> -->
+
             <div v-show="tab === 3 && serviceType === 'commercial'" class="tab">
               <h3>If you have any additional request or queries, please let us know.</h3>
               <div>
@@ -235,7 +233,10 @@
               </div>
             </div>
 
-            <div v-show="tab=== 1 && serviceType === 'carpet-cleaning'" class="tab">
+
+
+
+            <div v-show="tab===1 && serviceType === 'carpet-cleaning'" class="tab">
               <h3>Please provide us the following details!</h3>
               <div class="tab-one">
                 <div>
