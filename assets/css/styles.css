@@ -66,7 +66,7 @@ h5 {
 
 .btn, button:hover {
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-
+  outline: none;
 }
 
 .cards {
@@ -99,6 +99,7 @@ li, a {
     font-size: 1rem;
     color: #fff;
     text-decoration: none;
+   outline: none;
 }
 
 
@@ -127,7 +128,7 @@ li, a {
 }
 #banner .banner-form.commercial h1 {
     color: #ffffff;
-} 
+}
 
 #banner .banner-form {
     /* background: rgb(255, 255, 255, 0.5); */
@@ -136,6 +137,15 @@ li, a {
     width: 100%;
     height: auto;
 }
+
+
+/* Style Added By Arif */
+/*.go-cleaning-basic-page {*/
+/*  padding: 5rem 0;*/
+/*}*/
+/* Style Added By Arif */
+
+
 /*!* PreNav *!*/
 /*#pre-nav {*/
 /*    background: var(--secondary-colour);*/

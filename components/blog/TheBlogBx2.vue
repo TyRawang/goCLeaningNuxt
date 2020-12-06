@@ -2,27 +2,25 @@
 
   <section id="blog-section-one" class="container">
 
-    <div class="blogs">
-      <div v-for="(post, index) in postsForCurrentPage()" :key="index">
-        <img :src="post.image" alt="">
-        <!-- <img src="~/assets/img/Happy-Family.jpg" alt="Happy family sitting in their living room"> -->
-        <h2>{{ post.title }}</h2>
-        <figcaption>By {{ post.author ? post.author : 'Go Cleaning' }} | {{ formatDate(post.createdAt) }}</figcaption>
-        <p>{{ post.description }}</p>
-        <nuxt-link :to="'/blog/' + post.slug">Read More</nuxt-link>
-        <!-- <p>post.tags</p> -->
-      </div>
-    </div>
+    <GridBlog :blogPosts="postsForCurrentPage()" />
 
-    <ThePagination :allPosts="this.posts"></ThePagination>
+    <ThePagination
+      :total-pages="totalPages()"
+      :total="113"
+      :per-page="9"
+      :current-page="currentPage"
+      @pagechanged="onPageChange"
+    />
+<!--    <jw-pagination :items="posts" @changePage="goToPageNumber"></jw-pagination>-->
   </section>
 </template>
 
 <script>
-import ThePagination from "@/components/shared/ThePagination";
+import ThePagination from "@/components/global/ThePagination";
+import GridBlog from "@/components/shared/GridBlog";
 export default {
   name: "TheBlogBx2",
-  components: {ThePagination},
+  components: {GridBlog, ThePagination},
   props: {
     posts: {
       type: Array,
@@ -32,9 +30,8 @@ export default {
 
   data(){
     return {
-      postsPerPage: 9,
-      postsInCurrentPage: [],
       currentPage: 1,
+      postsPerPage: 9
     }
   },
 
@@ -49,6 +46,10 @@ export default {
     formatDate(date) {
       const options = {year: 'numeric', month: 'long', day: 'numeric'}
       return new Date(date).toLocaleDateString('en', options)
+    },
+
+    totalPages() {
+      return Math.ceil(this.posts.length / this.postsPerPage)
     },
 
     goToPageNumber(pageNo){
@@ -76,8 +77,10 @@ export default {
       }
     },
 
-
-
+    onPageChange(page) {
+      // console.log(page)
+      this.currentPage = page;
+    }
   },
 }
 </script>

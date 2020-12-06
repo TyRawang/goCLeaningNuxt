@@ -42,18 +42,54 @@
     <div class="testimonials">
       <h2>Testimonials</h2>
       <div class="testimonials-content">
-        <div class="cards">
-          <img src="~/assets/img/noah_bowman.png" alt="Go Cleaning Testimonial">
-          <p>
-            Go Cleaning provided me with excellent services. Their
-            cleaners are always smiling and have great respect for me
-            and house. I can easily say they are the best cleaning service
-            near me.
-            <span>Noah</span>
-            <span>Happy Customer</span>
-          </p>
-        </div>
+        <VueSlickCarousel ref="carousel" v-bind="slickOptions" class="carousel-container">
+          <div class="cards">
+            <img src="~/assets/img/noah_bowman.png" alt="Go Cleaning Testimonial">
+            <p>
+              Go Cleaning provided me with excellent services. Their
+              cleaners are always smiling and have great respect for me
+              and house. I can easily say they are the best cleaning service
+              near me.
+              <span>Noah</span>
+              <span>Happy Customer</span>
+            </p>
+          </div>
+          <div class="cards">
+            <img src="~/assets/img/noah_bowman.png" alt="Go Cleaning Testimonial">
+            <p>
+              Go Cleaning provided me with excellent services. Their
+              cleaners are always smiling and have great respect for me
+              and house. I can easily say they are the best cleaning service
+              near me.
+              <span>Noah</span>
+              <span>Happy Customer</span>
+            </p>
+          </div>
+          <div class="cards">
+            <img src="~/assets/img/noah_bowman.png" alt="Go Cleaning Testimonial">
+            <p>
+              Go Cleaning provided me with excellent services. Their
+              cleaners are always smiling and have great respect for me
+              and house. I can easily say they are the best cleaning service
+              near me.
+              <span>Noah</span>
+              <span>Happy Customer</span>
+            </p>
+          </div>
+        </VueSlickCarousel>
+<!--        <div class="cards">-->
+<!--          <img src="~/assets/img/noah_bowman.png" alt="Go Cleaning Testimonial">-->
+<!--          <p>-->
+<!--            Go Cleaning provided me with excellent services. Their-->
+<!--            cleaners are always smiling and have great respect for me-->
+<!--            and house. I can easily say they are the best cleaning service-->
+<!--            near me.-->
+<!--            <span>Noah</span>-->
+<!--            <span>Happy Customer</span>-->
+<!--          </p>-->
+<!--        </div>-->
       </div>
+
     </div>
 
     <!-- END OF SECTION-ONE -->
@@ -62,7 +98,22 @@
 
 <script>
 export default {
-name: "TheFirstSection"
+name: "TheFirstSection",
+  data(){
+  return {
+    slickOptions: {
+      arrows: false,
+      dots: false,
+      infinite: true,
+      slidesToShow: 1,
+      slidesToScroll: 1,
+      autoplay: true,
+      speed: 2000,
+      autoplaySpeed: 4000,
+      cssEase: "linear"
+    }
+  }
+  }
 }
 </script>
 
@@ -106,7 +157,6 @@ name: "TheFirstSection"
   display: block;
 }
 
-
 #first-section .second-box {
   padding: 1rem;
   margin-top: 2rem;
@@ -118,6 +168,7 @@ name: "TheFirstSection"
   line-height: 3.5rem;
   margin-bottom: 0.5rem;
 }
+
 #first-section  .second-box p {
   color: grey;
   margin-bottom: 1rem;
@@ -149,6 +200,7 @@ name: "TheFirstSection"
   height: auto;
   background: url('~assets/img/Go-Cleaning-Commercial-Cleaning.jpg') no-repeat left center/cover;
 }
+
 #first-section .side .side-overlay {
 
   display: flex;
@@ -167,8 +219,6 @@ name: "TheFirstSection"
   padding-top: 1rem;
 }
 
-
-
 #first-section .side .side-overlay > * {
   margin: 0.5rem;
 }
@@ -178,7 +228,6 @@ name: "TheFirstSection"
 }
 
 #first-section :nth-child(5) {
-
   grid-column-start: 1;
   grid-column-end: 3;
   width: 100%;
@@ -223,7 +272,6 @@ name: "TheFirstSection"
 
 }
 
-
 #first-section .testimonials h2 {
   text-align: center;
   margin-bottom: 2rem;
@@ -244,11 +292,15 @@ name: "TheFirstSection"
   display: block;
 }
 
-
 #first-section .testimonials .testimonials-content .cards {
   display: flex;
   /* grid-template-columns: repeat(3, 1fr); */
 
+}
+
+.carousel-container {
+  border: none;
+  box-shadow: none;
 }
 
 @media (max-width: 800px) {

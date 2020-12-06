@@ -26,10 +26,28 @@
               <li><nuxt-link to="/carpet-cleaning-service-calgary">Carpet Cleaning</nuxt-link></li>
             </ul>
           </li>
-          <li><nuxt-link to="/testimonials-reviews-for-best-cleaning-service">Testimonials</nuxt-link></li>
+          <li><nuxt-link to="#">Locations <i class="fas fa-angle-down"></i> </nuxt-link>
+            <ul class="dropdown">
+              <li></li>
+              <li><nuxt-link to="/location/calgary">Calgary</nuxt-link></li>
+              <li><nuxt-link to="/location/edmonton">Edmonton</nuxt-link></li>
+              <li><nuxt-link to="/location/toronto">Toronto</nuxt-link></li>
+            </ul>
+          </li>
+          <li><nuxt-link to="#">About <i class="fas fa-angle-down"></i> </nuxt-link>
+            <ul class="dropdown">
+              <li></li>
+              <li><nuxt-link to="/blog">Blog</nuxt-link></li>
+              <li><nuxt-link to="/testimonials-reviews-for-best-cleaning-service">Testimonials</nuxt-link></li>
+              <li><nuxt-link to="/best-cleaning-services-calgary-faq">FAQ</nuxt-link></li>
+              <li><nuxt-link to="/blog">Contact</nuxt-link></li>
+            </ul>
+          </li>
+          <li><nuxt-link to="/go-cleaning-car-wash">Car Wash</nuxt-link></li>
+          <!-- <li><nuxt-link to="/testimonials-reviews-for-best-cleaning-service">Testimonials</nuxt-link></li>
           <li><nuxt-link to="/best-cleaning-services-calgary-faq">FAQ</nuxt-link></li>
           <li><nuxt-link to="/blog">Blog</nuxt-link></li>
-          <li><nuxt-link to="/contact-us-for-cleaning-services">Contact</nuxt-link></li>
+          <li><nuxt-link to="/contact-us-for-cleaning-services">Contact</nuxt-link></li> -->
         </ul>
       </nav>
       <nuxt-link to="#" class="cta">

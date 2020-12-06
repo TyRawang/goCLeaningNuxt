@@ -39,7 +39,8 @@ export default {
   css: [
     '~/assets/css/styles.css',
     'vue-slick-carousel/dist/vue-slick-carousel.css',
-    'vue-slick-carousel/dist/vue-slick-carousel-theme.css'
+    'vue-slick-carousel/dist/vue-slick-carousel-theme.css',
+    'vue2-datepicker/index.css'
   ],
   /*
   ** Plugins to load before mounting the App
@@ -48,6 +49,8 @@ export default {
   plugins: [
     '~/plugins/carousel.js',
     '~/plugins/faq-accordion.js',
+    '~/plugins/datepicker.js',
+    { src: '~plugins/ga.js', mode: 'client' }
   ],
   /*
   ** Auto import components
@@ -73,6 +76,8 @@ export default {
     '@nuxtjs/toast',
     // nuxt sitemap
     '@nuxtjs/sitemap',
+    'nuxt-facebook-pixel-module',
+    'vue-social-sharing/nuxt'
 
   ],
   /*
@@ -107,12 +112,23 @@ export default {
     ]
   },
   sitemap: {
-    hostname: 'http:localhost',
+    hostname: 'http://localhost:3000',
     path: '/sitemap.xml',
     // cacheTime: 1000 * 60 * 60 * 2,
     trailingSlash: true,
     gzip: true,
     generate: false,
     routes: dyRoutes
-  }
+  },
+
+  generate: {
+    fallback: true
+  },
+
+  facebook: {
+    /* module options */
+    track: 'PageView',
+    pixelId: 'FACEBOOK_PIXEL_ID',
+    disabled: true
+  },
 }

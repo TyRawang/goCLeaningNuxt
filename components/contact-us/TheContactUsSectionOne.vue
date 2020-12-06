@@ -117,6 +117,6 @@
     }
 
     form label {
-        color: ;
+        /* color: ; */
     }
 </style>
