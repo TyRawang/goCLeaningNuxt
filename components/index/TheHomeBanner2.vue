@@ -174,11 +174,9 @@
                 <input id="client-name" type="text" placeholder="Full Name" v-model="clientData.firstName">
                 <!-- <input type="text" placeholder="Last Name" v-model="clientData.lastName"> -->
               </div>
-
               <div>
                 <label for="business-org">Company Name </label>
                 <input id="business-org" type="text" placeholder="Company Name" v-model="clientData.org">
-
               </div>
             </div>
 
