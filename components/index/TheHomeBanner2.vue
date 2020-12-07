@@ -98,7 +98,7 @@
                   </select>
                 </div>
                 <div>
-                  <label for="size">Size (sqt)</label>
+                  <label for="size">Size (sqt form data)</label>
                   <input type="text" v-model="formData.size" id="size">
                 </div>
                 <div>
@@ -205,7 +205,7 @@
                   </select>
                 </div>
                 <div>
-                    <label for="size">Size (sqt)</label>
+                    <label for="size">Size (sqt client data)</label>
                     <input type="text" name="size" v-model="clientData.size" id="size">
                 </div>
                 <div>
@@ -250,7 +250,7 @@
                 </div>
                 <div>
                   <div>
-                    <label for="area">Size (sqt)</label>
+                    <label for="area">Size (sqt form data)</label>
                     <input type="text" v-model="clientData.size" id="area">
                   </div>
                   <!-- <div>
@@ -325,7 +325,7 @@
                 </select> -->
               </div>
               <div>
-                  <label for="area">Size (sqt)</label>
+                  <label for="area">Size (sqt area)</label>
                   <input type="text" v-model="clientData.area" id="area">
               </div>
               <!-- <div>
