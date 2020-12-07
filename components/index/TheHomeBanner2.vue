@@ -5,9 +5,9 @@
       <div class="container">
         <div class="banner-form">
 
-          <!-- <div class="progress-bar" v-show="serviceType === 'residential'">
+          <div class="progress-bar" v-show="serviceType === 'residential'">
             <div class="progress-bar-filler" :style="{'width': completedPortion()+'%'}"></div>
-          </div> -->
+          </div>
 
           <form name="quotation_request" action="/thanks" method="post" netlify netlify-honeypot="bot-field">
             <input type="hidden" name="form-name" value="quotation_request"/>
@@ -720,17 +720,17 @@ export default {
       }
     },
 
-    submitForm() {
-        if(this.serviceType === 'residential'){
-          this.$axios.$post(this.$refs.contact.getAttribute('action'), this.formData).then(function () {
-            this.$toast.success('Info submission successful')
-          })
-        }else{
-          this.$axios.$post(this.$refs.contact.getAttribute('action'), this.clientData).then(function () {
-            this.$toast.success('Info submission successful')
-          })
-        }
-    },
+    // submitForm() {
+    //     if(this.serviceType === 'residential'){
+    //       this.$axios.$post(this.$refs.contact.getAttribute('action'), this.formData).then(function () {
+    //         this.$toast.success('Info submission successful')
+    //       })
+    //     }else{
+    //       this.$axios.$post(this.$refs.contact.getAttribute('action'), this.clientData).then(function () {
+    //         this.$toast.success('Info submission successful')
+    //       })
+    //     }
+    // },
 
     // validateFormSubmission(formData){},
     //
