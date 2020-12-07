@@ -30,7 +30,7 @@
 
 
           <form v-show="serviceType === 'residential'" name="quotation_request_residential" action="/thanks" method="post" netlify netlify-honeypot="bot-field">
-            <input type="hidden" name="form-name" value="quotation_request"/>
+            <input type="hidden" name="form-name" value="quotation_request_residential"/>
 
            <label v-show="false" for="service-house">Residential
                   <input type="radio" id="service-house" name="service" v-model="serviceType" value="residential">
@@ -330,7 +330,7 @@
 
           <!--  -->
            <form v-show="serviceType === 'carpet-cleaning'" name="quotation_request_carpet" action="/thanks" method="post" netlify netlify-honeypot="bot-field">
-            <input type="hidden" name="form-name" value="quotation_request"/>
+            <input type="hidden" name="form-name" value="quotation_request_carpet"/>
 
            <label v-show="false" for="service-house">carpet cleaning
                   <input type="radio" id="service-house" name="service" v-model="serviceType" value="carpet-cleaning">
