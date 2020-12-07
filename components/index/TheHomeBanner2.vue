@@ -152,8 +152,12 @@
             </div>
 
             <div v-show="tab === 4 && serviceType === 'residential'" class="tab">
-              <input type="date" alt="cleaning date" v-model="formData.cleaningDate">
-              <input type="time" alt="cleaning time" v-model="formData.cleaningTime">
+              <label for="cleaningDate">Cleaning Date
+                <input type="date" alt="cleaning date" name="cleaningDate" id="cleaningDate" v-model="formData.cleaningDate">
+              </label>
+              <label  for="cleaningTime">Cleaning Time
+                <input type="time" name="cleaningTime" alt="cleaning time" v-model="formData.cleaningTime" id="cleaningTime">
+              </label>
             </div>
 
             <div v-show="tab === 5 && serviceType === 'residential'" class="tab">
