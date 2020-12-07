@@ -16,17 +16,16 @@
               <h3>The Kind Of Service You are Looking for</h3>
               <div class="tab-main">
                 <label for="service-house">Residential
-                  <input type="radio" id="service-house" name="service" v-model="serviceType" value="residential">
+                  <input type="radio" id="service-house" name="service" v-model="serviceType" value="Residential">
                   <img src="~/assets/img/service-type-house.png"  alt="">
                 </label>
                 <label for="service-commercial">Commercial
-                  <input type="radio" id="service-commercial" name="service" v-model="serviceType" value="commercial">
+                  <input type="radio" id="service-commercial" name="service" v-model="serviceType" value="Commercial">
                   <img src="~/assets/img/service-type-apartment.png"  alt="">
                 </label>
-                <label for="service-corporate">Corporate
-                  <input type="radio" id="service-corporate" name="service" v-model="serviceType" value="carpet-cleaning">
+                <label for="service-carpet">Carpet Cleaning
+                  <input type="radio" id="service-carpet" name="service" v-model="serviceType" value="Carpet Cleaning">
                   <img src="~/assets/img/service-type-corporate.png" alt="">
-
                 </label>
               </div>
             </div>
@@ -397,7 +396,7 @@
                 <button
                   v-show="(tab === 5  && serviceType ==='residential') || (tab===3 && serviceType !=='residential')"
                   type="submit">Submit
-                </button>
+                </button>   
               </div>
             </div>
           </form>
@@ -463,7 +462,6 @@ export default {
         phone: '',
         cleaningData: '',
         cleaningTime: ''
-
 
       },
       timePickerOptions: {
