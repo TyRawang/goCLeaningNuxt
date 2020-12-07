@@ -9,10 +9,8 @@
             <div class="progress-bar-filler" :style="{'width': completedPortion()+'%'}"></div>
           </div>
 
-          <form name="quotation_request" action="/thanks" method="post" netlify netlify-honeypot="bot-field">
-            <input type="hidden" name="form-name" value="quotation_request"/>
 
-            <div v-show="tab === 0" class="tab">
+   <div v-show="tab === 0" class="tab">
               <h3>The Kind Of Service You are Looking for</h3>
               <div class="tab-main">
                 <label for="service-house">Residential
@@ -30,7 +28,15 @@
               </div>
             </div>
 
-            <div v-if="tab === 1 && serviceType === 'residential'" class="tab">
+
+          <form v-show="serviceType === 'residential'" name="quotation_request" action="/thanks" method="post" netlify netlify-honeypot="bot-field">
+            <input type="hidden" name="form-name" value="quotation_request"/>
+
+           <label v-show="false" for="service-house">Residential
+                  <input type="radio" id="service-house" name="service" v-model="serviceType" value="residential">
+                  <img src="~/assets/img/service-type-house.png"  alt="">
+                </label>
+            <div v-show="tab === 1 && serviceType === 'residential'" class="tab">
               <h3>How Often Are You Looking To Clean Your House?</h3>
               <div class="tab-zero">
                 <label for="one-time">One Time
@@ -56,7 +62,7 @@
               </div>
             </div>
 
-            <div v-if="tab === 2 && serviceType === 'residential'" class="tab">
+            <div v-show="tab === 2 && serviceType === 'residential'" class="tab">
               <h3>Tell Us About Your Home?</h3>
               <div class="two-column">
                 <div>
@@ -121,7 +127,7 @@
               </div>
             </div>
 
-            <div v-if="tab === 3 && serviceType === 'residential'" class="tab">
+            <div v-show="tab === 3 && serviceType === 'residential'" class="tab">
               <h3>Tell Us About Your Home?</h3>
               <div class="tab-one">
                 <div>
@@ -150,7 +156,7 @@
               </div>
             </div>
 
-            <div v-if="tab === 4 && serviceType === 'residential'" class="tab two-column">
+            <div v-show="tab === 4 && serviceType === 'residential'" class="tab two-column">
               <label for="cleaningDate">Cleaning Date
                 <input type="date" alt="cleaning date" name="cleaningDate" id="cleaningDate" v-model="formData.cleaningDate">
               </label>
@@ -159,7 +165,7 @@
               </label>
             </div>
 
-            <div v-if="tab === 5 && serviceType === 'residential'" class="tab">
+            <div v-show="tab === 5 && serviceType === 'residential'" class="tab">
               <p>
                 <label>Your Name: <input type="text" v-model="formData.customerName" name="name"></label>
               </p>
@@ -171,7 +177,33 @@
               </p>
             </div>
 
-            <div v-if="tab===1 && serviceType === 'commercial'" class="tab two-column">
+         
+
+            <div style="overflow:auto;">
+              <div style="float:right;">
+                <button v-show="tab > 0" type="button" id="prevBtn" @click="toPreviousTab">Previous</button>
+                <button
+                  v-show="(tab < 5 && serviceType ==='residential') || (serviceType !=='residential' && tab < 3)"
+                  type="button" id="nextBtn" @click="toNextTab">Next
+                </button>
+                <button
+                  v-show="(tab === 5  && serviceType ==='residential') || (tab===3 && serviceType !=='residential')"
+                  type="submit">Submit
+                </button>
+              </div>
+            </div>
+          </form>
+
+          <!--  -->
+   <form v-show="serviceType === 'commercial'" name="quotation_request" action="/thanks" method="post" netlify netlify-honeypot="bot-field">
+            <input type="hidden" name="form-name" value="quotation_request"/>
+
+           <label v-show="false" for="service-house">commercial
+                  <input type="radio" id="service-house" name="service" v-model="serviceType" value="commercial">
+                  <img src="~/assets/img/service-type-house.png"  alt="">
+                </label>
+         
+            <div v-show="tab===1 && serviceType === 'commercial'" class="tab two-column">
               <div>
                 <label for="client-name">Name: </label>
                 <input id="client-name" type="text" placeholder="Full Name" v-model="clientData.fullName">
@@ -183,7 +215,7 @@
               </div>
             </div>
 
-            <div v-if="tab===2 && serviceType === 'commercial'" class="tab">
+            <div v-show="tab===2 && serviceType === 'commercial'" class="tab">
               <div class="two-column">
                 <div>
                   <label for="client-email">Email: </label>
@@ -230,7 +262,7 @@
               </div>
             </div>
           <!-- </div> -->
-            <div v-if="tab === 3 && serviceType === 'commercial'" class="tab">
+            <div v-show="tab === 3 && serviceType === 'commercial'" class="tab">
               <h3>If you have any additional request or queries, please let us know.</h3>
               <div>
                 <label for="client-request">Request: </label>
@@ -280,7 +312,68 @@
               </div>
             </div> -->
 
-            <div v-if="tab === 2 && serviceType === 'carpet-cleaning'" class="tab">
+
+            <div style="overflow:auto;">
+              <div style="float:right;">
+                <button v-show="tab > 0" type="button" id="prevBtn" @click="toPreviousTab">Previous</button>
+                <button
+                  v-show="(tab < 5 && serviceType ==='residential') || (serviceType !=='residential' && tab < 3)"
+                  type="button" id="nextBtn" @click="toNextTab">Next
+                </button>
+                <button
+                  v-show="(tab === 5  && serviceType ==='residential') || (tab===3 && serviceType !=='residential')"
+                  type="submit">Submit
+                </button>
+              </div>
+            </div>
+          </form>
+
+          <!--  -->
+           <form v-show="serviceType === 'carpet-cleaning'" name="quotation_request" action="/thanks" method="post" netlify netlify-honeypot="bot-field">
+            <input type="hidden" name="form-name" value="quotation_request"/>
+
+           <label v-show="false" for="service-house">carpet cleaning
+                  <input type="radio" id="service-house" name="service" v-model="serviceType" value="carpet-cleaning">
+                  <img src="~/assets/img/service-type-house.png"  alt="">
+                </label>
+         
+          
+
+            <!-- <div v-show="tab=== 3 && serviceType === 'carpet-cleaning'" class="tab">
+              <h3>Please provide us the following details!</h3>
+              <div class="tab-one">
+                <div>
+                  <div>
+                    <label for="carpetData-FullName">Name: </label>
+                    <input id="carpetData-FullName" name="carpetData-FullName" type="text" placeholder="Full Name" v-model="clientData.fullName">
+                  </div>
+                  <div>
+                    <label for="carpetData-email">Email: </label>
+                    <input id="carpetData-email" name="carpetData-FullName" type="email" placeholder="Email" v-model="clientData.email">
+                  </div>
+                </div>
+                <div>
+                  <div>
+                    <label for="carpetData-size">Size (sqt form data)</label>
+                    <input type="text" name="carpetData-size" v-model="clientData.size" id="carpetData-size">
+                  </div>
+                  <div>
+                    <label for="carpetData-residentNo">Number of People Living in the House? </label>
+                    <select name="carpetData-residentNo" v-model="clientData.residentNo" id="carpetData-residentNo">
+                      <option value=""></option>
+                      <option value="1">1</option>
+                      <option value="2">2</option>
+                      <option value="3">3</option>
+                      <option value="4">4</option>
+                      <option value="5">5</option>
+                      <option value="6+">6+</option>
+                    </select>
+                  </div>
+                </div>
+              </div>
+            </div> -->
+
+            <div v-show="tab === 2 && serviceType === 'carpet-cleaning'" class="tab">
               <h3>Please provide us the following details!</h3>
               <div>
                 <label for="carpetData-address">Address: </label>
@@ -315,7 +408,7 @@
               </div> -->
             </div>
 
-            <div v-if="tab === 3 && serviceType === 'carpet-cleaning'" class="tab">
+            <div v-show="tab === 3 && serviceType === 'carpet-cleaning'" class="tab">
               <h3>If you have any additional request or queries, please let us know.</h3>
               <div>
                 <label for="carpetData-request">Request: </label>
@@ -332,7 +425,7 @@
             </div>
 
 
-            <div v-if="tab===1 && serviceType === 'carpet-cleaning'" class="tab two-column">
+            <div v-show="tab===1 && serviceType === 'carpet-cleaning'" class="tab two-column">
               <div>
                 <label for="carpetData-fullName">Name: </label>
                 <input id="carpetData-fullName" name="carpetData-fullName" type="text" placeholder="Full Name" v-model="carpetData.fullName">
