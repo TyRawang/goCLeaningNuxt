@@ -62,7 +62,7 @@
               <div class="two-column">
                 <div>
                   <label for="home-type">Home Type</label>
-                  <select name="house-type" v-model="formData.homeType1" id="home-type">
+                  <select name="home-type" v-model="formData.homeType" id="home-type">
                     <option value=""></option>
                     <option value="Bungalow">Bungalow</option>
                     <option value="Two Storey">Two Storey</option>
@@ -382,11 +382,11 @@ export default {
       serviceType: '',
       formData: {
         time: '',
-        homeType1: '',
+        homeType: '',
         people: '',
         bedrooms1: '',
         bathrooms1: '',
-        homeType2: '',
+        // homeType2: '',
         bedrooms2: '',
         bathrooms2: '',
         customerName: '',
@@ -498,7 +498,7 @@ export default {
       {
         if(this.serviceType === 'residential')
         {
-          if(this.formData.homeType1 === '')
+          if(this.formData.homeType === '')
           {
             valid = false
             this.$toast.error('You need to select a home type please!')
