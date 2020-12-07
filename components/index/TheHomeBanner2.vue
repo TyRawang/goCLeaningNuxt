@@ -29,7 +29,7 @@
             </div>
 
 
-          <form v-show="serviceType === 'residential'" name="quotation_request" action="/thanks" method="post" netlify netlify-honeypot="bot-field">
+          <form v-show="serviceType === 'residential'" name="quotation_request_residential" action="/thanks" method="post" netlify netlify-honeypot="bot-field">
             <input type="hidden" name="form-name" value="quotation_request"/>
 
            <label v-show="false" for="service-house">Residential
@@ -38,7 +38,7 @@
                 </label>
             <div v-show="tab === 1 && serviceType === 'residential'" class="tab">
               <h3>How Often Are You Looking To Clean Your House?</h3>
-              <div class="tab-zero">
+              <div class="tab-zero" name="How Often Are You Looking To Clean Your House?">
                 <label for="one-time">One Time
                   <input type="radio" id="one-time" name="time" v-model="formData.time" value="one-time">
                   <img src="~/assets/svg/go-cleaning-one-time-cleaning-calendar.svg" alt="">
@@ -195,7 +195,7 @@
           </form>
 
           <!--  -->
-   <form v-show="serviceType === 'commercial'" name="quotation_request" action="/thanks" method="post" netlify netlify-honeypot="bot-field">
+   <form v-show="serviceType === 'commercial'" name="quotation_request_commercial" action="/thanks" method="post" netlify netlify-honeypot="bot-field">
             <input type="hidden" name="form-name" value="quotation_request"/>
 
            <label v-show="false" for="service-house">commercial
@@ -206,12 +206,12 @@
             <div v-show="tab===1 && serviceType === 'commercial'" class="tab two-column">
               <div>
                 <label for="client-name">Name: </label>
-                <input id="client-name" type="text" placeholder="Full Name" v-model="clientData.fullName">
+                <input id="client-name" type="text" name="Name" placeholder="Full Name" v-model="clientData.fullName">
                 <!-- <input type="text" placeholder="Last Name" v-model="clientData.fullName"> -->
               </div>
               <div>
                 <label for="business-org">Company Name </label>
-                <input id="business-org" type="text" placeholder="Company Name" v-model="clientData.org">
+                <input id="business-org" type="text" name="Company_Name" placeholder="Company Name" v-model="clientData.org">
               </div>
             </div>
 
@@ -219,15 +219,15 @@
               <div class="two-column">
                 <div>
                   <label for="client-email">Email: </label>
-                  <input id="client-email" type="email" placeholder="Email" v-model="clientData.email">
+                  <input id="client-email" type="email" name="email" placeholder="Email" v-model="clientData.email">
                 </div>
                 <div>
                   <label for="client-address">Address: </label>
-                  <input id="client-address" type="text" placeholder="Address" v-model="clientData.address">
+                  <input id="client-address" type="text" name="Address" placeholder="Address" v-model="clientData.address">
                 </div>
                 <div>
                   <label for="location-type">Location Type</label>
-                  <select name="locationType" v-model="clientData.locationType" id="locationType">
+                  <select name="locationTypes" v-model="clientData.locationType" id="locationType">
                     <option value=""></option>
                     <option value="Really Dirty">Office</option>
                     <option value="Kind of Diry">Retail</option>
@@ -245,7 +245,7 @@
                 </div>
                 <div>
                     <label for="employees">Number of Employee(s) In The Location? </label>
-                    <select name="house-type" v-model="clientData.employeeNo" id="employeeNo">
+                    <select name="house-types" v-model="clientData.employeeNo" id="employeeNo">
                       <option value=""></option>
                       <option value="1-5">1-5</option>
                       <option value="6-10">6-10</option>
@@ -257,7 +257,7 @@
                   </div>
                 <div>
                   <label for="client-phone">Phone: </label>
-                  <input id="client-phone" type="tel" placeholder="Phone" v-model="clientData.phone">
+                  <input id="client-phone" name="Phones" type="tel" placeholder="Phone" v-model="clientData.phone">
                 </div>
               </div>
             </div>
@@ -266,14 +266,14 @@
               <h3>If you have any additional request or queries, please let us know.</h3>
               <div>
                 <label for="client-request">Request: </label>
-                <textarea id="client-request" v-model="clientData.request"></textarea>
+                <textarea id="client-request" name="Request" v-model="clientData.request"></textarea>
               </div>
               <div>
                 <label for="cleaningDate">Cleaning Date
                 <input type="date" alt="cleaning date" name="cleaningDate" id="cleaningDate" v-model="formData.cleaningDate">
                 </label>
                 <label  for="cleaningTime">Cleaning Time
-                  <input type="time" name="cleaningTime" alt="cleaning time" v-model="carpetData.cleaningTime" id="formData-cleaningTime">
+                  <input type="time" name="cleaningTime" alt="cleaning time"  v-model="carpetData.cleaningTime" id="formData-cleaningTime">
                 </label>
               </div>
             </div>
@@ -329,7 +329,7 @@
           </form>
 
           <!--  -->
-           <form v-show="serviceType === 'carpet-cleaning'" name="quotation_request" action="/thanks" method="post" netlify netlify-honeypot="bot-field">
+           <form v-show="serviceType === 'carpet-cleaning'" name="quotation_request_carpet" action="/thanks" method="post" netlify netlify-honeypot="bot-field">
             <input type="hidden" name="form-name" value="quotation_request"/>
 
            <label v-show="false" for="service-house">carpet cleaning
