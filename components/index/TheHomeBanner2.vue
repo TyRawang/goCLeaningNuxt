@@ -196,7 +196,7 @@
 
           <!--  -->
    <form v-show="serviceType === 'commercial'" name="quotation_request_commercial" action="/thanks" method="post" netlify netlify-honeypot="bot-field">
-            <input type="hidden" name="form-name" value="quotation_request"/>
+            <input type="hidden" name="form-name" value="quotation_request_commercial"/>
 
            <label v-show="false" for="service-house">commercial
                   <input type="radio" id="service-house" name="service" v-model="serviceType" value="commercial">
@@ -786,25 +786,7 @@ export default {
             valid = true
           }
         }
-        else if(this.serviceType === 'commercial') {
-          console.log(this.clientData.request 
-            + ":1 "
-            + this.clientData.phone
-            + ":2 "
-            +  this.clientData.employeeNo 
-            + ":3 "
-            + this.clientData.size
-            + ":4 "
-            + this.clientData.locationType
-            + ":5 "
-            + this.clientData.address 
-            + ":6 "
-            + this.clientData.email 
-            + ":7 "
-            + this.clientData.fullName 
-            + ":8 "
-            + this.clientData.org);
-        }
+        
         else if(this.serviceType === 'carpet-cleaning') {
           // if(this.carpetData.)
         }
