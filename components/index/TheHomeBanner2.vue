@@ -98,8 +98,8 @@
                   </select>
                 </div>
                 <div>
-                  <label for="size">Size (sqt form data)</label>
-                  <input type="text" v-model="formData.size" id="size">
+                  <label for="sizeF">Size (sqt form data)</label>
+                  <input type="text" name="sizeF" v-model="formData.size" id="sizeF">
                 </div>
                 <div>
                   <label for="levels">Levels</label>
@@ -205,8 +205,8 @@
                   </select>
                 </div>
                 <div>
-                    <label for="size">Size (sqt client data)</label>
-                    <input type="text" name="size" v-model="clientData.size" id="size">
+                    <label for="size_client">Size (sqt client data)</label>
+                    <input type="text" name="size_client" v-model="clientData.size" id="size_client">
                 </div>
                 <div>
                     <label for="employees">Number of Employee(s) In The Location? </label>
@@ -251,7 +251,7 @@
                 <div>
                   <div>
                     <label for="area">Size (sqt form data)</label>
-                    <input type="text" v-model="clientData.size" id="area">
+                    <input type="text" name="area" v-model="clientData.size" id="area">
                   </div>
                   <!-- <div>
                     <label for="residents-no">Number of People Living in the House? </label>
@@ -325,8 +325,8 @@
                 </select> -->
               </div>
               <div>
-                  <label for="area">Size (sqt area)</label>
-                  <input type="text" v-model="clientData.area" id="area">
+                  <label for="clientdata_Size">Size (sqt area)</label>
+                  <input type="text" name="clientdata_Size" v-model="clientData.area" id="clientdata_Size">
               </div>
               <!-- <div>
                   <label for="resident-no">Number of People Living in the House? </label>
