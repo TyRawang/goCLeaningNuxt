@@ -253,7 +253,7 @@
                     <label for="area">Size (sqt)</label>
                     <input type="text" v-model="clientData.size" id="area">
                   </div>
-                  <div>
+                  <!-- <div>
                     <label for="residents-no">Number of People Living in the House? </label>
                     <select name="residents-no" v-model="clientData.residentNo" id="residents-no">
                       <option value=""></option>
@@ -264,7 +264,7 @@
                       <option value="5">5</option>
                       <option value="6+">6+</option>
                     </select>
-                  </div>
+                  </div> -->
                 </div>
               </div>
             </div>
@@ -275,7 +275,7 @@
                 <label for="customer-address">Address: </label>
                 <input id="customer-address" type="text" placeholder="Address" v-model="clientData.address">
               </div>
-              <div>
+              <!-- <div>
                 <label for="dirty-level">How Clean Would You Say Your Home Is?</label>
                 <select name="dirty-level" v-model="clientData.howDirty" id="dirty-level">
                   <option value=""></option>
@@ -285,7 +285,7 @@
                   <option value="Kind of Clean">Kind of Clean</option>
                   <option value="Really Clean">Really Clean</option>
                 </select>
-              </div>
+              </div> -->
               <div>
                 <label for="customer-phone">Phone: </label>
                 <input id="customer-phone" type="tel" placeholder="Phone" v-model="clientData.phone">
@@ -314,7 +314,7 @@
                 <input id="customer-address" type="text" placeholder="Address" v-model="clientData.address">
               </div>
               <div>
-                <label for="dirt-level">How Clean Would You Say Your Home Is?</label>
+                <!-- <label for="dirt-level">How Clean Would You Say Your Home Is?</label>
                 <select name="dirt-level" v-model="clientData.dirtLevel" id="dirt-level">
                   <option value=""></option>
                   <option value="Really Dirty">Really Dirty</option>
@@ -322,13 +322,13 @@
                   <option value="About Average">About Average</option>
                   <option value="Kind of Clean">Kind of Clean</option>
                   <option value="Really Clean">Really Clean</option>
-                </select>
+                </select> -->
               </div>
               <div>
                   <label for="area">Size (sqt)</label>
                   <input type="text" v-model="clientData.area" id="area">
               </div>
-              <div>
+              <!-- <div>
                   <label for="resident-no">Number of People Living in the House? </label>
                   <select name="resident-no" v-model="clientData.residentNo" id="resident-no">
                     <option value=""></option>
@@ -339,7 +339,7 @@
                     <option value="5">5</option>
                     <option value="6+">6+</option>
                   </select>
-                </div>
+                </div> -->
               <div>
                 <label for="customer-phone">Phone: </label>
                 <input id="customer-phone" type="tel" placeholder="Phone" v-model="clientData.phone">
