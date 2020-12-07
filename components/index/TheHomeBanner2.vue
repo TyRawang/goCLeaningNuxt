@@ -151,7 +151,7 @@
               </div>
             </div>
 
-            <div v-show="tab === 4 && serviceType === 'residential'" class="tab">
+            <div v-show="tab === 4 && serviceType === 'residential'" class="tab two-column">
               <label for="cleaningDate">Cleaning Date
                 <input type="date" alt="cleaning date" name="cleaningDate" id="cleaningDate" v-model="formData.cleaningDate">
               </label>
@@ -162,10 +162,10 @@
 
             <div v-show="tab === 5 && serviceType === 'residential'" class="tab">
               <p>
-                <label>Your Name: <input type="text" v-model="formData.customerName" name="name" required/></label>
+                <label>Your Name: <input type="text" v-model="formData.customerName" name="name"></label>
               </p>
               <p>
-                <label>Your Email: <input type="email" name="email" v-model="formData.customerEmail" required/></label>
+                <label>Your Email: <input type="email" name="email" v-model="formData.customerEmail"></label>
               </p>
               <p>
                 <label>Message: <textarea name="message" v-model="formData.customerMessage"></textarea></label>
