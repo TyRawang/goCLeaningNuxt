@@ -5,14 +5,14 @@
       <div class="container">
         <div class="banner-form">
 
-          <div class="progress-bar" v-if="serviceType === 'residential'">
+          <div class="progress-bar" v-show="serviceType === 'residential'">
             <div class="progress-bar-filler" :style="{'width': completedPortion()+'%'}"></div>
           </div>
 
           <form name="quotation_request" action="/thanks" method="post" netlify netlify-honeypot="bot-field">
             <input type="hidden" name="form-name" value="quotation_request"/>
 
-            <div v-if="tab === 0" class="tab">
+            <div v-show="tab === 0" class="tab">
               <h3>The Kind Of Service You are Looking for</h3>
               <div class="tab-main">
                 <label for="service-house">Residential
@@ -388,13 +388,13 @@
 
             <div style="overflow:auto;">
               <div style="float:right;">
-                <button v-if="tab > 0" type="button" id="prevBtn" @click="toPreviousTab">Previous</button>
+                <button v-show="tab > 0" type="button" id="prevBtn" @click="toPreviousTab">Previous</button>
                 <button
-                  v-if="(tab < 5 && serviceType ==='residential') || (serviceType !=='residential' && tab < 3)"
+                  v-show="(tab < 5 && serviceType ==='residential') || (serviceType !=='residential' && tab < 3)"
                   type="button" id="nextBtn" @click="toNextTab">Next
                 </button>
                 <button
-                  v-if="(tab === 5  && serviceType ==='residential') || (tab===3 && serviceType !=='residential')"
+                  v-show="(tab === 5  && serviceType ==='residential') || (tab===3 && serviceType !=='residential')"
                   type="submit">Submit
                 </button>
               </div>
