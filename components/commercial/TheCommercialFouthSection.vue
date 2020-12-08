@@ -148,8 +148,9 @@ export default {
     #section-four-commercial {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    grid-gap: 2rem;
+    grid-gap: 1rem;
     justify-items: center;
+    margin-top: 5rem;
 
     }
 
@@ -194,4 +195,11 @@ export default {
         padding: 1rem;
         /* background-color: aqua; */
     }
+
+    @media (max-width: 700px) {
+        #section-four-commercial {
+            display: inline-block; 
+        }
+    }
+
 </style>

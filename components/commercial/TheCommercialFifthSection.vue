@@ -75,6 +75,9 @@ export default {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     justify-items: center;
+    margin-top: 4rem;
+    margin-bottom: 2rem;
+
     }
 
     #section-five-commercial h3 {
@@ -95,4 +98,13 @@ export default {
         line-height: 25px;
         color: #777777;
     }
+
+    @media (max-width: 600px) {
+        #section-five-commercial  {
+            display: inline-block;
+            text-align: center;
+        }
+
+    }
+    
 </style>

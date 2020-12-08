@@ -24,11 +24,11 @@ name: "TheCarpetBanner"
 }
 </script>
 
-<style>
+<style scoped>
     #banner {
         width: 100%;
         height: auto;
-        background: url('~assets/img/Go-Cleaning-Commercial-Cleaning.jpg') no-repeat center center/cover;
+        background: url('~assets/img/Go-Cleaning-Office-Cleaning.jpg') no-repeat center center/cover;
         /* border-radius: 0% 0% 90% 90%/0% 0% 50% 50%; */
     }
 
@@ -40,7 +40,7 @@ name: "TheCarpetBanner"
         text-align: center;
         padding-top: 4rem;
         /* background-color: rgba(73, 243, 51, 0.7); */
-        background-color: rgba(106, 191, 22, 0.65);
+        background-color: rgba(153, 115, 226, 0.8);
         width: 100%;
         height: auto;
         /* border-radius: 0% 0% 90% 90%/0% 0% 50% 50%; */

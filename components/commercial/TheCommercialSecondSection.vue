@@ -45,7 +45,8 @@ export default {
 <style scoped>
     #second-section-commercial {
     display: grid;
-    grid-template-columns: repeat(3, 3fr);
+    /* grid-template-columns: repeat(3, 3fr); */
+    grid-template-columns: repeat( auto-fit, minmax(350px, 1fr) );
     grid-gap: 1rem;
     /* margin: 0 auto; */
 

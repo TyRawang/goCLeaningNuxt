@@ -27,7 +27,7 @@ export default {
     grid-template-columns: repeat(2, minmax(0, 1fr));
     /* grid-auto-flow: column; */
     grid-gap: 3rem;
-    background-color: #F8F9FD;
+    background-color: #F8F9FD;   
     padding: 3rem;
     }
 
@@ -49,5 +49,11 @@ export default {
         max-width: 60%;
         /* max-height: 10%;
         max-width: auto; */
+    }
+
+    @media (max-width: 800px) {
+        #section-three-commercial {
+            display: inline-block;
+        }
     }
 </style>

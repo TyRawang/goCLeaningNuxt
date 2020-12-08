@@ -132,9 +132,6 @@ export default {
         max-width: 30rem;
 
 }
-#section-one-testimonials .cards {
-    /* max-width: 30rem; */
-}
 #section-one-testimonials .cards p {
     font-family: Dosis;
     font-style: normal;

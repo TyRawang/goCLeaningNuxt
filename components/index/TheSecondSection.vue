@@ -4,17 +4,17 @@
 
     <div class="residential-cleaning">
       <div>
-        <h2><span>Residential</span><span> Cleaning </span> <span>Service</span> </h2>
+        <h2><span>Residential</span><span>Cleaning</span> <span>Service</span> </h2>
       </div>
     </div>
     <div class="janitorial-cleaning">
       <div>
-        <h2><span>Janitorial</span><span>  </span> <span>Service</span> </h2>
+        <h2><span>Commercial</span><span>Cleaning</span> <span>Service</span> </h2>
       </div>
     </div>
     <div class="office-cleaning">
       <div>
-        <h2><span>Office</span><span> Cleaning </span> <span>Service</span> </h2>
+        <h2><span>Carpet</span><span>Cleaning</span> <span>Service</span> </h2>
       </div>
     </div>
   
