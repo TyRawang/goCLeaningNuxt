@@ -89,14 +89,20 @@ export default {
 #blog-section-one .blogs {
   display: grid;
   /* grid-template-columns: repeat(3, minmax(100px, 1fr)); */
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat( auto-fit, minmax(20rem, 1fr) );
   grid-gap: 1rem;
-  padding: 1rem 0rem 1rem 0rem;
+  padding: 6rem 0rem 1rem 0rem;
+  justify-content: center;
+  align-content: center;
+
+
 }
 
 #blog-section-one img {
   max-width: 100%;
   height: auto;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 #blog-section-one h2 {

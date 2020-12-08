@@ -5,17 +5,17 @@
                 <img src="~/assets/svg/go-cleaning-man.svg" alt="Go Cleaning Man Icon">
                 <img src="~/assets/svg/go-cleaning-female.svg" alt="Go Cleaning Female Icon">
             </span>
-            <h3>One Time Cleaning</h3>
+            <h3>Deep Cleaning</h3>
             <p>2 Cleaners</p>
             <ul>
                 <li>1 Bedroom House: $185</li>
-                <li>2 Bedroom House: $115</li>
-                <li>3 Bedroom House: $145</li>
-                <li>4 Bedroom House: $189</li>
-                <li>5 Bedroom House: $235</li>
+                <li>2 Bedroom House: $215</li>
+                <li>3 Bedroom House: $245</li>
+                <li>4 Bedroom House: $289</li>
+                <li>5 Bedroom House: 2235</li>
             </ul>
             <h4>STARTING FROM</h4>
-            <h5>$85</h5>
+            <h5>$185</h5>
             <h6>FLAT RATE</h6>
         </div>
         <div class="cards">
@@ -33,7 +33,7 @@
                 <li>Monthly - 5% OFF</li>
             </ul>
             <h4>STARTING FROM</h4>
-            <h5>$85</h5>
+            <h5>$72</h5>
             <h6>FLAT RATE</h6>
             <!-- <span class="btn">SELECT</span> -->
         </div>
@@ -46,7 +46,7 @@
             <h3>One Time Cleaning</h3>
             <p>2 Cleaners<p>
             <ul>
-                <li>1 Bedroom House: $185</li>
+                <li>1 Bedroom House: $85</li>
                 <li>2 Bedroom House: $115</li>
                 <li>3 Bedroom House: $145</li>
                 <li>4 Bedroom House: $189</li>
@@ -149,5 +149,16 @@ export default {
     margin-left: 2rem;
     margin-right: 2rem; 
 }
+
+@media (max-width: 900px) {
+
+    #section-two-residential {
+        grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+        justify-content: center;
+    }
+
+}
+
+
 
 </style>

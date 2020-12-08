@@ -21,15 +21,20 @@ export default {
 <style scoped>
 #section-one-residential {
     display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
     justify-items: center;
     margin-top: 3rem;
     grid-gap: 2rem;
+    
 
 }
 
 #section-one-residential img {
-    max-width: 70%;
+    max-width: 80%;
+    margin-bottom: 2rem;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
 }
 
 #section-one-residential h4 {

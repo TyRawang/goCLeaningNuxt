@@ -51,4 +51,10 @@ export default {
         /* max-height: 10%;
         max-width: auto; */
     }
+
+    @media (max-width: 800px) {
+        #section-three-residential {
+            display: block;
+        }   
+    }
 </style>

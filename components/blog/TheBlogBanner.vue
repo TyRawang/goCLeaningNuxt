@@ -17,7 +17,7 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
 .blog-banner {
   background-attachment: fixed;
   background-color: rgba(255, 255, 255, 0);

@@ -1,10 +1,13 @@
 <template>
     <div id="section-one-residential" class="container">
         <div>
-            <h2>House Cleaning</h2>
-            <p>Dreaming of having a home that will always be clean as a whistle when you arrive home?</p>
-            <h4>Well, you can stop dreaming!</h4>
-            <p>Go Cleaning is a professional and affordable Residential cleaning services Calgary based company that hires professional and dedicated cleaners who will ensure that your house will be spotless by the time you arrive home.</p>    
+            <h2>Carpet Cleaning Clean</h2>
+            <p>It is not easy to keep your clean even if you vacuum everyday. Let us clean for you &#128515;.</p>
+            <h4>Hey, don't wait any longer!</h4>
+            <p>At Go Cleaning we provide the best carpet cleaning service in Calgary for 
+                the most reasonable rate. Let us make your carpet feel and smeel fresh again 
+                with our commercial graded carpet cleaning machine and save chemicals.
+            </p>    
         </div>
         <div>
             <img src="~/assets/img/Go-Cleaning-Residential-Cleaning.jpg" alt="Go Cleaning Residental Cleaning">
@@ -21,7 +24,9 @@ export default {
 <style scoped>
 #section-one-residential {
     display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+    /* grid-template-columns: repeat(2, minmax(0, 1fr)); */
+    grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+
     justify-items: center;
     margin-top: 3rem;
     grid-gap: 2rem;

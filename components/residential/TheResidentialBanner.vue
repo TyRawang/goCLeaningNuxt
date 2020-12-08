@@ -41,7 +41,7 @@ export default {
     justify-content: center;
     text-align: center;
     padding-top: 4rem;
-    background-color: rgba(73, 243, 51, 0.7);
+    /* background-color: rgba(73, 243, 51, 0.7); */
     background-color: rgba(106, 191, 22, 0.65);
     width: 100%;
     height: auto;

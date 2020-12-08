@@ -150,4 +150,13 @@ export default {
     margin-right: 2rem; 
 }
 
+@media (max-width: 900px) {
+
+    #section-two-residential {
+        grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+        justify-content: center;
+    }
+
+}
+
 </style>
