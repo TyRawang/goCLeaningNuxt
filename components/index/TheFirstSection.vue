@@ -33,61 +33,80 @@
         <div class="btn">REQUEST A FREE QUOTE</div>
       </div>
     </div>
-    <div class="service-info">
+    <!-- <div class="service-info">
       <div>
         <h3>In need of cleaning service for your company?</h3>
         <h4>We ar the cleaning solution for your small, medium or large space.</h4>
       </div>
-    </div>
+    </div> -->
     <div class="testimonials">
       <h2>Testimonials</h2>
       <div class="testimonials-content">
-        <VueSlickCarousel ref="carousel" v-bind="slickOptions" class="carousel-container">
-          <div class="cards">
-            <img src="~/assets/img/noah_bowman.png" alt="Go Cleaning Testimonial">
-            <p>
-              Go Cleaning provided me with excellent services. Their
-              cleaners are always smiling and have great respect for me
-              and house. I can easily say they are the best cleaning service
-              near me.
-              <span>Noah</span>
-              <span>Happy Customer</span>
-            </p>
+        <VueSlickCarousel ref="carousel" v-bind="slickOptions">
+          <div >
+            <div class="cards">
+              <div>
+                <img src="~/assets/img/noah_bowman.png" alt="">
+              </div>
+              <div>
+                <p>
+                  Gdo Cleaning provided me with excellent services. Their cleaners
+                  are always smiling and have great respect for me and house. I can
+                  easily say they are the best cleaning service near me. Noah
+                </p>
+                <h6>Noah</h6>
+              </div>
+            </div>
           </div>
-          <div class="cards">
-            <img src="~/assets/img/noah_bowman.png" alt="Go Cleaning Testimonial">
-            <p>
-              Go Cleaning provided me with excellent services. Their
-              cleaners are always smiling and have great respect for me
-              and house. I can easily say they are the best cleaning service
-              near me.
-              <span>Noah</span>
-              <span>Happy Customer</span>
-            </p>
+          <div>
+            <div class="cards">
+              <div>
+                <img src="~/assets/img/noah_bowman.png" alt="">
+              </div>
+              <div>
+                <p>
+                  Gdo Cleaning provided me with excellent services. Their cleaners
+                  are always smiling and have great respect for me and house. I can
+                  easily say they are the best cleaning service near me. Noah
+                </p>
+                <h6>Noah</h6>
+              </div>
+            </div>
           </div>
-          <div class="cards">
-            <img src="~/assets/img/noah_bowman.png" alt="Go Cleaning Testimonial">
-            <p>
-              Go Cleaning provided me with excellent services. Their
-              cleaners are always smiling and have great respect for me
-              and house. I can easily say they are the best cleaning service
-              near me.
-              <span>Noah</span>
-              <span>Happy Customer</span>
-            </p>
+          <div>
+            <div class="cards">
+              <div>
+                <img src="~/assets/img/noah_bowman.png" alt="">
+              </div>
+              <div>
+                <p>
+                  Gdo Cleaning provided me with excellent services. Their cleaners
+                  are always smiling and have great respect for me and house. I can
+                  easily say they are the best cleaning service near me. Noah
+                </p>
+                <h6>Noah</h6>
+              </div>
+            </div>
           </div>
-        </VueSlickCarousel>
-<!--        <div class="cards">-->
-<!--          <img src="~/assets/img/noah_bowman.png" alt="Go Cleaning Testimonial">-->
-<!--          <p>-->
-<!--            Go Cleaning provided me with excellent services. Their-->
-<!--            cleaners are always smiling and have great respect for me-->
-<!--            and house. I can easily say they are the best cleaning service-->
-<!--            near me.-->
-<!--            <span>Noah</span>-->
-<!--            <span>Happy Customer</span>-->
-<!--          </p>-->
-<!--        </div>-->
+          <div>
+            <div class="cards">
+              <div>
+                <img src="~/assets/img/noah_bowman.png" alt="">
+              </div>
+              <div>
+                <p>
+                  Gdo Cleaning provided me with excellent services. Their cleaners
+                  are always smiling and have great respect for me and house. I can
+                  easily say they are the best cleaning service near me. Noah
+                </p>
+                <h6>Noah</h6>
+              </div>
+            </div>
+          </div>
+          <!-- <div> -->
+        </VueSlickCarousel>  
+
+
       </div>
 
     </div>
@@ -101,17 +120,28 @@ export default {
 name: "TheFirstSection",
   data(){
   return {
+    // slickOptions: {
+    //   arrows: false,
+    //   dots: false,
+    //   infinite: true,
+    //   slidesToShow: 1,
+    //   slidesToScroll: 1,
+    //   autoplay: true,
+    //   speed: 2000,
+    //   autoplaySpeed: 4000,
+    //   cssEase: "linear"
+    // }
     slickOptions: {
-      arrows: false,
-      dots: false,
-      infinite: true,
-      slidesToShow: 1,
-      slidesToScroll: 1,
-      autoplay: true,
-      speed: 2000,
-      autoplaySpeed: 4000,
-      cssEase: "linear"
-    }
+        arrows: false,
+        dots: true,
+        infinite: true,
+        slidesToShow: 2,
+        slidesToScroll: 1,
+        autoplay: true,
+        speed: 3000,
+        autoplaySpeed: 3000,
+        cssEase: "linear"
+      }
   }
   }
 }
@@ -123,11 +153,6 @@ name: "TheFirstSection",
   display: grid;
   grid-template-columns: 1fr 1.5fr 3fr 0.3fr 2fr;
   grid-auto-rows: auto;
-  /* grid-gap: 1rem; */
-
-  /* border-radius: 10rem; */
-
-
 }
 
 #first-section .first-box{
@@ -212,6 +237,7 @@ name: "TheFirstSection",
   height: 100%;
   color: #ffffff;
   line-height: 2.3rem;
+  margin-bottom: 3rem;
 }
 
 #first-section .side h3, h4 {
@@ -227,29 +253,6 @@ name: "TheFirstSection",
   padding: 0.5rem;
 }
 
-#first-section :nth-child(5) {
-  grid-column-start: 1;
-  grid-column-end: 3;
-  width: 100%;
-  height: auto;
-  background: url('~assets/img/Go-Cleaning-Header-Background.jpg') no-repeat right center/cover;
-  /* background-color: rgba(95, 97, 96, 0.8); */
-  color: #ffffff;
-}
-
-#first-section :nth-child(5) div {
-  display: flex;
-  flex-direction: column;
-  text-align: center;
-  padding-top: 4rem;
-  padding-bottom: 4rem;
-  background-color: rgba(95, 97, 96, 0.8);
-  width: 100%;
-  height: 100%;
-  color: #ffffff;
-  line-height: 1.3rem;
-
-}
 
 #first-section div:nth-child(5) div .btn {
   background-color: rgba(95, 97, 96, 0.8);
@@ -262,8 +265,7 @@ name: "TheFirstSection",
 
 /* TESTMONIALS */
 #first-section .testimonials  {
-  /* background-color: black; */
-  grid-column-start: 3;
+  grid-column-start: 1;
   grid-column-end: 5;
   grid-row-start: 2;
   grid-row-end: 3;
@@ -277,89 +279,41 @@ name: "TheFirstSection",
   margin-bottom: 2rem;
 }
 
-#first-section .testimonials .cards  img {
-  border-top-left-radius: 1rem;
-}
-
-#first-section .testimonials .cards p {
-  background: linear-gradient(124.9deg, #1675BF -5.34%, #32B8E9 110.05%);
-  color: #fff;
-  padding: 1rem;
-
-}
-
-#first-section .testimonials .cards p span {
-  display: block;
-}
-
 #first-section .testimonials .testimonials-content .cards {
-  display: flex;
-  /* grid-template-columns: repeat(3, 1fr); */
+    display: flex;
+    flex-direction: row;
+    max-width: 25rem;
+}
+
+#first-section .testimonials .testimonials-content .cards p {
+    font-family: Dosis;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 25px;
+    color: #777777;
 
 }
 
-.carousel-container {
-  border: none;
-  box-shadow: none;
-}
+
+#first-section .testimonials .testimonials-content  img {
+    border-radius: 95%;
+    width: 200px;
+  }
+
+  #first-section .testimonials .testimonials-content .cards :nth-child(2) {
+      padding: 1rem;
+  }
+
+  #first-section .testimonials .testimonials-content .cards :nth-child(2) h6 {
+      text-align: right;
+      color: var(--secondary-colour);
+      font-size: 2rem;
+
+  }
+  /* ============================================= */
 
 @media (max-width: 800px) {
-  #first-section {
-    grid-template-columns: 1fr;
-    grid-template-rows: auto;
-  }
-  #first-section .first-box {
-    grid-column-start: 5;
-    grid-column-end: 6;
-    grid-row-start: 3;
-    grid-row-end: 4;
-
-  }
-  #first-section .second-box {
-    grid-column-start: 1;
-    grid-column-end: 6;
-    grid-row-start: 1;
-    grid-row-end: 2;
-
-    flex-direction: row;
-  }
-
-  #first-section .review-logos {
-    grid-column-start: 1;
-    grid-column-end: 2;
-    grid-row-start: 2;
-    grid-row-end: 3;
-    /* display: inline-block; */
-
-  }
-
-  #first-section .side {
-    grid-column-start: 1;
-    grid-column-end: 5;
-    grid-row-start: 3;
-    grid-row-end: 4;
-
-  }
-
-  #first-section .service-info {
-    grid-column-start: 1;
-    grid-column-end: 6;
-    grid-row-start: 5;
-    grid-row-end: 6;
-
-
-  }
-
-  #first-section .testimonials {
-    grid-column-start: 3;
-    grid-column-end: 6;
-    grid-row-start: 2;
-    grid-row-end: 3;
-
-  }
-}
-
-@media (max-width: 600px) {
   #first-section {
     grid-template-columns: 1fr;
     grid-template-rows: auto;
@@ -389,11 +343,13 @@ name: "TheFirstSection",
     /* display: inline-block; */
 
   }
-  #first-section .review-logos ul {
+  #first-section .review-logos ul li {
     display: inline;
+    margin: auto;
+    width: 50%;
+    padding: 10px;
+
   }
-
-
 
   #first-section .side {
     grid-column-start: 1;
@@ -420,4 +376,5 @@ name: "TheFirstSection",
 
   }
 }
+
 </style>

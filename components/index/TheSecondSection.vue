@@ -17,6 +17,7 @@
         <h2><span>Office</span><span> Cleaning </span> <span>Service</span> </h2>
       </div>
     </div>
+  
   </div>
 </template>
 
@@ -103,7 +104,9 @@ name: "TheSecondSection"
 }
 
 
-#second-section .residential-cleaning h2 span, .janitorial-cleaning h2 span, .office-cleaning h2 span{
+#second-section .residential-cleaning h2 span, 
+#second-section .janitorial-cleaning h2 span, 
+#second-section .office-cleaning h2 span{
   display: block;
 }
 
@@ -116,22 +119,21 @@ name: "TheSecondSection"
 @media (max-width: 600px) {
   #second-section {
     flex-direction: column;
-
   }
 
   #second-section .residential-cleaning {
     width: 100%;
-    height: auto;
+    height: 15rem;
   }
 
   #second-section .janitorial-cleaning {
     width: 100%;
-    height: auto;
+    height: 15rem;
   }
 
   #second-section .office-cleaning {
     width: 100%;
-    height: auto;
+    height: 15rem;
   }
 }
 </style>

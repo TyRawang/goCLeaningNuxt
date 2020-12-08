@@ -21,16 +21,13 @@ export default {
 #section-two-testimonials {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
-      /* margin-top: 3rem; */
-      margin-bottom: 3rem;
-      
-
+      /* margin-bottom: 3rem; */
   }
   #section-two-testimonials input {
     border-radius: 25px;
     border: 2px solid #73AD21;
     padding: 20px;
-    width: 30rem;
+    width: 80%;
     height: auto;
     background: rgba(106,191,22, 0.3);
     /* color: lavender; */
@@ -51,7 +48,6 @@ export default {
 
         background:radial-gradient(circle, rgba(255,255,255,0) 0%, rgba(106,191,22,1) 82%), url(~assets/img/Happy-Family.jpg) no-repeat center center/cover;
         
-
     }
 
     #section-two-testimonials h3 {
@@ -78,6 +74,19 @@ export default {
         padding-bottom: 1rem;
         color: #FFFFFF;
     }
+        
+    @media (max-width: 1000px) {
 
+        #section-two-testimonials {
+            grid-template-columns: 1fr;
+        }
+        #section-two-testimonials div:nth-child(1) {
+        background:radial-gradient(circle, rgba(255,255,255,0) 0%, rgba(106,191,22,1) 82%), url(~assets/img/Happy-Family.jpg) no-repeat center center/cover;
+        }
+        #section-two-testimonials div:nth-child(2) {
+            display: none;
+        
+    }
+    }
    
 </style>

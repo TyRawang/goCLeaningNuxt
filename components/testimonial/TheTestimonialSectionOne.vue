@@ -129,9 +129,11 @@ export default {
     display: flex;
     flex-direction: row;
     /* background-color: grey; */
+        max-width: 30rem;
+
 }
 #section-one-testimonials .cards {
-    max-width: 30rem;
+    /* max-width: 30rem; */
 }
 #section-one-testimonials .cards p {
     font-family: Dosis;
