@@ -42,17 +42,16 @@
     <div class="testimonials">
       <h2>Testimonials</h2>
       <div class="testimonials-content">
-        <VueSlickCarousel ref="carousel" v-bind="slickOptions">
-          <div >
+                <VueSlickCarousel ref="carousel" v-bind="slickOptions">
+          <div>
             <div class="cards">
               <div>
-                <img src="~/assets/img/noah_bowman.png" alt="">
+                <!-- <img src="~/assets/img/noah_bowman.png" alt=""> -->
+                <img src="https://cdn5.vectorstock.com/i/1000x1000/61/44/young-man-smiling-person-caucasian-attractive-vector-14906144.jpg" alt="">
               </div>
               <div>
                 <p>
-                  Gdo Cleaning provided me with excellent services. Their cleaners
-                  are always smiling and have great respect for me and house. I can
-                  easily say they are the best cleaning service near me. Noah
+                  “Go Cleaning provided me with excellent services. Their cleaners are always smiling and have great respect for me and house. I can easily say they are the best cleaning service near me”
                 </p>
                 <h6>Noah</h6>
               </div>
@@ -61,50 +60,60 @@
           <div>
             <div class="cards">
               <div>
-                <img src="~/assets/img/noah_bowman.png" alt="">
+                <!-- <img src="~/assets/img/noah_bowman.png" alt=""> -->
+                <img src="https://image.freepik.com/free-vector/happy-young-woman-raises-her-with-sign-ok-presentation-concept-character-vector-illustration_102172-492.jpg" alt="">
               </div>
               <div>
                 <p>
-                  Gdo Cleaning provided me with excellent services. Their cleaners
-                  are always smiling and have great respect for me and house. I can
-                  easily say they are the best cleaning service near me. Noah
+                  “I highly recommend Go Cleaning!”
                 </p>
-                <h6>Noah</h6>
+                <h6>Avery</h6>
+              </div>
+            </div>
+          </div>
+          <div>
+    
+          </div>
+          <div>
+            <div class="cards">
+              <div>
+                <img src="https://image.freepik.com/free-vector/moslem-boy-celebrating-ramadan-with-beautiful-burning-lamp-his-hand_102172-521.jpg" alt="">
+              </div>
+              <div>
+                <p>
+                  “Go Cleaning is a company that I trust because of the relationship I have build with the cleaners. It is hard for me to give access to my personal living space easily. I am glad that I have cleaners that I can trust. Now i come home knowing my home will get best cleaning service and is in secure hands”
+                </p>
+                <h6>Medalin</h6>
               </div>
             </div>
           </div>
           <div>
             <div class="cards">
               <div>
-                <img src="~/assets/img/noah_bowman.png" alt="">
+                <img src="https://image.freepik.com/free-vector/moslem-boy-celebrating-ramadan-with-beautiful-burning-lamp-his-hand_102172-521.jpg" alt="">
               </div>
               <div>
                 <p>
-                  Gdo Cleaning provided me with excellent services. Their cleaners
-                  are always smiling and have great respect for me and house. I can
-                  easily say they are the best cleaning service near me. Noah
+                  “I found Go Cleaning through their ad. I am glad that I clicked that ad and choose them. They are on time and professional. I’ve tried several and I am happy and i can say they provide the best cleaning service”
                 </p>
-                <h6>Noah</h6>
+                <h6>Sue</h6>
               </div>
             </div>
           </div>
           <div>
             <div class="cards">
               <div>
-                <img src="~/assets/img/noah_bowman.png" alt="">
+                <img src="https://image.freepik.com/free-vector/moslem-boy-celebrating-ramadan-with-beautiful-burning-lamp-his-hand_102172-521.jpg" alt="">
               </div>
               <div>
                 <p>
-                  Gdo Cleaning provided me with excellent services. Their cleaners
-                  are always smiling and have great respect for me and house. I can
-                  easily say they are the best cleaning service near me. Noah
+                  “I love their cleaners. They are so friendly, always smiling”
                 </p>
-                <h6>Noah</h6>
+                <h6>Ava</h6>
               </div>
             </div>
           </div>
-          <!-- <div> -->
-        </VueSlickCarousel>  
+        </VueSlickCarousel>
 
 
       </div>
@@ -135,11 +144,11 @@ name: "TheFirstSection",
         arrows: false,
         dots: true,
         infinite: true,
-        slidesToShow: 2,
+        slidesToShow: 1.5,
         slidesToScroll: 1,
         autoplay: true,
         speed: 3000,
-        autoplaySpeed: 3000,
+        autoplaySpeed: 5000,
         cssEase: "linear"
       }
   }

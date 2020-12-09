@@ -40,17 +40,17 @@
               <li><nuxt-link to="/blog">Blog</nuxt-link></li>
               <li><nuxt-link to="/testimonials-reviews-for-best-cleaning-service">Testimonials</nuxt-link></li>
               <li><nuxt-link to="/best-cleaning-services-calgary-faq">FAQ</nuxt-link></li>
-              <li><nuxt-link to="/blog">Contact</nuxt-link></li>
+              <li><nuxt-link to="/contact-us-for-cleaning-services">Contact</nuxt-link></li>
             </ul>
           </li>
-          <li><nuxt-link to="/go-cleaning-car-wash">Car Wash</nuxt-link></li>
+          <!-- <li><nuxt-link to="/go-cleaning-car-wash">Car Wash</nuxt-link></li> -->
           <!-- <li><nuxt-link to="/testimonials-reviews-for-best-cleaning-service">Testimonials</nuxt-link></li>
           <li><nuxt-link to="/best-cleaning-services-calgary-faq">FAQ</nuxt-link></li>
           <li><nuxt-link to="/blog">Blog</nuxt-link></li>
           <li><nuxt-link to="/contact-us-for-cleaning-services">Contact</nuxt-link></li> -->
         </ul>
       </nav>
-      <nuxt-link to="#" class="cta">
+      <nuxt-link to="/free-quote" class="cta">
         <button>Free Quote</button>
       </nuxt-link>
       <a @click="openNav" class="menu" href="#">
@@ -61,9 +61,25 @@
     <div id="mobile__menu" class="overlay" ref="mobileMenu">
       <a href="#" @click="closeNav" class="close">&times;</a>
       <div class="overlay__content">
-        <nuxt-link to="#">Services</nuxt-link>
-        <nuxt-link to="#">Projects</nuxt-link>
-        <nuxt-link to="#">About</nuxt-link>
+        <span @click="closeNav"><nuxt-link to="/">Home</nuxt-link></span>
+        <nuxt-link to="#">Services <i class="fas fa-angle-down"></i></nuxt-link>
+          <ul class="dropdown-mobile">
+            <li></li>
+            <li @click="closeNav"><nuxt-link to="/commercial-cleaning-service-calgary">Commercial</nuxt-link></li>
+            <li @click="closeNav"><nuxt-link to="/residential-cleaning-service-calgary">Residential</nuxt-link></li>
+            <li @click="closeNav"><nuxt-link to="/carpet-cleaning-service-calgary">Carpet Cleaning</nuxt-link></li>
+          </ul>
+        <nuxt-link to="#">About <i class="fas fa-angle-down"></i></nuxt-link>
+          <ul class="dropdown-mobile">
+            <li></li>
+            <li @click="closeNav"><nuxt-link to="/blog">Blog</nuxt-link></li>
+            <li @click="closeNav"><nuxt-link to="/testimonials-reviews-for-best-cleaning-service">Testimonials</nuxt-link></li>
+            <li @click="closeNav"><nuxt-link to="/best-cleaning-services-calgary-faq">FAQ</nuxt-link></li>
+            <li @click="closeNav"><nuxt-link to="/contact-us-for-cleaning-services">Contact</nuxt-link></li>
+          </ul>
+        <nuxt-link to="/free-quote" class="cta">
+          <button @click="closeNav">Free Quote</button>
+        </nuxt-link>
       </div>
     </div>
   </section>
@@ -79,6 +95,7 @@ export default {
     closeNav(){
       this.$refs.mobileMenu.style.width = '0%';
     }
+
   }
 }
 </script>
@@ -300,13 +317,15 @@ nav ul li ul li {
   display: flex;
   height: 100%;
   flex-direction: column;
-  align-items: center;
+  align-items: flex-end;
   justify-content: center;
+  padding-right: 2rem;
+  margin-top: 6rem;
 
 }
 
 .overlay__content a {
-  padding: 1rem;
+  padding: 0.5rem;
   font-size: 5rem;
   display: block;
   transition: all 0.3s ease 0s;
@@ -335,11 +354,5 @@ nav ul li ul li {
     top: 1rem;
     right: 3rem;
   }
-
-  /* #banner .banner-bg .banner-form form {
-      grid-template-columns: repeat(2, 1fr);
-
-
-  } */
 }
 </style>
