@@ -141,14 +141,14 @@ name: "TheFirstSection",
     //   cssEase: "linear"
     // }
     slickOptions: {
-        arrows: false,
+        arrows: true,
         dots: true,
         infinite: true,
-        slidesToShow: 1.5,
-        slidesToScroll: 1,
+        slidesToShow: 1,
+        // slidesToScroll: 1,
         autoplay: true,
         speed: 3000,
-        autoplaySpeed: 5000,
+        autoplaySpeed: 8000,
         cssEase: "linear"
       }
   }
@@ -291,7 +291,7 @@ name: "TheFirstSection",
 #first-section .testimonials .testimonials-content .cards {
     display: flex;
     flex-direction: row;
-    max-width: 25rem;
+    max-width: 45rem;
 }
 
 #first-section .testimonials .testimonials-content .cards p {
@@ -383,6 +383,15 @@ name: "TheFirstSection",
     grid-row-start: 4;
     grid-row-end: 5;
 
+  }
+
+  @media (max-width: 750px) {
+      #first-section .testimonials .testimonials-content .cards {
+        /* display: flex; */
+        flex-direction: column;
+        max-width: 15rem;
+        /* margin-right: 4rem;  */
+    } 
   }
 }
 

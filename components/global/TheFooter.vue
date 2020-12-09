@@ -15,29 +15,31 @@
       </div>
       <div>
         <h3>Go Cleaning Menu</h3>
-        <a href="#">Home</a>
+        <a><nuxt-link to="/">Home</nuxt-link></a>
         <a href="#">Services</a>
-        <span><a href="#">Residential</a></span>
-        <span><a href="#">Commercial</a></span>
-        <span><a href="#">Airbnb</a></span>
-        <a href="#">Testimonials</a>
-        <a href="#">Faq</a>
-        <a href="#">Blog</a>
-        <a href="#">Contact</a>
+        <span><a><nuxt-link to="/commercial-cleaning-service-calgary">Commercial</nuxt-link></a></span>     
+        <span><a><nuxt-link to="/residential-cleaning-service-calgary">Residential</nuxt-link></a></span>
+        <span><a><nuxt-link to="/carpet-cleaning-service-calgary">Carpet Cleaning</nuxt-link></a></span> 
+        <a href="#">About</a>
+        <span><a><nuxt-link to="/blog">Blog</nuxt-link></a></span>     
+        <span><a><nuxt-link to="/testimonials-reviews-for-best-cleaning-service">Testimonials</nuxt-link></a></span>
+        <span><a><nuxt-link to="/best-cleaning-services-calgary-faq">FAQ</nuxt-link></a></span>
+        <span><a><nuxt-link to="/contact-us-for-cleaning-services">Contact</nuxt-link></a></span> 
+        
       </div>
       <div>
         <h3>Recent Posts</h3>
-        <a href="#">- Where Do We Start Cleaning?</a>
-        <a href="#">- What Is Your Cleaning Style?</a>
-        <a href="#">- Clean House, Cleaner Perspective</a>
+        <a><nuxt-link to="/blog/where-do-we-start-cleaning">- Where Do We Start Cleaning?</nuxt-link></a>
+        <a><nuxt-link to="/blog/clean-house-cleaner-perspective">- Clean House, Cleaner Perspective</nuxt-link></a>
+        <a><nuxt-link to="/blog/what-is-your-cleaning-style">- What Is Your Cleaning Style?</nuxt-link></a>
       </div>
     </div>              
     <!-- <li><nuxt-link to="/commercial-cleaning-service-calgary">Commercial</nuxt-link></li> -->
 
     <footer>
       <p>
-        © Copyright {{ new Date().getFullYear() }} | All Rights Reserved | <nuxt-link to="/sitemap.xml">Sitemap</nuxt-link> | Powered by WebDesign Calgary | 
-        <nuxt-link to="/privacy-policy">Privacy Policy</nuxt-link> | <nuxt-link to="/terms-condition">Terms &amp; Condition</nuxt-link>   
+        © Copyright {{ new Date().getFullYear() }} | All Rights Reserved | <nuxt-link to="/sitemap.xml">Sitemap</nuxt-link> | Powered by<a href="https://webdesigncalgary.net">WebDesign Calgary |</a> 
+                  <nuxt-link to="/privacy-policy">Privacy Policy</nuxt-link> | <nuxt-link to="/terms-conditions">Terms &amp; Condition</nuxt-link> 
       </p>
     </footer>
   </section>
@@ -140,7 +142,7 @@ footer p, footer a {
   padding: 1.5rem;
   color: #fff;
   margin: auto;
-  width: 50%;
+  width: 90%;
   font-size: 1rem;
   font-weight: 200;
 }

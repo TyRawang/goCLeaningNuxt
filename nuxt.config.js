@@ -1,7 +1,7 @@
 const dyRoutes = [
-  "/blog/custom-email-verification-notification-in-laravel",
-  "/blog/how-to-create-custom-bash-commands",
-  "/blog/intro-to-alpinejs"
+  "/blog/what-is-your-cleaning-style",
+  "/blog/where-do-we-start-cleaning",
+  "/blog/clean-house-cleaner-perspective"
 ]
 
 export default {
@@ -113,7 +113,7 @@ export default {
     ]
   },
   sitemap: {
-    hostname: 'http://localhost:3000',
+    hostname: 'https:gocleaning.ca',
     path: '/sitemap.xml',
     // cacheTime: 1000 * 60 * 60 * 2,
     trailingSlash: true,

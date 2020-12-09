@@ -69,6 +69,13 @@
             <li @click="closeNav"><nuxt-link to="/residential-cleaning-service-calgary">Residential</nuxt-link></li>
             <li @click="closeNav"><nuxt-link to="/carpet-cleaning-service-calgary">Carpet Cleaning</nuxt-link></li>
           </ul>
+        <nuxt-link to="#">Locations <i class="fas fa-angle-down"></i> </nuxt-link>
+            <ul class="dropdown">
+              <li></li>
+              <li @click="closeNav"><nuxt-link to="/location/calgary">Calgary</nuxt-link></li>
+              <li @click="closeNav"><nuxt-link to="/location/edmonton">Edmonton</nuxt-link></li>
+              <li @click="closeNav"><nuxt-link to="/location/toronto">Toronto</nuxt-link></li>
+            </ul>
         <nuxt-link to="#">About <i class="fas fa-angle-down"></i></nuxt-link>
           <ul class="dropdown-mobile">
             <li></li>
@@ -320,7 +327,7 @@ nav ul li ul li {
   align-items: flex-end;
   justify-content: center;
   padding-right: 2rem;
-  margin-top: 6rem;
+  margin-top: 10rem;
 
 }
 
