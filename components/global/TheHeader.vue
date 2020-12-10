@@ -12,7 +12,6 @@
         <a href="mailto: info@gocleaning.ca"><i class="fas fa-envelope fa-2x"></i></a>
       </div>
     </div>
-
     <header>
       <img src="~/assets/img/logo.png" alt="Go Cleaning Logo" class="logo">
       <nav>
@@ -103,7 +102,7 @@ export default {
       this.$refs.mobileMenu.style.width = '0%';
     }
 
-    
+
 
   }
 }

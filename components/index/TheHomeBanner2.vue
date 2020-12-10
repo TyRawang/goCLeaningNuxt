@@ -296,18 +296,18 @@
                   type="date"
                   alt="cleaning date"
                   name="cleaningDate"
-                  id="cleaningDate"
+                  id="residential-cleaningDate1"
                   v-model="formData.cleaningDate"
                 />
               </label>
-              <label for="cleaningTime"
+              <label for="formData-cleaningTime"
                 >Cleaning Time
                 <input
                   type="time"
                   name="cleaningTime"
                   alt="cleaning time"
                   v-model="formData.cleaningTime"
-                  id="cleaningTime"
+                  id="formData-cleaningTime"
                 />
               </label>
             </div>
@@ -529,24 +529,24 @@
                 ></textarea>
               </div>
               <div>
-                <label for="cleaningDate"
+                <label for="carpetData-cleaningDate"
                   >Cleaning Date
                   <input
                     type="date"
                     alt="cleaning date"
                     name="cleaningDate"
-                    id="cleaningDate"
-                    v-model="formData.cleaningDate"
+                    id="carpetData-cleaningDate"
+                    v-model="carpetData.cleaningDate"
                   />
                 </label>
-                <label for="cleaningTime"
+                <label for="carpetData-cleaningTime"
                   >Cleaning Time
                   <input
                     type="time"
                     name="cleaningTime"
                     alt="cleaning time"
                     v-model="carpetData.cleaningTime"
-                    id="cleaningTime"
+                    id="carpetData-cleaningTime"
                   />
                 </label>
               </div>
@@ -692,18 +692,18 @@
                     type="date"
                     alt="cleaning date"
                     name="carpetData-cleaningDate"
-                    id="cleaningDate"
+                    id="carpetData-cleaningDate"
                     v-model="carpetData.cleaningDate"
                   />
                 </label>
-                <label for="cleaningTime"
+                <label for="carpetData-cleaningTime"
                   >Cleaning Time
                   <input
                     type="time"
                     name="carpetData-cleaningTime"
                     alt="carpetData-cleaning time"
                     v-model="carpetData.cleaningTime"
-                    id="cleaningTime"
+                    id="carpetData-cleaningTime"
                   />
                 </label>
               </div>
