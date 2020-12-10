@@ -4,7 +4,7 @@
       <h3>Our customers love our service and attention to safety and detail</h3>
       <p><span>Send us an email, call us, or let us call you</span></p>
       <p>Your convenience and happiness is our pririty</p>
-      <button> REQUEST A FREE QUOTE </button>
+      <button><nuxt-link to="/free-quote">REQUEST A FREE QUOTE</nuxt-link></button>
     </div>
     <div id="footer-menu" class="container">
       <div>
@@ -17,8 +17,8 @@
         <h3>Go Cleaning Menu</h3>
         <a><nuxt-link to="/">Home</nuxt-link></a>
         <a href="#">Services</a>
-        <span><a><nuxt-link to="/commercial-cleaning-service-calgary">Commercial</nuxt-link></a></span>     
-        <span><a><nuxt-link to="/residential-cleaning-service-calgary">Residential</nuxt-link></a></span>
+        <span><a><nuxt-link to="/commercial-cleaning-services-calgary">Commercial</nuxt-link></a></span>     
+        <span><a><nuxt-link to="/residential-cleaning-services-calgary">Residential</nuxt-link></a></span>
         <span><a><nuxt-link to="/carpet-cleaning-service-calgary">Carpet Cleaning</nuxt-link></a></span> 
         <a href="#">About</a>
         <span><a><nuxt-link to="/blog">Blog</nuxt-link></a></span>     
@@ -39,7 +39,7 @@
     <footer>
       <p>
         © Copyright {{ new Date().getFullYear() }} | All Rights Reserved | <nuxt-link to="/sitemap.xml">Sitemap</nuxt-link> | Powered by<a href="https://webdesigncalgary.net">WebDesign Calgary |</a> 
-                  <nuxt-link to="/privacy-policy">Privacy Policy</nuxt-link> | <nuxt-link to="/terms-conditions">Terms &amp; Condition</nuxt-link> 
+                  <nuxt-link to="/privacy-policy">Privacy Policy</nuxt-link> | <nuxt-link to="/terms-conditions">Terms &amp; Conditions</nuxt-link> 
       </p>
     </footer>
   </section>

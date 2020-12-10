@@ -1,7 +1,7 @@
 <template>
     <div id="section-three-testimonials" class="container">
-        <div id="blog-section-one" class="container">
-              <GridBlog :blogPosts="recentPosts()" />
+        <div id="blog-section-one-k" class="container">
+                  <GridBlog :blogPosts="recentPosts()" />
         </div>
     </div>
 </template>
@@ -9,7 +9,7 @@
 <script>
 import GridBlog from "@/components/shared/GridBlog";
 export default {
-    name: 'TheTestimonialSectionTwo',
+    name: 'TheTestimonialSectionThree',
   components: {GridBlog},
   props: {
       posts: {
@@ -38,26 +38,25 @@ export default {
 </script>
 
 <style scoped>
-#blog-section-one .blogs {
+#blog-section-one-k {
   display: grid;
-  /* grid-template-columns: repeat(3, minmax(100px, 1fr)); */
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
   grid-gap: 1rem;
   padding: 1rem 0rem 1rem 0rem;
 }
 
-#blog-section-one img {
-  max-width: 100%;
+#blog-section-one-k img {
+  max-width: 90%;
   height: auto;
 }
 
-#blog-section-one h2 {
+#blog-section-one-k h2 {
   text-align: center;
   letter-spacing: 0.2rem;
   line-height: 3rem;
 }
 
-#blog-section-one figcaption {
+#blog-section-one-k figcaption {
   text-align: center;
   padding-bottom: 2rem;
   border-bottom: solid;
@@ -65,12 +64,14 @@ export default {
   border-width: thin;
 }
 
-#blog-section-one p {
+#blog-section-one-k p {
   margin-top: 1rem;
 }
 
-#blog-section-one a {
+#blog-section-one-k a {
   color: var(--primary-colour);
   /* text-align: right; */
 }
+
+
 </style>

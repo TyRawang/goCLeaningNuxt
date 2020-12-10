@@ -6,8 +6,8 @@
 
     <ThePagination
       :total-pages="totalPages()"
-      :total="113"
-      :per-page="9"
+      :total="9"
+      :per-page="3"
       :current-page="currentPage"
       @pagechanged="onPageChange"
     />
@@ -88,7 +88,6 @@ export default {
 <style>
 #blog-section-one .blogs {
   display: grid;
-  /* grid-template-columns: repeat(3, minmax(100px, 1fr)); */
   grid-template-columns: repeat( auto-fit, minmax(20rem, 1fr) );
   grid-gap: 1rem;
   padding: 6rem 0rem 1rem 0rem;

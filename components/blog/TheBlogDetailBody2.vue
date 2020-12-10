@@ -111,13 +111,7 @@
                         :hashtags="article.tags"
                       >
                         <i class="fab fa-whatsapp fa-lg"></i>
-                        <!--                        <span>Share on Twitter</span>-->
                       </ShareNetwork></span>
-<!--                        <a href="#"><i class="fab fa-facebook fa-lg"></i></a>-->
-<!--                        <a href="#"><i class="fab fa-twitter fa-lg"></i></a>-->
-<!--                        <a href="#"><i class="fab fa-linkedin fa-lg"></i></a>-->
-<!--                        <a href="#"><i class="fab fa-whatsapp fa-lg"></i></a>-->
-<!--                        &lt;!&ndash; <a href="#"><i class="fab fa-envelope-o"></i></a> &ndash;&gt;-->
                     </span>
 
                 </div>
@@ -160,7 +154,7 @@ export default {
         {id:4, name: 'Residential'},
         {id:5, name: 'Outside World'},
       ],
-      ourDomain:'https://cranky-hopper-6f24a3.netlify.app/' // for now. It should be the base url that is for example: gocleaning.ca
+      ourDomain:'https://gocleaning.ca/' // for now. It should be the base url that is for example: gocleaning.ca
     }
   },
 
@@ -190,6 +184,16 @@ export default {
         grid-gap: 3rem;
         padding-top: 4rem;
 
+    }
+
+    @media (max-width: 800px) {
+      section .body {
+        display: inline-block; 
+  
+      }
+      .share-this-blog  {
+        display: none;
+      }
     }
 
     h1 {

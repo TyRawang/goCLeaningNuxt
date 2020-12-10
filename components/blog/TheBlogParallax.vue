@@ -5,7 +5,7 @@
         <div class="row">
           <div class="col-md-12" data-anim-type="fade-in-right" data-anim-delay="100">
             <div class="main-title">
-              <h6>DON’T CALL US, WE’LL CALL YOU</h6>
+              <h6>DON’T CALL US, WE’LdL CALL YOU</h6>
               <h3 class="text-left">Request a Callback</h3>
               <p>Fill in the form below to request a callback to discuss your move.</p>
             </div>

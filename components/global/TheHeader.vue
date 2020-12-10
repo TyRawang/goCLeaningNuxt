@@ -21,8 +21,8 @@
           <li><nuxt-link to="#">Services <i class="fas fa-angle-down"></i> </nuxt-link>
             <ul class="dropdown">
               <li></li>
-              <li><nuxt-link to="/commercial-cleaning-service-calgary">Commercial</nuxt-link></li>
-              <li><nuxt-link to="/residential-cleaning-service-calgary">Residential</nuxt-link></li>
+              <li><nuxt-link to="/commercial-cleaning-services-calgary">Commercial</nuxt-link></li>
+              <li><nuxt-link to="/residential-cleaning-services-calgary">Residential</nuxt-link></li>
               <li><nuxt-link to="/carpet-cleaning-service-calgary">Carpet Cleaning</nuxt-link></li>
             </ul>
           </li>
@@ -65,8 +65,8 @@
         <nuxt-link to="#">Services <i class="fas fa-angle-down"></i></nuxt-link>
           <ul class="dropdown-mobile">
             <li></li>
-            <li @click="closeNav"><nuxt-link to="/commercial-cleaning-service-calgary">Commercial</nuxt-link></li>
-            <li @click="closeNav"><nuxt-link to="/residential-cleaning-service-calgary">Residential</nuxt-link></li>
+            <li @click="closeNav"><nuxt-link to="/commercial-cleaning-services-calgary">Commercial</nuxt-link></li>
+            <li @click="closeNav"><nuxt-link to="/residential-cleaning-services-calgary">Residential</nuxt-link></li>
             <li @click="closeNav"><nuxt-link to="/carpet-cleaning-service-calgary">Carpet Cleaning</nuxt-link></li>
           </ul>
         <nuxt-link to="#">Locations <i class="fas fa-angle-down"></i> </nuxt-link>
@@ -141,7 +141,7 @@ header {
   display: flex;
   justify-content: flex-end;
   align-items: center;
-  padding: 30px 10%;
+  padding: 10px 10%;
 }
 
 header .nav__links a:hover {
