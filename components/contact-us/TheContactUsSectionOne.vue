@@ -26,15 +26,15 @@
             </div>
             <div>
                 <h1>Send Us a Message</h1>
-                <form action="">
-                    <input type="text" id="name" name="name" placeholder="Your name..">
-                    <input type="text" id="cname" name="cname" placeholder="Your Company name..">
-                    <select id="cleaning-type" name="country">
+                <form action="/thanks" name="contact-us-page" method="POST" data-netlify="true">
+                    <input type="text" id="name" name="Customer-Name" placeholder="Your name..">
+                    <input type="text" id="cname" name="Company-Name" placeholder="Your Company name..">
+                    <select id="cleaning-type" name="Cleaning-Type">
                     <option value="Commercial">Commercial</option>
                     <option value="Residential">Residential</option>
                     <option value="Carpet Cleaning">Carpet Cleaning</option>
                     </select>
-                    <textarea id="subject" name="subject" placeholder="More Details." style="height:200px"></textarea>
+                    <textarea id="subject" name="More-Details" placeholder="More Details ..."></textarea>
                     <input type="submit" value="Submit">
                 </form>
             </div>
@@ -46,7 +46,7 @@
 <style scoped>
     .contact-info {
         display: grid;
-        grid-template-columns: repeat(3, 1fr);
+        grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
         grid-gap: 2rem; 
         /* justify-content: center; */
         justify-items: center;
@@ -82,8 +82,9 @@
 
     .contact-form  {
         display: grid;
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
         grid-gap: 2rem; 
+        margin-bottom: 4rem;
         /* padding-top: 1rem; */
 
     }
@@ -115,7 +116,9 @@
     input[type=submit]:hover {
         background-color: #45a049;
     }
-
+    .contact-form form textarea {
+        height: 200px;
+    }
     form label {
         /* color: ; */
     }

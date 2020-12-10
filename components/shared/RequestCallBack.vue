@@ -2,8 +2,9 @@
     <div id="section-two-testimonials" class="">
         <div>
             <h3>Request a Callback</h3>
-            <p>Give us your number to request a call back to diss your cleaning</p>
-            <input type="tel" id="phone" name="phone" placeholder="YOUR PHONE NUMBER" pattern="[0-9]{3}-[0-9]{2}-[0-9]{3}" required><br><br>        
+            <p>Give us your information and request a call </p>
+            <button><nuxt-link to="/free-quote">Request a Callback</nuxt-link></button>
+            <!-- <input type="tel" id="phone" name="phone" placeholder="YOUR PHONE NUMBER" pattern="[0-9]{3}-[0-9]{2}-[0-9]{3}" required><br><br>         -->
         </div>
         <div>
             <span></span>
