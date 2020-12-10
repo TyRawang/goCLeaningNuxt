@@ -64,11 +64,11 @@
               value="quotation_request_residential"
             />
 
-            <label v-show="false" for="service-house"
+            <label v-show="false" for="service-house1"
               >Residential
               <input
                 type="radio"
-                id="service-house"
+                id="service-house1"
                 name="service"
                 v-model="serviceType"
                 value="residential"
@@ -394,11 +394,11 @@
               value="quotation_request_commercial"
             />
 
-            <label v-show="false" for="service-house"
+            <label v-show="false" for="service-house2"
               >commercial
               <input
                 type="radio"
-                id="service-house"
+                id="service-house2"
                 name="service"
                 v-model="serviceType"
                 value="commercial"

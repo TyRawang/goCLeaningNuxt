@@ -42,7 +42,9 @@
     <div class="testimonials">
       <h2>Testimonials</h2>
       <div class="testimonials-content">
-                <VueSlickCarousel ref="carousel" v-bind="slickOptions">
+
+        <no-ssr>
+        <VueSlickCarousel ref="carousel" v-bind="slickOptions">
           <div>
             <div class="cards">
               <div>
@@ -114,7 +116,7 @@
             </div>
           </div>
         </VueSlickCarousel>
-
+        </no-ssr>
 
       </div>
 

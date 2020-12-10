@@ -18,6 +18,10 @@ export default {
     TheSecondSection, TheFirstSection, TheHomeBanner2, RequestCallBack
   },
 
+  head() {
+    title: 'Go Cleaning | Home'
+  },
+
   data(){
     return {
       loading: true,
