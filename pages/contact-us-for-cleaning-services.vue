@@ -20,6 +20,16 @@ import RequestCallBack from "@/components/shared/RequestCallBack";
 
 export default {
   components: { TheContactUsBanner, TheContactUsSectionOne,
-  RequestCallBack }
+  RequestCallBack },
+  head() {
+    return {
+      title: 'Contact Us | Go Cleaning', 
+      meta: [{
+        hid: 'description',
+        name: 'description', 
+        content: 'Feel free to ask us any questions. We will definitely provide you an awesome solution. Hope to hear from you soon!'
+      }]
+    }
+  }
 }
 </script>

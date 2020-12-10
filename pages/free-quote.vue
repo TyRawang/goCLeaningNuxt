@@ -18,6 +18,15 @@ export default {
       TheHomeBanner2
     // TheSecondSection, TheFirstSection, TheHomeBanner2, RequestCallBack
   },
+  head() {
+    return {
+      title: 'Best Residential Cleaning in Calgary | Go Cleaning', 
+      meta: [{
+        hid: 'description',
+        name: 'description', 
+        content: 'We have in the Cleaning Business for over a decade now, we are proud to call our self an expert in Cleaning. Let us help you live a happier life.'      }]
+    }
+  },
 
   data(){
     return {

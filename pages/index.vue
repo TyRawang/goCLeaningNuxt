@@ -19,7 +19,15 @@ export default {
   },
 
   head() {
-    title: 'Go Cleaning | Home'
+    return {
+      title: 'Best Cleaning & Janitorial Service in Calgary | Go Cleaning', 
+      meta: [{
+        hid: 'description',
+        name: 'description', 
+        content: 'Let us be your perfect solution for you residential & commercial cleaning needs. Our pricing is Affordable, order your FREE QUOTE today!'
+      }]
+    }
+
   },
 
   data(){

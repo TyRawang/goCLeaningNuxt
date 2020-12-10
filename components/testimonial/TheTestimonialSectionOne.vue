@@ -3,7 +3,7 @@
         <h3>WHAT THEY SAY ABOUT US</h3>
         <h2>TESTIMONIALS</h2>
 
-        <client-only>
+        <no-ssr>
         <VueSlickCarousel  ref="carousel" v-bind="slickOptions">
           <div>
             <div class="cards">
@@ -76,7 +76,7 @@
             </div>
           </div>
         </VueSlickCarousel>
-        </client-only>
+        </no-ssr>
 
     </div>
 </template>
