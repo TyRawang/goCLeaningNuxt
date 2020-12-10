@@ -103,6 +103,8 @@ export default {
       this.$refs.mobileMenu.style.width = '0%';
     }
 
+    
+
   }
 }
 </script>

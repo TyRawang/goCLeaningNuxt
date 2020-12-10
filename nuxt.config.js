@@ -113,7 +113,7 @@ export default {
     ]
   },
   sitemap: {
-    hostname: 'https:gocleaning.ca',
+    hostname: 'https://gocleaning.ca',
     path: '/sitemap.xml',
     // cacheTime: 1000 * 60 * 60 * 2,
     trailingSlash: true,
@@ -129,7 +129,7 @@ export default {
   facebook: {
     /* module options */
     track: 'PageView',
-    pixelId: 'FACEBOOK_PIXEL_ID',
+    pixelId: '2078883145737115',
     disabled: true
   },
 }

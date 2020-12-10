@@ -27,8 +27,8 @@
             <div>
                 <h1>Send Us a Message</h1>
                 <form action="/thanks" name="contact-us-page" method="POST" data-netlify="true">
-                    <input type="text" id="name" name="Customer-Name" placeholder="Your name..">
-                    <input type="text" id="cname" name="Company-Name" placeholder="Your Company name..">
+                    <input type="text" id="name" name="Customer-Name" placeholder="Your name">
+                    <input type="text" id="cname" name="Company-Name" placeholder="Your Company name">
                     <select id="cleaning-type" name="Cleaning-Type">
                     <option value="Commercial">Commercial</option>
                     <option value="Residential">Residential</option>
