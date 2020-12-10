@@ -24,7 +24,7 @@ export default {
   background-image: url('~assets/images/bg/rawpixel-679094-unsplash.jpg');
   background-position: center bottom;
   background-repeat: no-repeat;
-  background-size: cover;
+  background-size: cover; 
   opacity: 1;
   padding: 8% 30px 10%;
   filter: blur(0px);

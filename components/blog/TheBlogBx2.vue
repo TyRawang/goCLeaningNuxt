@@ -11,7 +11,6 @@
       :current-page="currentPage"
       @pagechanged="onPageChange"
     />
-<!--    <jw-pagination :items="posts" @changePage="goToPageNumber"></jw-pagination>-->
   </section>
 </template>
 
