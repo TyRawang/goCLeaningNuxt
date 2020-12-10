@@ -2,7 +2,7 @@
 title: What Is Your Cleaning Style?
 description: Everyone has a specific cleaning style/personality which can define how you organize and clean your living and work space. In ...
 author: Go Cleaning
-image: https://backend.gocleaning.ca/wp-content/uploads/2019/12/2.jpg
+image: https://res.cloudinary.com/dmw96e6jq/image/upload/v1607569211/What_Is_Your_Cleaning_Style_izjcl8.jpg
 ---
 
 Everyone has a specific cleaning style/personality which can define how you organize and clean your living and work space.

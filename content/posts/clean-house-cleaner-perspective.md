@@ -2,7 +2,7 @@
 title: Clean House, Cleaner Perspective
 description: As we begin our descent into the New Year we are often posed with the question 'Where do we ...
 author: Go Cleaning
-image: https://gocleaning.ca/_nuxt/img/clean-house-cleaner-perspective
+image: https://res.cloudinary.com/dmw96e6jq/image/upload/v1607569227/clean-house-cleaner-perspective_af0vjn.jpg
 ---
 
 ## Clean House, Cleaner Perspective

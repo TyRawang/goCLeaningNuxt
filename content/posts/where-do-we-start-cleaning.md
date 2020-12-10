@@ -2,7 +2,7 @@
 title: Where Do We Start Cleaning
 description: As we begin our descent into the New Year we are often posed with the question 'Where do we ...
 author: Go Cleaning
-image: https://backend.gocleaning.ca/wp-content/uploads/2019/12/3.jpeg
+image: https://res.cloudinary.com/dmw96e6jq/image/upload/v1607569211/Where_Do_We_Start_Cleaning_xqwlup.jpg
 ---
 
 As we begin our descent into the New Year we are often posed with the question ‘Where do we start cleaning?’ This question can be hard to answer especially if there are many problem areas in the home.
