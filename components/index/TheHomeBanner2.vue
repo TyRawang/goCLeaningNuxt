@@ -557,7 +557,7 @@
                 <button
                   v-show="tab > 0"
                   type="button"
-                  id="prevBtn"
+                  id="prevBtn1"
                   @click="toPreviousTab"
                 >
                   Previous
@@ -763,7 +763,7 @@
                 <button
                   v-show="tab > 0"
                   type="button"
-                  id="prevBtn"
+                  id="prevBtn2"
                   @click="toPreviousTab"
                 >
                   Previous
