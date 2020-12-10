@@ -529,24 +529,24 @@
                 ></textarea>
               </div>
               <div>
-                <label for="carpetData-cleaningDate"
+                <label for="clientData-cleaningDate"
                   >Cleaning Date
                   <input
                     type="date"
                     alt="cleaning date"
                     name="cleaningDate"
-                    id="carpetData-cleaningDate"
+                    id="clientData-cleaningDate"
                     v-model="carpetData.cleaningDate"
                   />
                 </label>
-                <label for="carpetData-cleaningTime"
+                <label for="clientData-cleaningTime"
                   >Cleaning Time
                   <input
                     type="time"
                     name="cleaningTime"
                     alt="cleaning time"
                     v-model="carpetData.cleaningTime"
-                    id="carpetData-cleaningTime"
+                    id="clientData-cleaningTime"
                   />
                 </label>
               </div>
@@ -568,7 +568,7 @@
                     (serviceType !== 'residential' && tab < 3)
                   "
                   type="button"
-                  id="nextBtn"
+                  id="nextBtn1"
                   @click="toNextTab"
                 >
                   Next
@@ -774,7 +774,7 @@
                     (serviceType !== 'residential' && tab < 3)
                   "
                   type="button"
-                  id="nextBtn"
+                  id="nextBtn2"
                   @click="toNextTab"
                 >
                   Next
