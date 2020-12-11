@@ -21,7 +21,6 @@ export default {
         // content: 'Let us be your perfect solution for you residential & commercial cleaning needs. Our pricing is Affordable, order your FREE QUOTE today!'
       }]
     }
-
   }
 }
 </script>

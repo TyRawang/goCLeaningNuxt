@@ -10,26 +10,27 @@
 import ThePageBannerSection from "@/components/shared/ThePageBannerSection";
 import TheQuoteRequestInfoSection from "@/components/shared/TheQuoteRequestInfoSection";
 export default {
-name: "calgary",
+name: "vanverour",
   components: {TheQuoteRequestInfoSection, ThePageBannerSection},
 
   data(){
     return {
       bannerPageMaterials: {
-        bannerImage: '/img/go-cleaning-calgary-banner-bg.png',
-        pageTitle: 'Calgary',
+        bannerImage: '/img/go-cleaning-vancouver-banner-bg.png',
+        pageTitle: 'Vancouver',
         pageSubtitle: 'Perfection is our passion',
         hasButton: false
       }
     }
   }, 
+
   head() {
     return {
-      title: 'Best Commercial & Residential Cleaning in Calgary | Go Cleaning Calgary', 
+      title: 'Best Dental Clinic Cleaning in Vancouver | Go Cleaning Vancouver', 
       meta: [{
         hid: 'description',
         name: 'description', 
-        content: 'Go Cleaning is a fast growing company, and Go Cleaning is very proud it. Request a FREE QUOTE for Commercial & Residential Cleaning today'
+        content: 'Cleanliness is a top priority for any medical clinic. Go Cleaning has years expereince cleaning medical environment and understand the importance of cleaning!'
         // content: 'Let us be your perfect solution for you residential & commercial cleaning needs. Our pricing is Affordable, order your FREE QUOTE today!'
       }]
     }

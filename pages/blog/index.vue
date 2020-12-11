@@ -20,6 +20,17 @@ export default {
   async asyncData ({ $content }) {
     const posts = await $content('posts').sortBy('createdAt', 'desc').fetch()
     return { posts }
+  },
+  head() {
+    return {
+      title: 'Learn more about cleaning by reading our blogs | Blog', 
+      meta: [{
+        hid: 'description',
+        name: 'description', 
+        content: 'Read our blogs and learn more about cleaning and Go Cleaning. We will share all our secrets behind creating a safe and clean environment!'
+        // content: 'Let us be your perfect solution for you residential & commercial cleaning needs. Our pricing is Affordable, order your FREE QUOTE today!'
+      }]
+    }
   }
 }
 </script>
