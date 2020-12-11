@@ -104,7 +104,9 @@ export default {
 
 
 
-  }
+  }, 
+  plugins: [{ src: '~plugins/ga.js', mode: 'client' }]
+
 }
 </script>
 
