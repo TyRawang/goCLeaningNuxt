@@ -30,7 +30,7 @@
               <li></li>
               <li><nuxt-link to="/location/calgary">Calgary</nuxt-link></li>
               <li><nuxt-link to="/location/edmonton">Edmonton</nuxt-link></li>
-              <li><nuxt-link to="/location/toronto">Toronto</nuxt-link></li>
+              <li><nuxt-link to="/location/vancouver">vancouver</nuxt-link></li>
             </ul>
           </li>
           <li><nuxt-link to="#">About <i class="fas fa-angle-down"></i> </nuxt-link>

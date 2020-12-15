@@ -17,9 +17,13 @@
         <h3>Go Cleaning Menu</h3>
         <a><nuxt-link to="/">Home</nuxt-link></a>
         <a href="#">Services</a>
-        <span><a><nuxt-link to="/commercial-cleaning-services-calgary">Commercial</nuxt-link></a></span>     
-        <span><a><nuxt-link to="/residential-cleaning-services-calgary">Residential</nuxt-link></a></span>
-        <span><a><nuxt-link to="/carpet-cleaning-service-calgary">Carpet Cleaning</nuxt-link></a></span> 
+        <span><a><nuxt-link to="/location/calgary">Calgary</nuxt-link></a></span>     
+        <span><a><nuxt-link to="/location/edmonton">Edmonton</nuxt-link></a></span>
+        <span><a><nuxt-link to="/location/vancouver">Vancouver</nuxt-link></a></span> 
+        <a href="#">Locations</a>
+        <span><a><nuxt-link to="/commercial-cleaning-services-calgary">Calgary</nuxt-link></a></span>     
+        <span><a><nuxt-link to="/residential-cleaning-services-calgary">Edmonton</nuxt-link></a></span>
+        <span><a><nuxt-link to="/carpet-cleaning-service-calgary">Vancouver</nuxt-link></a></span> 
         <a href="#">About</a>
         <span><a><nuxt-link to="/blog">Blog</nuxt-link></a></span>     
         <span><a><nuxt-link to="/testimonials-reviews-for-best-cleaning-service">Testimonials</nuxt-link></a></span>
