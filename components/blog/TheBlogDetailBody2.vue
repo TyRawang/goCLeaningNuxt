@@ -3,7 +3,7 @@
         <div class="body">
             <div>
                 <h1>{{article.title}}</h1>
-                <figcaption>By {{article.author ? article.author : 'Go Cleaning'}} | {{ formatDate(article.createdAt) }}</figcaption>
+                <figcaption>By {{article.author ? article.author : 'Go Cleaning'}} | {{  }}</figcaption>
                 <img :src="article.image" alt="">
                 <nuxt-content :document="article" />
                  <div class="share-this-blog-bottom">

@@ -96,7 +96,6 @@ export default {
   justify-content: center;
   align-content: center;
 
-
 }
 
 #blog-section-one img {
