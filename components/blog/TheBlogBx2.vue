@@ -85,6 +85,9 @@ export default {
 </script>
 
 <style>
+#blog-section-one {
+  margin-bottom: 4rem;
+}
 #blog-section-one .blogs {
   display: grid;
   grid-template-columns: repeat( auto-fit, minmax(20rem, 1fr) );
