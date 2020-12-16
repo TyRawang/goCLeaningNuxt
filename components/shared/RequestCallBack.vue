@@ -3,7 +3,7 @@
         <div>
             <h3>Request a Callback</h3>
             <p>Give us your information and request a call </p>
-            <button><nuxt-link to="/free-quote">Request a Callback</nuxt-link></button>
+            <button class=""><nuxt-link to="/free-quote" class="button">Request a Callback</nuxt-link></button>
             <!-- <input type="tel" id="phone" name="phone" placeholder="YOUR PHONE NUMBER" pattern="[0-9]{3}-[0-9]{2}-[0-9]{3}" required><br><br>         -->
         </div>
         <div>
@@ -37,6 +37,11 @@ export default {
 
   #section-two-testimonials input ::placeholder {
       color: white;
+  }
+
+  #section-two-testimonials .button {
+      /* txt-color: #ffffff; */
+      color: #ffffff;
   }
 
 

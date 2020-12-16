@@ -4,7 +4,7 @@
       <h3>Our customers love our service and attention to safety and detail</h3>
       <p><span>Send us an email, call us, or let us call you</span></p>
       <p>Your convenience and happiness is our pririty</p>
-      <button><nuxt-link to="/free-quote">REQUEST A FREE QUOTE</nuxt-link></button>
+      <button><nuxt-link to="/free-quote" class="button">REQUEST A FREE QUOTE</nuxt-link></button>
     </div>
     <div id="footer-menu" class="container">
       <div>
@@ -54,7 +54,7 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
 /* Pre Footer */
 
 #pre-footer {
@@ -97,6 +97,10 @@ export default {
 
 button {
   margin: 2rem;
+}
+
+#pre-footer .button {
+  color: #FFFFFF;
 }
 
 

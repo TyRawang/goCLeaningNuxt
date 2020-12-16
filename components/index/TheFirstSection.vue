@@ -3,18 +3,20 @@
   <div id="first-section">
     <div class="first-box">
       <h2>WE REMOVE <span>THE</span><span>Headache</span> <span>FROM</span> <span>CLEANING</span></h2>
-      <div class="btn">LET US CLEAN FOR YOU</div>
+      <div class=""><nuxt-link to="/free-quote" class="btn">LET US CLEAN FOR YOU</nuxt-link> </div>
+      
     </div>
 
     <div class="second-box">
-      <h1>Best Cleaning <span>Service in Calgary</span> </h1>
-      <p>Go Cleaning is a proud cleaning company in Calgary that is family owned and operated. We
-        beleive that clean environment leads to cleaner perspective and a healthier life.
+      <h1>Best Cleaning <span>Service in Calgary</span> </h1> 
+      <p>Go Cleaning is a proud cleaning company in <a href="https://www.calgary.ca/home.html">Calgary</a> that is family owned and operated. We
+        beleive that clean environment leads to a <nuxt-link to="/blog/clean-house-cleaner-perspective"> clean house and a cleaner perspective.</nuxt-link>
       </p>
-      <p>We have a staff of professional cleaners with years of experience in the Commerical and
-        Residential Cleaning industry. Your search stop here, we are provide the best
+      <p>We have a staff of professional cleaners with years of experience in the <nuxt-link to="/commercial-cleaning-services-calgary">Commercial</nuxt-link> 
+         and       <nuxt-link to="/residential-cleaning-services-calgary">Residential Cleaning industry</nuxt-link>. Your search stop here, we are provide the best
         Janitorial Service in Calgary.
       </p>
+
       <div class="btn">CHOOSE, QUALITY, CHOOSE GO CLEANING</div>
     </div>
     <div class="review-logos">
@@ -30,7 +32,8 @@
         <h3>Our customers love our serive and attention to safety and detail.</h3>
         <h4>Send us an email, call us, or let us call you</h4>
         <h3>Your convenience and happiness is our priority</h3>
-        <div class="btn">REQUEST A FREE QUOTE</div>
+        <div><nuxt-link to="/free-quote" class="btn">REQUEST A FREE QUOTE</nuxt-link>
+    </div>
       </div>
     </div>
     <!-- <div class="service-info">

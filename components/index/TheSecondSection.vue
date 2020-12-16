@@ -3,19 +3,26 @@
   <div id="second-section" class="">
 
     <div class="residential-cleaning">
+      <nuxt-link to="/residential-cleaning-services-calgary" class="box-font">
       <div>
         <h2><span>Residential</span><span>Cleaning</span> <span>Service</span> </h2>
       </div>
+      </nuxt-link>
     </div>
     <div class="janitorial-cleaning">
+      <nuxt-link to="commercial-cleaning-services-calgary" class="box-font" >
       <div>
         <h2><span>Commercial</span><span>Cleaning</span> <span>Service</span> </h2>
       </div>
+      </nuxt-link>
     </div>
+
     <div class="office-cleaning">
+      <nuxt-link to="/carpet-cleaning-service-calgary" class="box-font">
       <div>
         <h2><span>Carpet</span><span>Cleaning</span> <span>Service</span> </h2>
       </div>
+      </nuxt-link>
     </div>
   
   </div>
@@ -47,7 +54,10 @@ name: "TheSecondSection"
 
 #second-section .residential-cleaning {
   text-align: center;
-  background: url('~assets/img/Go-Cleaning-Residential-Cleaning.jpg') no-repeat center center/cover;
+  background: url('~assets/img/Go-Cleaning-Residential-Cleaning.jpg') no-repeat center center/cover;;
+  /* background: url('~assets/img/Go-Cleaning-Residential-Cleaning.jpg') no-repeat center center/cover; */
+  /* background: url('~assets/img/Go-Cleaning-Commercial-Cleaning.jpg') no-repeat center center/cover; */
+
 
   /* width: 100%;
   height: 100%; */
@@ -110,6 +120,9 @@ name: "TheSecondSection"
   display: block;
 }
 
+#second-section .box-font {
+  font-family: 'Dosis', sans-serif;
+}
 @media (max-width: 800px) {
   #second-section div * {
     font-size: 2rem;
