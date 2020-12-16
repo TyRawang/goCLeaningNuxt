@@ -4,7 +4,7 @@
       <img :src="post.image" alt="">
       <!-- <img src="~/assets/img/Happy-Family.jpg" alt="Happy family sitting in their living room"> -->
       <h2>{{ post.title }}</h2>
-      <figcaption>By {{ post.author ? post.author : 'Go Cleaning' }} |  }}</figcaption>
+      <figcaption>By {{ post.author ? post.author : 'Go Cleaning' }} </figcaption>
       <p>{{ post.description }}</p>
       <nuxt-link :to="'/blog/' + post.slug">Read More</nuxt-link>
       <!-- <p>post.tags</p> -->

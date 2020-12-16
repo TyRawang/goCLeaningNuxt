@@ -13,7 +13,16 @@
       </div>
     </div>
     <header>
-      <img src="~/assets/img/logo.png" alt="Go Cleaning Logo" class="logo">
+      <!-- <nuxt-link to="/">
+        <img src="~/assets/img/logo.png" alt="Go Cleaning Logo" class="logo">
+      </nuxt-link> -->
+      <nuxt-link 
+        tag="img"
+        :src="require('~/assets/img/logo.png')"
+        alt="Go Cleaning Logo" 
+        class="logo" 
+        to="/">
+      </nuxt-link>
       <nav>
         <ul class="nav__links">
           <li><nuxt-link to="/">Home</nuxt-link></li>
