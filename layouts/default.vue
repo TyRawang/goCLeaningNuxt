@@ -91,4 +91,19 @@ html {
   color: #fff;
   background-color: #35495e;
 }
+
+
+
+
+/* =================================== */
+.page-enter-active,
+.page-leave-active {
+  transition: opacity 0.15s ease-in-out, transform 0.35s ease-in-out;
+}
+.page-enter,
+.page-leave-to {
+  opacity: 0;
+  transform: translate3d(0, 15px, 0);
+}
+
 </style>
