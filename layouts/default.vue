@@ -15,7 +15,8 @@ import TheBreadcrumb from "@/components/global/TheBreadcrumb";
 export default {
   components: {
     TheBreadcrumb,
-    TheHeader, TheFooter
+    TheHeader, 
+    TheFooter
   },
 
   data(){

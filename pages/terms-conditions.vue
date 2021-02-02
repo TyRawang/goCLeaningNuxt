@@ -5,13 +5,10 @@
     <p>Welcome to Go Cleaning!</p>
 
     <p>These terms and conditions outline the rules and regulations for the use of Go Cleaning's Website, located at
-      https://cranky-hopper-6f24a3.netlify.app/.</p>
+      https:gocleaning.ca/.</p>
 
     <p>By accessing this website we assume you accept these terms and conditions. Do not continue to use Go Cleaning if
-      you do not agree to take all of the terms and conditions stated on this page. Our Terms and Conditions were
-      created with the help of the <a href="https://www.termsandconditionsgenerator.com">Terms And Conditions
-        Generator</a> and the <a href="https://www.privacypolicyonline.com/terms-conditions-generator/">Free Terms &
-        Conditions Generator</a>.</p>
+      you do not agree to take all of the terms and conditions stated on this page. </p>
 
     <p>The following terminology applies to these Terms and Conditions, Privacy Statement and Disclaimer Notice and all
       Agreements: "Client", "You" and "Your" refers to you, the person log on this website and compliant to the
