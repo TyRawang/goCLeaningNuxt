@@ -1,7 +1,7 @@
 <template>
   <div class="blogs">
     <nuxt-link v-for="(post, index) in blogPosts" :key="index" :to="'/blog/' + post.slug" class="single-blog">
-      <img :src="post.image" alt="">
+      <img :src="post.image.formats.large.url" alt="">
       <!-- <img src="~/assets/img/Happy-Family.jpg" alt="Happy family sitting in their living room"> -->
       <h2>{{ post.title }}</h2>
       <figcaption>By {{ post.author ? post.author : 'Go Cleaning' }} </figcaption>

@@ -95,7 +95,8 @@ export default {
     // nuxt sitemap
     "@nuxtjs/sitemap",
     "nuxt-facebook-pixel-module",
-    "vue-social-sharing/nuxt"
+    "vue-social-sharing/nuxt",
+    "@nuxtjs/markdownit"
   ],
   /*
    ** Axios module configuration
