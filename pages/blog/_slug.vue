@@ -2,7 +2,11 @@
   <section>
     <TheBlogDetailBanner />
     <div class="clearfix"></div>
-    <TheBlogDetailBody2 :posts="posts" :article="article" />
+    <TheBlogDetailBody2
+      :posts="posts"
+      :article="article"
+      :categories="categories"
+    />
     <!--    <nuxt-content :document="article" />-->
     <div class="clearfix"></div>
   </section>
@@ -21,7 +25,11 @@ export default {
           name: "description",
           content: this.article.seo.metaDescription
         },
-        { hid: "og:title", property: "og:title", content: this.article.seo.metaTitle },
+        {
+          hid: "og:title",
+          property: "og:title",
+          content: this.article.seo.metaTitle
+        },
         {
           hid: "og:description",
           property: "og:description",
@@ -49,6 +57,7 @@ export default {
   async asyncData({ $strapi, params, error }) {
     // console.log(params)
     const posts = await $strapi.find("articles");
+    const categories = await $strapi.find("categories");
     const articleData = await $strapi.find("articles", { slug: params.slug });
     let article = {};
     if (articleData.length > 0) {
@@ -57,7 +66,7 @@ export default {
       return error({ statusCode: 404, message: "Not found" });
     }
 
-    return { posts, article };
+    return { posts, article, categories };
   }
 };
 </script>

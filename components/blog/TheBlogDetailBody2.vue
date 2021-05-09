@@ -22,7 +22,7 @@
                 :title="article.seo.metaTitle"
                 :description="article.seo.metaDescription"
                 :quote="article.seo.quote"
-                :hashtags="article.tags.tagName"
+                :hashtags="article.tags"
               >
                 <i class="fab fa-facebook fa-lg"></i>
                 <!--                        <span>Share on Twitter</span>-->
@@ -35,7 +35,7 @@
                 :title="article.seo.metaTitle"
                 :description="article.seo.metaDescription"
                 :quote="article.seo.quote"
-                :hashtags="article.tags.tagName"
+                :hashtags="article.tags"
               >
                 <i class="fab fa-twitter fa-lg"></i>
                 <!--                        <span>Share on Twitter</span>-->
@@ -48,7 +48,7 @@
                 :title="article.seo.metaTitle"
                 :description="article.seo.metaDescription"
                 :quote="article.seo.quote"
-                :hashtags="article.tags.tagName"
+                :hashtags="article.tags"
               >
                 <i class="fab fa-linkedin fa-lg"></i>
                 <!--                        <span>Share on Twitter</span>-->
@@ -61,7 +61,7 @@
                 :title="article.seo.metaTitle"
                 :description="article.seo.metaDescription"
                 :quote="article.seo.quote"
-                :hashtags="article.tags.tagName"
+                :hashtags="article.tags"
               >
                 <i class="fab fa-whatsapp fa-lg"></i>
                 <!--                        <span>Share on Twitter</span>-->
@@ -164,22 +164,18 @@ export default {
       type: Array,
       required: true
     },
+    categories: {
+      type: Array,
+      required: true
+    },
     article: {
       type: Object,
       required: true
     }
   },
-
   data() {
     return {
       recent: 3,
-      categories: [
-        { id: 1, name: "Cleaning" },
-        { id: 2, name: "Commercial" },
-        { id: 3, name: "Corporate" },
-        { id: 4, name: "Residential" },
-        { id: 5, name: "Outside World" }
-      ],
       ourDomain: "https://gocleaning.ca/" // for now. It should be the base url that is for example: gocleaning.ca
     };
   },
