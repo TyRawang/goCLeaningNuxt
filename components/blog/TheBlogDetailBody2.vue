@@ -19,10 +19,10 @@
               ><ShareNetwork
                 network="facebook"
                 :url="ourDomain + $route.fullPath"
-                :title="article.title"
-                :description="article.description"
-                :quote="article.quote"
-                :hashtags="article.tags"
+                :title="article.seo.metaTitle"
+                :description="article.seo.metaDescription"
+                :quote="article.seo.quote"
+                :hashtags="article.tags.tagName"
               >
                 <i class="fab fa-facebook fa-lg"></i>
                 <!--                        <span>Share on Twitter</span>-->
@@ -32,10 +32,10 @@
               ><ShareNetwork
                 network="twitter"
                 :url="ourDomain + $route.fullPath"
-                :title="article.title"
-                :description="article.description"
-                :quote="article.quote"
-                :hashtags="article.tags"
+                :title="article.seo.metaTitle"
+                :description="article.seo.metaDescription"
+                :quote="article.seo.quote"
+                :hashtags="article.tags.tagName"
               >
                 <i class="fab fa-twitter fa-lg"></i>
                 <!--                        <span>Share on Twitter</span>-->
@@ -45,10 +45,10 @@
               ><ShareNetwork
                 network="linkedin"
                 :url="ourDomain + $route.fullPath"
-                :title="article.title"
-                :description="article.description"
-                :quote="article.quote"
-                :hashtags="article.tags"
+                :title="article.seo.metaTitle"
+                :description="article.seo.metaDescription"
+                :quote="article.seo.quote"
+                :hashtags="article.tags.tagName"
               >
                 <i class="fab fa-linkedin fa-lg"></i>
                 <!--                        <span>Share on Twitter</span>-->
@@ -58,10 +58,10 @@
               ><ShareNetwork
                 network="whatsapp"
                 :url="ourDomain + $route.fullPath"
-                :title="article.title"
-                :description="article.description"
-                :quote="article.quote"
-                :hashtags="article.tags"
+                :title="article.seo.metaTitle"
+                :description="article.seo.metaDescription"
+                :quote="article.seo.quote"
+                :hashtags="article.tags.tagName"
               >
                 <i class="fab fa-whatsapp fa-lg"></i>
                 <!--                        <span>Share on Twitter</span>-->
