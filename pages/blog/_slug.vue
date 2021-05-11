@@ -23,51 +23,52 @@ export default {
         {
           hid: "description",
           name: "description",
-          content: this.article.seo.metaDescription
+          content: this.article.seo.metaDescription,
         },
         {
           hid: "og:title",
           property: "og:title",
-          content: this.article.seo.metaTitle
+          content: this.article.seo.metaTitle,
         },
         {
           hid: "og:description",
           property: "og:description",
-          content: this.article.seo.metaDescription
+          content: this.article.seo.metaDescription,
         },
         {
           hid: "twitter:title",
           name: "twitter:title",
-          content: this.article.seo.metaTitle
+          content: this.article.seo.metaTitle,
         },
         {
           hid: "twitter:description",
           name: "twitter:description",
-          content: this.article.seo.metaDescription
-        }
-      ]
+          content: this.article.seo.metaDescription,
+        },
+      ],
     };
   },
 
   components: {
     TheBlogDetailBanner,
-    TheBlogDetailBody2
+    TheBlogDetailBody2,
   },
 
   async asyncData({ $strapi, params, error }) {
-    // console.log(params)
-    const posts = await $strapi.find("articles");
-    const categories = await $strapi.find("categories");
-    const articleData = await $strapi.find("articles", { slug: params.slug });
     let article = {};
+    let posts = [];
+    let categories = [];
+    // console.log(params)
+    posts = await $strapi.find("articles");
+    categories = await $strapi.find("categories");
+    const articleData = await $strapi.find("articles", { slug: params.slug });
+    console.log("articleData", articleData);
     if (articleData.length > 0) {
       article = articleData[0];
-    } else {
-      return error({ statusCode: 404, message: "Not found" });
     }
 
-    return { posts, article, categories };
-  }
+    return { posts, categories, article };
+  },
 };
 </script>
 

@@ -79,6 +79,7 @@ export default {
    */
   buildModules: [
     // '@nuxtjs/tailwindcss'
+    '@nuxtjs/dotenv',
   ],
   /*
    ** Nuxt.js modules
