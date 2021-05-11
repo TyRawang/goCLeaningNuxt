@@ -35,7 +35,6 @@ export default {
   },
 
   mounted() {
-    console.log(this.posts)
     this.$root.$on('pageNoClicked', (payload)=>{
       this.goToPageNumber(payload)
     })
