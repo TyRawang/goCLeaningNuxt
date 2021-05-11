@@ -2,8 +2,12 @@
   <section>
     <TheBlogDetailBanner />
     <div class="clearfix"></div>
-    <TheBlogDetailBody2 :posts="posts" :article="article" />
-<!--    <nuxt-content :document="article" />-->
+    <TheBlogDetailBody2
+      :posts="posts"
+      :article="article"
+      :categories="categories"
+    />
+    <!--    <nuxt-content :document="article" />-->
     <div class="clearfix"></div>
   </section>
 </template>
@@ -12,30 +16,60 @@
 import TheBlogDetailBanner from "@/components/blog/TheBlogDetailBanner";
 import TheBlogDetailBody2 from "@/components/blog/TheBlogDetailBody2";
 export default {
-  head () {
+  head() {
     return {
       title: this.article.title,
       meta: [
-        { hid: 'description', name: 'description', content: this.article.description },
-        { hid: 'og:title', property: 'og:title', content: this.article.title },
-        { hid: 'og:description', property: 'og:description', content: this.article.description },
-        { hid: 'twitter:title', name: 'twitter:title', content: this.article.title },
-        { hid: 'twitter:description', name: 'twitter:description', content: this.article.description }
-      ]
-    }
+        {
+          hid: "description",
+          name: "description",
+          content: this.article.seo.metaDescription,
+        },
+        {
+          hid: "og:title",
+          property: "og:title",
+          content: this.article.seo.metaTitle,
+        },
+        {
+          hid: "og:description",
+          property: "og:description",
+          content: this.article.seo.metaDescription,
+        },
+        {
+          hid: "twitter:title",
+          name: "twitter:title",
+          content: this.article.seo.metaTitle,
+        },
+        {
+          hid: "twitter:description",
+          name: "twitter:description",
+          content: this.article.seo.metaDescription,
+        },
+      ],
+    };
   },
 
   components: {
-    TheBlogDetailBanner, TheBlogDetailBody2
+    TheBlogDetailBanner,
+    TheBlogDetailBody2,
   },
 
-  async asyncData({ $content, params }) {
+  async asyncData({ $strapi, params, error }) {
+    let article = {};
+    let posts = [];
+    let categories = [];
     // console.log(params)
-    const posts = await $content('posts').sortBy('createdAt', 'desc').fetch()
-    const article = await $content('posts', params.slug).fetch()
-    return { posts, article }
+    posts = await $strapi.find("articles");
+    categories = await $strapi.find("categories");
+    const articleData = await $strapi.find("articles", { slug: params.slug });
+    console.log("articleData", articleData);
+    if (articleData.length > 0) {
+      article = articleData[0];
+    }
+
+    return { posts, categories, article };
   },
-}
+};
 </script>
 
 <style>
