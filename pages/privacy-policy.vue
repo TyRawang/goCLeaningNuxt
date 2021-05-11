@@ -2,7 +2,7 @@
   <div class="container">
     <h1>Privacy Policy for Go Cleaning</h1>
 
-    <p>At Go Cleaning, accessible from https://cranky-hopper-6f24a3.netlify.app/, one of our main priorities is the
+    <p>At Go Cleaning, accessible from https://gocleaning.ca, one of our main priorities is the
       privacy of our visitors. This Privacy Policy document contains types of information that is collected and recorded
       by Go Cleaning and how we use it.</p>
 
@@ -51,10 +51,7 @@
       include internet protocol (IP) addresses, browser type, Internet Service Provider (ISP), date and time stamp,
       referring/exit pages, and possibly the number of clicks. These are not linked to any information that is
       personally identifiable. The purpose of the information is for analyzing trends, administering the site, tracking
-      users' movement on the website, and gathering demographic information. Our Privacy Policy was created with the
-      help of the <a href="https://www.privacypolicygenerator.info">Privacy Policy Generator</a> and the <a
-        href="https://www.privacypolicyonline.com/privacy-policy-generator/">Online Privacy Policy Generator</a>.</p>
-
+      users' movement on the website, and gathering demographic information. 
     <h2>Cookies and Web Beacons</h2>
 
     <p>Like any other website, Go Cleaning uses 'cookies'. These cookies are used to store information including
