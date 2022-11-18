@@ -24,7 +24,6 @@
         <li><a href="https://g.page/gocleaningcanada?gm"><img src="~/assets/img/Go-Cleaning-Google-Review.png" alt="Go Cleaning Google Review"></a></li>
         <li><a href="https://homestars.com/companies/2925929-go-cleaning"><img src="~/assets/img/Go-Cleaning-HomeStars-Review.png" alt="Go Cleaning HomeStars Review"></a></li>
         <li><a href="https://www.yelp.ca/biz/go-cleaning-calgary"><img src="~/assets/img/Go-Cleaning-Yelp-Review.png" alt="Go Cleaning Yelp Review"></a></li>
-        <!–– <li><a href="https://www.bbb.org/ca/ab/calgary/profile/cleaning-services/go-cleaning-0017-105701"><img src="~/assets/img/Go-Cleaning-BBB-Review.jpg" alt="Go Cleaning BBB Review"></a></li> ––>
       </ul>
     </div>
     <div class="side">
